@@ -27,12 +27,17 @@
             <kind>1</kind>
             <string>
 image_speed = 0;
+face = 1;
 scale = 1;
 color = c_white;
 alpha = 1;
 rot = 0;
 spr_shadow = spr_blank;
+spr_bush_splash = 0;
+bush_splash = 0;
 
+bush_shake = 0;
+scr_depth();
 
 
 </string>
@@ -58,14 +63,14 @@ spr_shadow = spr_blank;
           <argument>
             <kind>1</kind>
             <string>scr_pug_nearest();
-scr_depth();
+//scr_depth();
 
 
 if g.mpgrid &gt; 0{
 }
 
 
-
+//draw shadow
 if spr_shadow != spr_blank{
 if surface_exists(g.surf_shadow){
 surface_set_target(g.surf_shadow);
@@ -73,7 +78,23 @@ draw_set_blend_mode(bm_normal);
 draw_sprite_ext(spr_shadow,0,x,y,1,1,0,g.c_night_shadow,1);
 draw_set_blend_mode(bm_normal);
 surface_reset_target();
-}}
+}}///////////////
+
+
+//bush shake
+if bush_shake &gt; 0{
+if bush_shake = 1{rot_dir = 1;
+scr_sound(snd_green_shake,g.sfx_volume);}
+bush_shake -= .05;
+rot += rot_dir;
+if rot &gt; 1{rot_dir = -1;}
+if rot &lt; -1{rot_dir = 1;}
+if bush_shake = 0{rot = 0;rot_dir = 0;}
+}
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -103,7 +124,18 @@ surface_reset_target();
 
 
 
-draw_sprite_ext(sprite_index,image_single,x,y,1,1,rot,color,alpha);
+draw_sprite_ext(sprite_index,image_single,x,y,1*face,1,rot,color,alpha);
+
+
+//bush splash leaf effect
+if spr_bush_splash &gt; 0{
+if bush_splash &gt; 0{
+bush_splash += .25;
+draw_sprite_ext(spr_bush_splash,bush_splash-1,x,y,1,1,rot,color,alpha);
+if bush_splash = sprite_get_number(spr_bush_splash)+1{bush_splash = 0;}
+}}
+
+
 
 //if show_stick = 1{draw_sprite_ext(spr_stick_hint,0,x-12,y-ihint+4,1,1,rot,c_white,alpha);
 //if hint_flash &lt; 5{draw_sprite_ext(spr_stick_hint_flash,hint_flash,x-12,y-ihint+4,1,1,rot,c_white,alpha);}}

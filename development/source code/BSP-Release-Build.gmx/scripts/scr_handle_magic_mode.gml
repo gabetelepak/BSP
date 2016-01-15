@@ -1,6 +1,6 @@
 
 //init action
-if g.button[player_number,g.button_RB]{
+if g.button[player_number,g.button_X]{
 //turn on
 if pug_action <= 0 && magic_mode = 0{
 speed = 0;
@@ -15,6 +15,15 @@ magic_mode_y = 0;
 build_x = (floor((x)/12)*12)+6;
 build_y = (floor((y-12)/12)*12);
 
+//drop item
+if item_held != ""{
+if item_obj >= 0{
+opt = instance_create(x,y+3,item_obj);
+opt.face = face;
+item_held = "";
+spr_item = spr_blank;
+pug_power = 0;
+scr_switch_power();}}
 
 
 }

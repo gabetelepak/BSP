@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 spr_shadow = spr_tree_left_shadow;
+spr_bush_splash = spr_tree_left_leaves;
 </string>
           </argument>
         </arguments>

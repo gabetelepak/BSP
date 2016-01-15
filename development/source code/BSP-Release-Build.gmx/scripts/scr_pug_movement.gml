@@ -1,7 +1,7 @@
 goal_x = x;
 goal_y = y;
 
-if speed > move_speed/4{speed -= move_speed/4;}else{speed = 0;}
+if speed > .25{speed -= .25;}else{speed = 0;}
 
 if g.button[player_number,g.button_UP]{goal_y = y-1;sprite_index = spr_walk_up;}
 if g.button[player_number,g.button_DOWN]{goal_y = y+1;sprite_index = spr_walk_down;}
@@ -10,6 +10,8 @@ if g.button[player_number,g.button_RIGHT]{goal_x = x+1;sprite_index = spr_walk;}
 
 if (goal_x > view_xview[0]+view_wview[0]-24 && goal_x > x) || (goal_x < view_xview[0]+24 && goal_x < x){goal_x = x;}
 if (goal_y > view_yview[0]+view_hview[0]-24 && goal_y > y) || (goal_y < view_yview[0]+24 && goal_y < y){goal_y = y;}
+
+
 
 //move
 if goal_x != x || goal_y != y{
@@ -39,7 +41,7 @@ image_speed = 0;}}
 if direction < 90 || direction > 270{face = -1;}
 if direction > 90 && direction < 270{face = 1;}
 
-
+if !place_free(x+hspeed,y+vspeed){speed = 0;}
 
 
 

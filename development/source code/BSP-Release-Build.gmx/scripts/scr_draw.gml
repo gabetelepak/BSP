@@ -22,4 +22,4 @@ draw_set_alpha(1);}
 
 
 //draw debug test
-scr_draw_debug();
+//scr_draw_debug();

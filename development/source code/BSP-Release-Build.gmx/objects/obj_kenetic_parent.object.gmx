@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>init = 0;
+direction = 0;
 image_speed = 0;
 scale = 1;
 color = c_white;
@@ -41,6 +42,25 @@ pug = 0;
 spr_shadow = spr_blank;
 shadow_scalex = 1;
 shadow_scaley = 1;
+spr_action = 0;
+target = -1;
+
+hit_particle = 0;
+hit_particle_num = 0;
+
+spawn_x = x;
+spawn_y = y;
+
+//get intstance number
+inst_number = -1;
+var i;
+for (i = 0; i &lt; instance_number( asset_get_index(object_get_name(id))); i += 1)
+   {
+if id = instance_find( asset_get_index(object_get_name(id)),i){
+ inst_number = i;}
+
+
+   }
 
 
 
@@ -68,6 +88,9 @@ shadow_scaley = 1;
             <kind>1</kind>
             <string>scr_pug_nearest();
 scr_depth();
+
+if direction &gt; 90 &amp;&amp; direction &lt;= 270{
+face = 1;}else{face = -1;}
 
 //handle z and gravity
 zbounce = 0;

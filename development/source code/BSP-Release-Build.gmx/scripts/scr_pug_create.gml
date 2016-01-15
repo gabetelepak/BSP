@@ -3,6 +3,9 @@ color = c_white;
 alpha = 1;
 move_speed = 2;
 face = 1;
+spr_shadow = spr_pug_shadow2;
+shadow_scalex = 1;
+shadow_scaley = 1;
 
 goal_x = x;
 goal_y = y;
@@ -43,10 +46,17 @@ spr_scoot = g.spr_scoot[i];
 spr_transform = g.spr_transform[i];
 spr_hover = g.spr_hover[i];
 
+
+
 sprite_index = spr_sit;
 
+//misc stuff
+
+sniff_icon_alarm_max = 60;//how long to show sniff icons
+sniff_icon_alarm = sniff_icon_alarm_max;
 
 //must be defined after sprites
 scr_init_pug_powers();
 scr_init_magic_mode();
+scr_init_item_holding();
 scr_switch_power();

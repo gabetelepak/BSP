@@ -106,6 +106,20 @@ alarm[1] = 30 + random(30);
 spr_offsetx = random(2)-1;
 spr_offsety = random(2)-1;}
 
+
+//get bubbled
+if bubble = 0{
+if instance_exists(obj_bubble){
+opt = instance_nearest(x,y,obj_bubble);
+if distance_to_point(opt.x,opt.y) &lt; 10 &amp;&amp; opt.sprite_index = spr_bubble_float{
+with opt{instance_destroy();}
+bubble = 1;
+}}}
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -132,6 +146,9 @@ spr_offsety = random(2)-1;}
 draw_sprite_ext(sprite_index,2,x,y-z,scale,scale,rot,color,.15);
 draw_sprite_ext(sprite_index,1,x+spr_offsetx,y-z+spr_offsety,scale,scale,rot,color,.3);
 draw_sprite_ext(sprite_index,0,x,y-z,scale,scale,rot,color,1);
+
+if bubble = 1{
+draw_sprite_ext(spr_bubble_float,image_single,x,y-z,scale,scale,rot,color,1);}
 
 if bubble = 1{
 if iz &gt; 15{iz -= 1;}else{iz = 15;}

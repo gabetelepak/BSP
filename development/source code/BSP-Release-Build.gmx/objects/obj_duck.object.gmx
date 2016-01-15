@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_kenetic_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_duck_create();
+            <string>event_inherited();
+zgrav = 0.05;
+zbouncable = 0;
+spr_shadow = spr_duck_shadow;
+zspeed = 0;
+
+//duck
+swim = 1;
+interact = "";
+action = 0;
+alarm[0] = floor(random(60))+60;
 </string>
           </argument>
         </arguments>
@@ -48,7 +58,184 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_duck_step();
+            <string>event_inherited();
+zbouncable = 0;
+
+alarm[1] -= 1;
+alarm[0] -= 1;
+if alarm[0] &lt;= 0{
+action = 0;
+spawn = 0;}
+
+if interact = ""{
+spr_action = 0;
+
+//swim in pong
+if position_meeting(x, y, obj_pond){
+swim = 1;
+action = 0;}
+else{swim = 0;}
+
+if action = 0{
+
+if scr_pug_dis(64) {
+if pug.sprite_index = pug.spr_bark{
+if swim = 0{
+sprite_index = spr_duck_quack;}
+else{sprite_index = spr_duck_quack_water;}
+image_speed = .25;
+alarm[0] = floor(sprite_get_number(spr_duck_quack)*4);
+scr_sound(snd_duck_quack,g.sfx_volume);
+action = 1;
+speed = 0;}}
+
+if scr_pug_dis(48) {
+if pug.sprite_index = pug.spr_pee{
+if swim &gt; 0{
+sprite_index = spr_duck_swim_angry;
+image_speed = .12;
+alarm[0] = floor(sprite_get_number(spr_duck_swim_angry)*8.3);
+scr_sound(snd_duck_quack,g.sfx_volume);
+action = 1;
+speed = .75;
+direction = point_direction(x,y,426,488);}
+else{
+sprite_index = spr_duck_walk_angry;
+image_speed = .25;
+alarm[0] = floor(sprite_get_number(spr_duck_walk_angry)*4);
+scr_sound(snd_duck_quack,g.sfx_volume);
+action = 1;
+speed = .75;
+direction = point_direction(x,y,426,488);
+}}}
+
+
+
+if scr_pug_dis(32){ 
+if pug.sprite_index = pug.spr_poop || pug.sprite_index = pug.spr_bite{
+if pug.pug_action = 6{
+if swim &gt; 0{obj_pond.ripple = -6;}
+action = 1;
+interact = "takeoff";
+target = pug;
+swim = 0;
+}}}
+
+
+
+if action = 0{
+if speed &gt; 0{
+if swim = 0{
+sprite_index = spr_duck_walk;
+
+if direction &gt; 45 &amp;&amp; direction &lt; 90+45{
+sprite_index = spr_duck_walk_up;}
+if direction &gt; 270-45 &amp;&amp; direction &lt; 270+45{
+sprite_index = spr_duck_walk_down;}
+
+}
+else{sprite_index = spr_duck_swim;}
+image_speed = .25;}
+else{
+if swim = 0{
+sprite_index = spr_duck_stand;}
+else{sprite_index = spr_duck_swim;}
+image_single = 0;
+image_speed = 0;}}
+
+
+if distance_to_point(spawn_x,spawn_y) &gt; 32{
+direction = point_direction(x,y,spawn_x,spawn_y);}
+
+if speed &gt; .75{speed -= .75/30;}
+
+}
+
+
+
+if action = 0 &amp;&amp; alarm[1] &lt;= 0 &amp;&amp; alarm[0] &lt;= 0{
+alarm[1] = 60 + floor(random(60));
+i = random(100);
+if i &gt; 70{
+alarm[0] = 30 + floor(random(30));
+speed = 1;
+if swim = 1{speed = 1.5;}else{
+direction = random(359);
+if distance_to_point(spawn_x,spawn_y) &gt; 32{
+direction = point_direction(x,y,spawn_x,spawn_y);}}}
+else{speed = 0;}
+
+if swim = 0{
+if i &lt; 30{
+action = 1;
+sprite_index = spr_duck_sleep;
+image_speed = .25;
+alarm[0] = 4*4;}
+
+if i &gt;= 30 &amp;&amp; i &lt; 50{
+action = 1;
+if swim = 0{
+sprite_index = spr_duck_quack;}
+else{sprite_index = spr_duck_quack_water;}
+image_speed = .33;
+alarm[0] = 3 * 3 * 3;
+scr_sound(snd_duck_quack,g.sfx_volume);}}
+}
+}//end if no interact
+/////////////////////////////////////////////////////////
+
+if interact = "takeoff"{
+if spr_action = 0{
+sprite_index = spr_duck_takeoff;
+if position_meeting(x, y, obj_pond){sprite_index = spr_duck_takeoff_water;}
+image_single = 0;
+image_speed = .12;
+speed = 0;
+z = 0;
+zspeed = 0;
+if face = 1{direction = 180;}
+else{direction = 0;}}
+spr_action += image_speed;
+
+
+if zspeed &lt; 2{zspeed += .025;}
+
+if spr_action &gt;= sprite_get_number(sprite_index){
+interact = "fly";
+spr_action = 0;
+sprite_index = spr_duck_fly;
+image_speed = .12;
+image_single = 0;
+}}
+
+if interact = "fly"{
+image_speed = .25;
+if speed &lt; 3{speed += .2;}
+if zspeed &lt; 2{zspeed += .1;}
+
+if x &lt; -32{x = -32;
+interact = "wait offscreen";}
+if x &gt; room_width+32{x = room_width+32;
+interact = "wait offscreen";}}
+
+if interact = "wait offscreen"{
+speed = 0;
+zspeed = 0;
+if point_distance(spawn_x,spawn_y,target.x,target.y) &gt; 192 || target &lt;= 0{
+interact = "return fly";}}
+
+if interact = "return fly"{
+direction = point_direction(x,y,spawn_x,spawn_y);
+speed = clamp(distance_to_point(spawn_x,spawn_y),.25,2);
+z = distance_to_point(spawn_x,spawn_y)*.5;
+
+if distance_to_point(spawn_x,spawn_y) &lt;= 2{
+z = 0; speed = 0; interact = "";
+action = 0;
+alarm[0] = floor(random(60))+60;}
+
+}
+
 </string>
           </argument>
         </arguments>
@@ -71,7 +258,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_duck_draw();
+            <string>event_inherited();
+//draw_sprite_ext(sprite_index,image_single,x,y-z-14,1,1,rot,color,alpha);
+
+draw_text(g.vx+10,g.vy+20+10*inst_number,interact);
+
+
+
 </string>
           </argument>
         </arguments>
@@ -89,8 +282,5 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>32,64</point>
-    <point>32,32</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

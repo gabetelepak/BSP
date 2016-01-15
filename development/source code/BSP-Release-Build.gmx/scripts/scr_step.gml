@@ -15,8 +15,8 @@ scr_step_park_night();}
 
 
 
-//general minor systems
-scr_step_general_systems();
+//misc minor systems
+scr_step_misc_systems();
 
 
 

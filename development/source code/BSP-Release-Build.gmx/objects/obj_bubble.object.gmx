@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_kenetic_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,22 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = room_height-y;
-image_speed = .12;
+            <string>event_inherited();
 
-scale = 1;
-color = c_white;
-alpha = 1;
-cam_scale = 1;
-rot = 0;
-drop = 0;
-face = 1;
-
-speed = 1;
-direction = 0;
-friction = .02;
-
-life = 0;
+init = 0;
+zgrav = 0;
+zbouncable = 0;
+spr_shadow = spr_blank;
 
 
 </string>
@@ -65,73 +55,34 @@ life = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_depth();
-depth -= 24;
-scr_pug_nearest();
-life += 1;
-if speed &lt;= .2{speed = .2;
-friction = 0;}
+            <string>event_inherited();
+image_speed = .15;
+z = 13;
+alarm[0] += 1;
 
-if sprite_index = spr_bubble_spawn{
-if floor(image_index) = image_number-1{
+
+if init = 0{
+speed = .75;
+if floor(image_index) = sprite_get_number(sprite_index)-1{
 sprite_index = spr_bubble_float;
-image_single = 0;
-image_speed = .12;}}
+init = 1;}}
 
-
-if life = 30*5{
-sprite_index = spr_bubble_pop;
-image_single = 0;
-image_speed = .2;
-scr_sound(snd_bubble_pop,g.sfx_volume);
+if init = 1 &amp;&amp; speed &gt; .25{
+speed -= .025;
 }
 
-if sprite_index = spr_bubble_pop{
-if floor(image_index) = image_number-1{
+if alarm[0] = 120{
+image_speed = .25;
+sprite_index = spr_bubble_pop;
+image_index = 0;}
+
+if alarm[0] &gt; 120{
+if ceil(image_index) = sprite_get_number(sprite_index){
+scr_sound(snd_bubble_pop,g.sfx_volume);
 instance_destroy();}}
 
 
 
-if sprite_index = spr_bubble_float{
-i = 0;
-with obj_firefly{
-if scr_dis(x,y-z,other.x,other.y) &lt;= 15 &amp;&amp; bubble = 0{
-bubble = 1;
-other.i = 1;}}
-if i = 1{instance_destroy();}}
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if abs(hspeed) &gt; 0{
-if surface_exists(g.surf_shadow){
-surface_set_target(g.surf_shadow);
-draw_sprite_ext(spr_frisbee_shadow,image_single,x-3-abs(hspeed)*2,y+abs(hspeed)*6,scale,scale,0,color,1);}
-surface_reset_target();
-}
-draw_sprite_ext(sprite_index,image_single,x,y,scale,scale,rot,color,alpha);
-
-//draw_text(x+30,y-30,g.frisbee_catch);
 
 </string>
           </argument>
@@ -150,8 +101,5 @@ draw_sprite_ext(sprite_index,image_single,x,y,scale,scale,rot,color,alpha);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>12,4</point>
-    <point>12,12</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

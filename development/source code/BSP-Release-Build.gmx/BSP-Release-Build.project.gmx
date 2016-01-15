@@ -202,7 +202,6 @@
           <sprite>sprites\spr_lamp_left</sprite>
           <sprite>sprites\spr_carpet</sprite>
           <sprite>sprites\sprite174</sprite>
-          <sprite>sprites\spr_slide</sprite>
           <sprite>sprites\spr_trampoline</sprite>
           <sprite>sprites\spr_tramp_mask</sprite>
           <sprite>sprites\spr_tramp_place</sprite>
@@ -216,6 +215,17 @@
           <sprite>sprites\spr_gate</sprite>
           <sprite>sprites\spr_swing</sprite>
           <sprite>sprites\spr_bridge_rock</sprite>
+          <sprite>sprites\spr_breadshop</sprite>
+          <sprite>sprites\spr_chars</sprite>
+          <sprite>sprites\spr_toolshop</sprite>
+          <sprite>sprites\spr_horse</sprite>
+          <sprite>sprites\spr_slide</sprite>
+          <sprite>sprites\spr_slide_shadow</sprite>
+          <sprite>sprites\spr_sandbox</sprite>
+          <sprite>sprites\spr_sandbox_mask</sprite>
+          <sprite>sprites\spr_sandbox_shadow</sprite>
+          <sprite>sprites\spr_market_lights</sprite>
+          <sprite>sprites\spr_market_lights_mask</sprite>
         </sprites>
         <sprites name="grass">
           <sprite>sprites\spr_grass1</sprite>
@@ -234,28 +244,61 @@
           <sprite>sprites\spr_grass_dark7</sprite>
         </sprites>
         <sprites name="flowers">
-          <sprite>sprites\spr_sprout</sprite>
-          <sprite>sprites\spr_flower_bounce</sprite>
-          <sprite>sprites\spr_flower_die</sprite>
-          <sprites name="petals A">
-            <sprite>sprites\spr_petal_bounce_a</sprite>
-            <sprite>sprites\spr_petal_die_a</sprite>
+          <sprites name="odl">
+            <sprite>sprites\spr_flower_bounce</sprite>
+            <sprite>sprites\spr_flower_die</sprite>
+            <sprites name="petals A">
+              <sprite>sprites\spr_petal_bounce_a</sprite>
+              <sprite>sprites\spr_petal_die_a</sprite>
+            </sprites>
+            <sprites name="petal C">
+              <sprite>sprites\spr_petal_bounce_c</sprite>
+              <sprite>sprites\spr_petal_die_c</sprite>
+            </sprites>
+            <sprites name="petal d">
+              <sprite>sprites\spr_petal_bounce_d</sprite>
+              <sprite>sprites\spr_petal_die_d</sprite>
+            </sprites>
+            <sprite>sprites\spr_sprout</sprite>
+            <sprite>sprites\spr_flower_mask</sprite>
+            <sprites name="petal B">
+              <sprite>sprites\spr_petal_bounce_b</sprite>
+              <sprite>sprites\spr_petal_die_b</sprite>
+            </sprites>
+            <sprite>sprites\sprite518</sprite>
+            <sprite>sprites\spr_single_flower_mask</sprite>
           </sprites>
-          <sprites name="petal B">
-            <sprite>sprites\spr_petal_bounce_b</sprite>
-            <sprite>sprites\spr_petal_die_b</sprite>
+          <sprites name="Cosmos">
+            <sprite>sprites\spr_flower_cosmos_dead</sprite>
+            <sprite>sprites\spr_flower_cosmos_dead_stem</sprite>
+            <sprite>sprites\spr_flower_cosmos_stem</sprite>
+            <sprite>sprites\spr_flower_cosmos_purple</sprite>
+            <sprite>sprites\spr_flower_cosmos_red</sprite>
+            <sprite>sprites\spr_flower_cosmos_white</sprite>
+            <sprite>sprites\spr_flower_cosmos_yellow</sprite>
           </sprites>
-          <sprites name="petal C">
-            <sprite>sprites\spr_petal_bounce_c</sprite>
-            <sprite>sprites\spr_petal_die_c</sprite>
+          <sprite>sprites\spr_flower_spawn_mask</sprite>
+          <sprite>sprites\spr_flower_petal</sprite>
+          <sprite>sprites\spr_flower_petal_shadow</sprite>
+          <sprite>sprites\spr_flower_shadow</sprite>
+          <sprites name="lily">
+            <sprite>sprites\spr_flower_lily_dead_stem</sprite>
+            <sprite>sprites\spr_flower_lily_dead</sprite>
+            <sprite>sprites\spr_flower_lily_stem</sprite>
+            <sprite>sprites\spr_flower_lily_purple</sprite>
+            <sprite>sprites\spr_flower_lily_red</sprite>
+            <sprite>sprites\spr_flower_lily_white</sprite>
+            <sprite>sprites\spr_flower_lily_yellow</sprite>
           </sprites>
-          <sprites name="petal d">
-            <sprite>sprites\spr_petal_bounce_d</sprite>
-            <sprite>sprites\spr_petal_die_d</sprite>
+          <sprites name="pansy">
+            <sprite>sprites\spr_flower_pansy_dead</sprite>
+            <sprite>sprites\spr_flower_pansy_dead_stem</sprite>
+            <sprite>sprites\spr_flower_pansy_stem</sprite>
+            <sprite>sprites\spr_flower_pansy_purple</sprite>
+            <sprite>sprites\spr_flower_pansy_red</sprite>
+            <sprite>sprites\spr_flower_pansy_white</sprite>
+            <sprite>sprites\spr_flower_pansy_yellow</sprite>
           </sprites>
-          <sprite>sprites\spr_flower_mask</sprite>
-          <sprite>sprites\spr_single_flower_mask</sprite>
-          <sprite>sprites\sprite518</sprite>
         </sprites>
         <sprites name="newflowers">
           <sprite>sprites\sprite415</sprite>
@@ -431,8 +474,6 @@
           <sprite>sprites\spr_stick_walk_down</sprite>
           <sprite>sprites\spr_stick_walk_up</sprite>
           <sprite>sprites\spr_stick_ground</sprite>
-          <sprite>sprites\spr_stick_hint</sprite>
-          <sprite>sprites\spr_stick_hint_flash</sprite>
           <sprite>sprites\sprite536</sprite>
           <sprite>sprites\spr_stick_poop</sprite>
           <sprite>sprites\spr_stick_walk</sprite>
@@ -447,9 +488,11 @@
         </sprites>
         <sprites name="bubble wand">
           <sprite>sprites\spr_bubble_wand_static</sprite>
+          <sprite>sprites\spr_bubble_wand_shadow</sprite>
           <sprite>sprites\spr_bubble_spawn</sprite>
           <sprite>sprites\spr_bubble_pop</sprite>
           <sprite>sprites\spr_bubble_float</sprite>
+          <sprite>sprites\spr_bubble_wand_hint</sprite>
         </sprites>
       </sprites>
       <sprites name="tip icons">
@@ -500,6 +543,15 @@
         <sprite>sprites\spr_ui_build</sprite>
         <sprite>sprites\spr_ui_drop</sprite>
         <sprite>sprites\spr_ui_exit</sprite>
+        <sprite>sprites\spr_mm_ui_button</sprite>
+        <sprite>sprites\spr_objectives_ui_button</sprite>
+        <sprite>sprites\spr_ui_goal</sprite>
+        <sprite>sprites\spr_ui_goal_markout</sprite>
+        <sprites name="controller buttons">
+          <sprite>sprites\spr_button_b</sprite>
+          <sprite>sprites\spr_button_x</sprite>
+        </sprites>
+        <sprite>sprites\spr_alert</sprite>
       </sprites>
       <sprites name="construction mode">
         <sprite>sprites\spr_build_space_yellow</sprite>
@@ -523,8 +575,17 @@
       <sprite>sprites\spr_pug_mask</sprite>
       <sprites name="sammie">
         <sprite>sprites\spr_sammie_sheet</sprite>
-        <sprite>sprites\spr_sammie_transform</sprite>
-        <sprite>sprites\spr_sammie_hover</sprite>
+        <sprites name="magic mode">
+          <sprite>sprites\spr_sammie_hover</sprite>
+          <sprite>sprites\spr_sammie_transform</sprite>
+        </sprites>
+        <sprites name="bubble wand">
+          <sprite>sprites\spr_sammie_bubble_wand_use</sprite>
+          <sprite>sprites\spr_sammie_bubble_wand_walk</sprite>
+          <sprite>sprites\spr_sammie_bubble_wand_down</sprite>
+          <sprite>sprites\spr_sammie_bubble_wand_up</sprite>
+          <sprite>sprites\spr_sammie_bubble_wand_idle</sprite>
+        </sprites>
       </sprites>
       <sprites name="alice">
         <sprite>sprites\spr_alice_sheet</sprite>
@@ -587,14 +648,14 @@
     <scripts name="game options">
       <script>scripts\scr_define_game_options.gml</script>
     </scripts>
-    <scripts name="minor systems">
+    <scripts name="General Systems">
       <scripts name="audio">
         <script>scripts\scr_sound.gml</script>
         <script>scripts\scr_crossfade.gml</script>
       </scripts>
-      <scripts name="general">
-        <script>scripts\scr_define_general_systems.gml</script>
-        <script>scripts\scr_step_general_systems.gml</script>
+      <scripts name="misc">
+        <script>scripts\scr_define_misc_systems.gml</script>
+        <script>scripts\scr_step_misc_systems.gml</script>
         <script>scripts\scr_dis.gml</script>
       </scripts>
       <scripts name="controls">
@@ -641,6 +702,11 @@
         <script>scripts\scr_handle_magic_mode.gml</script>
         <script>scripts\scr_magic_mode_db.gml</script>
       </scripts>
+      <scripts name="item holding">
+        <script>scripts\scr_init_item_holding.gml</script>
+        <script>scripts\scr_handle_item_holding.gml</script>
+        <script>scripts\script49.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -658,7 +724,7 @@
     </objects>
     <objects name="imported">
       <objects name="scenery static">
-        <object>objects\obj_flower</object>
+        <object>objects\obj_flower_old</object>
         <objects name="greens">
           <object>objects\obj_tree_left</object>
           <object>objects\obj_tree_right</object>
@@ -692,6 +758,12 @@
           <object>objects\obj_center_fountain</object>
           <object>objects\obj_gate</object>
           <object>objects\obj_bridge_rock</object>
+          <object>objects\obj_breadshop</object>
+          <object>objects\obj_toolshop</object>
+          <object>objects\obj_chairs</object>
+          <object>objects\obj_horse</object>
+          <object>objects\obj_sandbox</object>
+          <object>objects\obj_market_lights</object>
         </objects>
         <objects name="grass">
           <object>objects\obj_grass_dark1</object>
@@ -729,15 +801,23 @@
     <objects name="Park Objects">
       <objects name="static objects">
         <object>objects\obj_scenery_static_parent</object>
+        <object>objects\obj_flower</object>
+        <object>objects\obj_flower_spawn</object>
       </objects>
       <objects name="kenetic objects">
         <object>objects\obj_kenetic_parent</object>
         <objects name="items">
           <object>objects\obj_beachball</object>
+          <object>objects\obj_petal</object>
+          <object>objects\obj_bubble_wand</object>
+          <object>objects\obj_bubble</object>
         </objects>
         <objects name="animals">
           <object>objects\obj_firefly</object>
           <object>objects\obj_frog</object>
+          <object>objects\obj_duck</object>
+          <object>objects\obj_pigeon</object>
+          <object>objects\obj_bird_poop</object>
         </objects>
       </objects>
     </objects>

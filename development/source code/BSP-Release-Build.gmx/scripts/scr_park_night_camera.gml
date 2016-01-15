@@ -16,3 +16,5 @@ view_yview[0] = clamp(view_yview[0],0,room_height-view_hview[0]);
 
 vx = view_xview[0];
 vy = view_yview[0];
+vw = view_wview[0];
+vh = view_hview[0];

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_kenetic_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_pigeon_create();
+            <string>event_inherited();
+zgrav = 0.05;
+zbouncable = 0;
+spr_shadow = spr_pigeon_shadow;
+zspeed = 0;
+
+//duck
+swim = 1;
+interact = "";
+action = 0;
+alarm[0] = floor(random(60))+60;
 </string>
           </argument>
         </arguments>
@@ -48,7 +58,146 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_pigeon_step();
+            <string>event_inherited();
+zbouncable = 0;
+
+alarm[1] -= 1;
+alarm[0] -= 1;
+if alarm[0] &lt;= 0{
+action = 0;
+spawn = 0;}
+
+if interact = ""{
+spr_action = 0;
+
+
+
+if action = 0{
+
+//bark reaction
+if scr_pug_dis(64) {
+if pug.sprite_index = pug.spr_bark{
+sprite_index = spr_pigeon_coo;
+image_speed = .25;
+alarm[0] = floor(sprite_get_number(spr_pigeon_coo)/image_speed);
+scr_sound(snd_duck_quack,g.sfx_volume);
+action = 1;
+speed = 0;}}
+
+
+//bite reaction
+if scr_pug_dis(32){ 
+if pug.sprite_index = pug.spr_poop || pug.sprite_index = pug.spr_bite{
+if pug.pug_action = 6{
+action = 1;
+interact = "takeoff";
+target = pug;
+}}}
+
+
+
+if action = 0{
+if speed &gt; 0{
+sprite_index = spr_pigeon_walk;
+image_speed = .25;}
+else{
+sprite_index = spr_pigeon_stand;
+image_single = 0;
+image_speed = 0;}}
+
+
+if distance_to_point(spawn_x,spawn_y) &gt; 32{
+direction = point_direction(x,y,spawn_x,spawn_y);}
+
+if speed &gt; .75{speed -= .75/30;}
+
+}
+
+
+//move around randomly
+if action = 0 &amp;&amp; alarm[1] &lt;= 0 &amp;&amp; alarm[0] &lt;= 0{
+alarm[1] = 60 + floor(random(60));
+i = random(100);
+if i &gt; 70{
+alarm[0] = 30 + floor(random(30));
+speed = 1;
+if swim = 1{speed = 1.5;}else{
+direction = random(359);
+if distance_to_point(spawn_x,spawn_y) &gt; 32{
+direction = point_direction(x,y,spawn_x,spawn_y);}}}
+else{speed = 0;}
+
+if i &lt; 10{
+action = 1;
+sprite_index = spr_pigeon_eat;
+image_speed = .25;
+alarm[0] = floor(sprite_get_number(sprite_index)/image_speed);}
+
+if i &gt;= 10 &amp;&amp; i &lt; 50{
+action = 1;
+sprite_index = spr_pigeon_coo;
+image_speed = .25;
+alarm[0] = floor(sprite_get_number(sprite_index)/image_speed);
+scr_sound(snd_pigeon_coo,g.sfx_volume);}
+}
+
+
+
+}//end if no interact
+/////////////////////////////////////////////////////////
+
+if interact = "takeoff"{
+if spr_action = 0{
+sprite_index = spr_pigeon_takeoff;
+image_single = 0;
+image_speed = .12;
+speed = 0;
+z = 0;
+zspeed = 0;
+if face = 1{direction = 180;}
+else{direction = 0;}}
+spr_action += image_speed;
+
+
+if zspeed &lt; 2{zspeed += .025;}
+
+if spr_action &gt;= sprite_get_number(sprite_index){
+interact = "fly";
+spr_action = 0;
+sprite_index = spr_pigeon_fly;
+image_speed = .12;
+image_single = 0;
+}}
+
+if interact = "fly"{
+image_speed = .25;
+if speed &lt; 3{speed += .2;}
+if zspeed &lt; 2{zspeed += .1;}
+
+if x &lt; -32{x = -32;
+interact = "wait offscreen";}
+if x &gt; room_width+32{x = room_width+32;
+interact = "wait offscreen";}}
+
+if interact = "wait offscreen"{
+speed = 0;
+zspeed = 0;
+interact = "return fly";
+instance_create(target.x-16+random(32),target.y-16+random(32),obj_bird_poop);}
+
+if interact = "return fly"{
+direction = point_direction(x,y,spawn_x,spawn_y);
+speed = clamp(distance_to_point(spawn_x,spawn_y)/4,.25,2);
+z = distance_to_point(spawn_x,spawn_y)*.5;
+
+if distance_to_point(spawn_x,spawn_y) &lt;= 32{
+z = 0; speed = 0; 
+interact = "";
+action = 0;
+alarm[0] = floor(random(30))+60;}
+
+}
+
 </string>
           </argument>
         </arguments>
@@ -71,7 +220,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_pigeon_draw();
+            <string>event_inherited();
+//draw_sprite_ext(sprite_index,image_single,x,y-z-14,1,1,rot,color,alpha);
+
+draw_text(g.vx+10,g.vy+20+10*inst_number,interact);
+
+
+
 </string>
           </argument>
         </arguments>
@@ -89,8 +244,5 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>32,64</point>
-    <point>32,32</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>
