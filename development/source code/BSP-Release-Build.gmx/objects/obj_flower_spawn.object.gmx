@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>active = 1;
 death_time = -1;
+life_time = 0;
 
 //reposition if overlapping another flower bed.
 /*
@@ -143,6 +144,9 @@ flower3.death_time = death_time;
 
 if death_time &gt; 0{death_time -= 1;
 if death_time = 0{instance_destroy();}}
+
+if life_time &lt; 30{
+life_time += 1;}
 </string>
           </argument>
         </arguments>

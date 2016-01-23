@@ -19,10 +19,10 @@ spr_item = spr_item_walk;}
 
 //perform drop action
 if item_obj >= 0{
-if sprite_index = spr_bite_low{
-if pug_action = 4 && pug_action_proc = 0{
-opt = instance_create(x,y+3,item_obj);
-opt.face = face;
+if sprite_index = spr_spit{
+if pug_action = 12 && pug_action_proc = 0{
+opt = instance_create(x-face*6,y+3,item_obj);
+opt.direction = direction;
 item_held = "";
 pug_power = 0;
 scr_switch_power();
@@ -50,7 +50,7 @@ abi_left_snd = snd_bubble_wand_swipe;
 g.spr_left_ui[player_number] = spr_ui_bubble;
 
 
-abi_right_anim = spr_bite_low;
+abi_right_anim = spr_spit;
 abi_right_icon = spr_ui_exit;
 abi_right_snd = snd_blank;
 g.spr_right_ui[player_number] = spr_ui_exit;

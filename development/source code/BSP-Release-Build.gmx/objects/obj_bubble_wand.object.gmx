@@ -26,11 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
 zgrav = .05;
 zbouncable = 0;
 spr_shadow = spr_bubble_wand_shadow;
-z = 4;
+z = 5;
 
 </string>
           </argument>
@@ -62,7 +61,7 @@ if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
 pug.sprite_index = pug.spr_bite_low;
  
-if pug.pug_action = 4 &amp;&amp; pug.pug_action_proc = 0{
+if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 if pug.item_held = ""{
 pug.pug_action_proc = 1;
 pug.item_held = "Bubble Wand";

@@ -2,6 +2,7 @@
 //init action
 if g.button[player_number,g.button_Y]{
 if pug_action <= 0{
+scoot = 0;
 sprite_index = spr_sniff;
 image_speed = .25;
 image_index = 0;

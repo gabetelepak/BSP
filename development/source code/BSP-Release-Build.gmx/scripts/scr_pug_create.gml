@@ -6,6 +6,8 @@ face = 1;
 spr_shadow = spr_pug_shadow2;
 shadow_scalex = 1;
 shadow_scaley = 1;
+scoot = 0;
+ate_firefly = 0;
 
 goal_x = x;
 goal_y = y;
@@ -40,7 +42,7 @@ spr_walk_up = g.spr_walk_up[i];
 spr_sick = g.spr_sick[i];
 spr_walk_down_bite = g.spr_walk_down_bite[i];
 
-spr_poop_attack = g.spr_poop_attack[i];
+//spr_poop_attack = g.spr_poop_attack[i];
 spr_scoot = g.spr_scoot[i];
 
 spr_transform = g.spr_transform[i];

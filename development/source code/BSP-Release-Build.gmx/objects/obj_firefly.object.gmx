@@ -116,8 +116,13 @@ with opt{instance_destroy();}
 bubble = 1;
 }}}
 
-
-
+//get bit
+if scr_pug_dis(8) &gt; 0{
+if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
+if pug.pug_action = 3 &amp;&amp; pug.pug_action_proc = 0{
+pug.pug_action_proc = 1;
+pug.ate_firefly += 1;
+instance_destroy();}}}
 
 
 </string>

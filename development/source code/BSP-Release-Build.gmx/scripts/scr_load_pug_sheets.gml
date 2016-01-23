@@ -30,10 +30,9 @@ spr_pee[i] = scr_create_sprite(surface_sheet,i2,19,24,48);i2 += 1;
 //spr_victory[i] = scr_create_sprite(surface_sheet,i2,4,24,48);i2 += 1;
 //spr_diva[i] = scr_create_sprite(surface_sheet,i2,4,24,48);i2 += 1;
 //spr_booty[i] = scr_create_sprite(surface_sheet,i2,4,24,48);i2 += 1;
-
-spr_poop_attack[i] = scr_create_sprite(surface_sheet,i2,11,24,48);i2 += 1;
-spr_stung[i] = scr_create_sprite(surface_sheet,i2,13,24,48);i2 += 1;
-spr_spit[i] = scr_create_sprite(surface_sheet,i2,13,24,48);i2 += 1;
+//spr_poop_attack[i] = scr_create_sprite(surface_sheet,i2,11,24,48);i2 += 1;
+spr_stung[i] = scr_create_sprite(surface_sheet,i2,1,24,48);i2 += 1;
+spr_spit[i] = scr_create_sprite(surface_sheet,i2,6,24,48);i2 += 1;
 
 spr_scoot[i] = scr_create_sprite(surface_sheet,i2,4,24,48);i2 += 1;
 //spr_tramp_enter[i] = scr_create_sprite(surface_sheet,i2,10,24,46);i2 += 1;

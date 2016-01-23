@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>init = 0;
+            <string>scr_pug_nearest();
+init = 0;
 direction = 0;
 image_speed = 0;
 scale = 1;

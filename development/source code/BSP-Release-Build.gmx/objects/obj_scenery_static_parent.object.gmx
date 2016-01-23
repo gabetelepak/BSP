@@ -35,7 +35,7 @@ rot = 0;
 spr_shadow = spr_blank;
 spr_bush_splash = 0;
 bush_splash = 0;
-
+z = 0;
 bush_shake = 0;
 scr_depth();
 

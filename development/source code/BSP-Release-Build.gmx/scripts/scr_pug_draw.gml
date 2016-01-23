@@ -10,6 +10,7 @@ i2 = 0;
 if magic_mode = 2{i2 = image_single;}
 draw_sprite_ext(spr_hover_shadow,i2,x,y,1,1,0,c_white,i*.25);}
 
+//adjust for shadow
 i = 0;
 if direction = 90 && speed > 0{
 i = -3;}

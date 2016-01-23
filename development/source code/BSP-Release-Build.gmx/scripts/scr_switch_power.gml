@@ -3,7 +3,7 @@
 
 pug_power += 2;
 
-if pug_power > 2{
+if pug_power > 4{
 pug_power = 0;}
 
 i = pug_power;
