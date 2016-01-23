@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-image_speed = .05;
+
+image_speed = 0;
 spawn = 0;
 spr_shadow = spr_flower_shadow;
 
@@ -39,6 +40,12 @@ spr_dead_stem = spr_flower_cosmos_dead_stem;
 
 petal_color = c_purple;
 petal_alarm = 0;
+scale = .25;
+bloom_scale = 0;
+bloom = 0;
+bloom_alpha = 1;
+death_time = 999;
+death_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -63,6 +70,41 @@ petal_alarm = 0;
             <kind>1</kind>
             <string>event_inherited();
 
+//grow scaling.
+if bloom &lt; 2{
+if scale &lt; 1{
+scale += .05;}
+else{
+if bloom_scale &lt; 1.1 &amp;&amp; bloom = 0{
+bloom_scale += .075 - (bloom_scale/20);}
+if bloom_scale &gt;= 1.1{bloom = 1;}
+if bloom_scale &gt; 1 &amp;&amp; bloom = 1{
+bloom_scale -= .025;
+if bloom_scale &lt; 1{bloom_scale = 1;bloom = 2}}}
+if bloom &gt;= 2{image_speed = 0.05;}}
+
+//death scaling
+if death_time &lt;= 200{
+petal_color = g.c_flower_dead;
+image_speed = 0;
+image_index = 0;
+death_time -= 1;
+
+if death_time &gt;= 175{
+alpha -= .04;
+bloom_scale -= .01;}
+
+if death_time &lt;= 100{
+death_alpha += .015;
+if death_alpha &gt; 1{death_alpha = 1;}
+scale -= .01;
+}
+
+if death_time &lt;= 0{instance_destroy();}
+}
+
+
+
 if spawn = 0{spawn = 1;
 spr_head = asset_get_index("spr_flower_"+string(name)+"_"+string(colorn));
 spr_stem = asset_get_index("spr_flower_"+string(name)+"_stem");
@@ -77,25 +119,33 @@ if colorn = "yellow"{petal_color = c_yellow;}
 
 }
 
+if death_time &gt; 50{
+
 //walk through
+
 if scr_pug_dis(2){
 if pug.speed &gt; 0{
 if petal_alarm&lt;= 0{
+if death_time &lt; 175 &amp;&amp; death_time &gt; 100{death_time = 100;}
 repeat(floor(random(4))){
 opt = instance_create(x,y-2,obj_petal);
 opt.color = petal_color;
-petal_alarm = 15;}}}}
+petal_alarm = 15;
+}}}}
 
 //bark
 if scr_pug_dis(32){ 
 if pug.sprite_index = pug.spr_bark{
 if pug.pug_action = 3{
+if death_time &lt; 175 &amp;&amp; death_time &gt; 100{death_time = 100;}
 repeat(floor(random(5))){
 opt = instance_create(x,y-2,obj_petal);
 opt.color = petal_color;
 petal_alarm = 45;
 image_speed = .2;}
 }}}
+
+}
 
 
 if petal_alarm &gt; 0{petal_alarm -= 1;}else{image_speed = .05;}
@@ -121,10 +171,16 @@ if petal_alarm &gt; 0{petal_alarm -= 1;}else{image_speed = .05;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>
 
-draw_sprite_ext(spr_head,image_single,x,y,1*face,1,rot,color,alpha);
+draw_sprite_ext(sprite_index,image_single,x,y,scale*face,scale,rot,color,alpha);
 
+if scale &gt;= 1{
+draw_sprite_ext(spr_head,image_single,x,y,bloom_scale*face,bloom_scale,rot,color,alpha);}
+
+if death_time &lt;= 200{
+draw_sprite_ext(spr_dead_stem,image_single,x,y,scale*face,scale,rot,color,(1-alpha)-death_alpha);
+draw_sprite_ext(spr_dead_head,image_single,x,y,scale*face,scale,rot,color,(1-alpha)-death_alpha);}
 
 </string>
           </argument>

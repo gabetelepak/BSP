@@ -36,4 +36,4 @@ spr_bubble_wand_down[i] = spr_sammie_bubble_wand_down;
 spr_bubble_wand_up[i] = spr_sammie_bubble_wand_up;
 spr_bubble_wand_idle[i] = spr_sammie_bubble_wand_idle;
 
-
+arrayname[5] = 0;

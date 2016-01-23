@@ -15,7 +15,7 @@ draw_set_alpha(1);}
 
 
 
-
+draw_text(20,20,array_length_1d(arrayname));
 
 
 

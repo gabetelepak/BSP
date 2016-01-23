@@ -34,7 +34,7 @@ iy = vy+25;
 
 draw_sprite_ext(spr_objectives_ui_button,0,ix,iy,1,1,0,c_white,1);
 draw_sprite_ext(spr_button_b,3,ix+15,iy+15,1,1,0,c_white,1);
-draw_sprite_ext(spr_alert,0,ix-15+8,iy+15-8,1,1,0,c_white,1);
+draw_sprite_ext(spr_alert,0,ix+15+8,iy+15-8,1,1,0,c_white,1);
 
 
 

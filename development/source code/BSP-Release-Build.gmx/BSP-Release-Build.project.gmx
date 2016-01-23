@@ -260,7 +260,6 @@
               <sprite>sprites\spr_petal_die_d</sprite>
             </sprites>
             <sprite>sprites\spr_sprout</sprite>
-            <sprite>sprites\spr_flower_mask</sprite>
             <sprites name="petal B">
               <sprite>sprites\spr_petal_bounce_b</sprite>
               <sprite>sprites\spr_petal_die_b</sprite>
@@ -299,9 +298,7 @@
             <sprite>sprites\spr_flower_pansy_white</sprite>
             <sprite>sprites\spr_flower_pansy_yellow</sprite>
           </sprites>
-        </sprites>
-        <sprites name="newflowers">
-          <sprite>sprites\sprite415</sprite>
+          <sprite>sprites\spr_flower_mask</sprite>
         </sprites>
         <sprites name="lilly pads">
           <sprite>sprites\spr_lilypad1</sprite>
@@ -657,6 +654,7 @@
         <script>scripts\scr_define_misc_systems.gml</script>
         <script>scripts\scr_step_misc_systems.gml</script>
         <script>scripts\scr_dis.gml</script>
+        <script>scripts\scr_collide.gml</script>
       </scripts>
       <scripts name="controls">
         <script>scripts\scr_define_controls.gml</script>
@@ -803,6 +801,7 @@
         <object>objects\obj_scenery_static_parent</object>
         <object>objects\obj_flower</object>
         <object>objects\obj_flower_spawn</object>
+        <object>objects\obj_poop</object>
       </objects>
       <objects name="kenetic objects">
         <object>objects\obj_kenetic_parent</object>
@@ -828,6 +827,9 @@
       <object>objects\g_floor</object>
       <object>objects\obj_topwall</object>
       <object>objects\obj_magic_mode</object>
+    </objects>
+    <objects name="masks">
+      <object>objects\obj_flower_mask</object>
     </objects>
   </objects>
   <rooms name="rooms">

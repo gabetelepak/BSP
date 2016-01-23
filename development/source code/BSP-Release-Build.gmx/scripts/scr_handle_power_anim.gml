@@ -19,8 +19,9 @@ scr_sound(abi_right_snd,1);
 }}
 
 
-
-
+if sprite_index = spr_poop{
+if pug_action = 10{
+instance_create(x+(face*20),y,obj_poop);}}
 
 
 

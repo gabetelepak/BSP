@@ -29,7 +29,7 @@
 face = 1;
 max_alpha = 1;
 alpha = 0;
-image_speed = .75;
+image_speed = .4;
 idle_alarm = 30 + (30)*floor(random(5));
 sprite_stop = 0;
 confirm_reset = 0;
@@ -63,23 +63,23 @@ i+=1;
 if pug_num = i{
 spr_idle = spr_char_sit_doug;
 spr_selected = spr_char_sit_doug;
-max_alpha = .75;}
+max_alpha = 1;}
 i+=1;
 if pug_num = i{
 spr_idle = spr_char_sit_burgie;
 spr_selected = spr_char_sit_burgie;
-max_alpha = .75;}
+max_alpha = 1;}
 i+=1;
 if pug_num = i{
 spr_idle = spr_char_sit_maya;
 spr_selected = spr_char_sit_maya;
 face = -1;
-max_alpha = .75;}
+max_alpha = 1;}
 i+=1;
 if pug_num = i{
 spr_idle = spr_char_sit_puglie;
 spr_selected = spr_char_sit_puglie;
-max_alpha = .75;}
+max_alpha = 1;}
 i+=1;
 
 
@@ -111,7 +111,7 @@ sprite_index = spr_idle;
 //randomize idle interval
 if sprite_index = spr_selected{
 if sprite_stop &lt;= 0{
-image_speed = .75;
+image_speed = .4;
 image_index = 0;
 sprite_index = spr_idle;}
 else{
@@ -126,13 +126,23 @@ i = 0;
 i2 = 0;
 repeat(2){
 if g.selected_char[i] = pug_num{
-if g.selected_char_confirm[i] = 1{ i2 = 1;
+if g.selected_char_confirm[i] &lt;= 1{ i2 = 1;
 if confirm_reset = 0{
 confirm_reset = 1;
 sprite_index = spr_selected;
 image_index = 0;
-image_speed = .75;
+image_speed = .4;
 sprite_stop = image_number+1;}}}
+
+
+if g.selected_char[i] = pug_num{
+if g.selected_char_confirm[i] = 1{
+if sprite_index != spr_selected{
+sprite_index = spr_selected;
+image_index = 0;
+image_speed = .4;
+sprite_stop = image_number+1;}}}
+
 i+=1;}
 
 //not selected

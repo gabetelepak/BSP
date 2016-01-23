@@ -261,7 +261,7 @@ alarm[0] = floor(random(60))+60;}
             <string>event_inherited();
 //draw_sprite_ext(sprite_index,image_single,x,y-z-14,1,1,rot,color,alpha);
 
-draw_text(g.vx+10,g.vy+20+10*inst_number,interact);
+//draw_text(g.vx+10,g.vy+20+10*inst_number,interact);
 
 
 

@@ -75,7 +75,7 @@ if spr_shadow != spr_blank{
 if surface_exists(g.surf_shadow){
 surface_set_target(g.surf_shadow);
 draw_set_blend_mode(bm_normal);
-draw_sprite_ext(spr_shadow,0,x,y,1,1,0,g.c_night_shadow,1);
+draw_sprite_ext(spr_shadow,0,x,y,1,1,0,g.c_night_shadow,alpha);
 draw_set_blend_mode(bm_normal);
 surface_reset_target();
 }}///////////////
@@ -124,7 +124,7 @@ if bush_shake = 0{rot = 0;rot_dir = 0;}
 
 
 
-draw_sprite_ext(sprite_index,image_single,x,y,1*face,1,rot,color,alpha);
+draw_sprite_ext(sprite_index,image_single,x,y,scale*face,scale,rot,color,alpha);
 
 
 //bush splash leaf effect

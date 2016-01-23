@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_flower_spawn_mask</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,13 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//spawn 4 flowers
+            <string>active = 1;
+death_time = -1;
+
+//reposition if overlapping another flower bed.
+/*
+i = scr_collide(obj_flower_spawn);
+if i &gt; 0{
+x = i.x + abs(x-i.x)*24;
+y = i.y + abs(y-i.y)*24;}
+
+i = scr_collide(obj_flower_spawn);
+if i &gt; 0{instance_destroy();}
+*/
+
+
+i = instance_place(x,y,obj_flower_spawn);
+if instance_exists(i){active = 0;}
+
+
+//destroy if hit the flower mask
+if instance_exists(obj_flower_mask){
+if place_meeting(x,y,obj_flower_mask){active = 0;}}
+
+
+//spawn 4 flowers
+if active = 1{
+
+i = instance_place(x, y, obj_poop);
+if i &gt; 0{i.death_time = 30;}
+
+
+//kill the poo
 
 //randomize which flowers sprout
-i = floor(random(2.99));
-if i = 0{ name = "cosmos";}
-if i = 1{ name = "lily";}
-if i = 2{ name = "pansy";}
+i2 = floor(random(2.99));
+if i2 = 0{ name = "cosmos";}
+if i2 = 1{ name = "lily";}
+if i2 = 2{ name = "pansy";}
 
 i = floor(random(3.99));
 if i = 0{colorn = "purple";}
@@ -42,27 +73,37 @@ if i = 3{colorn = "yellow";}
 ix = x-12;
 iy = y-12;
 
-opt = instance_create(ix+5,iy+21,obj_flower);
+flower0 = instance_create(ix+5,iy+21,obj_flower);
+opt = flower0;
 opt.name = name;
 opt.colorn = colorn;
 opt.face = 1;
+opt.image_index = i2;
 
-opt = instance_create(ix+13,iy+23,obj_flower);
+flower1 = instance_create(ix+13,iy+23,obj_flower);
+opt = flower1;
 opt.name = name;
 opt.colorn = colorn;
 opt.face = -1;
+opt.image_index = i2;
 
-opt = instance_create(ix+19,iy+17,obj_flower);
+flower2 = instance_create(ix+19,iy+17,obj_flower);
+opt = flower2;
 opt.name = name;
 opt.colorn = colorn;
 opt.face = -1;
+opt.image_index = i2;
 
-opt = instance_create(ix+11,iy+15,obj_flower);
+flower3 = instance_create(ix+11,iy+15,obj_flower);
+opt = flower3;
 opt.name = name;
 opt.colorn = colorn;
 opt.face = 1;
+opt.image_index = i2;}
+else{
+instance_destroy();}
 
-instance_destroy();
+active = 0;
 </string>
           </argument>
         </arguments>
@@ -85,7 +126,71 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>event_inherited();
+
+//pee
+if scr_pug_dis(4){
+if scr_dis(x,y,pug.x+pug.face*18,pug.y) &lt; 18{
+if pug.sprite_index = pug.spr_pee{
+if pug.pug_action = 9{
+death_time = 200;
+flower0.death_time = death_time;
+flower1.death_time = death_time;
+flower2.death_time = death_time;
+flower3.death_time = death_time;
+
+}}}}
+
+if death_time &gt; 0{death_time -= 1;
+if death_time = 0{instance_destroy();}}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_flower_spawn">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_white,.2);
+//draw_text(x,y,test);
+</string>
           </argument>
         </arguments>
       </action>

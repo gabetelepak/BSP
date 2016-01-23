@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_scenery_static_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,31 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = room_height-y;
-image_speed = 0;
-
-scale = 1;
-color = c_white;
-alpha = 1;
-cam_scale = 1;
-rot = 0;
-drop = 0;
-relish = 0;
-
-speed = 0;
-direction = 0;
-gravity = 0;
-ox = x;
-oy = y;
-spawn = 0;
-roll = 0;
-alarm[0] = 10 * 30;
-poop_oil = 0;
-highlight_exempt = 1;
-
-
-
-
+            <string>event_inherited();
+death_time = 10 * 30;
+image_index = 3;
 
 </string>
           </argument>
@@ -73,78 +51,58 @@ highlight_exempt = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_depth();
+            <string>event_inherited();
 
-scr_pug_nearest();
+death_time -= 1;
 
-
-
-alarm[0] -= 1;
-if alarm[0] &lt;= 20{
-image_speed = .2;}
-
-if alarm[0] &lt;= 0{
-instance_destroy();}
-
-
-////////////////////////////////////
-if spawn = 0{
-if poop_oil = 1{
-sprite_index = spr_poop_oil;
-if relish = 0{sprite_index = spr_relish_oil;}
-alpha = .5;}else{
-if alarm[0] &gt; 20{
-if scr_pug_dis(16){ 
-if relish = 0{sprite_index = spr_poop_flatt;}
+if death_time &lt;= 30{
+image_speed = .15;
+if floor(image_index) = 3{
 image_speed = 0;}}
 
-if alarm[0] &gt; 35{
-if distance_to_object(obj_flower) &lt;= 16{
-alarm[0] = 35;}}
 
-/*
-if alarm[0] &gt; 20{
-//bite
-if scr_pug_dis(48){ 
-if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_lowbite{
-if pug.action = 5{pug.sprite_index = pug.spr_lowbite;}
-if pug.action = 1{
-with pug{
-sick = 16*30;
-sprite_index = spr_sick;
-image_index = 0;
-image_speed = .25;
-stung = 0;
-action = sprite_get_number(spr_sick);
-speed = 0;}
-instance_destroy();
-}}}
-}
-*/
-
-}
+if death_time &gt; 9*30{
+image_speed = -.25;
+if floor(image_index) = 0{image_index = 0;
+image_speed = 0;}}
 
 
-/*
-//pee
-if scr_pug_dis(96){ 
-if pug.sprite_index = pug.spr_pee{
-if pug.action = sprite_get_number(pug.spr_pee)-2{
-sprite_index = spr_hotdog_soggy;
-image_speed = .1;
-}}}
+if death_time &lt;= 0{
+instance_destroy();}
 
-if floor(image_index) = (image_number-1){
-image_single = 0;
-image_index = 3;
+//flatten when stepped on
+if scr_pug_dis(2){ 
+sprite_index = spr_poop_flatt;
 image_speed = 0;}
 
-*/
+//grow flowers
+if death_time &gt; 30 &amp;&amp; death_time &lt; 9*30{
+i = instance_nearest(x,y,obj_flower_spawn);
+idir = point_direction(i.x,i.y,x,y);
+if distance_to_object(i) &lt;= 12{
+
+//ix = floor((i.x+lengthdir_x(24,idir))/12)*12;
+//iy = floor((i.y+lengthdir_y(24,idir))/12)*12;
+ix = i.x;
+iy = i.y;
+if abs(i.x-x) &gt;= abs(i.y-y){
+ix = i.x+sign(x-i.x)*24;}else{
+iy = i.y+sign(y-i.y)*24;}
+opt = instance_create(ix,iy,obj_flower_spawn);
+
+
+
+}}
 
 
 
 
-}//end spawn
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -167,7 +125,11 @@ image_speed = 0;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_single,x,y,scale,scale,rot,color,alpha);
+            <string>event_inherited();
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -185,8 +147,5 @@ image_speed = 0;}
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>12,4</point>
-    <point>12,12</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

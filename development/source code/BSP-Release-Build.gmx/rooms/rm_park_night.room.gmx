@@ -12,7 +12,7 @@
   <showcolour>-1</showcolour>
   <code>instance_create(0,0,g_floor);
 instance_create(0,0,obj_topwall);
-//instance_create(0,0,obj_flower_mask);
+instance_create(0,0,obj_flower_mask);
 //instance_create(0,0,obj_build_mask);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -187,6 +187,9 @@ instance_create(0,0,obj_topwall);
     <instance objName="obj_flower_spawn" x="444" y="228" name="inst_FFBB3231" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flower_spawn" x="420" y="204" name="inst_32D83AA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flower_spawn" x="420" y="228" name="inst_AD5012F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flower_spawn" x="648" y="252" name="inst_5D933895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flower_spawn" x="696" y="264" name="inst_A935D966" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flower_spawn" x="708" y="276" name="inst_C8BDF9E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
