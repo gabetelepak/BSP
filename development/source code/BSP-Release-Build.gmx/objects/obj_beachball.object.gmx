@@ -31,6 +31,7 @@ zbouncable = 1;
 spr_shadow = spr_beachball_shadow;
 
 zspeed = 8;
+z = 3;
 
 </string>
           </argument>
@@ -56,6 +57,12 @@ zspeed = 8;
             <kind>1</kind>
             <string>event_inherited();
 
+//unlock
+if z &lt;= 1{
+if scr_pug_dis(4) &gt; 0{
+if g.unlock_beachball = 0{
+g.unlock_beachball = 1;
+pug.spr_unlock = spr_unlock_beachball}}}
 
 if scr_pug_dis(4) &gt; 0{
 if z &lt;= 4 &amp;&amp; pug.speed &gt; 0{

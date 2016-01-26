@@ -2,7 +2,7 @@
 
 var soundi = 1;
 if instance_exists(g){
-if id != g{
+if id != g.id{
 if x < view_xview[0]{soundi = 0;}
 if x > view_xview[0]+view_wview[0]{soundi = 0;}
 if y < view_yview[0]{soundi = 0;}

@@ -60,9 +60,9 @@ selected_char_confirm[i] = 0;
 select_anim[selected_char[i]] = 0;}
 }
 
-
+//goto park
 if selected_char_confirm[0] > 0 && selected_char_confirm[1] > 0{
-if button[i,button_A]{}}
+if button[i,button_A]{room_goto(rm_park_night);}}
 
 i+=1;}
 

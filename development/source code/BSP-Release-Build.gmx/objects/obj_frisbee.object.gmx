@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_kenetic_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,30 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = room_height-y;
+            <string>event_inherited();
+zgrav = .0025;
+zbouncable = 0;
+spr_shadow = spr_frisbee_shadow;
+z = 0;
 image_speed = 0;
-
-scale = 1;
-color = c_white;
-alpha = 1;
-cam_scale = 1;
-rot = 0;
-drop = 0;
-face = 1;
-
-speed = 8;
-direction = 90;
-gravity = .1;
-ox = 712;
-oy = 378;
-spawn = 1;
-shake = 0;
-
-highlight_exempt = 0;
-poop_frisbee = 0;
-catch = 0;
-
-
 
 </string>
           </argument>
@@ -72,140 +54,46 @@ catch = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_depth();
+            <string>event_inherited();
+image_speed = 0;
 
-scr_pug_nearest();
+//if releasing from pug mouth
+if active = 1{
+z = 9;
+active = 0;
+i = 2+g.frisbee_catch;
+speed = 4+random(1+g.frisbee_catch)*.2;
+if face = -1{direction = 0+random(i*2)-i;}else{direction = 180+random(i*2)-i;}}
 
-if spawn = 1{
-scale += (oy - y)/600;
-if y &gt; oy{
-speed = 0;
-gravity = 0;
-y = oy;
-spawn = 0;}
+if z &lt;= 0{
+speed = 0;}
 
-if vspeed &gt; 0{
-depth -= 96;}}
-////////////////////////////////////
+//collision
+if !place_free(x+hspeed,y){hspeed = hspeed*-.8;
+if hspeed = 0{hspeed = 1;}}
 
-if drop = 1{spawn = 2;
-if face &lt; 0{direction = -2+random(8);}else{direction = 168+random(8);}
-speed = 3 + (g.frisbee_catch/5);
-gravity = .025;
-drop = 2;
-catch = 1;}
-
-if drop = 2{
-depth -= abs(hspeed)*6;
-ox = x;
-oy = y;
-if !place_free(x+(hspeed*1.25),y){
-//if hspeed &lt; 0{hspeed = abs(hspeed)+1;face = 1;}
-//else{hspeed = -hspeed-1;face = -1;}
-hspeed = -(hspeed*.8);
-}
-hspeed = hspeed*.985;
-if vspeed &gt; 1{hspeed = hspeed*.97;}
-if abs(hspeed) &lt;= 1{speed = 0;drop = 0;spawn = 0;gravity = 0;catch = 0;g.frisbee_catch = 0;}
-
-}
-/////////////////////////////////////////////////
+if speed &gt; 0{speed = speed*.98;}
 
 
-if spawn = 0 || drop = 2{
-if scr_pug_dis(48){ 
-if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_lowbite{
-if pug.action = 5{pug.sprite_index = pug.spr_lowbite;}
-if pug.action = 2 &amp;&amp; pug.holding = ""{
-pug.holding = "frisbee";
-if catch = 1{g.frisbee_catch += 1;pug.show_catch = 30;}
+//unlock
+if z &lt;= 1{
+if scr_pug_dis(4) &gt; 0{
+if g.unlock_frisbee = 0{
+g.unlock_frisbee = 1;
+pug.spr_unlock = spr_unlock_frisbee;}}}
+
+
+//grab frisbee
+if scr_pug_dis(8) &gt; 0{
+if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
+if pug.item_held = ""{
+if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
+pug.sprite_index = pug.spr_bite_low;
+pug.pug_action_proc = 1;
+pug.item_held = "Frisbee";
+if z &gt;= 1{g.frisbee_catch += 1;pug.show_catch = 30;}
 instance_destroy();
 }}}}
-
-if spawn = 0{
-
-//pee
-if scr_pug_dis(32){ 
-if pug.sprite_index = pug.spr_pee{
-if pug.action = sprite_get_number(pug.spr_pee)-2{
-shake = 30;
-ox = x;
-oy = y;}}}
-
-
-//poop frisbee
-if poop_frisbee = 0{
-if instance_exists(obj_poop){
-opt = instance_nearest(x,y,obj_poop);
-if distance_to_object(opt) &lt; 32 &amp;&amp; opt.alarm[0] &gt; 270{
-poop_frisbee = 1;
-with opt{instance_destroy();}}}}
-
-if poop_frisbee = 1{
-sprite_index = spr_frisbee_poop;}
-
-
-//////////////////////
-
-if shake = 1{
-x = ox;
-y = oy;
-shake -= 1;
-rot = 0;}
-
-if shake &gt;= 1{
-shake -= 1;
-image_speed = .5;
-
-if (shake+3) mod 6{
-x = ox-1;
-rot = 80/sprite_height;}
-
-if shake mod 6{
-rot = -(80/sprite_height);
-x = ox+1;}
-}
-
-
-}//end spawn
-
-if x &lt; -10 || x &gt; room_width+10{
-
-hspeed = -(hspeed);
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if abs(hspeed) &gt; 0{
-if surface_exists(g.surf_shadow){
-surface_set_target(g.surf_shadow);
-draw_sprite_ext(spr_frisbee_shadow,image_single,x-3-abs(hspeed)*2,y+abs(hspeed)*6,scale,scale,0,color,1);}
-surface_reset_target();
-}
-draw_sprite_ext(sprite_index,image_single,x,y,scale,scale,rot,color,alpha);
-
-//draw_text(x+30,y-30,g.frisbee_catch);
-
 </string>
           </argument>
         </arguments>
@@ -223,8 +111,5 @@ draw_sprite_ext(sprite_index,image_single,x,y,scale,scale,rot,color,alpha);
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>12,4</point>
-    <point>12,12</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

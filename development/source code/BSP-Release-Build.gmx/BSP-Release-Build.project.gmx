@@ -85,6 +85,17 @@
         <sound>sound\snd_burgie_bark</sound>
       </sounds>
     </sounds>
+    <sounds name="magic mode">
+      <sound>sound\snd_mm_open</sound>
+      <sound>sound\snd_mm_close</sound>
+      <sound>sound\snd_mm_place</sound>
+      <sound>sound\snd_mm_cant_place</sound>
+      <sound>sound\snd_mm_switch</sound>
+    </sounds>
+    <sound>sound\snd_button</sound>
+    <sounds name="unlock ui">
+      <sound>sound\snd_scratch</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_blank</sprite>
@@ -406,9 +417,9 @@
           <sprite>sprites\spr_frisbee_ground</sprite>
           <sprite>sprites\spr_frisbee_shadow</sprite>
           <sprite>sprites\spr_frisbee_static</sprite>
-          <sprite>sprites\spr_frisbee_walk</sprite>
-          <sprite>sprites\spr_frisbee_walk_down</sprite>
-          <sprite>sprites\spr_frisbee_walk_up</sprite>
+          <sprite>sprites\spr_frisbee_walk_old</sprite>
+          <sprite>sprites\spr_frisbee_walk_down_old</sprite>
+          <sprite>sprites\spr_frisbee_walk_up_old</sprite>
           <sprite>sprites\spr_frisbee_hint</sprite>
           <sprite>sprites\spr_frisbee_hint_flash</sprite>
           <sprite>sprites\spr_frisbee_poop</sprite>
@@ -491,6 +502,9 @@
           <sprite>sprites\spr_bubble_float</sprite>
           <sprite>sprites\spr_bubble_wand_hint</sprite>
         </sprites>
+        <sprites name="bugnet">
+          <sprite>sprites\spr_bugnet_static</sprite>
+        </sprites>
       </sprites>
       <sprites name="tip icons">
         <sprite>sprites\spr_tip_appear</sprite>
@@ -537,6 +551,7 @@
         <sprite>sprites\spr_ui_scoot</sprite>
         <sprite>sprites\spr_ui_trick</sprite>
         <sprite>sprites\spr_ui_bubble</sprite>
+        <sprite>sprites\spr_ui_bugnet</sprite>
         <sprite>sprites\spr_ui_build</sprite>
         <sprite>sprites\spr_ui_drop</sprite>
         <sprite>sprites\spr_ui_exit</sprite>
@@ -556,8 +571,8 @@
         <sprite>sprites\spr_build_select_bg</sprite>
         <sprite>sprites\spr_build_select</sprite>
         <sprite>sprites\spr_item_mask</sprite>
-        <sprite>sprites\spr_unlock_beachball</sprite>
-        <sprite>sprites\spr_unlock_frog</sprite>
+        <sprite>sprites\spr_unlock_beachball_old</sprite>
+        <sprite>sprites\spr_unlock_frog_old</sprite>
       </sprites>
       <sprites name="ross power">
         <sprite>sprites\spr_aust</sprite>
@@ -570,8 +585,10 @@
     </sprites>
     <sprites name="pug characters">
       <sprite>sprites\spr_pug_mask</sprite>
+      <sprite>sprites\spr_hover_shadow</sprite>
       <sprites name="sammie">
         <sprite>sprites\spr_sammie_sheet</sprite>
+        <sprite>sprites\spr_sammie_itemget</sprite>
         <sprites name="magic mode">
           <sprite>sprites\spr_sammie_hover</sprite>
           <sprite>sprites\spr_sammie_transform</sprite>
@@ -583,11 +600,44 @@
           <sprite>sprites\spr_sammie_bubble_wand_up</sprite>
           <sprite>sprites\spr_sammie_bubble_wand_idle</sprite>
         </sprites>
+        <sprites name="bug net">
+          <sprite>sprites\spr_sammie_bugnet_use</sprite>
+          <sprite>sprites\spr_sammie_bugnet_walk</sprite>
+          <sprite>sprites\spr_sammie_bugnet_down</sprite>
+          <sprite>sprites\spr_sammie_bugnet_up</sprite>
+          <sprite>sprites\spr_sammie_bugnet_idle</sprite>
+        </sprites>
+        <sprites name="frisbee">
+          <sprite>sprites\spr_sammie_frisbee_walk</sprite>
+          <sprite>sprites\spr_sammie_frisbee_down</sprite>
+          <sprite>sprites\spr_sammie_frisbee_up</sprite>
+          <sprite>sprites\spr_sammie_frisbee_idle</sprite>
+        </sprites>
       </sprites>
       <sprites name="alice">
         <sprite>sprites\spr_alice_sheet</sprite>
+        <sprite>sprites\spr_alice_itemget</sprite>
+        <sprites name="magic mode">
+          <sprite>sprites\spr_alice_hover</sprite>
+          <sprite>sprites\spr_alice_transform</sprite>
+        </sprites>
       </sprites>
-      <sprite>sprites\spr_hover_shadow</sprite>
+      <sprites name="bella">
+        <sprite>sprites\spr_bella_sheet</sprite>
+        <sprite>sprites\spr_bella_itemget</sprite>
+        <sprites name="magic mode">
+          <sprite>sprites\spr_bella_hover</sprite>
+          <sprite>sprites\spr_bella_transform</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="edgar">
+        <sprite>sprites\spr_edgar_sheet</sprite>
+        <sprite>sprites\spr_edgar_itemget</sprite>
+        <sprites name="magic mode">
+          <sprite>sprites\spr_edgar_hover</sprite>
+          <sprite>sprites\spr_edgar_transform</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="general park">
       <sprites name="magic mode ui">
@@ -598,11 +648,22 @@
       </sprites>
       <sprites name="misc">
         <sprite>sprites\spr_topwall_mask</sprite>
+        <sprite>sprites\spr_big_numbers</sprite>
       </sprites>
       <sprites name="icons">
         <sprite>sprites\spr_icon_beachball</sprite>
         <sprite>sprites\spr_icon_firefly</sprite>
         <sprite>sprites\spr_icon_frog</sprite>
+      </sprites>
+      <sprites name="unlock ui">
+        <sprite>sprites\spr_unlock_beachball</sprite>
+        <sprite>sprites\spr_unlock_frisbee</sprite>
+        <sprite>sprites\spr_unlock_bubble_wand</sprite>
+        <sprite>sprites\spr_unlock_bugnet</sprite>
+        <sprite>sprites\spr_unlock_menu</sprite>
+        <sprites name="goal panels">
+          <sprite>sprites\spr_secret_panel</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -655,6 +716,7 @@
         <script>scripts\scr_step_misc_systems.gml</script>
         <script>scripts\scr_dis.gml</script>
         <script>scripts\scr_collide.gml</script>
+        <script>scripts\instance_number_within_distance.gml</script>
       </scripts>
       <scripts name="controls">
         <script>scripts\scr_define_controls.gml</script>
@@ -679,9 +741,15 @@
         <script>scripts\scr_park_night_camera.gml</script>
       </scripts>
       <scripts name="user interface">
-        <script>scripts\scr_draw_park_ui.gml</script>
         <script>scripts\scr_init_park_ui.gml</script>
+        <script>scripts\scr_draw_park_ui.gml</script>
         <script>scripts\scr_draw_magic_mode_ui.gml</script>
+        <scripts name="unlock menu">
+          <script>scripts\scr_init_unlock_ui.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="particle">
+        <script>scripts\scr_sparkle.gml</script>
       </scripts>
     </scripts>
     <scripts name="pug characters">
@@ -703,7 +771,6 @@
       <scripts name="item holding">
         <script>scripts\scr_init_item_holding.gml</script>
         <script>scripts\scr_handle_item_holding.gml</script>
-        <script>scripts\script49.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -808,7 +875,10 @@
         <objects name="items">
           <object>objects\obj_beachball</object>
           <object>objects\obj_petal</object>
+          <object>objects\obj_sparkle</object>
           <object>objects\obj_bubble_wand</object>
+          <object>objects\obj_bugnet</object>
+          <object>objects\obj_frisbee</object>
           <object>objects\obj_bubble</object>
         </objects>
         <objects name="animals">
@@ -816,12 +886,14 @@
           <object>objects\obj_frog</object>
           <object>objects\obj_duck</object>
           <object>objects\obj_pigeon</object>
+          <object>objects\obj_granny</object>
           <object>objects\obj_bird_poop</object>
         </objects>
       </objects>
     </objects>
     <objects name="pug characters">
       <object>objects\obj_player</object>
+      <object>objects\obj_unlock</object>
     </objects>
     <objects name="park bg objs">
       <object>objects\g_floor</object>

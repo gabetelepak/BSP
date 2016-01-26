@@ -8,7 +8,7 @@ sprite_index = spr_transform;
 image_speed = .25;
 image_index = 0;
 pug_action = sprite_get_number(sprite_index);
-scr_sound(snd_pug_sniff,1);
+scr_sound(snd_mm_open,g.sfx_volume);
 magic_mode = 1;
 magic_mode_y = 0;
 
@@ -35,7 +35,7 @@ sprite_index = spr_transform;
 image_speed = -.5;
 image_index = 0;
 pug_action = sprite_get_number(sprite_index);
-scr_sound(snd_pug_sniff,1);
+scr_sound(snd_mm_close,g.sfx_volume);
 magic_mode = 3;
 magic_mode_y = 52;}
 }
@@ -84,6 +84,7 @@ g.otherobj.magic_mode_clear = 0;}
 
 
 if g.button[player_number,g.button_DLEFT] && g.press_delay[player_number] = 0{
+scr_sound(snd_mm_switch,g.sfx_volume);
 g.press_delay[player_number] = 15;
 i = build_icon_count;
 build_icon[0] = build_icon[i];
@@ -95,6 +96,7 @@ i-=1;}
 }
 
 if g.button[player_number,g.button_DRIGHT] && g.press_delay[player_number] = 0{
+scr_sound(snd_mm_switch,g.sfx_volume);
 g.press_delay[player_number] = 15;
 i = 0;
 repeat(build_icon_count){
@@ -108,10 +110,12 @@ if magic_mode_clear = 1{
 if g.button[player_number,g.button_DDOWN] && g.press_delay[player_number] = 0{
 g.press_delay[player_number] = 15;
 if build_obj[2] > 0{
+scr_sound(snd_mm_place,g.sfx_volume);
 instance_create(build_x,build_y,build_obj[2]);}}}
 
-
-
+if magic_mode_clear != 1{
+if g.button[player_number,g.button_DDOWN] && g.press_delay[player_number] = 0{
+scr_sound(snd_mm_cant_place,g.sfx_volume);}}
 
 
 

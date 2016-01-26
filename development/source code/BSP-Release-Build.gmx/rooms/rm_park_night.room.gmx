@@ -190,6 +190,9 @@ instance_create(0,0,obj_flower_mask);
     <instance objName="obj_flower_spawn" x="648" y="252" name="inst_5D933895" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flower_spawn" x="696" y="264" name="inst_A935D966" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flower_spawn" x="708" y="276" name="inst_C8BDF9E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bugnet" x="672" y="192" name="inst_B6B1DE5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_frisbee" x="672" y="144" name="inst_18B174E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_granny" x="24" y="264" name="inst_8554CBAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

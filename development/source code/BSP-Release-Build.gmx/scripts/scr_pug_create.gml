@@ -8,6 +8,8 @@ shadow_scalex = 1;
 shadow_scaley = 1;
 scoot = 0;
 ate_firefly = 0;
+net_firefly = 0;
+show_catch = 0;
 
 goal_x = x;
 goal_y = y;
@@ -23,7 +25,9 @@ else{opug = instance_find(obj_player,i);}
    }
 
 //assign sprites based on player
-i = player_number;
+//i = player_number;
+i = g.selected_char[player_number];
+if i < 0{i = player_number;}
 spr_sit = g.spr_sit[i];
 spr_walk = g.spr_walk[i];
 spr_sit_bite = g.spr_sit_bite[i];
@@ -47,6 +51,7 @@ spr_scoot = g.spr_scoot[i];
 
 spr_transform = g.spr_transform[i];
 spr_hover = g.spr_hover[i];
+spr_itemget = g.spr_itemget[i];
 
 
 

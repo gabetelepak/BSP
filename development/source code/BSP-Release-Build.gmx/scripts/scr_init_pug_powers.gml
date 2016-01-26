@@ -1,6 +1,7 @@
 pug_action = 0;
 pug_action_proc = 0;
-
+unlock_time = 0;
+spr_unlock = 0;
 
 
 //pug power db
@@ -39,3 +40,9 @@ pug_power_icon[i] = spr_tip_bite;
 pug_power_ui_icon[i] = spr_ui_bite;
 pug_power_anim[i] = spr_bite;
 pug_power_snd[i] = snd_pug_bite;
+
+
+//set initial ui icons(so they show up)
+g.spr_left_ui[player_number] = pug_power_ui_icon[pug_power];
+g.spr_right_ui[player_number] = pug_power_ui_icon[pug_power];
+

@@ -43,6 +43,8 @@ ix = 0;
 iy = 0;
 spr_offsetx = random(2)-1;
 spr_offsety = random(2)-1;
+
+
 </string>
           </argument>
         </arguments>
@@ -93,9 +95,9 @@ iz = floor(15 + random(10));}
 
 
 //movement
-if distance_to_point(ix,iy) &gt; 2{
-move_towards_point(ix,iy,.2);
-}
+//if distance_to_point(ix,iy) &gt; 2{
+//move_towards_point(ix,iy,.2);
+//}
 
 if z &lt; iz{z += .1;}
 if z &gt; iz{z -= .1;}
@@ -117,11 +119,19 @@ bubble = 1;
 }}}
 
 //get bit
-if scr_pug_dis(8) &gt; 0{
+if scr_pug_dis(2) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
 if pug.pug_action = 3 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 pug.ate_firefly += 1;
+instance_destroy();}}}
+
+//get netted
+if scr_pug_dis(8) &gt; 0{
+if pug.sprite_index = g.spr_bugnet_use[pug.player_number]{
+if pug.pug_action = 5 &amp;&amp; pug.pug_action_proc = 0{
+pug.pug_action_proc = 1;
+pug.net_firefly += 1;
 instance_destroy();}}}
 
 

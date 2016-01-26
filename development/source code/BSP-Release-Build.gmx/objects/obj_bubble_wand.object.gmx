@@ -59,14 +59,18 @@ image_speed = .15;
 //grab wand
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
-pug.sprite_index = pug.spr_bite_low;
- 
-if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 if pug.item_held = ""{
+if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
+pug.sprite_index = pug.spr_bite_low;
 pug.pug_action_proc = 1;
 pug.item_held = "Bubble Wand";
 instance_destroy();
 }}}}
+
+if scr_pug_dis(4) &gt; 0{
+if g.unlock_bubble_wand = 0{
+g.unlock_bubble_wand = 1;
+pug.spr_unlock = spr_unlock_bubble_wand;}}
 </string>
           </argument>
         </arguments>

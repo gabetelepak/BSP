@@ -45,6 +45,7 @@ shadow_scalex = 1;
 shadow_scaley = 1;
 spr_action = 0;
 target = -1;
+active = 0;
 
 hit_particle = 0;
 hit_particle_num = 0;

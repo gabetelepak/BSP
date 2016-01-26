@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_kenetic_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_granny_create();
+            <string>event_inherited();
+zgrav = 0.05;
+zbouncable = 0;
+spr_shadow = spr_pigeon_shadow;
+zspeed = 0;
+
+spawn = 0;
+attack = 0;
+shoo = 0;
+attack_pug = 0;
+appear_alarm = 60;//1350;
+angry = 0;
+sx = x;
+sy = y;
+ix = 528;
+iy = 228;
+attack_pug = 0;
 </string>
           </argument>
         </arguments>
@@ -48,7 +64,216 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_granny_step();
+            <string>event_inherited();
+zbouncable = 0;
+
+
+if speed &gt; 0{
+image_speed = .2;}
+
+
+if spawn = 0{
+y = 300;
+x = -60;
+sy = 270;
+sx = -60;
+
+appear_alarm -= 1;
+
+
+if scr_pug_dis(400){ 
+if pug.sprite_index = pug.spr_bark || pug.sprite_index = pug.spr_bite ||
+pug.sprite_index = pug.spr_poop || pug.sprite_index = pug.spr_pee
+if pug.action = 2{
+spawn = 1;
+}}
+
+if appear_alarm &lt;= 0{
+spawn = 1;}
+
+
+}
+
+
+if spawn = 1{
+attack_pug = pug;
+direction = point_direction(x,y,ix,iy);
+speed = 1;
+if distance_to_point(ix,iy) &lt;= 1.9{
+speed = 0;
+spawn = 2;}}
+//////////////////////////////
+
+if spawn = 2{
+sprite_index = spr_granny_sit;
+image_index = 0;
+image_speed = .2;
+face = 1;
+direction = 89;
+x = ix;
+y = iy;
+spawn = 3;
+
+/*
+if obj_plate.sandwich = 0 || obj_plate.sandwich = 2{
+spawn = 6;scr_sound(snd_granny_cry,g.sfx_volume);
+
+with obj_player{
+frozen = 60;
+buttdrag_unlocked = 1;
+while spr_left != spr_buttdrag{
+//scr_switch();
+}}
+
+//temp removed for game grumps
+//instance_create(-500,-500,obj_trampoline);
+
+}*/
+
+
+}
+
+/*
+if spawn = 3{
+if image_index = 4{
+image_speed = 0;
+spawn = 4;
+if obj_plate.sandwich = -1{obj_plate.sandwich = 1;obj_plate.poop_plate = 0;}}
+
+if obj_plate.sandwich = 0 || obj_plate.sandwich = 2{
+spawn = 6;scr_sound(snd_granny_cry,g.sfx_volume);
+
+with obj_player{
+frozen = 60;
+buttdrag_unlocked = 1;
+while spr_left != spr_buttdrag{
+//scr_switch();
+}}
+
+//temp removed for game grumps
+//instance_create(-500,-500,obj_trampoline);
+
+}
+
+
+}
+*/
+
+
+
+if spawn = 4{
+
+if scr_pug_dis(280){ 
+if scr_dis(pug.x,pug.x,x,x) &lt; 120 &amp;&amp; scr_dis(pug.y,pug.y,y,y) &lt; 90{ 
+if attack = 0{spawn = 5;
+attack_pug = pug;}}}
+
+
+//whacks all around
+/*
+if scr_pug_dis(200){ 
+if scr_dis(pug.x,pug.x,x,x) &lt; 240 &amp;&amp; scr_dis(pug.y,pug.y,y,y) &lt; 160{ 
+if attack = 0{
+if pug.x &gt; obj_granny.x-96{ 
+attack = 6/.2;
+scr_sound(snd_granny_hit,.5);}}}}
+*/
+
+if attack &gt; 0{attack -= 1;
+sprite_index = spr_granny_sit_hit;
+image_speed = .2;
+if attack = 29{
+with obj_pug{
+if scr_dis(obj_granny.x,obj_granny.x,x,x) &lt; 40 &amp;&amp; scr_dis(obj_granny.y,obj_granny.y,y,y) &lt; 32{
+if x &gt; obj_granny.x-32{ 
+bounce = 60;
+if x &gt; obj_granny.x+16{ 
+bounce_dir = -10;}
+else{bounce_dir = +10;}}}}}}
+
+if attack = 0{
+sprite_index = spr_granny_sit;
+image_index = 4;
+image_speed = 0;}
+///////////////////////////////////////////////////////////
+
+if scr_pug_dis(300){ 
+if pug.sprite_index = pug.spr_bark{
+if pug.action = sprite_get_number(pug.spr_bark)-1{
+if attack = 0{spawn = 5;
+attack_pug = pug;}}}}
+}
+////////////////////////////////////////////////////////////////////////////////////
+
+
+if spawn = 5{
+shoo = 0;
+if scr_pug_dis(280){
+if shoo = 0{
+shoo = 1;}}
+
+if shoo = 1{
+scr_sound(snd_granny_cane_shake,g.sfx_volume);
+shoo = 2;}
+
+if shoo &gt;= 1{
+direction = point_direction(x,y,attack_pug.x,attack_pug.y);
+speed = 1;
+sprite_index = spr_granny_walk_shoo;
+image_speed = .2;
+
+
+if scr_pug_dis(40){
+if attack = 0{
+attack = 7/.2;
+image_index = 0;
+scr_sound(snd_granny_hit,g.sfx_volume);}}
+
+if attack &gt; 0{
+speed = 0;
+attack -= 1;
+sprite_index = spr_granny_walk_hit;
+image_speed = .2;
+if attack = 20{
+pug.bounce = 60;
+if pug.x &gt; obj_granny.x{ 
+pug.bounce_dir = -10;}
+else{pug.bounce_dir = +10;}
+}
+if attack = 0{sprite_index = spr_granny_walk;
+spawn = 1;}}
+
+}
+else{
+sprite_index = spr_granny_walk;
+spawn = 1;}
+
+
+if distance_to_point(ix+64,iy+48) &gt;= 120{
+sprite_index = spr_granny_walk;
+spawn = 1;}
+
+}
+
+////////////////////////////////////////////////////////////
+
+if spawn = 6{
+obj_player.buttdrag_unlocked = 1;
+direction = point_direction(x,y,sx,sy);
+speed = 1;
+sprite_index = spr_granny_walk_cry;
+image_speed = .2;}
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -71,7 +296,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_granny_draw();
+            <string>event_inherited();
+//draw_sprite_ext(sprite_index,image_single,x,y-z-14,1,1,rot,color,alpha);
+
+//draw_text(g.vx+10,g.vy+20+10*inst_number,interact);
+
+
+
 </string>
           </argument>
         </arguments>
@@ -89,8 +320,5 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>32,64</point>
-    <point>32,32</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

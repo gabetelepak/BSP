@@ -1,5 +1,5 @@
 draw_sprite_ext(sprite_index,image_single,x,y-magic_mode_y,1*face,1,rot,color,alpha);
-if spr_item != spr_blank{
+if spr_item != spr_blank && sprite_index != spr_itemget{
 draw_sprite_ext(spr_item,image_single,x,y-magic_mode_y,1*face,1,rot,color,alpha);}
 //draw_text(x,y,magic_mode);
 
@@ -52,3 +52,19 @@ i = floor(sniff_icon_alarm/4) div 2;
 draw_sprite(i2,i,ix,iy);}
 i2 = abi_right_icon;}
 }
+
+
+//frisbee catch number
+if show_catch > 0{
+if show_catch = 30{
+scr_sound(snd_count,g.sfx_volume);
+if g.frisbee_catch >= 5{scr_sound(snd_pug_ability,g.sfx_volume);}}
+show_catch -= 1;
+draw_sprite(spr_big_numbers,g.frisbee_catch - 1,x,y-(52)-10+show_catch);
+if show_catch = 0{
+if g.frisbee_catch >= 5{g.frisbee_catch = 0;}}}
+
+
+
+
+

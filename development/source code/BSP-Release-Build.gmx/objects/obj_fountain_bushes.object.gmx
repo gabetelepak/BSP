@@ -63,6 +63,14 @@ bush_shake = 1;
 bubble_wand = 0;
 pug.pug_action_proc = 1;
 pug.item_held = "Bubble Wand";
+
+
+if g.unlock_bubble_wand = 0{
+g.unlock_bubble_wand = 1;
+pug.spr_unlock = spr_unlock_bubble_wand;}
+
+
+
 }}}
 </string>
           </argument>
