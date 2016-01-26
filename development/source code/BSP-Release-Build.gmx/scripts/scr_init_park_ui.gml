@@ -9,4 +9,9 @@ g.ui_scale[1] = 1;
 g.last_ui[0] = 0;
 g.last_ui[1] = 0;
 
+
+bones = 0;
+bones_show = 0;
+bones_time = 0;
+
 scr_init_unlock_ui();

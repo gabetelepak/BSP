@@ -7,12 +7,20 @@ spr_shadow = spr_pug_shadow2;
 shadow_scalex = 1;
 shadow_scaley = 1;
 scoot = 0;
+slide = 0;
 ate_firefly = 0;
 net_firefly = 0;
 show_catch = 0;
 
 goal_x = x;
 goal_y = y;
+
+z = 0;
+zgrav = .05;
+zbounce = 0;
+zspeed = 0;
+zbouncable = 1;
+hurt = 0;
 
 //determine player number
 var i;
@@ -52,6 +60,7 @@ spr_scoot = g.spr_scoot[i];
 spr_transform = g.spr_transform[i];
 spr_hover = g.spr_hover[i];
 spr_itemget = g.spr_itemget[i];
+spr_pugslide = g.spr_pugslide[i];
 
 
 
@@ -67,3 +76,24 @@ scr_init_pug_powers();
 scr_init_magic_mode();
 scr_init_item_holding();
 scr_switch_power();
+
+
+
+i = pug_power;
+abi_left_anim = pug_power_anim[i]
+abi_left_icon = pug_power_icon[i];
+abi_left_snd = pug_power_snd[i];
+g.spr_left_ui[player_number] = pug_power_ui_icon[i];
+
+i = pug_power+1;
+abi_right_anim = pug_power_anim[i]
+abi_right_icon = pug_power_icon[i];
+abi_right_snd = pug_power_snd[i]
+g.spr_right_ui[player_number] = pug_power_ui_icon[i];
+
+//set initial ui icons(so they show up)
+g.spr_left_ui[player_number] = spr_ui_bark;
+g.spr_right_ui[player_number] = spr_ui_pee;
+g.last_ui[player_number] = 999;
+ui_scale[player_number] = 1.4;
+

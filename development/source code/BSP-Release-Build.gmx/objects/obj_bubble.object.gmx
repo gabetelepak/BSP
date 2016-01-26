@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>obj_kenetic_parent</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_bubble_spawn</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -31,7 +31,7 @@ init = 0;
 zgrav = 0;
 zbouncable = 0;
 spr_shadow = spr_blank;
-
+speed = 0;
 
 </string>
           </argument>
@@ -58,30 +58,36 @@ spr_shadow = spr_blank;
             <string>event_inherited();
 image_speed = .15;
 z = 13;
+depth -= z;
 alarm[0] += 1;
 
 
 if init = 0{
-speed = .75;
 if floor(image_index) = sprite_get_number(sprite_index)-1{
 sprite_index = spr_bubble_float;
 init = 1;}}
 
 if init = 1 &amp;&amp; speed &gt; .25{
-speed -= .025;
+speed = speed*.93;
 }
 
-if alarm[0] = 120{
+if alarm[0] = 150{
 image_speed = .25;
 sprite_index = spr_bubble_pop;
 image_index = 0;}
 
-if alarm[0] &gt; 120{
+if alarm[0] &gt; 150{
+if ceil(image_index) = sprite_get_number(sprite_index)-2{
+scr_sound(snd_bubble_pop,g.sfx_volume);}
 if ceil(image_index) = sprite_get_number(sprite_index){
-scr_sound(snd_bubble_pop,g.sfx_volume);
-instance_destroy();}}
+instance_destroy();}
+}
 
-
+//pop if pug runs into it.
+if alarm[0] &lt; 145{
+if scr_pug_dis(2) &gt; 0{
+if pug.speed &gt; 0{
+alarm[0] = 145;}}}
 
 
 </string>

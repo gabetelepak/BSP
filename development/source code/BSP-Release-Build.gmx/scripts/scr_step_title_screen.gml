@@ -4,9 +4,9 @@ title_splash_alarm -= 1;
 if title_splash_alarm <= 30{
 splash_alpha = max(0,title_splash_alarm/30);
 
-if !audio_is_playing(g.background_music1){
-audio_sound_gain(background_music1, g.music_volume, 0);
-audio_play_sound(background_music1, 1, 1);}
+if !audio_is_playing(snd_title_music){
+audio_sound_gain(snd_title_music, g.music_volume, 0);
+audio_play_sound(snd_title_music, 1, 1);}
 
 //press A to skip splash screen
 }else{

@@ -27,7 +27,80 @@
             <kind>1</kind>
             <string>event_inherited();
 spr_shadow = spr_picnic_bush_shadow;
+frisbee = 1;
+hint_flash = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
 
+//grab wand
+
+if scr_pug_dis(8) &gt; 0{
+if pug.sprite_index = pug.spr_bite &amp;&amp; pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
+if frisbee = 1 &amp;&amp; pug.item_held = ""{
+bush_shake = 1;
+frisbee = 0;
+pug.pug_action_proc = 1;
+pug.item_held = "Frisbee";
+
+
+if g.unlock_frisbee = 0{
+g.unlock_frisbee = 1;
+pug.spr_unlock = spr_unlock_frisbee;}
+
+
+
+}}}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+if frisbee = 1{
+hint_flash += .25;
+if hint_flash &gt; 30{hint_flash = 0;}
+i = hint_flash;
+if i &gt; 3{i = 0;}
+draw_sprite(spr_frisbee_hint,i,x-20,y);}
 </string>
           </argument>
         </arguments>

@@ -31,6 +31,7 @@ stage = 0;
 ix = (g.vx+g.vw/2)+128+25;
 iy = g.vy+25;
 init_dis = distance_to_point(ix,iy);
+magic_mode = 0;
 </string>
           </argument>
         </arguments>
@@ -60,7 +61,17 @@ unlock_time = 90;
 stage += 1;
 
 if stage = 1{
-y = y-52;}
+y = y-52;
+
+if sprite_index = spr_unlock_beachball{
+opt = instance_create(x,y,obj_unlock);
+opt.sprite_index = sprite_index;
+opt.stage = 1;
+opt.unlock_time = 90;
+opt.magic_mode = 1;}
+
+
+}
 
 
 }
@@ -110,10 +121,18 @@ if (unlock_time mod 5) == 0{
 scr_sparkle(x,y,20,0);}
 
 //the unlock button cords
+if magic_mode = 0{
 ix = (g.vx+g.vw/2)+128+25;
 iy = g.vy+25;
 speed = (distance_to_point(ix,iy)/20)+2;
-direction = point_direction(x,y,ix,iy)-30;
+direction = point_direction(x,y,ix,iy)-30;}
+else{
+ix = (g.vx+g.vw/2)-128-25;
+iy = g.vy+25;
+speed = (distance_to_point(ix,iy)/20)+2;
+direction = point_direction(x,y,ix,iy)+30;
+}
+
 
 
 draw_sprite(sprite_index,0,x,y);
@@ -122,8 +141,13 @@ draw_sprite(sprite_index,0,x,y);
 if scr_dis(x,y,ix,iy) &lt; 5{
 scr_sparkle(x,y,40,0);
 repeat(15){scr_sparkle(x,y,20,4);}
+
+if magic_mode = 0{g.unlock_alert = 1;}
+else{g.magic_mode_alert = 1;}
+
+if sprite_index != spr_unlock_frog{
 g.unlock_alert = 1;
-g.secrets_found_panel += 1;
+g.secrets_found_panel += 1;}
 instance_destroy();}
 
 

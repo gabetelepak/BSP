@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_kenetic_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,31 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = room_height-y;
+            <string>event_inherited();
+zgrav = .0025;
+zbouncable = 0;
+spr_shadow = spr_blank;
+z = 0;
 image_speed = 0;
-
-scale = 1;
-color = c_white;
-alpha = 1;
-cam_scale = 1;
-rot = 0;
-drop = 0;
-
-
-speed = 0;
-direction = 0;
-gravity = 0;
-ox = x;
-oy = y;
-spawn = 3;
-roll = 0;
-
-highlight_exempt = 0;
-
-
-
-
-
+bone_get = 0;
 </string>
           </argument>
         </arguments>
@@ -72,84 +54,24 @@ highlight_exempt = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_depth();
+            <string>event_inherited();
+depth += 12;
 
-scr_pug_nearest();
+if bone_get = 1{
+depth -= 24;
+image_speed = .25;}
 
+if floor(image_index) = sprite_get_number(sprite_index)-1{
+instance_destroy();}
 
-////////////////////////////////////
-if drop &gt; 0{spawn = 1;
-depth -= 48;
-y+=33/5;
-alarm[0] += 1;
-if alarm[0] &gt;= 5{drop = 0;spawn = 0;}}
-///////////////////////
-
-if spawn = 3{
-if scr_pug_dis(96){ 
-if pug.sprite_index = pug.spr_dig{
-if pug.action = 2{
-spawn = 1;
-}}}}
-
-if spawn &lt; 3{
-sprite_index = spr_bone;
-
-if scr_pug_dis(48){ 
-if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_lowbite{
-if pug.action = 5{pug.sprite_index = pug.spr_lowbite;}
-if pug.action = 2 &amp;&amp; pug.holding = ""{
-pug.holding = "bone";
-instance_destroy();
-}}}
-
-
-//pee
-if scr_pug_dis(96){ 
-if pug.sprite_index = pug.spr_pee{
-if pug.action = sprite_get_number(pug.spr_pee)-1{
-sprite_index = spr_bone_puddle;
-image_speed = .33;
-}}}
-
-
-}
-
-if floor(image_index) = (image_number-1){
-image_single = 0;
-image_index = image_number-1;
-image_speed = 0;}
-
-
-
-
-
-
-
-//end spawn
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_single,x,y,scale,scale,rot,color,alpha);
+//pickup bone
+if bone_get = 0{
+if scr_pug_dis(2) &gt; 0{
+pug.sprite_index = pug.spr_bite_low;
+pug.pug_action_proc = 1;
+bone_get = 1;
+g.bones += 10;
+}}
 </string>
           </argument>
         </arguments>
@@ -167,8 +89,5 @@ image_speed = 0;}
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>12,4</point>
-    <point>12,12</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>

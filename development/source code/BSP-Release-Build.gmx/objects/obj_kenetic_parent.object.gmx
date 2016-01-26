@@ -106,7 +106,6 @@ if z &lt;= .2{z = 0;
 if zbouncable{
 if zspeed &lt; -.2{zspeed = -zspeed*.25;
 zbounce = 1;}}
-
 }
 
 rot += rotspeed;

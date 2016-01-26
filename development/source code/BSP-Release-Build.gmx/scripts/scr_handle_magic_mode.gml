@@ -1,6 +1,8 @@
 
 //init action
 if g.button[player_number,g.button_X]{
+g.magic_mode_alert = 0;
+
 //turn on
 if pug_action <= 0 && magic_mode = 0{
 speed = 0;

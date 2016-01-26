@@ -42,7 +42,5 @@ pug_power_anim[i] = spr_bite;
 pug_power_snd[i] = snd_pug_bite;
 
 
-//set initial ui icons(so they show up)
-g.spr_left_ui[player_number] = pug_power_ui_icon[pug_power];
-g.spr_right_ui[player_number] = pug_power_ui_icon[pug_power];
+
 

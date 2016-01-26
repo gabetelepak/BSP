@@ -78,9 +78,10 @@ if speed &gt; 0{speed = speed*.98;}
 //unlock
 if z &lt;= 1{
 if scr_pug_dis(4) &gt; 0{
+if pug.magic_mode = 0{
 if g.unlock_frisbee = 0{
 g.unlock_frisbee = 1;
-pug.spr_unlock = spr_unlock_frisbee;}}}
+pug.spr_unlock = spr_unlock_frisbee;}}}}
 
 
 //grab frisbee

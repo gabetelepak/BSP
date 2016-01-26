@@ -8,4 +8,5 @@ else{background_visible[7] = 1;}}
 
 if keyboard_check(vk_shift) && 
 keyboard_check(vk_enter){
+park_night_intro = 1;
 room_goto(rm_park_night);}

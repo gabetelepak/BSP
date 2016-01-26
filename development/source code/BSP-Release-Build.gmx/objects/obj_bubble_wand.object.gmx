@@ -68,9 +68,10 @@ instance_destroy();
 }}}}
 
 if scr_pug_dis(4) &gt; 0{
+if pug.magic_mode = 0{
 if g.unlock_bubble_wand = 0{
 g.unlock_bubble_wand = 1;
-pug.spr_unlock = spr_unlock_bubble_wand;}}
+pug.spr_unlock = spr_unlock_bubble_wand;}}}
 </string>
           </argument>
         </arguments>

@@ -1,4 +1,4 @@
-draw_sprite_ext(sprite_index,image_single,x,y-magic_mode_y,1*face,1,rot,color,alpha);
+draw_sprite_ext(sprite_index,image_single,x,y-magic_mode_y-z,1*face,1,rot,color,alpha);
 if spr_item != spr_blank && sprite_index != spr_itemget{
 draw_sprite_ext(spr_item,image_single,x,y-magic_mode_y,1*face,1,rot,color,alpha);}
 //draw_text(x,y,magic_mode);

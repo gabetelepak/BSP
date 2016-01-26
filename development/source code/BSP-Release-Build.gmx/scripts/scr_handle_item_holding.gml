@@ -84,8 +84,25 @@ if sprite_index = g.spr_bubble_wand_use[player_number]{
 if pug_action = 1{
 opt = instance_create(x-(face*24),y,obj_bubble);
 if direction > 90 && direction <= 270{
-opt.direction = 180;}else{opt.direction = 0;}
-}}
+opt.direction = 180+random(20)-10;}else{opt.direction = 0+random(20)-10;}
+opt.speed = 1 + random(1.1);}
+
+if pug_action = 2{
+if ceil(random(10)) > 3{
+opt = instance_create(x-(face*24),y,obj_bubble);
+if direction > 90 && direction <= 270{
+opt.direction = 180+random(20)-10;}else{opt.direction = 0+random(20)-10;}
+opt.speed = .75 + random(1.1);}}
+
+if pug_action = 3{
+if ceil(random(10)) > 5{
+opt = instance_create(x-(face*24),y,obj_bubble);
+if direction > 90 && direction <= 270{
+opt.direction = 180+random(20)-10;}else{opt.direction = 0+random(20)-10;}
+opt.speed = .5 + random(1.1);}}
+
+
+}
 
 
 }//////////////////////////////////////////////////////////////////

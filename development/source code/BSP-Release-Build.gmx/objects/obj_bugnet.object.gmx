@@ -88,9 +88,10 @@ instance_destroy();
 
 
 if scr_pug_dis(4) &gt; 0{
+if pug.magic_mode = 0{
 if g.unlock_bugnet = 0{
 g.unlock_bugnet= 1;
-pug.spr_unlock = spr_unlock_bugnet;}}
+pug.spr_unlock = spr_unlock_bugnet;}}}
 </string>
           </argument>
         </arguments>

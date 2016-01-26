@@ -46,15 +46,22 @@ selected_char[i] = 0;
 if selected_char[i] = selected_char[i2]{selected_char[i] = 1;}}}
 }
 
+
+if button[i,button_UP] || button[i,button_DOWN]{
+scr_sound(snd_frog_bounce,g.sfx_volume);}
+
 //confirm selection
-if button[i,button_X] || button[i,button_A]{
+if button[i,button_X] || button[i,button_A] || button[i,button_LT]{
+if selected_char[i] > -1{
+if char_locked[selected_char[i]] = 1{scr_sound(snd_frog_bounce,g.sfx_volume);}else{
 if selected_char[i] > -1 && selected_char_confirm[i] < 1{
+scr_sound(snd_button,g.sfx_volume);
 selected_char_confirm[i] = 1;
 select_anim[selected_char[i]] = 0;}
-}
+}}}
 
 //un confirm
-if button[i,button_B]{
+if button[i,button_B] || button[i,button_RT]{
 if selected_char_confirm[i] > 0{
 selected_char_confirm[i] = 0;
 select_anim[selected_char[i]] = 0;}
@@ -62,7 +69,9 @@ select_anim[selected_char[i]] = 0;}
 
 //goto park
 if selected_char_confirm[0] > 0 && selected_char_confirm[1] > 0{
-if button[i,button_A]{room_goto(rm_park_night);}}
+if  button[i,button_A]{
+park_night_intro = 1;
+room_goto(rm_park_night);}}
 
 i+=1;}
 

@@ -7,10 +7,16 @@ sprite_index = spr_sniff;
 image_speed = .25;
 image_index = 0;
 pug_action = sprite_get_number(sprite_index);
-scr_sound(snd_pug_sniff,1);
+scr_sound(snd_pug_sniff,g.sfx_volume);
 if scr_dis(x,y,opug.x,opug.y) < 48{
 
 scr_switch_power();
+
+if opug.x < x{
+face = 1;
+opug.face = 1;}else{
+face = -1;
+opug.face = -1;}
 
 //start sniff icon timer
 sniff_icon_alarm = 0;

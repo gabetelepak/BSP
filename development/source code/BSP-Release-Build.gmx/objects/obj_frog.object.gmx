@@ -64,6 +64,9 @@ float_alarm = 0;
             <string>event_inherited();
 zbouncable = 0;
 
+if direction &gt; 90 &amp;&amp; direction &lt;= 270{
+face = 1;}else{face = -1;}
+
 if lilypad = 1{face = 1;}
 
 if tongue_alarm &gt; 0{tongue_alarm -= 1;}
@@ -74,18 +77,22 @@ sprite_index = spr_frog_ribbit;}
 //get firefly target////////////////
 target = -1;
 if instance_exists(obj_firefly){
-target = instance_nearest(x-(face*8),y-12,obj_firefly);}
+target = instance_nearest(x,y-12,obj_firefly);}
 
 if target &gt; 0 &amp;&amp; lash = 0{
-if target.x &lt; x{direction = 0;}else{direction = 180;}}
+if target.x &lt;= x{direction = 180;}else{direction = 0;}
+
+
+
+}
 
 
 
 if tongue_alarm &lt;= 0 &amp;&amp; lash = 0 &amp;&amp; hop = 0{
 tongue_alarm = floor(10+random(10));
 with obj_firefly{
-if distance_to_point(other.x-(other.face*24),other.y+15) &lt;= 20 &amp;&amp;
-abs(other.y+15 - y) &lt; 12{
+if scr_dis(other.x-(other.face*24),other.y+15,x,y) &lt;= 24 &amp;&amp;
+abs(other.y+15 - y) &lt; 15{
 other.target = id;
 other.lash = 1;}}
 
@@ -100,12 +107,21 @@ if lash = 2{
 if floor(image_index) = (image_number-1){
 with obj_firefly{
 if other.lash = 2{
-if distance_to_point(other.x-(other.face*24),other.y+15) &lt;= 20 &amp;&amp;
-abs(other.y+15 - y) &lt; 12{
+if scr_dis(other.x-(other.face*24),other.y+15,x,y) &lt;= 24 &amp;&amp;
+abs(other.y+15 - y) &lt; 15{
 if bubble &gt; 0{
 other.target = id;
 other.lash = 3;
 g.mm_unlock_frog = 1;
+
+if g.unlock_frog = 0{
+g.unlock_frog = 1;
+//pug.spr_unlock = spr_unlock_frog;
+opt = instance_create(x,y,obj_unlock);
+opt.sprite_index = spr_unlock_frog;
+opt.magic_mode = 1;
+}
+
 scr_magic_mode_db();
 lilypad = 0;
 instance_destroy();}
@@ -169,13 +185,15 @@ scr_define_construction();}}
 if instance_exists(target) &amp;&amp; float_alarm &lt;= 0{
 if lash = 0 &amp;&amp; hop = 0 &amp;&amp; target &gt; 0 &amp;&amp; lilypad &lt;= 0{
 
-if distance_to_point(target.x,target.y) &gt; 18{
+if scr_dis(x+face*8,y,target.x,target.y) &gt; 8 || 
+scr_dis(y,y,target.y,target.y) &gt; 8{
 
-if abs(x-target.x) &gt; 24{
+
+if abs(x-target.x) &gt; 12{
 if x &lt; target.x &amp;&amp; place_free(x+24,y){hopx = x+24;hopy = y;}
 if x &gt; target.x &amp;&amp; place_free(x-24,y){hopx = x-24;hopy = y;}}
 
-if abs(y-target.y) &gt; 24{
+if abs(y-target.y) &gt; 6{
 if y &lt; target.y &amp;&amp; place_free(x,y+24){hopy = y+24;hopx = x;}
 if y &gt; target.y &amp;&amp; place_free(x,y-24){hopy = y-24;hopx = x;}}
 
