@@ -62,6 +62,13 @@ spr_hover = g.spr_hover[i];
 spr_itemget = g.spr_itemget[i];
 spr_pugslide = g.spr_pugslide[i];
 
+if spr_transform = spr_sammie_transform || spr_transform = spr_bella_transform{
+spr_bubble_wand_use = spr_sammie_bubble_wand_use;
+spr_bugnet_use = spr_sammie_bugnet_use;}
+else{
+spr_bubble_wand_use = spr_alice_bubble_wand_use;
+spr_bugnet_use = spr_alice_bugnet_use;}
+
 
 
 sprite_index = spr_sit;
@@ -92,8 +99,10 @@ abi_right_snd = pug_power_snd[i]
 g.spr_right_ui[player_number] = pug_power_ui_icon[i];
 
 //set initial ui icons(so they show up)
-g.spr_left_ui[player_number] = spr_ui_bark;
-g.spr_right_ui[player_number] = spr_ui_pee;
-g.last_ui[player_number] = 999;
-ui_scale[player_number] = 1.4;
+
+
+g.spr_left_ui[0] = spr_ui_bite;
+g.spr_right_ui[0] = spr_ui_poop;
+g.spr_left_ui[1] = spr_ui_bite;
+g.spr_right_ui[1] = spr_ui_poop;
 

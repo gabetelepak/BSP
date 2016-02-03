@@ -1,5 +1,6 @@
 scr_depth();
 
+
 //handle controls
 
 
@@ -30,7 +31,7 @@ scr_handle_magic_mode();}
 
 //handle action timer
 if pug_action > 0{
-if sprite_index != g.spr_bugnet_use[player_number]{speed = 0;}
+if sprite_index != spr_bugnet_use{speed = 0;}
 else{speed = move_speed*.75;
 
 if direction = 90 || direction = 270{

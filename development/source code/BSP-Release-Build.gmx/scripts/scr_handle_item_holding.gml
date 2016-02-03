@@ -1,3 +1,5 @@
+
+
 //reset to blank
 spr_item = spr_blank;
 if item_held = ""{item_obj = -1;}
@@ -68,7 +70,7 @@ spr_item_up = g.spr_bubble_wand_up[i];
 spr_item_idle = g.spr_bubble_wand_idle[i];
 
 
-abi_left_anim = g.spr_bubble_wand_use[i];
+abi_left_anim = spr_bubble_wand_use;
 abi_left_icon = spr_ui_bubble;
 abi_left_snd = snd_bubble_wand_swipe;
 g.spr_left_ui[player_number] = spr_ui_bubble;
@@ -80,7 +82,7 @@ abi_right_snd = snd_blank;
 g.spr_right_ui[player_number] = spr_ui_exit;
 
 //perform bubble wand
-if sprite_index = g.spr_bubble_wand_use[player_number]{
+if sprite_index = spr_bubble_wand_use{
 if pug_action = 1{
 opt = instance_create(x-(face*24),y,obj_bubble);
 if direction > 90 && direction <= 270{
@@ -111,7 +113,7 @@ opt.speed = .5 + random(1.1);}}
 if item_held = "Bugnet"{
 item_ui = 1;
 item_obj = obj_bugnet;
-i = player_number;
+i = player_number;;
 
 spr_item_walk = g.spr_bugnet_walk[i];
 spr_item_down = g.spr_bugnet_down[i];
@@ -119,7 +121,7 @@ spr_item_up = g.spr_bugnet_up[i];
 spr_item_idle = g.spr_bugnet_idle[i];
 
 
-abi_left_anim = g.spr_bugnet_use[i];
+abi_left_anim = spr_bugnet_use;
 abi_left_icon = spr_ui_bugnet;
 abi_left_snd = snd_bubble_wand_swipe;
 g.spr_left_ui[player_number] = spr_ui_bugnet;
@@ -131,7 +133,7 @@ abi_right_snd = snd_blank;
 g.spr_right_ui[player_number] = spr_ui_exit;
 
 //perform bubble wand
-if sprite_index = g.spr_bugnet_use[player_number]{
+if sprite_index = spr_bugnet_use{
 if pug_action = 1{
 }}
 

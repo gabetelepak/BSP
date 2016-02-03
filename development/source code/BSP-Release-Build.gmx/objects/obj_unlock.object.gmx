@@ -142,12 +142,16 @@ if scr_dis(x,y,ix,iy) &lt; 5{
 scr_sparkle(x,y,40,0);
 repeat(15){scr_sparkle(x,y,20,4);}
 
-if magic_mode = 0{g.unlock_alert = 1;}
-else{g.magic_mode_alert = 1;}
+if magic_mode = 0{
 
 if sprite_index != spr_unlock_frog{
 g.unlock_alert = 1;
 g.secrets_found_panel += 1;}
+
+}
+else{g.magic_mode_alert = 1;}
+
+
 instance_destroy();}
 
 

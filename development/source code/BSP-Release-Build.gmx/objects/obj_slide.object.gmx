@@ -50,7 +50,7 @@ spr_shadow = spr_slide_shadow;
           <argument>
             <kind>1</kind>
             <string>//grab frisbee
-if scr_pug_dis(12) &gt; 0{
+if scr_pug_dis(20) &gt; 0{
 if pug.item_held = ""{
 if sprite_index = spr_slide{
 if pug.x &lt; x-25{

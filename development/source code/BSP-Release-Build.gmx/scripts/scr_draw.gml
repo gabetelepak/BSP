@@ -7,6 +7,8 @@ scr_draw_character_select();}
 if room = rm_park_night{
 scr_draw_park_night();}
 
+//draw_text(20,20,string(id));
+
 /*
 if keyboard_check(vk_enter){
 draw_set_alpha(.25);
@@ -15,7 +17,7 @@ draw_set_alpha(1);}
 
 
 
-//draw_text(20,20,array_length_1d(arrayname));
+
 
 
 

@@ -106,3 +106,9 @@ spr_frisbee_idle[i] = spr_sammie_frisbee_idle;
 
 
 arrayname[5] = 0;
+
+//fix bug when skipping to park
+g.selected_char[0] = 0;
+g.selected_char[1] = 1;
+
+

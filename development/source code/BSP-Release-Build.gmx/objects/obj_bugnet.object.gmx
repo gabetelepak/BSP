@@ -64,7 +64,7 @@ depth += 13;
 
 if net_firefly &gt; 0{
 if firefly_alarm &lt;= 0{
-firefly_alarm = 10+random(10);
+firefly_alarm = 1+random(2);
 net_firefly -= 1;
 opt = instance_create(x-face*8,y-4,obj_firefly);
 opt.direction = random(360);

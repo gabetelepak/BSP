@@ -128,7 +128,7 @@ instance_destroy();}}}
 
 //get netted
 if scr_pug_dis(8) &gt; 0{
-if pug.sprite_index = g.spr_bugnet_use[pug.player_number]{
+if pug.sprite_index = pug.spr_bugnet_use{
 if pug.pug_action = 5 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 pug.net_firefly += 1;

@@ -13,15 +13,5 @@ if park_night_intro > 0{
 if park_night_intro = 1{park_night_intro = 120;}
 park_night_intro -= 1;
 if park_night_intro = 2{
-
-g.spr_left_ui[0] = spr_ui_bark;
-g.spr_right_ui[0] = spr_ui_pee;
-g.last_ui[0] = 999;
-ui_scale[0] = 1.4;
-g.spr_left_ui[1] = spr_ui_bark;
-g.spr_right_ui[1] = spr_ui_pee;
-g.last_ui[1] = 999;
-ui_scale[1] = 1.4;
-
 park_night_intro = 0;}
 }
