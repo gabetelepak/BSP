@@ -53,7 +53,7 @@ spr_shadow = spr_slide_shadow;
 if scr_pug_dis(20) &gt; 0{
 if pug.item_held = ""{
 if sprite_index = spr_slide{
-if pug.x &lt; x-25{
+if scr_dis(pug.x,pug.y, x-25,y-8) &lt; 16{
 if pug.slide &lt;= 0 &amp;&amp; pug.scoot = 0{pug.slide = 1;
 sprite_index = pug.spr_pugslide;
 image_speed = .25;

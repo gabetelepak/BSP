@@ -39,6 +39,8 @@ hopx = 0;
 hopy = 0;
 lilypad = 0;
 float_alarm = 0;
+startx = x;
+starty = y;
 </string>
           </argument>
         </arguments>
@@ -77,7 +79,12 @@ sprite_index = spr_frog_ribbit;}
 //get firefly target////////////////
 target = -1;
 if instance_exists(obj_firefly){
-target = instance_nearest(x,y-12,obj_firefly);}
+target = instance_nearest(x,y-12,obj_firefly);
+if instance_exists(target) &amp;&amp; target &gt;= 0{
+if target.y  &gt; g.vy+g.vh || scr_dis(target.x,target.y,startx,starty) &gt; 120{target = 0;}}
+
+
+}
 
 if target &gt; 0 &amp;&amp; lash = 0{
 if target.x &lt;= x{direction = 180;}else{direction = 0;}
