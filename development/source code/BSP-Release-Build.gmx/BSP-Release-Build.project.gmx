@@ -550,8 +550,11 @@
           <sprite>sprites\spr_granny_walk_cry</sprite>
           <sprite>sprites\spr_granny_walk_shoo</sprite>
           <sprite>sprites\spr_granny_sit</sprite>
+          <sprite>sprites\spr_granny_sleep</sprite>
+          <sprite>sprites\spr_granny_mask</sprite>
           <sprite>sprites\spr_granny_sit_hit</sprite>
           <sprite>sprites\spr_granny_walk_hit</sprite>
+          <sprite>sprites\spr_granny_shadow</sprite>
         </sprites>
       </sprites>
       <sprites name="UI Overlay ">
@@ -892,6 +895,7 @@
         <object>objects\obj_flower</object>
         <object>objects\obj_flower_spawn</object>
         <object>objects\obj_poop</object>
+        <object>objects\obj_plate</object>
       </objects>
       <objects name="kenetic objects">
         <object>objects\obj_kenetic_parent</object>
@@ -911,6 +915,7 @@
           <object>objects\obj_duck</object>
           <object>objects\obj_pigeon</object>
           <object>objects\obj_granny</object>
+          <object>objects\object93</object>
           <object>objects\obj_bird_poop</object>
         </objects>
       </objects>

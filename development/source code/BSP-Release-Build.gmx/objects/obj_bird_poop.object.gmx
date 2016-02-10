@@ -78,7 +78,7 @@ instance_destroy();}
 
 if hit = 0{
 if z &lt;= 0{hit = 1;
-if scr_pug_dis(4) &gt; 0{
+if scr_pug_dis(6) &gt; 0{
 if pug.magic_mode = 0{
 if pug.hurt = 0 &amp;&amp; pug.sprite_index != pug.spr_stung{
 pug.hurt = 2;}}}}}

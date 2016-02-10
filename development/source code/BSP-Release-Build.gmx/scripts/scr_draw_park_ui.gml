@@ -94,9 +94,11 @@ bones_time -= 1;}
 draw_sprite_ext(spr_bone_ui,0,vx+10,vy+15+10,1,1,0,c_white,bones_show/10);
 draw_set_alpha(bones_show/10);
 draw_set_font(font_bsp14);
-draw_set_color(c_white);
+draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
+draw_text(vx+10+35,vy+23,string(floor(bones_show)));
+draw_set_color(c_white);
 draw_text(vx+10+35,vy+21,string(floor(bones_show)));
 draw_set_alpha(1);
 
