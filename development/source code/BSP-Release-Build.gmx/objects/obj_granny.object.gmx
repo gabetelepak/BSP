@@ -83,6 +83,12 @@ opt = instance_place(x,y,obj_beachball);
 if opt != noone{
 if opt.z &lt;= 4{
 state = "wake";}}
+
+opt = instance_place(x,y,obj_bubble);
+if opt != noone{
+if opt.z &lt;= 8{
+state = "wake";}}
+
 }//end sleep//////////////////////////////
 
 if state = "wake"{

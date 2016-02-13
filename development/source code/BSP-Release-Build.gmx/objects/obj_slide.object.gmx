@@ -62,7 +62,7 @@ image_speed = .25;
 
 
 if sprite_index != spr_slide{
-if floor(image_index) = sprite_get_number(sprite_index)-1{
+if floor(image_index) = sprite_get_number(sprite_index)-3{
 sprite_index = spr_slide;}}
 </string>
           </argument>

@@ -10,3 +10,8 @@ if keyboard_check(vk_shift) &&
 keyboard_check(vk_enter){
 park_night_intro = 1;
 room_goto(rm_park_night);}
+
+
+
+if mouse_check_button_pressed(mb_middle){
+scr_dust(mouse_x,mouse_y,180,3);}
