@@ -86,11 +86,22 @@ speed = 0;}}
 
 
 //bite reaction
-if scr_pug_dis(6){ 
+if scr_pug_dis(12){ 
 if pug.sprite_index = pug.spr_poop || pug.sprite_index = pug.spr_bite
 || pug.sprite_index = pug.spr_bite_low{
 pug.sprite_index = pug.spr_bite_low;
 if pug.pug_action = 1{
+pug.pug_action_proc = 1;
+action = 1;
+interact = "takeoff";
+target = pug;
+direction = 180;
+}}}
+
+//bite reaction
+if scr_pug_dis(16){ 
+if pug.sprite_index = pug.spr_pee{
+if pug.pug_action = 6{
 pug.pug_action_proc = 1;
 action = 1;
 interact = "takeoff";

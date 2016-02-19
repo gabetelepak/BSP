@@ -22,12 +22,14 @@ selected_char_confirm[i] = 0
 press_delay[i] = 10;
 selected_char[i] -= 1;
 char_head_roll[i] = 0;
+scr_sound(snd_button,g.sfx_volume);
 }
 if button[i,button_RIGHT] && press_delay[i] = 0{
 selected_char_confirm[i] = 0
 press_delay[i] = 10;
 selected_char[i] += 1;
 char_head_roll[i] = 0;
+scr_sound(snd_button,g.sfx_volume);
 }
 
 if button[i,button_LEFT]{
@@ -47,15 +49,16 @@ if selected_char[i] = selected_char[i2]{selected_char[i] = 1;}}}
 }
 
 
-if button[i,button_UP] || button[i,button_DOWN]{
-scr_sound(snd_frog_bounce,g.sfx_volume);}
+//if button[i,button_UP] || button[i,button_DOWN]{
+//scr_sound(snd_frog_bounce,g.sfx_volume);}
 
 //confirm selection
-if button[i,button_X] || button[i,button_A] || button[i,button_LT]{
+if button[i,button_X] || button[i,button_LT]{
 if selected_char[i] > -1{
 if char_locked[selected_char[i]] = 1{scr_sound(snd_frog_bounce,g.sfx_volume);}else{
 if selected_char[i] > -1 && selected_char_confirm[i] < 1{
-scr_sound(snd_button,g.sfx_volume);
+//scr_sound(snd_button,g.sfx_volume);
+scr_sound(snd_scratch,g.sfx_volume);
 selected_char_confirm[i] = 1;
 select_anim[selected_char[i]] = 0;}
 }}}
@@ -63,6 +66,7 @@ select_anim[selected_char[i]] = 0;}
 //un confirm
 if button[i,button_B] || button[i,button_RT]{
 if selected_char_confirm[i] > 0{
+scr_sound(snd_build_error,g.sfx_volume);
 selected_char_confirm[i] = 0;
 select_anim[selected_char[i]] = 0;}
 }

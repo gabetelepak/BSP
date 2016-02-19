@@ -9,6 +9,10 @@ scr_draw_park_night();}
 
 //draw_text(20,20,string(id));
 
+//draw_set_halign(fa_left);
+//draw_text(vx+20,vy+20,string(g.dxpos[0])+" x "+string(g.dypos[0]));
+//draw_text(vx+20,vy+50,string(g.dxpos[1])+" x "+string(g.dypos[1]));
+
 /*
 if keyboard_check(vk_enter){
 draw_set_alpha(.25);

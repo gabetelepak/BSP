@@ -27,7 +27,7 @@ opt.active = 1;
 
 
 
-
+//general movement
 if g.park_night_intro = 0 && slide  = 0 && hurt = 0{
 if pug_action <= 0 && (magic_mode = 0 || magic_mode = 2){
 scr_pug_movement();}

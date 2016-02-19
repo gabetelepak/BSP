@@ -36,7 +36,7 @@ alpha = 0;
 //personal
 bubble = 0;
 image_speed = .2;
-z = floor(15 + random(10));
+z = floor(20 + random(5));
 sx = x;
 sy = y;
 iz = 0;
@@ -120,7 +120,11 @@ alarm[0] = 30 + random(10);
 
 ix = floor(sx + random(30)-15);
 iy = floor(sy + random(20)-15);
-iz = floor(15 + random(10));}
+iz = floor(20 + random(5));
+}
+
+if bubble &gt; 0{
+iz = floor(5 + random(5));}
 
 
 //movement
@@ -129,7 +133,7 @@ if distance_to_point(ix,iy) &gt; 2{
 move_towards_point(ix,iy,.2);}}
 
 if z &lt; iz{z += .1;}
-if z &gt; iz{z -= .1;}
+if z &gt; iz{z -= .15;}
 
 
 if alarm[1] &lt;= 0{
@@ -169,6 +173,12 @@ scr_check_burst(1);}
 
 
 }}}
+
+if instance_exists(obj_bubble_wand){
+opt = instance_nearest(x,y,obj_bubble_wand);
+if scr_dis(x,y,opt.x,opt.y) &lt; 32{
+if bubble &lt; 1{
+bubble = 1;}}}
 
 
 </string>

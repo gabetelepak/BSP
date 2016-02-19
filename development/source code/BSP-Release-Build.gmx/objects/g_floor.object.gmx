@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>g.surf_shadow = surface_create(room_width,room_height);
+            <string>g.surf_shadow = 0;
+g.surf_shadow = surface_create(room_width,room_height);
 </string>
           </argument>
         </arguments>
@@ -54,10 +55,13 @@
 //draw_clear_alpha(c_black,0);
 //surface_reset_target();
 
+
+
 }
 
 if !surface_exists(g.surf_shadow){
-g.surf_shadow = surface_create(room_width,room_height);}
+g.surf_shadow = surface_create(room_width,room_height);
+}
 </string>
           </argument>
         </arguments>

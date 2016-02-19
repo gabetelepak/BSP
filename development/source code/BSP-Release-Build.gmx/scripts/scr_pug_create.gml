@@ -1,7 +1,7 @@
 rot = 0;
 color = c_white;
 alpha = 1;
-move_speed = 2;
+move_speed = 2.5;
 face = 1;
 spr_shadow = spr_pug_shadow2;
 shadow_scalex = 1;

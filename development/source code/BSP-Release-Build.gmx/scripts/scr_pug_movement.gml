@@ -26,7 +26,10 @@ if scoot = 1{sprite_index = spr_scoot;}
 direction = point_direction(x,y,goal_x,goal_y);
 
 if place_free(x+lengthdir_x(move_speed,direction),y+lengthdir_y(move_speed,direction)){
-speed = move_speed;}
+if g.manymouse_active = 1{i = 1.33;}else{i = 1;}
+speed = move_speed*i;
+
+;}
 else{
 speed = 0;
 

@@ -1,4 +1,5 @@
 //options should be first
+
 scr_define_game_options();
 scr_define_controls();
 
@@ -18,7 +19,7 @@ pug_id[0] = 0;
 pug_id[1] = 0;
 button[player,"A"] = 0;
 frisbee_catch = 0;
-hint_time_max = 30*45;//30*45;
+hint_time_max = 30*10;//30*45;
 
 target_bread = 0;
 

@@ -86,6 +86,7 @@ opt.active = 1;
 
 
 //hint
+if scr_pug_dis(96) &gt; 0{
 if hint_time &gt; 0{
 hint_time -= 1;}
 else{
@@ -93,6 +94,7 @@ if g.check_babyduck = 0{
 opt = instance_create(x+hintx,y+hinty,obj_hint);
 opt.spr_hint = spr_hint;
 hint_time = g.hint_time_max;}}
+}else{hint_time = g.hint_time_max*.3;}
 
 </string>
           </argument>

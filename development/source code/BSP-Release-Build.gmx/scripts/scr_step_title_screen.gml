@@ -1,3 +1,9 @@
+/*
+if title_splash_alarm = 115{
+if window_get_fullscreen() = 0{
+window_set_fullscreen(1);}}
+*/
+
 //handle splash screen
 if title_splash_alarm > 0{
 title_splash_alarm -= 1;

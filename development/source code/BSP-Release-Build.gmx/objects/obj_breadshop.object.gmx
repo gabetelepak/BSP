@@ -101,6 +101,7 @@ sprite_index = spr_breadshop_idle;}}
 
 
 //hint no pigeons
+if scr_pug_dis(96) &gt; 0{
 if pigeon &gt; 0{
 if hint_time &gt; 0{
 hint_time -= 1;}
@@ -108,7 +109,7 @@ else{
 hint_time = g.hint_time_max*.33;
 opt = instance_create(x+hintx,y+hinty,obj_hint);
 opt.spr_hint = spr_hint;}
-}
+}}else{hint_time = g.hint_time_max*.3;}
 
 
 

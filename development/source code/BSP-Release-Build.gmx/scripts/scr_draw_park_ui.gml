@@ -56,8 +56,8 @@ if bones_time > 0{
 bones_time -= 1;}
 
 
-draw_sprite_ext(spr_bone_ui,0,vx+10,vy+15+10,1,1,0,c_white,bones_show/10);
-draw_set_alpha(bones_show/10);
+draw_sprite_ext(spr_bone_ui,0,vx+10,vy+15+10,1,1,0,c_white,bones_show/5);
+draw_set_alpha(bones_show/5);
 draw_set_font(font_bsp14);
 draw_set_color(c_black);
 draw_set_halign(fa_left);

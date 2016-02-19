@@ -32,7 +32,7 @@ spr_shadow = spr_granny_shadow;
 zspeed = 0;
 direction = 0;
 state = "sleep";
-move_speed = 1.5;
+move_speed = 1.75;
 target = 0;
 cry = 0;
 
@@ -82,22 +82,41 @@ hint_alpha = 0;
 
 if state = "sleep"{
 image_speed = .25;
-if scr_pug_dis(4) &gt; 0{state = "wake";}
+
+//if scr_pug_dis(4) &gt; 0{state = "wake";}
 
 opt = instance_place(x,y,obj_beachball);
+if instance_exists(obj_beachball){
+i = instance_nearest(x,y,obj_beachball);
+if scr_dis(x,y,i.x,i.y+i.z) &lt; 32{opt = i;}}
 if opt != noone{
-if opt.z &lt;= 4{
+if opt.z &lt;= 6{
 state = "wake";}}
 
-opt = instance_place(x,y,obj_beachball);
+opt = instance_place(x,y,obj_frisbee);
+if instance_exists(obj_frisbee){
+i = instance_nearest(x,y,obj_frisbee);
+if scr_dis(x,y,i.x,i.y+i.z) &lt; 24{opt = i;}}
 if opt != noone{
-if opt.z &lt;= 4{
+if opt.z &lt;= 6{
 state = "wake";}}
 
-opt = instance_place(x,y,obj_bubble);
+opt = instance_nearest(x,y,obj_bubble);
 if opt != noone{
-if opt.z &lt;= 8{
-state = "wake";}}
+if scr_dis(x,y,opt.x,opt.y) &lt; 32{
+if opt.sprite_index = spr_bubble_pop{
+state = "wake";}}}
+
+if scr_pug_dis(32){ 
+if pug.sprite_index = pug.spr_bark{
+if pug.pug_action = 1{
+state = "wake";}}}
+
+if scr_pug_dis(16){ 
+if pug.sprite_index = pug.spr_bite{
+if pug.pug_action = 1{
+state = "wake";}}}
+
 
 }//end sleep//////////////////////////////
 
@@ -205,15 +224,15 @@ move_towards_point(dx,dy,move_speed*.5);}
 
 //handle hint
 if state = "defend"{
+if scr_pug_dis(96) &gt; 0{
 if hint_time &gt; 0{
 hint_time -= 1;}
 else{
-
 opt = instance_create(x+hintx,y+hinty,obj_hint);
 opt.spr_hint = spr_hint;
-
-hint_time = g.hint_time_max;}}
-else{hint_time = g.hint_time_max-(15*30);}
+hint_time = g.hint_time_max;}
+}else{hint_time = g.hint_time_max*.3;}
+}else{hint_time = g.hint_time_max*.3;}
 
 
 

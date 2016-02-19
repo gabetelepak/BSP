@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+spawn = 0;
+
 
 
 </string>
@@ -51,6 +53,14 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+if spawn = 0{spawn = 1;
+with obj_firefly{
+if instance_exists(obj_bubble_wand_pond){
+if scr_dis(x,y,other.x,other.y) &lt; 64{
+if bubble &lt; 1{
+bubble = 1;}}}
+}}
 
 
 if g.check_duck = 1{

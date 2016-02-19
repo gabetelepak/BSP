@@ -246,6 +246,7 @@ alarm[0] = floor(random(60))+60;}
 
 
 //hint
+if scr_pug_dis(96) &gt; 0{
 if id = instance_find(obj_duck,1){
 spr_hint = spr_hint_hear_broken;
 
@@ -255,10 +256,8 @@ else{
 if g.check_duck = 0{
 opt = instance_create(x+hintx,y+hinty,obj_hint);
 opt.spr_hint = spr_hint;
-hint_time = g.hint_time_max;}}
-
-
-}
+hint_time = g.hint_time_max;}}}
+}else{hint_time = g.hint_time_max*.3;}
 
 
 </string>
