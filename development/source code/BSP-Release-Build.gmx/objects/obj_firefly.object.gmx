@@ -30,6 +30,7 @@ zgrav = 0;
 zbouncable = 0;
 spr_shadow = spr_blank;
 zspeed = 0;
+alpha = 0;
 
 
 //personal
@@ -45,6 +46,29 @@ spr_offsetx = random(2)-1;
 spr_offsety = random(2)-1;
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>repeat(3){scr_sparkle(x,y-z,6,1);}
 </string>
           </argument>
         </arguments>
@@ -69,14 +93,19 @@ spr_offsety = random(2)-1;
             <kind>1</kind>
             <string>event_inherited();
 
+if alpha &lt; 1{
+alpha += 1/60;}
+if speed &gt;= 2{alpha = 1;}
+
 speed = speed*.94;
 if abs(speed) &lt;= .2{speed = 0;}
 
 //move away form pug a little
+if speed &lt; 2{
 if scr_pug_dis(6) &gt; 0{
 if pug.speed &gt; 0{
 direction = point_direction(x,y,pug.x,pug.y)+170+random(20);
-speed = .5;}}
+speed = .5;}}}
 
 
 if alarm[0] &gt; 0{
@@ -95,9 +124,9 @@ iz = floor(15 + random(10));}
 
 
 //movement
-//if distance_to_point(ix,iy) &gt; 2{
-//move_towards_point(ix,iy,.2);
-//}
+if speed &lt; 2{
+if distance_to_point(ix,iy) &gt; 2{
+move_towards_point(ix,iy,.2);}}
 
 if z &lt; iz{z += .1;}
 if z &gt; iz{z -= .1;}
@@ -132,7 +161,14 @@ if pug.sprite_index = pug.spr_bugnet_use{
 if pug.pug_action = 5 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 pug.net_firefly += 1;
-instance_destroy();}}}
+instance_destroy();
+
+if g.check_firefly = 0{
+g.check_firefly = 1;
+scr_check_burst(1);}
+
+
+}}}
 
 
 </string>
@@ -158,9 +194,9 @@ instance_destroy();}}}
           <argument>
             <kind>1</kind>
             <string>//event_inherited();
-draw_sprite_ext(sprite_index,2,x,y-z,scale,scale,rot,color,.15);
-draw_sprite_ext(sprite_index,1,x+spr_offsetx,y-z+spr_offsety,scale,scale,rot,color,.3);
-draw_sprite_ext(sprite_index,0,x,y-z,scale,scale,rot,color,1);
+draw_sprite_ext(sprite_index,2,x,y-z,scale,scale,rot,color,.15*alpha);
+draw_sprite_ext(sprite_index,1,x+spr_offsetx,y-z+spr_offsety,scale,scale,rot,color,.3*alpha);
+draw_sprite_ext(sprite_index,0,x,y-z,scale,scale,rot,color,1*alpha);
 
 if bubble = 1{
 draw_sprite_ext(spr_bubble_float,image_single,x,y-z,scale,scale,rot,color,1);}

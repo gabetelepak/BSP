@@ -45,8 +45,17 @@ angry = 0;
 sx = x;
 sy = y;
 dx = -64;
-dy = 252;
+dy = 252+64;
 attack_pug = 0;
+
+spr_hint = spr_hint_sandwich;
+hintx = +30;
+hinty = -59;
+hint_time = g.hint_time_max;
+hint_alpha = 0;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -72,6 +81,7 @@ attack_pug = 0;
             <string>event_inherited();
 
 if state = "sleep"{
+image_speed = .25;
 if scr_pug_dis(4) &gt; 0{state = "wake";}
 
 opt = instance_place(x,y,obj_beachball);
@@ -91,12 +101,18 @@ state = "wake";}}
 
 }//end sleep//////////////////////////////
 
+
 if state = "wake"{
-sprite_index = spr_granny_sit;
+sprite_index = spr_granny_wakeup;
 image_index = 0;
-image_speed = .15;
+image_speed = .25;
 state = "start";
-instance_create(564,228,obj_plate);}
+instance_create(564,228,obj_plate);
+
+g.check_granny = 1;
+scr_check_burst(3);
+
+}
 
 if state = "start"{
 if image_index &gt; image_number - 1{
@@ -107,14 +123,14 @@ state = "defend";}}
 //move back to start, sit when arrive.
 if state = "retreat"{
 if scr_dis(x,y,sx,sy) &gt; move_speed+1{
-move_towards_point(sx,sy,move_speed*.5);}
+move_towards_point(sx,sy,move_speed*.75);}
 else{
 speed = 0;
 x = sx; 
 y = sy;
 sprite_index = spr_granny_sit;
 image_index = 0;
-image_speed = .2;
+image_speed = .25;
 state = "start";}}
 
 
@@ -154,10 +170,30 @@ image_speed = .2;
 state = "retreat";}}
 
 
-//cry
+//init cry
 if state = "defend" &amp;&amp; cry = 1{
 scr_sound(snd_granny_cry,g.sfx_volume);
-state = "cry";}
+state = "cry";
+
+
+//unlock butt drag
+with obj_player{
+sniff_icon_alarm = 0;
+scr_sound(snd_hint_appear,g.sfx_volume);
+pug_power = 2;
+pug_power_max = 4;
+scr_switch_power();
+
+sprite_index = spr_sniffed;
+image_speed = .25;
+image_index = 0;
+pug_action = sprite_get_number(sprite_index);
+
+
+}
+
+
+}
 
 if state = "cry"{
 sprite_index = spr_granny_walk_cry;
@@ -166,6 +202,18 @@ move_towards_point(dx,dy,move_speed*.5);}
 
 
 
+
+//handle hint
+if state = "defend"{
+if hint_time &gt; 0{
+hint_time -= 1;}
+else{
+
+opt = instance_create(x+hintx,y+hinty,obj_hint);
+opt.spr_hint = spr_hint;
+
+hint_time = g.hint_time_max;}}
+else{hint_time = g.hint_time_max-(15*30);}
 
 
 

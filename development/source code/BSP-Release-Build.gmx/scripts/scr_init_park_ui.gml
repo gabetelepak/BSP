@@ -21,3 +21,11 @@ g.spr_right_ui[0] = spr_ui_poop;
 g.spr_left_ui[1] = spr_ui_bite;
 g.spr_right_ui[1] = spr_ui_poop;
 
+//orbyt checkbox
+check_firefly = 0;
+check_babyduck = 0;
+check_granny = 0;
+check_frog = 0;
+check_duck = 0;
+check_sandwich = 0;
+

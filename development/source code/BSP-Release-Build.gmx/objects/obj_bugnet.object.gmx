@@ -33,6 +33,9 @@ z = 5;
 image_speed = 0;
 net_firefly = 0;
 firefly_alarm = 0;
+
+if net_firefly &gt; 0{
+net_firefly = min(floor(net_firefly*1.5),15);}
 </string>
           </argument>
         </arguments>
@@ -78,8 +81,8 @@ opt.z = 3;
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
 if pug.item_held = ""{
-if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 pug.sprite_index = pug.spr_bite_low;
+if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 pug.item_held = "Bugnet";
 pug.net_firefly = net_firefly;

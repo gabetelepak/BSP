@@ -13,3 +13,8 @@ mp_grid_add_instances(g.mpgrid,id,1);}}
 player_total = 0;
 with obj_player{
 g.player_total += 1;}
+
+//cam shake
+shake = 0;
+shakex = 0;
+shakey = 0;

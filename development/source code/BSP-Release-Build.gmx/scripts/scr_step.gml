@@ -3,6 +3,13 @@
 scr_step_controls(0);
 scr_step_controls(1);
 
+if manymouse_active = 1{
+scr_handle_manymouse();
+scr_manymouse_controls(0);
+scr_manymouse_controls(1);}
+
+
+
 if room = rm_title_screen || room = rm_character_select{
 scr_step_title_screen();}
 

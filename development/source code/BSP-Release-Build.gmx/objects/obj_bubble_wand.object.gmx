@@ -30,7 +30,7 @@ zgrav = .05;
 zbouncable = 0;
 spr_shadow = spr_bubble_wand_shadow;
 z = 5;
-
+first_spawn = 0;
 </string>
           </argument>
         </arguments>
@@ -56,6 +56,15 @@ z = 5;
             <string>event_inherited();
 image_speed = .15;
 
+if first_spawn &gt; 0{
+first_spawn += 1;
+if first_spawn mod 4 = 0{scr_sparkle(x,y,24,0);}
+speed -= .033;
+if speed &lt;= .1{speed = 0;
+if z &lt;= 1{first_spawn = 0;}
+}
+}else{
+
 //grab wand
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
@@ -67,11 +76,13 @@ pug.item_held = "Bubble Wand";
 instance_destroy();
 }}}}
 
-if scr_pug_dis(4) &gt; 0{
+if scr_pug_dis(2) &gt; 0{
 if pug.magic_mode = 0{
 if g.unlock_bubble_wand = 0{
 g.unlock_bubble_wand = 1;
 pug.spr_unlock = spr_unlock_bubble_wand;}}}
+
+}
 </string>
           </argument>
         </arguments>

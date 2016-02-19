@@ -124,11 +124,22 @@ scr_sparkle(x,y,20,0);}
 if magic_mode = 0{
 ix = (g.vx+g.vw/2)+128+25;
 iy = g.vy+25;
+
+//temp orbyt location
+ix = (g.vx+g.vw/2);
+iy = g.vy-25;
+
 speed = (distance_to_point(ix,iy)/20)+2;
 direction = point_direction(x,y,ix,iy)-30;}
 else{
+
 ix = (g.vx+g.vw/2)-128-25;
 iy = g.vy+25;
+
+//temp orbyt location
+ix = (g.vx+g.vw/2);
+iy = g.vy-25;
+
 speed = (distance_to_point(ix,iy)/20)+2;
 direction = point_direction(x,y,ix,iy)+30;
 }

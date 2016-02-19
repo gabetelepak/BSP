@@ -27,6 +27,73 @@
             <kind>1</kind>
             <string>event_inherited();
 spr_shadow = spr_sandbox_shadow;
+depth+=8;
+
+
+spr_hint = spr_hint_hungry;
+hintx = 0;
+hinty = -48;
+hint_time = g.hint_time_max;
+hint_alpha = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+
+
+if g.target_bread &gt; 0{
+if distance_to_object(g.target_bread) &lt; 2{
+if g.check_babyduck = 0{
+g.check_babyduck = 1;
+scr_check_burst(2);
+
+if g.target_bread.object_index = obj_player{
+with g.target_bread{
+
+if item_ui = 0 &amp;&amp; item_held = "Bread"{
+item_held = "";
+spr_item = spr_blank;
+opt = instance_create(x-face*6,y+3,item_obj);
+opt.face = face;
+opt.direction = direction;
+opt.active = 1;
+}}
+}}
+
+}}
+
+
+
+
+//hint
+if hint_time &gt; 0{
+hint_time -= 1;}
+else{
+if g.check_babyduck = 0{
+opt = instance_create(x+hintx,y+hinty,obj_hint);
+opt.spr_hint = spr_hint;
+hint_time = g.hint_time_max;}}
+
 </string>
           </argument>
         </arguments>

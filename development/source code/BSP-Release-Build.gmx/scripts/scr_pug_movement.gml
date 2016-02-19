@@ -4,6 +4,8 @@ goal_y = y;
 if speed > .25{speed -= .25;}else{speed = 0;}
 
 
+
+
 if g.button[player_number,g.button_UP]{goal_y = y-1;sprite_index = spr_walk_up;}
 if g.button[player_number,g.button_DOWN]{goal_y = y+1;sprite_index = spr_walk_down;}
 if g.button[player_number,g.button_LEFT]{goal_x = x-1;sprite_index = spr_walk;}

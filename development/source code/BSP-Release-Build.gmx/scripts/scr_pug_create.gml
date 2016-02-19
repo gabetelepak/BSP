@@ -27,10 +27,16 @@ var i;
 for (i = 0; i < instance_number(obj_player); i += 1)
    {
 if id = instance_find(obj_player,i){
+g.pug_id[i] = id;
  player_number = i;}
 else{opug = instance_find(obj_player,i);}
 
    }
+   
+   
+
+   
+   
 
 //assign sprites based on player
 //i = player_number;

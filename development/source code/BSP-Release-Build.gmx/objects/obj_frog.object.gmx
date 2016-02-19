@@ -29,6 +29,9 @@
 zgrav = .05;
 zbouncable = 0;
 spr_shadow = spr_frog_shadow;
+direction = random(360);
+image_index = irandom(3);
+frog_sleep = 1;
 
 zspeed = 0;
 
@@ -41,6 +44,12 @@ lilypad = 0;
 float_alarm = 0;
 startx = x;
 starty = y;
+
+spr_hint = spr_hint_firefly;
+hintx = -32;
+hinty = -48;
+hint_time = g.hint_time_max;
+hint_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -69,6 +78,33 @@ zbouncable = 0;
 if direction &gt; 90 &amp;&amp; direction &lt;= 270{
 face = 1;}else{face = -1;}
 
+
+if frog_sleep = 1{
+sprite_index = spr_frog_sleep;
+image_speed = .15;
+
+//hint
+if id = instance_find(obj_frog,4){
+spr_hint = spr_hint_firefly;
+if hint_time &gt; 0{
+hint_time -= 1;}
+else{
+opt = instance_create(x+hintx,y+hinty,obj_hint);
+opt.spr_hint = spr_hint;
+hint_time = g.hint_time_max;}}
+
+i = instance_nearest(x,y,obj_firefly);
+if scr_dis(x,y,i.x,i.y) &lt;= 64 &amp;&amp; lilypad = 0{
+frog_sleep = 0;}
+
+
+//dont do anything but sleep
+}
+else{
+
+
+
+
 if lilypad = 1{face = 1;}
 
 if tongue_alarm &gt; 0{tongue_alarm -= 1;}
@@ -79,7 +115,8 @@ sprite_index = spr_frog_ribbit;}
 //get firefly target////////////////
 target = -1;
 if instance_exists(obj_firefly){
-target = instance_nearest(x,y-12,obj_firefly);
+i = instance_nearest(x,y-12,obj_firefly);
+if scr_dis(x,y,i.x,i.y) &lt;= 128{target = instance_nearest(x,y-6,obj_firefly);}
 if instance_exists(target) &amp;&amp; target &gt;= 0{
 if target.y  &gt; g.vy+g.vh || scr_dis(target.x,target.y,startx,starty) &gt; 120{target = 0;}}
 
@@ -131,7 +168,13 @@ opt.magic_mode = 1;
 
 scr_magic_mode_db();
 lilypad = 0;
-instance_destroy();}
+instance_destroy();
+
+if g.check_frog = 0{
+g.check_frog = 1;
+scr_check_burst(4);}
+
+}
 else{
 speed = 1;
 direction = point_direction(x,y,other.x,other.y)+100+random(160);}}}}
@@ -192,8 +235,9 @@ scr_define_construction();}}
 if instance_exists(target) &amp;&amp; float_alarm &lt;= 0{
 if lash = 0 &amp;&amp; hop = 0 &amp;&amp; target &gt; 0 &amp;&amp; lilypad &lt;= 0{
 
-if scr_dis(x+face*8,y,target.x,target.y) &gt; 8 || 
-scr_dis(y,y,target.y,target.y) &gt; 8{
+//if scr_dis(x+face*8,y,target.x,target.y) &gt; 8 || 
+//scr_dis(y,y,target.y,target.y) &gt; 8 || 
+//scr_dis(x+face*8,y,target.x,target.y) &lt; 4{
 
 
 if abs(x-target.x) &gt; 12{
@@ -209,14 +253,17 @@ if opt &gt; 0 &amp;&amp; instance_exists(opt){
 if opt.float_alarm&lt;= 0{hopx = 0;hopy=0;}}
 
 
-}}
+//}
+}
 
 //init hop
 if (hopx != 0 || hopy != 0) &amp;&amp; hop = 0{hop = 1;
 sprite_index = spr_frog_hop;
 image_index = 0;
 image_speed = .25;
-scr_sound(snd_frog_hop,g.sfx_volume);}
+scr_sound(snd_frog_hop,g.sfx_volume);
+//scr_dust(x,y,90,2);
+}
 
 if hop &gt; 0 &amp;&amp; floor(image_index) &gt;= 4 &amp;&amp; floor(image_index) &lt;= 10{
 move_towards_point(hopx,hopy,24/7/4);}else{speed = 0;}
@@ -263,7 +310,7 @@ if abs(speed) &lt;= .2{speed = 0;}
 
 //collide check(unstuck self on solid objects)
 if z &lt;= 0 &amp;&amp; speed &lt;= 0{
-if !place_free(x,y){
+if !place_free(x,y) || x &lt; 8 || y &gt; g.vy+g.vh-8 || x &gt; room_width-8{
 direction = point_direction(x,y,room_width/2,room_height/2);
 speed = 3;
 zspeed = 1;
@@ -272,7 +319,7 @@ zspeed = 1;
 }//end frogball///////////////////////////////////////////
 
 
-
+}//end sleep
 
 </string>
           </argument>

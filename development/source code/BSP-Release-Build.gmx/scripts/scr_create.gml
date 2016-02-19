@@ -2,6 +2,10 @@
 scr_define_game_options();
 scr_define_controls();
 
+
+manymouse_active = 1;
+scr_init_manymouse();
+
 scr_define_misc_systems();
 scr_define_title_screen();
 scr_define_character_select();
@@ -10,8 +14,13 @@ scr_define_colors();
 scr_define_game_options();
 
 player = 0;
+pug_id[0] = 0;
+pug_id[1] = 0;
 button[player,"A"] = 0;
 frisbee_catch = 0;
+hint_time_max = 30*45;//30*45;
+
+target_bread = 0;
 
 vx = view_xview[0];
 vy = view_yview[0];
@@ -37,6 +46,12 @@ spr_frisbee_walk[i] = spr_sammie_frisbee_walk;
 spr_frisbee_down[i] = spr_sammie_frisbee_down;
 spr_frisbee_up[i] = spr_sammie_frisbee_up;
 spr_frisbee_idle[i] = spr_sammie_frisbee_idle;
+spr_bread_walk[i] = spr_sammie_bread_walk;
+spr_bread_down[i] = spr_sammie_bread_down;
+spr_bread_up[i] = spr_sammie_bread_up;
+spr_bread_idle[i] = spr_sammie_bread_idle;
+
+
 
 //alice
 i+=1;
@@ -59,6 +74,10 @@ spr_frisbee_walk[i] = spr_sammie_frisbee_walk;
 spr_frisbee_down[i] = spr_sammie_frisbee_down;
 spr_frisbee_up[i] = spr_sammie_frisbee_up;
 spr_frisbee_idle[i] = spr_sammie_frisbee_idle;
+spr_bread_walk[i] = spr_sammie_bread_walk;
+spr_bread_down[i] = spr_sammie_bread_down;
+spr_bread_up[i] = spr_sammie_bread_up;
+spr_bread_idle[i] = spr_sammie_bread_idle;
 
 //bella
 i+=1;
@@ -81,6 +100,10 @@ spr_frisbee_walk[i] = spr_sammie_frisbee_walk;
 spr_frisbee_down[i] = spr_sammie_frisbee_down;
 spr_frisbee_up[i] = spr_sammie_frisbee_up;
 spr_frisbee_idle[i] = spr_sammie_frisbee_idle;
+spr_bread_walk[i] = spr_sammie_bread_walk;
+spr_bread_down[i] = spr_sammie_bread_down;
+spr_bread_up[i] = spr_sammie_bread_up;
+spr_bread_idle[i] = spr_sammie_bread_idle;
 
 //edgar
 i+=1;
@@ -103,6 +126,10 @@ spr_frisbee_walk[i] = spr_sammie_frisbee_walk;
 spr_frisbee_down[i] = spr_sammie_frisbee_down;
 spr_frisbee_up[i] = spr_sammie_frisbee_up;
 spr_frisbee_idle[i] = spr_sammie_frisbee_idle;
+spr_bread_walk[i] = spr_sammie_bread_walk;
+spr_bread_down[i] = spr_sammie_bread_down;
+spr_bread_up[i] = spr_sammie_bread_up;
+spr_bread_idle[i] = spr_sammie_bread_idle;
 
 
 arrayname[5] = 0;

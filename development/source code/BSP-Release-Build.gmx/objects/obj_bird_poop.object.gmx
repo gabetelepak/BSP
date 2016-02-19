@@ -78,10 +78,12 @@ instance_destroy();}
 
 if hit = 0{
 if z &lt;= 0{hit = 1;
-if scr_pug_dis(6) &gt; 0{
-if pug.magic_mode = 0{
-if pug.hurt = 0 &amp;&amp; pug.sprite_index != pug.spr_stung{
-pug.hurt = 2;}}}}}
+with obj_player{
+if scr_dis(x,y,other.x,other.y)&lt; 16{
+if magic_mode = 0{
+if hurt = 0 &amp;&amp; sprite_index != spr_stung{
+hurt = 2;}}}}
+}}
 
 
 </string>

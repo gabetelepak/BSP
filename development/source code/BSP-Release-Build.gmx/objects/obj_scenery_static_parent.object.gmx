@@ -38,8 +38,14 @@ bush_splash = 0;
 z = 0;
 bush_shake = 0;
 scr_depth();
+pug = 0;
 
 
+//hint
+spr_hint = spr_blank;
+hint_time = g.hint_time_max;
+hintx = 0;
+hinty = 0;
 </string>
           </argument>
         </arguments>
@@ -75,7 +81,7 @@ if spr_shadow != spr_blank{
 if surface_exists(g.surf_shadow){
 surface_set_target(g.surf_shadow);
 draw_set_blend_mode(bm_normal);
-draw_sprite_ext(spr_shadow,0,x,y,1,1,0,g.c_night_shadow,alpha);
+draw_sprite_ext(spr_shadow,image_single,x,y,1,1,0,g.c_night_shadow,alpha);
 draw_set_blend_mode(bm_normal);
 surface_reset_target();
 }}///////////////

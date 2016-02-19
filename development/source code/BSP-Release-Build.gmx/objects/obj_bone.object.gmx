@@ -26,11 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-zgrav = .0025;
+zgrav = .0;
 zbouncable = 0;
-spr_shadow = spr_blank;
+spr_shadow = spr_bone_shadow;
 z = 0;
-image_speed = 0;
+image_speed = .15;
+image_index = floor(x/(room_width/5));
 bone_get = 0;
 </string>
           </argument>
@@ -57,20 +58,29 @@ bone_get = 0;
             <string>event_inherited();
 depth += 12;
 
-if bone_get = 1{
-depth -= 24;
-image_speed = .25;}
+if bone_get  &gt; 0{
+depth = 2;
+image_speed = .25;
 
-if floor(image_index) = sprite_get_number(sprite_index)-1{
+if floor(image_index) = 7{
 instance_destroy();}
+
+}
+
+if bone_get = 2{bone_get = 1;
+sprite_index = spr_bone_get;
+image_index = 0;
+}
+
+
 
 //pickup bone
 if bone_get = 0{
 if scr_pug_dis(2) &gt; 0{
 pug.sprite_index = pug.spr_bite_low;
 pug.pug_action_proc = 1;
-bone_get = 1;
-g.bones += 10;
+bone_get = 2;
+g.bones += 5;
 }}
 </string>
           </argument>

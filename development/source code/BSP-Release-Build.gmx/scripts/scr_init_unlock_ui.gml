@@ -6,6 +6,9 @@ unlock_frog = 0;
 unlock_alert = 0;
 magic_mode_alert = 0;
 
+unlock_bread = 0;
+
+
 secrets_found = 0;
 secrets_found_panel = 0;
 secrets_found_panel_stage = 0;
@@ -14,3 +17,5 @@ secrets_found_panel_y = 0;
 //menu
 show_unlock_menu = 0;
 b_pressed = 0;
+
+

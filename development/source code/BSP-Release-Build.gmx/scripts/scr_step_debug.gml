@@ -14,4 +14,7 @@ room_goto(rm_park_night);}
 
 
 if mouse_check_button_pressed(mb_middle){
-scr_dust(mouse_x,mouse_y,180,3);}
+//scr_dust(mouse_x,mouse_y,180,3);
+//opt = instance_create(mouse_x,mouse_y,obj_hint);
+//opt.spr_hint = spr_hint_sandwich;
+}

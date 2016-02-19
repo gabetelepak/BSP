@@ -53,6 +53,14 @@ hit_particle_num = 0;
 spawn_x = x;
 spawn_y = y;
 
+
+//hint
+spr_hint = spr_blank;
+hint_time = g.hint_time_max;
+hintx = 0;
+hinty = 0;
+
+
 //get intstance number
 inst_number = -1;
 var i;
@@ -105,6 +113,7 @@ zspeed = zspeed * (1+zgrav);}
 if z &lt;= .2{z = 0;
 if zbouncable{
 if zspeed &lt; -.2{zspeed = -zspeed*.25;
+scr_dust(x,y,90,2);
 zbounce = 1;}}
 }
 
@@ -120,7 +129,7 @@ if spr_shadow != spr_blank{
 if surface_exists(g.surf_shadow){
 surface_set_target(g.surf_shadow);
 draw_set_blend_mode(bm_normal);
-draw_sprite_ext(spr_shadow,0,x,y,shadow_scalex,shadow_scaley,0,g.c_night_shadow,1);
+draw_sprite_ext(spr_shadow,image_single,x,y,shadow_scalex,shadow_scaley,0,g.c_night_shadow,1);
 draw_set_blend_mode(bm_normal);
 surface_reset_target();
 }}

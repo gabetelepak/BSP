@@ -151,14 +151,17 @@ spr_item_walk = g.spr_frisbee_walk[i]
 spr_item_down = g.spr_frisbee_down[i];
 spr_item_up = g.spr_frisbee_up[i];
 spr_item_idle = g.spr_frisbee_idle[i];
-
-
-//abi_left_anim = spr_blank;
-//abi_left_icon = spr_blank;
-//abi_left_snd = snd_blank;
-
-//abi_right_anim = spr_spit;
-//abi_right_icon = spr_blank;
-//abi_right_snd = snd_blank;
 }////////////////////////////////////////////////////////
 
+//bread item////////////////////////////////////////////////
+if item_held = "Bread"{
+g.target_bread = id;
+item_ui = 0;
+item_obj = obj_bread;
+i = player_number;
+
+spr_item_walk = g.spr_bread_walk[i]
+spr_item_down = g.spr_bread_down[i];
+spr_item_up = g.spr_bread_up[i];
+spr_item_idle = g.spr_bread_idle[i];
+}////////////////////////////////////////////////////////

@@ -36,6 +36,13 @@ swim = 1;
 interact = "";
 action = 0;
 alarm[0] = floor(random(60))+60;
+
+
+spr_hint = spr_blank;
+hintx = 0;
+hinty = -48;
+hint_time = g.hint_time_max;
+hint_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -235,6 +242,24 @@ action = 0;
 alarm[0] = floor(random(60))+60;}
 
 }
+
+
+
+//hint
+if id = instance_find(obj_duck,1){
+spr_hint = spr_hint_hear_broken;
+
+if hint_time &gt; 0{
+hint_time -= 1;}
+else{
+if g.check_duck = 0{
+opt = instance_create(x+hintx,y+hinty,obj_hint);
+opt.spr_hint = spr_hint;
+hint_time = g.hint_time_max;}}
+
+
+}
+
 
 </string>
           </argument>

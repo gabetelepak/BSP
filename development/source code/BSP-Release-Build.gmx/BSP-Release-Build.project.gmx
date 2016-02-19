@@ -153,9 +153,6 @@
       </sprites>
       <sprite>sprites\spr_char_sit_selector</sprite>
     </sprites>
-    <sprites name="Park Central">
-      <sprite>sprites\spr_title_card_central_bark</sprite>
-    </sprites>
     <sprites name="imported">
       <sprite>sprites\spr_pug_shadow2</sprite>
       <sprites name="scenery static">
@@ -227,9 +224,7 @@
           <sprite>sprites\spr_gate</sprite>
           <sprite>sprites\spr_swing</sprite>
           <sprite>sprites\spr_bridge_rock</sprite>
-          <sprite>sprites\spr_breadshop</sprite>
           <sprite>sprites\spr_chars</sprite>
-          <sprite>sprites\spr_toolshop</sprite>
           <sprite>sprites\spr_horse</sprite>
           <sprite>sprites\spr_sandbox</sprite>
           <sprite>sprites\spr_sandbox_mask</sprite>
@@ -240,12 +235,20 @@
             <sprite>sprites\spr_toolshop_give</sprite>
             <sprite>sprites\spr_toolshop_idle</sprite>
             <sprite>sprites\spr_toolshop_no</sprite>
+            <sprite>sprites\spr_toolshop</sprite>
+            <sprite>sprites\spr_toolshop_sold</sprite>
           </sprites>
           <sprites name="slide">
             <sprite>sprites\spr_slide_shadow</sprite>
             <sprite>sprites\spr_slide</sprite>
             <sprite>sprites\spr_slide_alice</sprite>
             <sprite>sprites\spr_slide_sammy</sprite>
+          </sprites>
+          <sprites name="breadshop">
+            <sprite>sprites\spr_breadshop_idle</sprite>
+            <sprite>sprites\spr_breadshop_give</sprite>
+            <sprite>sprites\spr_breadshop_no</sprite>
+            <sprite>sprites\spr_breadshop_sold</sprite>
           </sprites>
         </sprites>
         <sprites name="grass">
@@ -397,6 +400,7 @@
           <sprite>sprites\spr_duck_walk_up</sprite>
           <sprite>sprites\spr_duck_walk_down</sprite>
           <sprite>sprites\spr_baby_duck_walk</sprite>
+          <sprite>sprites\spr_babyduck_shadow</sprite>
           <sprite>sprites\spr_baby_duck_walk_down</sprite>
           <sprite>sprites\spr_baby_duck_walk_up</sprite>
         </sprites>
@@ -419,6 +423,7 @@
           <sprite>sprites\spr_frog_miss</sprite>
           <sprite>sprites\spr_frog_catch</sprite>
           <sprite>sprites\spr_frog_shadow</sprite>
+          <sprite>sprites\spr_frog_sleep</sprite>
         </sprites>
       </sprites>
       <sprites name="items">
@@ -466,7 +471,7 @@
           <sprite>sprites\spr_leaves_spit</sprite>
           <sprite>sprites\spr_leaves_walk_down</sprite>
         </sprites>
-        <sprites name="bone">
+        <sprites name="bone old">
           <sprite>sprites\spr_bone_old</sprite>
           <sprite>sprites\spr_bone_static</sprite>
           <sprite>sprites\spr_bone_walk</sprite>
@@ -511,26 +516,39 @@
           <sprite>sprites\spr_bubble_pop</sprite>
           <sprite>sprites\spr_bubble_float</sprite>
           <sprite>sprites\spr_bubble_wand_hint</sprite>
+          <sprite>sprites\spr_bubble_wand_pond</sprite>
         </sprites>
         <sprites name="bugnet">
           <sprite>sprites\spr_bugnet_static</sprite>
         </sprites>
         <sprites name="bones">
+          <sprite>sprites\spr_bone_get</sprite>
           <sprite>sprites\spr_bone</sprite>
+          <sprite>sprites\spr_bone_shadow</sprite>
           <sprite>sprites\spr_bone_ui</sprite>
         </sprites>
       </sprites>
-      <sprites name="tip icons">
-        <sprite>sprites\spr_tip_appear</sprite>
-        <sprite>sprites\spr_tip_disappear</sprite>
-        <sprite>sprites\spr_tip_pee</sprite>
-        <sprite>sprites\spr_tip_poop</sprite>
-        <sprite>sprites\spr_tip_bite</sprite>
-        <sprite>sprites\spr_tip_bark</sprite>
-        <sprite>sprites\spr_tip_dig</sprite>
-        <sprite>sprites\spr_tip_sleep</sprite>
-        <sprite>sprites\spr_tip_dance</sprite>
-        <sprite>sprites\spr_tip_buttdrag</sprite>
+      <sprites name="hints and tip icons">
+        <sprites name="old">
+          <sprite>sprites\spr_tip_appear</sprite>
+          <sprite>sprites\spr_tip_pee</sprite>
+          <sprite>sprites\spr_tip_poop</sprite>
+          <sprite>sprites\spr_tip_bark</sprite>
+          <sprite>sprites\spr_tip_dig</sprite>
+          <sprite>sprites\spr_tip_sleep</sprite>
+          <sprite>sprites\spr_tip_dance</sprite>
+          <sprite>sprites\spr_tip_buttdrag</sprite>
+          <sprite>sprites\spr_tip_bite</sprite>
+          <sprite>sprites\spr_tip_disappear</sprite>
+        </sprites>
+        <sprite>sprites\spr_hint_expand</sprite>
+        <sprite>sprites\spr_hint_deflate</sprite>
+        <sprite>sprites\spr_hint_firefly</sprite>
+        <sprite>sprites\spr_hint_sandwich</sprite>
+        <sprite>sprites\spr_hint_pigeon</sprite>
+        <sprite>sprites\spr_hint_hungry</sprite>
+        <sprite>sprites\spr_hint_heart</sprite>
+        <sprite>sprites\spr_hint_hear_broken</sprite>
       </sprites>
       <sprites name="particle">
         <sprite>sprites\spr_flies</sprite>
@@ -555,6 +573,7 @@
           <sprite>sprites\spr_granny_sit_hit</sprite>
           <sprite>sprites\spr_granny_walk_hit</sprite>
           <sprite>sprites\spr_granny_shadow</sprite>
+          <sprite>sprites\spr_granny_wakeup</sprite>
         </sprites>
       </sprites>
       <sprites name="UI Overlay ">
@@ -630,6 +649,12 @@
           <sprite>sprites\spr_sammie_frisbee_up</sprite>
           <sprite>sprites\spr_sammie_frisbee_idle</sprite>
         </sprites>
+        <sprites name="bread">
+          <sprite>sprites\spr_sammie_bread_down</sprite>
+          <sprite>sprites\spr_sammie_bread_walk</sprite>
+          <sprite>sprites\spr_sammie_bread_up</sprite>
+          <sprite>sprites\spr_sammie_bread_idle</sprite>
+        </sprites>
       </sprites>
       <sprites name="alice">
         <sprite>sprites\spr_alice_sheet</sprite>
@@ -643,6 +668,12 @@
         </sprites>
         <sprites name="bug net">
           <sprite>sprites\spr_alice_bugnet_use</sprite>
+        </sprites>
+        <sprites name="bread">
+          <sprite>sprites\spr_alice_bread_down</sprite>
+          <sprite>sprites\spr_alice_bread_walk</sprite>
+          <sprite>sprites\spr_alice_bread_up</sprite>
+          <sprite>sprites\spr_alice_bread_idle</sprite>
         </sprites>
       </sprites>
       <sprites name="bella">
@@ -668,15 +699,15 @@
         <sprite>sprites\spr_mm_arrow_button</sprite>
         <sprite>sprites\spr_mm_ui_bg</sprite>
         <sprite>sprites\spr_magic_mode_mask</sprite>
+        <sprites name="icons">
+          <sprite>sprites\spr_icon_beachball</sprite>
+          <sprite>sprites\spr_icon_firefly</sprite>
+          <sprite>sprites\spr_icon_frog</sprite>
+        </sprites>
       </sprites>
       <sprites name="misc">
         <sprite>sprites\spr_topwall_mask</sprite>
         <sprite>sprites\spr_big_numbers</sprite>
-      </sprites>
-      <sprites name="icons">
-        <sprite>sprites\spr_icon_beachball</sprite>
-        <sprite>sprites\spr_icon_firefly</sprite>
-        <sprite>sprites\spr_icon_frog</sprite>
       </sprites>
       <sprites name="unlock ui">
         <sprite>sprites\spr_unlock_beachball</sprite>
@@ -684,14 +715,23 @@
         <sprite>sprites\spr_unlock_frog</sprite>
         <sprite>sprites\spr_unlock_bubble_wand</sprite>
         <sprite>sprites\spr_unlock_bugnet</sprite>
+        <sprite>sprites\spr_unlock_bread</sprite>
         <sprite>sprites\spr_unlock_menu</sprite>
         <sprites name="goal panels">
           <sprite>sprites\spr_secret_panel</sprite>
+          <sprite>sprites\spr_orbyt_panel</sprite>
         </sprites>
         <sprite>sprites\spr_ui_checkmark</sprite>
       </sprites>
       <sprites name="particles">
         <sprite>sprites\spr_dust</sprite>
+      </sprites>
+      <sprite>sprites\spr_title_card_central_bark</sprite>
+      <sprites name="items">
+        <sprites name="bread">
+          <sprite>sprites\spr_bread</sprite>
+          <sprite>sprites\spr_bread_shadow</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -718,7 +758,6 @@
         <script>scripts\scr_load_pug_sheets.gml</script>
         <script>scripts\scr_create_sprite.gml</script>
         <script>scripts\scr_define_colors.gml</script>
-        <script>scripts\scr_define_options.gml</script>
       </scripts>
     </scripts>
     <scripts name="title screen">
@@ -750,6 +789,11 @@
         <script>scripts\scr_define_controls.gml</script>
         <script>scripts\scr_step_controls.gml</script>
         <script>scripts\script17.gml</script>
+        <scripts name="manymouse">
+          <script>scripts\scr_init_manymouse.gml</script>
+          <script>scripts\scr_handle_manymouse.gml</script>
+          <script>scripts\scr_manymouse_controls.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Particles">
         <script>scripts\scr_particle.gml</script>
@@ -776,10 +820,12 @@
           <script>scripts\scr_init_unlock_ui.gml</script>
           <script>scripts\scr_draw_unlock_ui.gml</script>
         </scripts>
+        <script>scripts\scr_draw_park_ui_top_panel.gml</script>
       </scripts>
       <scripts name="particle">
         <script>scripts\scr_sparkle.gml</script>
         <script>scripts\scr_dust.gml</script>
+        <script>scripts\scr_check_burst.gml</script>
       </scripts>
     </scripts>
     <scripts name="pug characters">
@@ -788,6 +834,7 @@
       <script>scripts\scr_pug_draw.gml</script>
       <script>scripts\scr_pug_sniff.gml</script>
       <script>scripts\scr_pug_movement.gml</script>
+      <script>scripts\scr_pug_slide.gml</script>
       <scripts name="pug powers">
         <script>scripts\scr_init_pug_powers.gml</script>
         <script>scripts\scr_switch_power.gml</script>
@@ -900,6 +947,8 @@
         <object>objects\obj_flower_spawn</object>
         <object>objects\obj_poop</object>
         <object>objects\obj_plate</object>
+        <object>objects\obj_bubble_wand_pond</object>
+        <object>objects\obj_hint</object>
       </objects>
       <objects name="kenetic objects">
         <object>objects\obj_kenetic_parent</object>
@@ -909,6 +958,7 @@
           <object>objects\obj_sparkle</object>
           <object>objects\obj_bubble_wand</object>
           <object>objects\obj_bugnet</object>
+          <object>objects\obj_bread</object>
           <object>objects\obj_frisbee</object>
           <object>objects\obj_bone</object>
           <object>objects\obj_bubble</object>
@@ -917,9 +967,11 @@
           <object>objects\obj_firefly</object>
           <object>objects\obj_frog</object>
           <object>objects\obj_duck</object>
-          <object>objects\obj_pigeon</object>
+          <object>objects\obj_babyduck</object>
+          <object>objects\obj_pigeon_old</object>
+          <object>objects\obj_pigeon_breadshop</object>
+          <object>objects\obj_pigeon_attack</object>
           <object>objects\obj_granny</object>
-          <object>objects\object93</object>
           <object>objects\obj_bird_poop</object>
         </objects>
       </objects>

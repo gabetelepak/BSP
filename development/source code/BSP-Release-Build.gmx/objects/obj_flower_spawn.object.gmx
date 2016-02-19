@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_flower_spawn_mask</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -105,6 +105,17 @@ else{
 instance_destroy();}
 
 active = 0;
+kill = 0;
+
+if instance_number(obj_flower_spawn) &gt; 80{
+i = 0;
+while i &lt; 999{
+opt = instance_find(obj_flower_spawn, i);
+if opt != noone{if opt.kill = 0{opt.kill = 2;i = 1000;}}
+i += 1;}
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -147,6 +158,31 @@ if death_time = 0{instance_destroy();}}
 
 if life_time &lt; 30{
 life_time += 1;}
+
+
+
+
+
+
+if kill = 2{
+
+/*
+death_time = 200;
+flower0.death_time = death_time;
+flower1.death_time = death_time;
+flower2.death_time = death_time;
+flower3.death_time = death_time;
+kill = 1;
+*/
+
+with flower0{instance_destroy();}
+with flower1{instance_destroy();}
+with flower2{instance_destroy();}
+with flower3{instance_destroy();}
+instance_destroy();
+}
+
+
 </string>
           </argument>
         </arguments>

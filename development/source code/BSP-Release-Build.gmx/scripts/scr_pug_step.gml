@@ -3,15 +3,27 @@ scr_depth();
 
 //handle controls
 
-
+//get hurt
 if hurt = 2 && sprite_index != spr_stung{
+g.shake = 3;
 sprite_index = spr_stung;
 image_speed = .25;
 image_index = 0;
 pug_action = 8;
 zspeed -= 4;
-scr_sound(snd_pug_hurt,g.sfx_volume);}
+scr_sound(snd_pug_hurt,g.sfx_volume);
 
+//drop non ui item
+if item_ui = 0 && item_held != ""{
+item_held = "";
+spr_item = spr_blank;
+opt = instance_create(x-face*6,y+3,item_obj);
+opt.face = face;
+opt.direction = direction;
+opt.active = 1;
+}
+}
+////////////////////
 
 
 
@@ -52,28 +64,7 @@ if !place_free(x+hspeed,y+vspeed){speed = 0;}
 if speed = 0{x = floor(x);y = floor(y);}
 
 //handle pug slide
-visible = 1;
-if slide > 0{
-slide += .25;
-if slide < 9{
-visible = 0;
-y = obj_slide.y+8;
-x = obj_slide.x+2+10*6;}
-if slide >= 9{
-
-direction = point_direction(x,y,obj_tree_left.x,obj_tree_left.y);
-scr_dust(x,y,direction+180,1);
-sprite_index = spr_scoot;
-image_index = 0;
-speed = 3;
-face = -1;
-//slide = 0;
-visible = 1;
-if scr_dis(x,y,obj_tree_left.x,obj_tree_left.y) <= 26{
-slide = 0;
-obj_tree_left.drop_frisbee = 2;
-hurt = 2;}
-}}/////////////
+scr_pug_slide();
 
 //z
 zgrav = .05;

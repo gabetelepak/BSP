@@ -69,7 +69,7 @@ if z &lt;= 0{
 speed = 0;}
 
 //collision
-if !place_free(x+hspeed,y){hspeed = hspeed*-.8;
+if !place_free(x+hspeed,y) || x-4 &lt; 0 || x+4 &gt; room_width{hspeed = hspeed*-.8;
 if hspeed = 0{hspeed = 1;}}
 
 if speed &gt; 0{speed = speed*.98;}
@@ -88,8 +88,8 @@ pug.spr_unlock = spr_unlock_frisbee;}}}}
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
 if pug.item_held = ""{
+pug.sprite_index = pug.spr_bite_low
 if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
-pug.sprite_index = pug.spr_bite_low;
 pug.pug_action_proc = 1;
 pug.item_held = "Frisbee";
 if z &gt;= 1{g.frisbee_catch += 1;pug.show_catch = 30;}

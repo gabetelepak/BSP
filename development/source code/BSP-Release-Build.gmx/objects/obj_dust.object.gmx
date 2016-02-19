@@ -3,7 +3,7 @@
   <spriteName>spr_dust</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,7 +33,7 @@ face = 1;
 color = c_white;
 alpha = 1;
 speed = 1.5+random(1);
-life = 10 + irandom(20);
+life = 10 + irandom(10);
 gravity = .05;
 gravity_direction = 90;
 
@@ -65,6 +65,7 @@ life -= 1;
 
 
 scale += .05;
+speed = speed*.98;
 
 if life &lt; 10{
 alpha -= .09;

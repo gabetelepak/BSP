@@ -80,13 +80,13 @@ if pug.sprite_index = pug.spr_bark{
 sprite_index = spr_pigeon_coo;
 image_speed = .25;
 alarm[0] = floor(sprite_get_number(spr_pigeon_coo)/image_speed);
-scr_sound(snd_duck_quack,g.sfx_volume);
+scr_sound(snd_pigeon_coo,g.sfx_volume);
 action = 1;
 speed = 0;}}
 
 
 //bite reaction
-if scr_pug_dis(32){ 
+if scr_pug_dis(6){ 
 if pug.sprite_index = pug.spr_poop || pug.sprite_index = pug.spr_bite{
 if pug.pug_action = 6{
 action = 1;
@@ -183,20 +183,13 @@ if interact = "wait offscreen"{
 speed = 0;
 zspeed = 0;
 interact = "return fly";
-instance_create(target.x-16+random(32),target.y-16+random(32),obj_bird_poop);}
+instance_create(target.x-16+random(32),target.y-16+random(32),obj_bird_poop);
+instance_destroy();
 
-if interact = "return fly"{
-direction = point_direction(x,y,spawn_x,spawn_y);
-speed = clamp(distance_to_point(spawn_x,spawn_y)/4,.25,2);
-z = distance_to_point(spawn_x,spawn_y)*.5;
-
-if distance_to_point(spawn_x,spawn_y) &lt;= 32{
-z = 0; speed = 0; 
-interact = "";
-action = 0;
-alarm[0] = floor(random(30))+60;}
 
 }
+
+
 
 </string>
           </argument>

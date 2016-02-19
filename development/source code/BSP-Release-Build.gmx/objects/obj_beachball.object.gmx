@@ -83,7 +83,7 @@ rotspeed = floor(random(6)-3);}
 
 //collide check(unstuck self on solid objects)
 if z &lt;= 0 &amp;&amp; speed &lt;= 0{
-if !place_free(x,y){
+if !place_free(x,y) || x &lt; 8 || y &gt; g.vy+g.vh-8 || x &gt; room_width-8{
 direction = point_direction(x,y,room_width/2,room_height/2);
 speed = 2;
 zspeed = 2;
