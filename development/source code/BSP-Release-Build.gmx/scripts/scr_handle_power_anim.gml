@@ -9,6 +9,10 @@ pug_action = sprite_get_number(sprite_index);
 scr_sound(abi_left_snd,1);
 if sprite_index != spr_scoot{scoot = 0;}
 }}
+
+//cancel out for tutorial
+if room = rm_tutorial && g.tutorial_step < 1{g.button[player_number,g.button_RT] = 0;}
+
 //right
 if g.button[player_number,g.button_RT]{
 if pug_action <= 0{

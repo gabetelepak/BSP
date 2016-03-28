@@ -9,6 +9,7 @@ scr_init_manymouse();
 
 scr_define_misc_systems();
 scr_define_title_screen();
+scr_define_tutorial();
 scr_define_character_select();
 scr_define_park_night();
 scr_define_colors();

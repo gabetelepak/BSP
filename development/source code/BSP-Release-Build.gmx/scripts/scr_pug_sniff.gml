@@ -1,4 +1,7 @@
 
+//cancel out for tutorial
+if room = rm_tutorial && g.tutorial_step < 2{g.button[player_number,g.button_Y] = 0;}
+
 //init action
 if g.button[player_number,g.button_Y]{
 if pug_action <= 0{

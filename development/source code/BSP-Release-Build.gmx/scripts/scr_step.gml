@@ -16,6 +16,9 @@ scr_step_title_screen();}
 if room = rm_character_select{
 scr_step_character_select();}
 
+if room = rm_tutorial{
+scr_step_tutorial();}
+
 if room = rm_park_night{
 if lroom != room{scr_init_park_night();}
 scr_step_park_night();}

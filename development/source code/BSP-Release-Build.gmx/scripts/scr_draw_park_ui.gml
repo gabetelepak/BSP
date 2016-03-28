@@ -31,6 +31,8 @@ draw_sprite_ext(spr_right_ui[1],0,vx+(618),vy+(340),ui_scale[1],ui_scale[1],0,c_
 //scr_draw_park_ui_top_panel();
 
 //orbyt build top panel
+
+if room = rm_park_night{
 draw_sprite_ext(spr_orbyt_panel,game_finished,vx+vw/2,vy,1,1,0,c_white,1);
 if game_finished = 0{
 ix = (vx+vw/2)-168+86;
@@ -70,7 +72,7 @@ draw_text(vx+10+35,vy+23,string(floor(bones_show)));
 draw_set_color(c_white);
 draw_text(vx+10+35,vy+21,string(floor(bones_show)));
 draw_set_alpha(1);
-
+}
 
 
 

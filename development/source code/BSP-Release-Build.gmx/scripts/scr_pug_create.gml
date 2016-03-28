@@ -107,8 +107,8 @@ g.spr_right_ui[player_number] = pug_power_ui_icon[i];
 //set initial ui icons(so they show up)
 
 
-g.spr_left_ui[0] = spr_ui_bite;
-g.spr_right_ui[0] = spr_ui_poop;
-g.spr_left_ui[1] = spr_ui_bite;
-g.spr_right_ui[1] = spr_ui_poop;
+g.spr_left_ui[0] = spr_ui_bark;
+g.spr_right_ui[0] = spr_ui_pee;
+g.spr_left_ui[1] = spr_ui_bark;
+g.spr_right_ui[1] = spr_ui_pee;
 

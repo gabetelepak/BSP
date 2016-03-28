@@ -75,9 +75,13 @@ select_anim[selected_char[i]] = 0;}
 if selected_char_confirm[0] > 0 && selected_char_confirm[1] > 0{
 if  button[i,button_Y]{
 
-//original
+//original, brought to tutorial
+/*
 park_night_intro = 1;
 room_goto(rm_park_night);
+*/
+
+room_goto(rm_tutorial);
 
 }}
 

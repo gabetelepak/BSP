@@ -1,4 +1,7 @@
-
+//for tutorial
+if room = rm_tutorial{
+if g.tutorial_step = 2{
+g.tut_confirm[player_number] = 1;}}
 
 
 pug_power += 2;

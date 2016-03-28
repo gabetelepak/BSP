@@ -544,6 +544,7 @@
           <sprite>sprites\spr_bugnet_static</sprite>
         </sprites>
         <sprites name="bones">
+          <sprite>sprites\spr_bone_get_old</sprite>
           <sprite>sprites\spr_bone_get</sprite>
           <sprite>sprites\spr_bone</sprite>
           <sprite>sprites\spr_bone_shadow</sprite>
@@ -762,6 +763,7 @@
       <sprite>sprites\spr_tut_success_message</sprite>
       <sprite>sprites\spr_hydrant</sprite>
       <sprite>sprites\spr_hydrant_dirty</sprite>
+      <sprite>sprites\spr_tut_arena_mask</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -880,6 +882,11 @@
         <script>scripts\scr_handle_item_holding.gml</script>
       </scripts>
     </scripts>
+    <scripts name="tutorial">
+      <script>scripts\scr_define_tutorial.gml</script>
+      <script>scripts\scr_step_tutorial.gml</script>
+      <script>scripts\scr_draw_tutorial.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_bsp14</font>
@@ -887,6 +894,13 @@
   </fonts>
   <objects name="objects">
     <object>objects\g</object>
+    <objects name="tutorial">
+      <object>objects\obj_tut_panel_top</object>
+      <object>objects\obj_tut_panel_bottom</object>
+      <object>objects\obj_hydrant</object>
+      <object>objects\obj_tut_status</object>
+      <object>objects\obj_tut_arena</object>
+    </objects>
     <objects name="character select">
       <object>objects\obj_wood_top</object>
       <object>objects\obj_wood_bottom</object>
@@ -1007,9 +1021,6 @@
       </objects>
       <objects name="particles">
         <object>objects\obj_dust</object>
-      </objects>
-      <objects name="tutorial">
-        <object>objects\obj_hydrant</object>
       </objects>
     </objects>
     <objects name="pug characters">

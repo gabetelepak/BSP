@@ -4,6 +4,9 @@ scr_draw_title_screen();}
 if room = rm_character_select{
 scr_draw_character_select();}
 
+if room = rm_tutorial{
+scr_draw_tutorial();}
+
 if room = rm_park_night{
 scr_draw_park_night();}
 
