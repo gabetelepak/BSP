@@ -36,6 +36,9 @@ scr_step_debug();
 if keyboard_check(vk_escape){
 game_end();}
 
+if keyboard_check_pressed(ord('R')){
+game_restart();}
+
 //switch full screen
 if keyboard_check_pressed(vk_f10){
 if surface_exists(g.surf_shadow){surface_free(g.surf_shadow);}

@@ -35,6 +35,7 @@ state = "sleep";
 move_speed = 1.75;
 target = 0;
 cry = 0;
+defend_delay = 0;
 
 spawn = 0;
 attack = 0;
@@ -127,7 +128,6 @@ image_index = 0;
 image_speed = .25;
 state = "start";
 instance_create(564,228,obj_plate);
-
 g.check_granny = 1;
 scr_check_burst(3);
 
@@ -138,6 +138,8 @@ if image_index &gt; image_number - 1{
 image_index = image_number-1;
 image_speed = 0;
 state = "defend";}}
+
+if defend_delay &gt; 0{defend_delay -= 1;}
 
 //move back to start, sit when arrive.
 if state = "retreat"{
@@ -150,7 +152,9 @@ y = sy;
 sprite_index = spr_granny_sit;
 image_index = 0;
 image_speed = .25;
-state = "start";}}
+state = "start";
+defend_delay = 60;}}
+
 
 
 //attack

@@ -62,7 +62,7 @@ granny = instance_nearest(x,y,obj_granny);
 if sprite_index = spr_plate_sandwich{
 if scr_pug_dis(48) &gt; 0{
 if instance_exists(granny) &amp;&amp; granny &gt; 0{
-if granny.state="defend" &amp;&amp; granny.cry = 0{
+if granny.state="defend" &amp;&amp; granny.cry = 0 &amp;&amp; granny.defend_delay &lt;= 0{
 granny.state = "attack";
 granny.target = pug;
 scr_sound(snd_granny_cane_shake,g.sfx_volume);

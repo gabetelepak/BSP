@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>Pictures</name>
+      <exists>0</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Pictures</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\manymouse</extension>
   </NewExtensions>
@@ -104,10 +123,12 @@
       <sprite>sprites\spr_spacebeagles_splash</sprite>
       <sprite>sprites\spr_title_screen_blur</sprite>
       <sprite>sprites\spr_title_logo</sprite>
+      <sprite>sprites\spr_title_logo_pugs_sniffin_pugs</sprite>
       <sprite>sprites\spr_title_start_button</sprite>
     </sprites>
     <sprites name="Character Select">
       <sprite>sprites\spr_character_select_wood_top</sprite>
+      <sprite>sprites\spr_character_select_wood_top_yellow_start</sprite>
       <sprite>sprites\spr_character_select_wood_bottom</sprite>
       <sprite>sprites\spr_fire_hydrant</sprite>
       <sprite>sprites\spr_wood_wall</sprite>
@@ -222,6 +243,7 @@
           <sprite>sprites\spr_center_fountain</sprite>
           <sprite>sprites\spr_center_fountain_mask</sprite>
           <sprite>sprites\spr_gate</sprite>
+          <sprite>sprites\spr_gate_mask</sprite>
           <sprite>sprites\spr_swing</sprite>
           <sprite>sprites\spr_bridge_rock</sprite>
           <sprite>sprites\spr_chars</sprite>
@@ -734,6 +756,13 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprites name="tutorial">
+      <sprite>sprites\spr_tut_panel_bottom</sprite>
+      <sprite>sprites\spr_tut_panel_top</sprite>
+      <sprite>sprites\spr_tut_success_message</sprite>
+      <sprite>sprites\spr_hydrant</sprite>
+      <sprite>sprites\spr_hydrant_dirty</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="title screen">
@@ -814,6 +843,7 @@
       </scripts>
       <scripts name="user interface">
         <script>scripts\scr_init_park_ui.gml</script>
+        <script>scripts\scr_handle_park_ui.gml</script>
         <script>scripts\scr_draw_park_ui.gml</script>
         <script>scripts\scr_draw_magic_mode_ui.gml</script>
         <scripts name="unlock menu">
@@ -978,6 +1008,9 @@
       <objects name="particles">
         <object>objects\obj_dust</object>
       </objects>
+      <objects name="tutorial">
+        <object>objects\obj_hydrant</object>
+      </objects>
     </objects>
     <objects name="pug characters">
       <object>objects\obj_player</object>
@@ -995,6 +1028,7 @@
   <rooms name="rooms">
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_character_select</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_park_night</room>
   </rooms>
   <help>

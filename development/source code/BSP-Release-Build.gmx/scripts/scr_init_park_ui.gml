@@ -1,3 +1,6 @@
+game_finished = 0;
+finished_time = 0;
+idle_time = 0;
 g.spr_left_ui[0] = 0;
 g.spr_right_ui[0] = 0;
 g.ui_scale[0] = 1;

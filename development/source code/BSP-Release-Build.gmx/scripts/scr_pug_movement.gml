@@ -22,7 +22,7 @@ if (goal_y > view_yview[0]+view_hview[0]-24 && goal_y > y) || (goal_y < view_yvi
 //move
 if goal_x != x || goal_y != y{
 if scoot = 1{sprite_index = spr_scoot;}
-
+g.idle_time = 0;
 direction = point_direction(x,y,goal_x,goal_y);
 
 if place_free(x+lengthdir_x(move_speed,direction),y+lengthdir_y(move_speed,direction)){

@@ -146,10 +146,10 @@ if scr_dis(x,y,pug.x+pug.face*18,pug.y) &lt; 18{
 if pug.sprite_index = pug.spr_pee{
 if pug.pug_action = 9{
 death_time = 200;
-flower0.death_time = death_time;
-flower1.death_time = death_time;
-flower2.death_time = death_time;
-flower3.death_time = death_time;
+if instance_exists(flower0){flower0.death_time = death_time;}
+if instance_exists(flower1){flower1.death_time = death_time;}
+if instance_exists(flower2){flower2.death_time = death_time;}
+if instance_exists(flower3){flower3.death_time = death_time;}
 
 }}}}
 
@@ -174,11 +174,10 @@ flower2.death_time = death_time;
 flower3.death_time = death_time;
 kill = 1;
 */
-
-with flower0{instance_destroy();}
-with flower1{instance_destroy();}
-with flower2{instance_destroy();}
-with flower3{instance_destroy();}
+if instance_exists(flower0){with flower0{instance_destroy();}}
+if instance_exists(flower1){with flower1{instance_destroy();}}
+if instance_exists(flower2){with flower2{instance_destroy();}}
+if instance_exists(flower3){with flower3{instance_destroy();}}
 instance_destroy();
 }
 
