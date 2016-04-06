@@ -4,7 +4,7 @@ scr_handle_park_ui();
 if tutorial_step = 0{
 
 //advance tut
-if g.tut_confirm[0] = 1 &&
+if g.tut_confirm[0] = 1 ||
 g.tut_confirm[1] = 1{
 g.tut_confirm[0] = 0;
 g.tut_confirm[1] = 0;
@@ -27,7 +27,7 @@ g.tut_confirm[player_number] = 1;}
 if tutorial_step = 1{
 
 //advance tut
-if g.tut_confirm[0] = 1 &&
+if g.tut_confirm[0] = 1 ||
 g.tut_confirm[1] = 1{
 g.tut_confirm[0] = 0;
 g.tut_confirm[1] = 0;
@@ -45,7 +45,7 @@ obj_tut_panel_bottom.death = 1;
 if tutorial_step = 2{
 
 //advance tut
-if g.tut_confirm[0] = 1 &&
+if g.tut_confirm[0] = 1 ||
 g.tut_confirm[1] = 1{
 g.tut_confirm[0] = 0;
 g.tut_confirm[1] = 0;
