@@ -36,6 +36,9 @@ step = 0;
 
 if g.manymouse_active = 1{
 sprite_index = spr_tut_panel_top;}
+
+if g.tiff_panels = 1{
+sprite_index = spr_tut_panel_top_tiff;}
 </string>
           </argument>
         </arguments>

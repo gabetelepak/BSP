@@ -3,8 +3,8 @@
 scr_define_game_options();
 scr_define_controls();
 
-
-manymouse_active = 0;
+tiff_panels = 1;
+manymouse_active = 1;
 scr_init_manymouse();
 
 scr_define_misc_systems();

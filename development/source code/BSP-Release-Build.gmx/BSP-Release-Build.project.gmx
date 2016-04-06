@@ -130,6 +130,7 @@
       <sprite>sprites\sprite479</sprite>
       <sprite>sprites\spr_character_select_wood_top</sprite>
       <sprite>sprites\spr_character_select_wood_top_gamepad</sprite>
+      <sprite>sprites\spr_character_select_wood_top_tiff</sprite>
       <sprite>sprites\spr_character_select_wood_bottom</sprite>
       <sprite>sprites\spr_fire_hydrant</sprite>
       <sprite>sprites\spr_wood_wall</sprite>
@@ -762,8 +763,10 @@
     <sprites name="tutorial">
       <sprite>sprites\spr_tut_panel_bottom</sprite>
       <sprite>sprites\spr_tut_panel_bottom_gamepad</sprite>
+      <sprite>sprites\spr_tut_panel_bottom_tiff</sprite>
       <sprite>sprites\spr_tut_panel_top</sprite>
       <sprite>sprites\spr_tut_panel_top_gamepad</sprite>
+      <sprite>sprites\spr_tut_panel_top_tiff</sprite>
       <sprite>sprites\spr_tut_success_message</sprite>
       <sprite>sprites\spr_hydrant</sprite>
       <sprite>sprites\spr_hydrant_dirty</sprite>
