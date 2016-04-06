@@ -32,3 +32,8 @@ check_frog = 0;
 check_duck = 0;
 check_sandwich = 0;
 
+
+//intro tip "solve puzzles"
+unlock_intro_tip_y = 120;
+unlock_intro_tip = 8*30;
+

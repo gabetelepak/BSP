@@ -54,8 +54,8 @@ button[islot,button_DOWN] = max(button[islot,button_DOWN],keyboard_check(ord('S'
 button[islot,button_X] = gamepad_button_check(gamepad[islot], gp_face3);
 button[islot,button_B] = gamepad_button_check(gamepad[islot], gp_face2);
 button[islot,button_Y] = max(gamepad_button_check(gamepad[islot], gp_face4),keyboard_check(ord('2')),keyboard_check(ord('3')));
-button[islot,button_LT] = max(gamepad_button_check(gamepad[islot], gp_shoulderlb),keyboard_check(ord('Q')));
-button[islot,button_RT] = max(gamepad_button_check(gamepad[islot], gp_shoulderrb),keyboard_check(ord('E')));
+button[islot,button_LT] = max(gamepad_button_check(gamepad[islot], gp_shoulderlb),keyboard_check(ord('Q')),button[islot,button_X]);
+button[islot,button_RT] = max(gamepad_button_check(gamepad[islot], gp_shoulderrb),keyboard_check(ord('E')),button[islot,button_B]);
 }
 else{
 button[islot,button_LEFT] = max(button[islot,button_LEFT],keyboard_check(ord('J')));
@@ -65,8 +65,8 @@ button[islot,button_DOWN] = max(button[islot,button_DOWN],keyboard_check(ord('K'
 button[islot,button_X] = gamepad_button_check(gamepad[islot], gp_face3);
 button[islot,button_B] = gamepad_button_check(gamepad[islot], gp_face2);
 button[islot,button_Y] = max(gamepad_button_check(gamepad[islot], gp_face4),keyboard_check(ord('8')),keyboard_check(ord('9')));
-button[islot,button_LT] = max(gamepad_button_check(gamepad[islot], gp_shoulderlb),keyboard_check(ord('U')));
-button[islot,button_RT] = max(gamepad_button_check(gamepad[islot], gp_shoulderrb),keyboard_check(ord('O')));
+button[islot,button_LT] = max(gamepad_button_check(gamepad[islot], gp_shoulderlb),keyboard_check(ord('U')),button[islot,button_X]);
+button[islot,button_RT] = max(gamepad_button_check(gamepad[islot], gp_shoulderrb),keyboard_check(ord('O')),button[islot,button_B]);
 
 }
 

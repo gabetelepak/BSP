@@ -19,11 +19,11 @@ if opug.x < x{
 face = 1;
 direction = 180;
 opug.face = 1;
-opug.direction = 0;}else{
+opug.direction = 180;}else{
 face = -1;
 direction = 0;
 opug.face = -1;
-opug.direction = 180;}
+opug.direction = 0;}
 
 //start sniff icon timer
 sniff_icon_alarm = 0;

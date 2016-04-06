@@ -20,7 +20,7 @@
   <width>511</width>
   <height>53</height>
   <frames>
-    <frame index="0">images\spr_character_select_wood_top_yellow_start_0.png</frame>
-    <frame index="1">images\spr_character_select_wood_top_yellow_start_1.png</frame>
+    <frame index="0">images\sprite479_0.png</frame>
+    <frame index="1">images\sprite479_1.png</frame>
   </frames>
 </sprite>

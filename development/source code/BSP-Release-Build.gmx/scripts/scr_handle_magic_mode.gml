@@ -1,6 +1,9 @@
 
 //init action
-if g.button[player_number,g.button_X]{
+//temp disable mm so we can use X for powers
+//if g.button[player_number,g.button_X]{
+mm_disabled = 1;
+if mm_disabled = 0{
 g.magic_mode_alert = 0;
 
 //turn on

@@ -33,6 +33,13 @@ draw_sprite_ext(spr_right_ui[1],0,vx+(618),vy+(340),ui_scale[1],ui_scale[1],0,c_
 //orbyt build top panel
 
 if room = rm_park_night{
+
+//solve puzzle text for 5 seconds when game starts
+if park_night_intro = 0{
+if unlock_intro_tip > 0{unlock_intro_tip -= 1;
+if unlock_intro_tip_y > 0{unlock_intro_tip_y -= unlock_intro_tip_y*.05+.5;}
+draw_sprite_ext(spr_park_intro_tip,0,vx+vw/2,vy+48+20-unlock_intro_tip_y,1,1,0,c_white,unlock_intro_tip/15);}}
+
 draw_sprite_ext(spr_orbyt_panel,game_finished,vx+vw/2,vy,1,1,0,c_white,1);
 if game_finished = 0{
 ix = (vx+vw/2)-168+86;

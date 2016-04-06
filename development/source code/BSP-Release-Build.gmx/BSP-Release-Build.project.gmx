@@ -127,8 +127,9 @@
       <sprite>sprites\spr_title_start_button</sprite>
     </sprites>
     <sprites name="Character Select">
+      <sprite>sprites\sprite479</sprite>
       <sprite>sprites\spr_character_select_wood_top</sprite>
-      <sprite>sprites\spr_character_select_wood_top_yellow_start</sprite>
+      <sprite>sprites\spr_character_select_wood_top_gamepad</sprite>
       <sprite>sprites\spr_character_select_wood_bottom</sprite>
       <sprite>sprites\spr_fire_hydrant</sprite>
       <sprite>sprites\spr_wood_wall</sprite>
@@ -745,6 +746,7 @@
           <sprite>sprites\spr_orbyt_panel</sprite>
         </sprites>
         <sprite>sprites\spr_ui_checkmark</sprite>
+        <sprite>sprites\spr_park_intro_tip</sprite>
       </sprites>
       <sprites name="particles">
         <sprite>sprites\spr_dust</sprite>
@@ -759,7 +761,9 @@
     </sprites>
     <sprites name="tutorial">
       <sprite>sprites\spr_tut_panel_bottom</sprite>
+      <sprite>sprites\spr_tut_panel_bottom_gamepad</sprite>
       <sprite>sprites\spr_tut_panel_top</sprite>
+      <sprite>sprites\spr_tut_panel_top_gamepad</sprite>
       <sprite>sprites\spr_tut_success_message</sprite>
       <sprite>sprites\spr_hydrant</sprite>
       <sprite>sprites\spr_hydrant_dirty</sprite>
