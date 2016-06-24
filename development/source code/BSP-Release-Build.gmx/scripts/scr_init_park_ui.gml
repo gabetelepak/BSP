@@ -17,6 +17,8 @@ bones = 0;
 bones_show = 0;
 bones_time = 0;
 
+
+
 scr_init_unlock_ui();
 
 g.spr_left_ui[0] = spr_ui_bark;

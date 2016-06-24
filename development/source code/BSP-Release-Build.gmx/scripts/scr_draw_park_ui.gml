@@ -79,7 +79,29 @@ draw_text(vx+10+35,vy+23,string(floor(bones_show)));
 draw_set_color(c_white);
 draw_text(vx+10+35,vy+21,string(floor(bones_show)));
 draw_set_alpha(1);
+
+//draw reset timer
+if unlock_intro_tip <= 0{
+draw_set_font(font_bsp23);
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+
+i = "";
+i2 = floor(reset_time/30/60);
+i3 = floor(reset_time/30)-60*i2;
+if string_length(string(i3)) < 2{i3 = "0"+string(i3);}
+i = "TIME LEFT: "+string(i2)+":"+string(i3);
+
+if reset_time < 30*5{i = "TIME'S UP!";}
+
+draw_text(vx+(vw/2)+124+12,vy+14+2,string(i));
+draw_set_color(c_white);
+draw_text(vx+(vw/2)+124+12,vy+14,string(i));
 }
+
+
+}//end if room = park
 
 
 

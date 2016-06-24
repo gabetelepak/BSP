@@ -14,5 +14,7 @@ idle_time += 1;
 if game_finished = 1{
 finished_time += 1;}
 
-if finished_time >= 5*30 || idle_time >= 30*30{
+if reset_time > 0{reset_time -= 1;}
+
+if finished_time >= 5*30 || idle_time >= 30*30 || reset_time = 1{
 game_restart();}

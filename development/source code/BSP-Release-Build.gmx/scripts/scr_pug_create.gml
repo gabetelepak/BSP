@@ -22,7 +22,9 @@ zspeed = 0;
 zbouncable = 1;
 hurt = 0;
 
+
 //determine player number
+
 var i;
 for (i = 0; i < instance_number(obj_player); i += 1)
    {
@@ -32,8 +34,9 @@ g.pug_id[i] = id;
 else{opug = instance_find(obj_player,i);}
 
    }
+
    
-   
+
 
    
    

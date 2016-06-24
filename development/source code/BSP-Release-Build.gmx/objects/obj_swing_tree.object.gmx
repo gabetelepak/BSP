@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-spr_shadow = spr_tree_left_shadow;
+if room = rm_park_night{
+spr_shadow = spr_tree_left_shadow;}
+
 </string>
           </argument>
         </arguments>

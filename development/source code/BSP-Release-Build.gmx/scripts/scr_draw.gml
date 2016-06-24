@@ -1,13 +1,16 @@
-if room = rm_title_screen || room = rm_character_select{
+if game_phase = 'start menu' || game_phase = 'char select'{
 scr_draw_title_screen();}
 
-if room = rm_character_select{
+if game_phase = 'char select'{
+if room_phase = 0{
 scr_draw_character_select();}
+if room_phase = 1{
+scr_draw_chartut();}}
 
-if room = rm_tutorial{
-scr_draw_tutorial();}
+//if room = rm_tutorial{
+//scr_draw_tutorial();}
 
-if room = rm_park_night{
+if game_phase = 'park night'{
 scr_draw_park_night();}
 
 //draw_text(20,20,string(id));
@@ -21,7 +24,7 @@ if keyboard_check(vk_enter){
 draw_set_alpha(.25);
 mp_grid_draw(mpgrid);
 draw_set_alpha(1);}
-
+*/
 
 
 

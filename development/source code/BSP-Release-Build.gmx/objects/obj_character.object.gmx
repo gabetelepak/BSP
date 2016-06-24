@@ -185,9 +185,13 @@ alpha += 1/45;}
 draw_sprite_ext(sprite_index,image_index,x,y,1*face,1,0,c_white,alpha);
 
 if g.selected_char[0] = pug_num{
+g.char_startx[0] = x;
+g.char_starty[0] = y;
 draw_sprite(spr_char_sit_selector,0,x,y);}
 
 if g.selected_char[1] = pug_num{
+g.char_startx[1] = x;
+g.char_starty[1] = y;
 draw_sprite(spr_char_sit_selector,1,x,y);}
 
 //draw_text(x+48,y,pug_num);

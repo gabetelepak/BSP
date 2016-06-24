@@ -1,4 +1,23 @@
+scr_define_chartut();
 idle_anim = 0;
+room_phase = 0;
+
+if game_phase = 'char select' && room = rm_park_night{
+view_xview[0] = 352;
+view_yview[0] = 300;
+vx = view_xview[0];
+vy = view_yview[0];
+
+
+
+}
+
+
+
+g.char_startx[0] = 0;
+g.char_starty[0] = 0;
+g.char_startx[1] = 0;
+g.char_starty[1] = 0;
 
 i = 0;
 repeat(8){

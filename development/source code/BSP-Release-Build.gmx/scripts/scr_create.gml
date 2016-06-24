@@ -1,10 +1,10 @@
 //options should be first
-
+game_phase = 'start menu';//start menu, char select, tutorial, park night
 scr_define_game_options();
 scr_define_controls();
 
-tiff_panels = 1;
-manymouse_active = 1;
+tiff_panels = 0;
+manymouse_active = 0;
 scr_init_manymouse();
 
 scr_define_misc_systems();
@@ -21,7 +21,7 @@ pug_id[1] = 0;
 button[player,"A"] = 0;
 frisbee_catch = 0;
 hint_time_max = 30*10;//30*45;
-
+reset_time = 0;
 target_bread = 0;
 
 vx = view_xview[0];

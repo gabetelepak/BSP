@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = room_width/2;
-y = room_height+84;
+            <string>//x = room_width/2;
+//y = room_height+84;
 //physics_apply_force(x, y, 0, 3);
 gravity_direction = 90;
 gravity = .5;
 stop = 0;
+
 
 
 </string>
@@ -57,8 +58,8 @@ stop = 0;
             <kind>1</kind>
             <string>if stop &gt;= 90{
 gravity = 0;
-speed = 0;
-y = room_height;}
+y = 352+360-83;
+speed = 0;}
 else{
 stop += 1;}
 
@@ -118,7 +119,7 @@ speed = speed*.33;}
             <string>draw_sprite(sprite_index,0,x,y);
 
 sx = x-304;
-sy = y-83;
+sy = y-84;
 
 ix = 0;
 iy = 0;
@@ -170,12 +171,12 @@ draw_sprite(spr_player_token,0,sx+50,sy+27+16);}
 if g.selected_char[1] &gt;= 0{
 if g.char_head_roll[1] &lt; 130{
 g.char_head_roll[1] += max(1,(135-g.char_head_roll[1])*.125);}
-draw_sprite_ext(g.char_big[g.selected_char[1]],0,sx+room_width-78+130-g.char_head_roll[1],sy+27,-1,1,0,c_white,1);
+draw_sprite_ext(g.char_big[g.selected_char[1]],0,sx+640-78+130-g.char_head_roll[1],sy+27,-1,1,0,c_white,1);
 
-draw_sprite(g.char_name[g.selected_char[1]],1,sx+room_width-78,sy-59);
-draw_sprite(spr_player_token,1,sx+room_width-37,sy+62);
+draw_sprite(g.char_name[g.selected_char[1]],1,sx+640-78,sy-59);
+draw_sprite(spr_player_token,1,sx+640-37,sy+62);
 }else{
-draw_sprite(spr_player_token,1,sx+room_width-78,sy+27+16);}
+draw_sprite(spr_player_token,1,sx+640-78,sy+27+16);}
 
 
 

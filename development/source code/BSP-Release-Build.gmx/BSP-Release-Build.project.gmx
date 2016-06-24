@@ -760,7 +760,7 @@
         </sprites>
       </sprites>
     </sprites>
-    <sprites name="tutorial">
+    <sprites name="tutorial_old">
       <sprite>sprites\spr_tut_panel_bottom</sprite>
       <sprite>sprites\spr_tut_panel_bottom_gamepad</sprite>
       <sprite>sprites\spr_tut_panel_bottom_tiff</sprite>
@@ -772,6 +772,37 @@
       <sprite>sprites\spr_hydrant_dirty</sprite>
       <sprite>sprites\spr_tut_arena_mask</sprite>
     </sprites>
+    <sprites name="charselect / tutorial">
+      <sprites name="signs">
+        <sprite>sprites\spr_sign_bark_spawn_left</sprite>
+        <sprite>sprites\spr_sign_bark_left</sprite>
+        <sprite>sprites\spr_sign_bark_check</sprite>
+        <sprite>sprites\spr_sign_bark_spawn_right</sprite>
+        <sprite>sprites\spr_sign_bark_right</sprite>
+        <sprite>sprites\spr_sign_pee_spawn</sprite>
+        <sprite>sprites\spr_sign_pee</sprite>
+        <sprite>sprites\spr_sign_pee_check</sprite>
+      </sprites>
+      <sprites name="fountain">
+        <sprite>sprites\spr_bigfountain_dirty</sprite>
+        <sprite>sprites\spr_bigfountain</sprite>
+        <sprite>sprites\spr_bigfountain_mask</sprite>
+        <sprite>sprites\spr_bigfountain_fill</sprite>
+      </sprites>
+      <sprite>sprites\spr_idol</sprite>
+      <sprite>sprites\spr_idol_spin</sprite>
+      <sprite>sprites\spr_idol_shadow</sprite>
+      <sprite>sprites\spr_tut_right_bush</sprite>
+      <sprite>sprites\spr_tut_right_bush_shadow</sprite>
+      <sprite>sprites\spr_tut_left_bush</sprite>
+      <sprite>sprites\spr_tut_left_bush_shadow</sprite>
+      <sprite>sprites\spr_fence</sprite>
+      <sprite>sprites\spr_lake_top</sprite>
+      <sprite>sprites\spr_biglake</sprite>
+      <sprite>sprites\spr_biglake_mask</sprite>
+      <sprite>sprites\spr_gatedoor</sprite>
+      <sprite>sprites\spr_gatedoor_mask_open</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="title screen">
@@ -782,6 +813,10 @@
       <background>background\bg_park_night</background>
       <background>background\bg_park_night_sky</background>
       <background>background\bg_park_night_lake</background>
+    </backgrounds>
+    <backgrounds name="char select / tutorial">
+      <background>background\bg_char_tut</background>
+      <background>background\bg_char_tut_mock</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -815,6 +850,7 @@
       <scripts name="audio">
         <script>scripts\scr_sound.gml</script>
         <script>scripts\scr_crossfade.gml</script>
+        <script>scripts\scr_music.gml</script>
       </scripts>
       <scripts name="misc">
         <script>scripts\scr_define_misc_systems.gml</script>
@@ -865,6 +901,7 @@
         <script>scripts\scr_sparkle.gml</script>
         <script>scripts\scr_dust.gml</script>
         <script>scripts\scr_check_burst.gml</script>
+        <script>scripts\scr_obj_full_sparkle.gml</script>
       </scripts>
     </scripts>
     <scripts name="pug characters">
@@ -889,15 +926,22 @@
         <script>scripts\scr_handle_item_holding.gml</script>
       </scripts>
     </scripts>
-    <scripts name="tutorial">
+    <scripts name="tutorial_old">
       <script>scripts\scr_define_tutorial.gml</script>
       <script>scripts\scr_step_tutorial.gml</script>
       <script>scripts\scr_draw_tutorial.gml</script>
+    </scripts>
+    <scripts name="character select tutorial">
+      <script>scripts\scr_define_chartut.gml</script>
+      <script>scripts\scr_step_chartut.gml</script>
+      <script>scripts\scr_draw_chartut.gml</script>
+      <script>scripts\scr_erase_character_select_obj.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_bsp14</font>
     <font>fonts\font1</font>
+    <font>fonts\font_bsp23</font>
   </fonts>
   <objects name="objects">
     <object>objects\g</object>
@@ -949,7 +993,7 @@
           <object>objects\obj_hotdog_stand</object>
           <object>objects\obj_bridge_front</object>
           <object>objects\obj_center_fountain</object>
-          <object>objects\obj_gate</object>
+          <object>objects\obj_gatewall</object>
           <object>objects\obj_bridge_rock</object>
           <object>objects\obj_breadshop</object>
           <object>objects\obj_toolshop</object>
@@ -1042,12 +1086,29 @@
     <objects name="masks">
       <object>objects\obj_flower_mask</object>
     </objects>
+    <objects name="park char / tut">
+      <object>objects\obj_biglake</object>
+      <object>objects\obj_bigfountain_bush_left</object>
+      <object>objects\obj_bigfountain_bush_right</object>
+      <object>objects\obj_bigfountain</object>
+      <object>objects\obj_gatedoor</object>
+      <object>objects\obj_tut_sign_parent</object>
+      <object>objects\obj_tut_sign_left</object>
+      <object>objects\obj_tut_sign_right</object>
+      <object>objects\obj_tut_sign_fountain</object>
+      <object>objects\obj_idol</object>
+      <object>objects\obj_tut_duck</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_character_select</room>
-    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_park_night</room>
+    <room>rooms\rm_testoutroom</room>
+    <rooms name="old">
+      <room>rooms\rm_tutorial</room>
+      <room>rooms\rm_character_select_old</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

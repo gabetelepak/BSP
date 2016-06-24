@@ -18,3 +18,6 @@ g.player_total += 1;}
 shake = 0;
 shakex = 0;
 shakey = 0;
+
+//game reset timer, for demos
+reset_time = 30*60*6;//6min

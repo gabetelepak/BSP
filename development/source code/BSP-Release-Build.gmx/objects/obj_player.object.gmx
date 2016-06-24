@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_pug_create();
+            <string>created = 0;
 </string>
           </argument>
         </arguments>
@@ -48,7 +48,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_pug_step();
+            <string>if created = 2{
+scr_pug_create();}
+
+if created &gt;= 3{
+scr_pug_step();}
+else{
+created += 1;}
 </string>
           </argument>
         </arguments>
@@ -71,7 +77,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_pug_draw();
+            <string>if created &gt;= 3{
+scr_pug_draw();}
 </string>
           </argument>
         </arguments>

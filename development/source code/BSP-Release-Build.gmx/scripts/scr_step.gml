@@ -10,17 +10,23 @@ scr_manymouse_controls(1);}
 
 
 
-if room = rm_title_screen || room = rm_character_select{
+if game_phase = 'start menu' || game_phase = 'char select'{
 scr_step_title_screen();}
 
-if room = rm_character_select{
+if game_phase = 'char select'{
+if room_phase = -1 && room = rm_park_night{
+scr_define_character_select();}
+
+if room_phase = 0{
 scr_step_character_select();}
+}
 
-if room = rm_tutorial{
-scr_step_tutorial();}
 
-if room = rm_park_night{
-if lroom != room{scr_init_park_night();}
+//if room = rm_tutorial{
+//scr_step_tutorial();}
+
+if game_phase = 'park night'{
+//if lroom != room{scr_init_park_night();}
 scr_step_park_night();}
 
 
@@ -44,6 +50,16 @@ game_restart();}
 
 //switch full screen
 if keyboard_check_pressed(vk_f10){
-if surface_exists(g.surf_shadow){surface_free(g.surf_shadow);}
+//if surface_exists(g.surf_shadow){surface_free(g.surf_shadow);}
 if window_get_fullscreen() = true{window_set_fullscreen(false);}
 else{window_set_fullscreen(true);}}
+
+
+
+/*
+if mouse_check_button_pressed(mb_right){
+i = instance_position(mouse_x,mouse_y,obj_bigfountain);
+if instance_exists(i){
+with i{scr_obj_full_sparkle();}}}
+*/
+

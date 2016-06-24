@@ -1,3 +1,8 @@
+//gametime
+gametime += 1;
+if gametime > 99999{
+gametime = 0;}
+
 //button bounce
 button_bounce += button_bounce_dir/10;
 if button_bounce <= 0{

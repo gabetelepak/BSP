@@ -28,6 +28,7 @@ opt.active = 1;
 
 
 //general movement
+if g.game_phase = 'tutorial' || g.game_phase = 'park night'{
 if g.park_night_intro = 0 && slide  = 0 && hurt = 0{
 if pug_action <= 0 && (magic_mode = 0 || magic_mode = 2){
 scr_pug_movement();}
@@ -38,7 +39,7 @@ scr_pug_sniff();}
 scr_handle_power_anim();
 scr_handle_item_holding();}
 
-scr_handle_magic_mode();}
+scr_handle_magic_mode();}}
 
 
 //handle action timer
