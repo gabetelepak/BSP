@@ -21,6 +21,9 @@ if room_phase = 0{
 scr_step_character_select();}
 }
 
+if game_phase = 'tuorial'{
+scr_step_chartut();}
+
 
 //if room = rm_tutorial{
 //scr_step_tutorial();}
@@ -50,7 +53,8 @@ game_restart();}
 
 //switch full screen
 if keyboard_check_pressed(vk_f10){
-//if surface_exists(g.surf_shadow){surface_free(g.surf_shadow);}
+//
+if surface_exists(g.surf_shadow){surface_free(g.surf_shadow);}
 if window_get_fullscreen() = true{window_set_fullscreen(false);}
 else{window_set_fullscreen(true);}}
 
@@ -62,4 +66,7 @@ i = instance_position(mouse_x,mouse_y,obj_bigfountain);
 if instance_exists(i){
 with i{scr_obj_full_sparkle();}}}
 */
+
+g.vx = view_xview[0];
+g.vy = view_yview[0];
 

@@ -3,6 +3,10 @@ if room = rm_tutorial{
 if g.tutorial_step = 2{
 g.tut_confirm[player_number] = 1;}}
 
+if g.game_phase = 'tutorial' && g.tut_power_hold = 1{
+g.tut_power_hold = 0;
+instance_create(360,200,obj_chartut_status);}
+
 
 pug_power += 2;
 

@@ -4,7 +4,7 @@ scr_define_game_options();
 scr_define_controls();
 
 tiff_panels = 0;
-manymouse_active = 0;
+manymouse_active = 1;
 scr_init_manymouse();
 
 scr_define_misc_systems();
@@ -14,6 +14,7 @@ scr_define_character_select();
 scr_define_park_night();
 scr_define_colors();
 scr_define_game_options();
+scr_define_park_night_camera();
 
 player = 0;
 pug_id[0] = 0;
@@ -26,6 +27,8 @@ target_bread = 0;
 
 vx = view_xview[0];
 vy = view_yview[0];
+
+tut_power_hold = 0;
 
 //sammie
 i = 0;

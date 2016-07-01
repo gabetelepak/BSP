@@ -9,8 +9,12 @@ else{background_visible[7] = 1;}}
 if keyboard_check(vk_shift) && 
 keyboard_check(vk_enter){
 park_night_intro = 1;
+scr_init_park_night();
 room_goto(rm_park_night);
-game_phase = 'park night';}
+game_phase = 'park night';
+g.tut_power_hold = 0;
+
+}
 
 
 

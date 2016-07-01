@@ -1,29 +1,7 @@
 //temp turned off for orbyt build
 //scr_draw_unlock_ui();
 
-
-//bottom ui
-draw_sprite_ext(spr_park_ui,0,vx,vy,1,1,0,c_white,1);
-
-
-
-
-i = 0;
-repeat(2){
-if spr_left_ui[i] != last_ui[i]{
-last_ui[i] = spr_left_ui[i];
-ui_scale[i] = 1.4;}
-
-if ui_scale[i] > 1{ui_scale[i] = ui_scale[i] * .975;}
-else{ui_scale[i] = 1;}
-
-i+=1;}
-
-draw_sprite_ext(spr_left_ui[0],0,vx+(22),vy+(340),ui_scale[0],ui_scale[0],0,c_white,1);
-draw_sprite_ext(spr_right_ui[0],0,vx+(66),vy+(340),ui_scale[0],ui_scale[0],0,c_white,1);
-
-draw_sprite_ext(spr_left_ui[1],0,vx+(574),vy+(340),ui_scale[1],ui_scale[1],0,c_white,1);
-draw_sprite_ext(spr_right_ui[1],0,vx+(618),vy+(340),ui_scale[1],ui_scale[1],0,c_white,1);
+scr_draw_power_ui();
 
 
 
@@ -33,7 +11,7 @@ draw_sprite_ext(spr_right_ui[1],0,vx+(618),vy+(340),ui_scale[1],ui_scale[1],0,c_
 //orbyt build top panel
 
 if room = rm_park_night{
-
+if dont_show_objectives = 0{
 //solve puzzle text for 5 seconds when game starts
 if park_night_intro = 0{
 if unlock_intro_tip > 0{unlock_intro_tip -= 1;
@@ -79,12 +57,13 @@ draw_text(vx+10+35,vy+23,string(floor(bones_show)));
 draw_set_color(c_white);
 draw_text(vx+10+35,vy+21,string(floor(bones_show)));
 draw_set_alpha(1);
+}
 
 //draw reset timer
 if unlock_intro_tip <= 0{
 draw_set_font(font_bsp23);
 draw_set_color(c_black);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 i = "";
@@ -95,13 +74,44 @@ i = "TIME LEFT: "+string(i2)+":"+string(i3);
 
 if reset_time < 30*5{i = "TIME'S UP!";}
 
-draw_text(vx+(vw/2)+124+12,vy+14+2,string(i));
+//+124+12
+draw_text(vx+(vw/2),vy+14+2,string(i));
 draw_set_color(c_white);
-draw_text(vx+(vw/2)+124+12,vy+14,string(i));
+draw_text(vx+(vw/2),vy+14,string(i));
 }
 
 
 }//end if room = park
+
+
+
+
+if game_phase = 'park night' && park_night_intro = 0{
+draw_set_font(font_bsp23);
+draw_set_color(c_black);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+i = "";
+i2 = floor(reset_time/30/60);
+i3 = floor(reset_time/30)-60*i2;
+if string_length(string(i3)) < 2{i3 = "0"+string(i3);}
+i = "TIME LEFT: "+string(i2)+":"+string(i3);
+
+if reset_time < 30*5{i = "TIME'S UP!";}
+
+//+124+12
+draw_text(vx+(320),vy+14+2,string(i));
+draw_set_color(c_white);
+draw_text(vx+(320),vy+14,string(i));
+
+
+if game_finished = 1{
+draw_sprite_ext(spr_orbyt_panel,game_finished,vx+vw/2,vy,1,1,0,c_white,1);}
+
+}
+
+
 
 
 

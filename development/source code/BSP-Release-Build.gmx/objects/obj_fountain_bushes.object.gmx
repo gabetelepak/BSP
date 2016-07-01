@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 spr_shadow = spr_fountain_bushes_shadow;
-hint_flash = 0;
+hint_flash = 1;
+frisbee = 1;
 bubble_wand = 0;
 spr_bush_splash = spr_trash_bush_poof;
 </string>
@@ -58,16 +59,16 @@ spr_bush_splash = spr_trash_bush_poof;
 
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bite &amp;&amp; pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
-if bubble_wand = 1 &amp;&amp; pug.item_held = ""{
+if frisbee = 1 &amp;&amp; pug.item_held = ""{
 bush_shake = 1;
-bubble_wand = 0;
+frisbee = 0;
 pug.pug_action_proc = 1;
-pug.item_held = "Bubble Wand";
+pug.item_held = "Frisbee";
 
 
-if g.unlock_bubble_wand = 0{
-g.unlock_bubble_wand = 1;
-pug.spr_unlock = spr_unlock_bubble_wand;}
+if g.unlock_frisbee = 0{
+g.unlock_frisbee = 1;
+pug.spr_unlock = spr_unlock_frisbee;}
 
 
 
@@ -96,12 +97,12 @@ pug.spr_unlock = spr_unlock_bubble_wand;}
             <kind>1</kind>
             <string>event_inherited();
 
-if bubble_wand = 1{
+if frisbee = 1{
 hint_flash += .25;
 if hint_flash &gt; 30{hint_flash = 0;}
 i = hint_flash;
 if i &gt; 3{i = 0;}
-draw_sprite(spr_bubble_wand_hint,i,x-20,y);}
+draw_sprite(spr_frisbee_hint,i,x-5,y);}
 </string>
           </argument>
         </arguments>

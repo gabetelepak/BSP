@@ -54,9 +54,7 @@ complete = 0;
 
 
 if scr_pug_dis(16) &gt; 0{
-if instance_exists(obj_tut_sign_right){
-with obj_tut_sign_right{
-if life = 0{life = 1;}}}
+
 
 if complete = 0{
 if pug.sprite_index = pug.spr_bark{

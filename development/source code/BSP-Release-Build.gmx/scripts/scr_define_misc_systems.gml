@@ -1,4 +1,5 @@
 gametime = 0;
+screen_flash = 0;
 
 button_bounce = 3;
 button_bounce_dir = -1;

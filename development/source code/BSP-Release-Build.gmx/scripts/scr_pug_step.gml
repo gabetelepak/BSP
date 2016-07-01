@@ -36,7 +36,11 @@ scr_pug_movement();}
 if magic_mode = 0{
 if item_held = ""{
 scr_pug_sniff();}
-scr_handle_power_anim();
+
+if g.tut_power_hold = 0{
+scr_handle_power_anim();}
+
+
 scr_handle_item_holding();}
 
 scr_handle_magic_mode();}}

@@ -12,6 +12,9 @@ ate_firefly = 0;
 net_firefly = 0;
 show_catch = 0;
 
+spawn_x = x;
+spawn_y = y;
+
 goal_x = x;
 goal_y = y;
 
@@ -21,6 +24,7 @@ zbounce = 0;
 zspeed = 0;
 zbouncable = 1;
 hurt = 0;
+unlock_butt_drag = 0;
 
 
 //determine player number

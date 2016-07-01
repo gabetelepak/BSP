@@ -26,15 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-zgrav = .05;
+zgrav = .075;
 zbouncable = 1;
 sprite_index = spr_idol_spin
 spr_shadow = spr_idol_shadow;
 rotspeed = 10;
 spawn = 1;
-zspeed = 8;
+zspeed = 6;
 z = 3;
 random_sparkle = irandom(90)+15;
+ready = 0;
+
 
 speed = 1;
 direction = 270;
@@ -63,8 +65,9 @@ direction = 270;
             <kind>1</kind>
             <string>event_inherited();
 
+if ready &lt; 2{
 if y &gt;= 450{
-if speed &gt; 0{speed -= .05;}}
+if speed &gt; 0{speed -= .05;}}}
 
 //stop rotation
 if z &lt;= 1{
@@ -80,7 +83,31 @@ if g.gametime mod random_sparkle = 0{
 random_sparkle = irandom(90)+15;
 scr_obj_full_sparkle(.25);}
 
+if speed = 0 &amp;&amp; sprite_index = spr_idol &amp;&amp; z = 0 &amp;&amp; ready = 0{
+ready = 1;}
 
+if ready = 2{
+depth = 2;
+direction = point_direction(x,y,obj_bigfountain.x,obj_bigfountain.y-37) + 45;
+if speed &lt; 2.5{speed += .025;}
+
+if scr_dis(x,y,obj_bigfountain.x,obj_bigfountain.y-37) &lt; 4{
+
+opt = instance_create(360,200,obj_chartut_status);
+opt.step = 1;
+scr_sound(snd_scratch,1);
+
+ready = 3;
+with obj_bigfountain{scr_obj_full_sparkle(5);
+complete = 2;}
+repeat(5){scr_obj_full_sparkle(3);}
+
+}}
+
+if ready = 3{
+depth = obj_bigfountain.depth;
+x = obj_bigfountain.x;
+y = obj_bigfountain.y-37;}
 
 </string>
           </argument>
@@ -106,6 +133,9 @@ scr_obj_full_sparkle(.25);}
             <kind>1</kind>
             <string>//event_inherited();
 draw_sprite_ext(sprite_index,image_single,x,y-z,1,1,rot,color,alpha);
+
+
+//draw_text(x,y-60,ready);
 
 
 </string>

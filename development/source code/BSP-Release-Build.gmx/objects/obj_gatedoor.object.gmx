@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 spr_shadow = spr_blank;
-frisbee = 0;
-hint_flash = 0;
+open = 0;
+passage = 0;
 </string>
           </argument>
         </arguments>
@@ -53,25 +53,47 @@ hint_flash = 0;
             <kind>1</kind>
             <string>event_inherited();
 
-//grab frisbee
-/*
-if scr_pug_dis(8) &gt; 0{
-if pug.sprite_index = pug.spr_bite &amp;&amp; pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
-if frisbee = 1 &amp;&amp; pug.item_held = ""{
-bush_shake = 1;
-frisbee = 0;
-pug.pug_action_proc = 1;
-pug.item_held = "Frisbee";
+if open &gt; 0{
+
+if g.game_phase = "tutorial"{
+if view_yview[0] &gt; 240{view_yview[0] -= 1;}}
+
+image_speed = .25;
+if floor(image_index) = image_number-1{
+image_speed = 0;
+mask_index = spr_gatedoor_mask_open;}
 
 
-if g.unlock_frisbee = 0{
-g.unlock_frisbee = 1;
-pug.spr_unlock = spr_unlock_frisbee;}
+with obj_player{
+if y &lt; other.y-16{other.passage = 1;}}
+
+if passage = 1{
+if g.game_phase = "tutorial"{
+g.park_night_intro = 1;
+with g{scr_init_park_night();}
+g.game_phase = "park night";
+g.screen_flash = 1;
+
+with obj_player{
+x = spawn_x;
+y = spawn_y;
+speed = 0;
+pug_action = 0;
+sprite_index = spr_sit;}
+
+
+}}
+
+}
+
+if g.game_phase = "park night"{
+open = 0;
+mask_index = spr_gatedoor;
+if image_index &gt;= 1{
+image_index -= 1;}}
 
 
 
-}}}
-*/
 </string>
           </argument>
         </arguments>

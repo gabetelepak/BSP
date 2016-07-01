@@ -29,7 +29,10 @@
 zgrav = 0.05;
 zbouncable = 0;
 spr_shadow = spr_pigeon_shadow;
+direction = irandom(360);
 zspeed = 0;
+
+flutter_immune = 15;
 
 //duck
 swim = 1;
@@ -171,8 +174,8 @@ image_single = 0;
 
 if interact = "fly"{
 image_speed = .25;
-if speed &lt; 3{speed += .2;}
-if zspeed &lt; 2{zspeed += .1;}
+if speed &lt; 4{speed += .25;}
+if zspeed &lt; 2{zspeed += .125;}
 
 if x &lt; -32{x = -32;
 interact = "wait offscreen";}
@@ -187,7 +190,7 @@ instance_create(target.x-16+random(32),target.y-16+random(32),obj_bird_poop);}
 
 if interact = "return fly"{
 direction = point_direction(x,y,spawn_x,spawn_y);
-speed = clamp(distance_to_point(spawn_x,spawn_y)/4,.25,2);
+speed = clamp(distance_to_point(spawn_x,spawn_y)/5,.25,3);
 z = distance_to_point(spawn_x,spawn_y)*.5;
 
 if distance_to_point(spawn_x,spawn_y) &lt;= 32{
@@ -197,6 +200,38 @@ action = 0;
 alarm[0] = floor(random(30))+60;}
 
 }
+
+
+
+
+if interact = ""{
+if flutter_immune &lt;= 0{
+if scr_pug_dis(4) {
+if pug.speed &gt;= 2{
+interact = "flutter";
+zspeed = irandom(5);
+zgrav = 0.05 + (irandom(5)/100);
+z = 1;
+image_speed = .75;
+direction = irandom(360);
+speed = irandom(4)/4;
+}}}}
+
+if interact = "flutter"{
+sprite_index = spr_pigeon_flutter;
+
+
+if z &lt;= 0{interact = "";
+zgrav = 0.05;
+rot = 0;
+speed = 0;
+rotspeed = 0;
+zspeed = 0;
+flutter_immune = 15;}}
+
+if flutter_immune &gt; 0{flutter_immune -= 1;}
+
+//
 
 </string>
           </argument>

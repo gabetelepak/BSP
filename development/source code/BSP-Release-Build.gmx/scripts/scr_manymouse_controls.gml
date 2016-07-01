@@ -14,7 +14,7 @@ if floor(mx) > 0{
 g.button[i13,g.button_RIGHT] = 1;}
 if floor(my) > 0{
 g.button[i13,g.button_UP] = 1;}
-if floor(my) < 0{
+if floor(my) > 0{
 g.button[i13,g.button_DOWN] = 1;}
 
 window_mouse_set(cx, cy);

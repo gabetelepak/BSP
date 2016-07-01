@@ -1,3 +1,4 @@
+dont_show_objectives = 1;
 game_finished = 0;
 finished_time = 0;
 idle_time = 0;

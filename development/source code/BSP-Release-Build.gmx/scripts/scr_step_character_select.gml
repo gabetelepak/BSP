@@ -84,9 +84,11 @@ if  button[0,button_Y] || button[1,button_Y]{
 park_night_intro = 1;
 room_goto(rm_park_night);
 */
+screen_flash = 1;
 game_phase = 'tutorial';
 scr_define_chartut();
 scr_erase_character_select_obj();
+
 
 }}}
 

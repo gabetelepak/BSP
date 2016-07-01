@@ -75,6 +75,8 @@ hint_alpha = 0;
             <string>event_inherited();
 zbouncable = 0;
 
+if g.park_night_intro = 0 &amp;&amp; g.game_phase = "park night"{
+
 if direction &gt; 90 &amp;&amp; direction &lt;= 270{
 face = 1;}else{face = -1;}
 
@@ -322,7 +324,7 @@ zspeed = 1;
 
 
 }//end sleep
-
+}
 </string>
           </argument>
         </arguments>

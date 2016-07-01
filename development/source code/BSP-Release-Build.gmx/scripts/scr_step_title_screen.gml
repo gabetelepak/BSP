@@ -23,6 +23,7 @@ if title_splash_alarm <= 0 && room = rm_title_screen{
 if button[0,button_A] || button[1,button_A]{
 room_goto(rm_park_night);
 game_phase = 'char select';
+screen_flash = 1;
 room_phase = -1;}}
 
 if title_logo_alarm > 0{

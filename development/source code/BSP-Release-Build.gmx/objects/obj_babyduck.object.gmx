@@ -78,6 +78,7 @@ spawn = 0;}
 if g.check_babyduck = 1 &amp;&amp; stage = "sandbox"{
 stage = "pug follow";}
 
+
 if stage = "pug follow"{
 maxdis = 24;
 i = instance_nearest(x,y,obj_player);
@@ -85,22 +86,28 @@ spawn_x = i.x;
 spawn_y = i.y;
 move_speed = 1.5;
 
+
 i = instance_find(obj_duck,1);
-if scr_dis(i.x,i.y,x,y) &lt; 20{
+if scr_dis(i.x,i.y,x,y) &lt; 64{
 if g.check_duck = 0{
 g.check_duck = 1;
-scr_check_burst(5);}}}
+scr_check_burst(5);}}
 
 
+}
+
+/*
 if g.check_duck = 1 &amp;&amp; stage = "pug follow"{
 stage = "duck";}
+
+
 if stage = "duck"{
 i = instance_find(obj_duck,1);
 spawn_x = i.x;
 spawn_y = i.y;
 move_speed = .5;
 maxdis = 12;}
-
+*/
 
 
 

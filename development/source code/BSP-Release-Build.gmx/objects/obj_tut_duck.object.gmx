@@ -32,6 +32,7 @@ spr_shadow = spr_duck_shadow;
 zspeed = 0;
 spawn_x = 0;
 spawn_y = 0;
+spawn = 1;
 
 //duck
 swim = 1;
@@ -81,10 +82,6 @@ spawn = 0;}
 
 if interact = ""{
 spr_action = 0;
-
-
-
-
 if action = 0{
 
 if distance_to_point(spawn_x,spawn_y) &gt; 6{
@@ -157,7 +154,7 @@ alarm[0] = 30 + floor(random(30));
 speed = .25;
 if swim = 1{speed = 1.5;}else{
 direction = random(359);
-if distance_to_point(spawn_x,spawn_y) &gt; 12{
+if distance_to_point(spawn_x,spawn_y) &gt; 6{
 direction = point_direction(x,y,spawn_x,spawn_y);}}}
 else{speed = 0;}
 
@@ -180,6 +177,54 @@ scr_sound(snd_duck_quack,g.sfx_volume);}}
 }//end if no interact
 /////////////////////////////////////////////////////////
 
+if spawn = 0{
+if instance_exists(obj_idol){
+idol = obj_idol;
+if idol.ready &gt;= 1 &amp;&amp; obj_bigfountain.ready &gt;= 1{
+interact = "takeoff";
+
+
+if interact = "takeoff"{
+if spr_action = 0{
+sprite_index = spr_duck_takeoff;
+direction = point_direction(x,y,idol.x,idol.y);
+image_index = 0;
+image_speed = .12;
+speed = 0;
+z = 0;
+zspeed = 0;}
+
+spr_action += image_speed;
+
+
+if spr_action &gt;= sprite_get_number(sprite_index){
+sprite_index = spr_duck_fly;
+image_speed = .25;
+z = 6;
+interact = "pickup";}}
+
+if interact = "pickup"{
+sprite_index = spr_duck_fly;
+image_speed = .25;
+if speed &lt; 4{speed += .075;}
+if alarm[0] &lt;= 0 &amp;&amp; idol.ready &lt; 3{alarm[0] = 5+random(15);
+direction = point_direction(x,y,idol.x,idol.y);}
+
+if idol.ready = 1{
+if scr_dis(x,y,idol.x,idol.y) &lt; 7{idol.ready = 2;}}
+
+if idol.ready = 2{
+depth = idol.depth;}
+
+}
+
+if idol.ready =3{
+direction = 45;
+speed = 2;
+if y+x &lt; g.vy-32{instance_destroy();}}
+
+
+}}}
 
 </string>
           </argument>

@@ -802,6 +802,12 @@
       <sprite>sprites\spr_biglake_mask</sprite>
       <sprite>sprites\spr_gatedoor</sprite>
       <sprite>sprites\spr_gatedoor_mask_open</sprite>
+      <sprite>sprites\spr_tut_sign_top</sprite>
+      <sprite>sprites\spr_tut_sign_bottom</sprite>
+      <sprite>sprites\spr_chartut_status</sprite>
+      <sprite>sprites\spr_ant_pile</sprite>
+      <sprite>sprites\spr_ants</sprite>
+      <sprite>sprites\spr_ants_mask</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -885,6 +891,7 @@
       <script>scripts\scr_define_park_night.gml</script>
       <scripts name="park step">
         <script>scripts\scr_park_night_camera.gml</script>
+        <script>scripts\scr_define_park_night_camera.gml</script>
       </scripts>
       <scripts name="user interface">
         <script>scripts\scr_init_park_ui.gml</script>
@@ -896,6 +903,7 @@
           <script>scripts\scr_draw_unlock_ui.gml</script>
         </scripts>
         <script>scripts\scr_draw_park_ui_top_panel.gml</script>
+        <script>scripts\scr_draw_power_ui.gml</script>
       </scripts>
       <scripts name="particle">
         <script>scripts\scr_sparkle.gml</script>
@@ -931,7 +939,7 @@
       <script>scripts\scr_step_tutorial.gml</script>
       <script>scripts\scr_draw_tutorial.gml</script>
     </scripts>
-    <scripts name="character select tutorial">
+    <scripts name=" tutorial">
       <script>scripts\scr_define_chartut.gml</script>
       <script>scripts\scr_step_chartut.gml</script>
       <script>scripts\scr_draw_chartut.gml</script>
@@ -1091,6 +1099,7 @@
       <object>objects\obj_bigfountain_bush_left</object>
       <object>objects\obj_bigfountain_bush_right</object>
       <object>objects\obj_bigfountain</object>
+      <object>objects\obj_antpile</object>
       <object>objects\obj_gatedoor</object>
       <object>objects\obj_tut_sign_parent</object>
       <object>objects\obj_tut_sign_left</object>
@@ -1098,12 +1107,16 @@
       <object>objects\obj_tut_sign_fountain</object>
       <object>objects\obj_idol</object>
       <object>objects\obj_tut_duck</object>
+      <object>objects\obj_tut_sign_top</object>
+      <object>objects\obj_tut_sign_bottom</object>
+      <object>objects\obj_chartut_status</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_character_select</room>
     <room>rooms\rm_park_night</room>
+    <room>rooms\rm_park_night_big</room>
     <room>rooms\rm_testoutroom</room>
     <rooms name="old">
       <room>rooms\rm_tutorial</room>

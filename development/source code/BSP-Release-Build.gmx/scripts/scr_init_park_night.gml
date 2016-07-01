@@ -20,4 +20,7 @@ shakex = 0;
 shakey = 0;
 
 //game reset timer, for demos
-reset_time = 30*60*6;//6min
+reset_time = 30*60*3;//6min
+idle_time = 0;
+finished_time = 0;
+

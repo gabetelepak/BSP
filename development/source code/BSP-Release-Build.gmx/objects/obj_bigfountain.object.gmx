@@ -28,6 +28,7 @@
             <string>event_inherited();
 spr_shadow = spr_blank;
 complete = 0;
+ready = 0;
 </string>
           </argument>
         </arguments>
@@ -54,10 +55,8 @@ complete = 0;
 
 event_inherited();
 
-if scr_pug_dis(16) &gt; 0{
-if instance_exists(obj_tut_sign_left){
-with obj_tut_sign_fountain{
-if life = 0{life = 1;}}}
+if scr_pug_dis(20) &gt; 0{
+
 
 if complete = 0{
 if pug.sprite_index = pug.spr_pee{
@@ -71,21 +70,31 @@ scr_obj_full_sparkle(3);}
 }
 
 if complete = 1{
-complete = 2;
-
+ready = 1;
 sprite_index = spr_bigfountain_fill;
 image_index = 0;
-image_speed = .1;
+image_speed = 0;
+
 
 if instance_exists(obj_tut_sign_fountain){
 with obj_tut_sign_fountain{
-if life != 3{life = 3;
-image_index = 0;}}}}
+if life &lt; 3{life = 3;
+image_index = 0;}}}
+
+}
 
 
 if complete = 2{
-if floor(image_index) = image_number-1{
 complete = 3;
+
+sprite_index = spr_bigfountain_fill;
+image_index = 0;
+image_speed = .1;}
+
+
+if complete = 3{
+if floor(image_index) = image_number-1{
+complete = 4;
 sprite_index = spr_bigfountain;
 image_speed = .2;}}
 

@@ -128,7 +128,7 @@ image_index = 0;
 image_speed = .25;
 state = "start";
 instance_create(564,228,obj_plate);
-g.check_granny = 1;
+//g.check_granny = 1;
 scr_check_burst(3);
 
 }
@@ -201,6 +201,8 @@ state = "cry";
 
 //unlock butt drag
 with obj_player{
+if unlock_butt_drag = 0{
+unlock_butt_drag = 1;
 sniff_icon_alarm = 0;
 scr_sound(snd_hint_appear,g.sfx_volume);
 pug_power = 2;
@@ -211,8 +213,7 @@ sprite_index = spr_sniffed;
 image_speed = .25;
 image_index = 0;
 pug_action = sprite_get_number(sprite_index);
-
-
+}
 }
 
 

@@ -70,6 +70,25 @@ opt.speed = 3;
 opt.zspeed = 3;
 opt.zbouncable = 1;
 opt.first_spawn = 1;
+
+
+//unlock butt drag
+with obj_player{
+if unlock_butt_drag = 0{
+unlock_butt_drag = 1;
+sniff_icon_alarm = 0;
+scr_sound(snd_hint_appear,g.sfx_volume);
+pug_power = 2;
+pug_power_max = 4;
+scr_switch_power();
+
+sprite_index = spr_sniffed;
+image_speed = .25;
+image_index = 0;
+pug_action = sprite_get_number(sprite_index);
+}}
+
+
 instance_destroy();}
 </string>
           </argument>

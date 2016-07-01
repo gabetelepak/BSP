@@ -66,6 +66,8 @@ stop += 1;}
 if speed &lt; 1 &amp;&amp;
 stop &lt; 89 &amp;&amp; stop &gt; 30{
 stop = 89;}
+
+if g.game_phase != 'char select'{instance_destroy();}
 </string>
           </argument>
         </arguments>

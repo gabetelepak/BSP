@@ -59,7 +59,9 @@ sprite_complete = spr_sign_bark_check;
             <kind>1</kind>
             <string>if sprite_index != lsprite_index{
 image_index = 0;
-lsprite_index = sprite_index;}
+lsprite_index = sprite_index;
+if sprite_index = sprite_complete{scr_sound(snd_scratch,1);}
+}
 
 if life = 0{
 sprite_index = spr_blank;}
@@ -75,12 +77,12 @@ image_speed = .25;
 sprite_index = sprite_static;}
 
 if life = 3{
-image_speed = .25;
+image_speed = .2;
 sprite_index = sprite_complete;
+
 
 if floor(image_index) = image_number-1{
 image_speed = 0;
-scr_sound(snd_scratch,1);
 life = 4;}}
 
 if life = 4{
