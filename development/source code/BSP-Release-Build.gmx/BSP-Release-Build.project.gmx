@@ -130,6 +130,7 @@
       <sprite>sprites\sprite479</sprite>
       <sprite>sprites\spr_character_select_wood_top</sprite>
       <sprite>sprites\spr_character_select_wood_top_gamepad</sprite>
+      <sprite>sprites\spr_character_select_wood_top_gamepad_old</sprite>
       <sprite>sprites\spr_character_select_wood_top_tiff</sprite>
       <sprite>sprites\spr_character_select_wood_bottom</sprite>
       <sprite>sprites\spr_fire_hydrant</sprite>
@@ -759,6 +760,11 @@
           <sprite>sprites\spr_bread_shadow</sprite>
         </sprites>
       </sprites>
+      <sprites name="general ui">
+        <sprite>sprites\spr_ui_b</sprite>
+        <sprite>sprites\spr_ui_x</sprite>
+        <sprite>sprites\spr_ui_y</sprite>
+      </sprites>
     </sprites>
     <sprites name="tutorial_old">
       <sprite>sprites\spr_tut_panel_bottom</sprite>
@@ -803,6 +809,7 @@
       <sprite>sprites\spr_gatedoor</sprite>
       <sprite>sprites\spr_gatedoor_mask_open</sprite>
       <sprite>sprites\spr_tut_sign_top</sprite>
+      <sprite>sprites\spr_tut_sign_top_mm</sprite>
       <sprite>sprites\spr_tut_sign_bottom</sprite>
       <sprite>sprites\spr_chartut_status</sprite>
       <sprite>sprites\spr_ant_pile</sprite>

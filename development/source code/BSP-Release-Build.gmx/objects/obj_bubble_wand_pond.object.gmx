@@ -74,7 +74,7 @@ opt.first_spawn = 1;
 
 //unlock butt drag
 with obj_player{
-if unlock_butt_drag = 0{
+if unlock_butt_drag = 999{//ommitted
 unlock_butt_drag = 1;
 sniff_icon_alarm = 0;
 scr_sound(snd_hint_appear,g.sfx_volume);
@@ -86,7 +86,8 @@ sprite_index = spr_sniffed;
 image_speed = .25;
 image_index = 0;
 pug_action = sprite_get_number(sprite_index);
-}}
+}
+}
 
 
 instance_destroy();}

@@ -33,7 +33,7 @@ gravity = .5;
 stop = 0;
 
 if g.manymouse_active = 1{
-sprite_index = spr_character_select_wood_top;}
+sprite_index = spr_tut_sign_top_mm;}
 
 if g.tiff_panels = 1{
 sprite_index = spr_character_select_wood_top_tiff;}
