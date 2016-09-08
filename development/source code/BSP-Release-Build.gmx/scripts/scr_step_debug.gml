@@ -19,6 +19,9 @@ g.tut_power_hold = 0;
 
 
 if mouse_check_button_pressed(mb_middle){
+
+instance_create(mouse_x,mouse_y,obj_score_popup);
+
 //scr_dust(mouse_x,mouse_y,180,3);
 //opt = instance_create(mouse_x,mouse_y,obj_hint);
 //opt.spr_hint = spr_hint_sandwich;

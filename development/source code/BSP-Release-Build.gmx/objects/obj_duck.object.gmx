@@ -94,6 +94,7 @@ image_speed = .25;
 alarm[0] = floor(sprite_get_number(spr_duck_quack)*4);
 scr_sound(snd_duck_quack,g.sfx_volume);
 action = 1;
+scr_score_point(g.min_score);
 speed = 0;}}
 
 if scr_pug_dis(48) {
@@ -114,6 +115,7 @@ scr_sound(snd_duck_quack,g.sfx_volume);
 action = 1;
 speed = .75;
 direction = point_direction(x,y,426,488);
+scr_score_point(g.min_score);
 }}}
 
 
@@ -126,6 +128,7 @@ action = 1;
 interact = "takeoff";
 target = pug;
 swim = 0;
+scr_score_point(g.small_score);
 }}}
 
 

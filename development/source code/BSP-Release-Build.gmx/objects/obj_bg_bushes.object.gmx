@@ -28,6 +28,8 @@
             <string>event_inherited();
 spr_shadow = spr_bg_bushes_shadow;
 spr_bush_splash = spr_bg_bush_poof;
+
+points_worth = g.med_score;
 </string>
           </argument>
         </arguments>
@@ -63,6 +65,7 @@ opt.direction = 270+random(30)-15;
 opt.speed = 3;
 opt.z = 5;
 g.mm_unlock_beachball = 1;
+scr_score_point(points_worth);
 with pug{scr_magic_mode_db();}}
 }}
 </string>

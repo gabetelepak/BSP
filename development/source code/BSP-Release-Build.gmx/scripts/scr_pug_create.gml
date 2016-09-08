@@ -11,6 +11,8 @@ slide = 0;
 ate_firefly = 0;
 net_firefly = 0;
 show_catch = 0;
+pause = 0;//pugs cannot be controlled.
+invisible = 0;//visible doesnt really work, fixes it.
 
 spawn_x = x;
 spawn_y = y;
@@ -34,6 +36,7 @@ for (i = 0; i < instance_number(obj_player); i += 1)
    {
 if id = instance_find(obj_player,i){
 g.pug_id[i] = id;
+g.pug_score[i] = 0;
  player_number = i;}
 else{opug = instance_find(obj_player,i);}
 
@@ -119,3 +122,9 @@ g.spr_right_ui[0] = spr_ui_pee;
 g.spr_left_ui[1] = spr_ui_bark;
 g.spr_right_ui[1] = spr_ui_pee;
 
+
+
+//treehouse stuff
+treehouse_floor = 1;
+jump_up_ladder = 0;
+jump = 0;

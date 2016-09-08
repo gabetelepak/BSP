@@ -2,6 +2,7 @@ goal_x = x;
 goal_y = y;
 
 if speed > .25{speed -= .25;}else{speed = 0;}
+//speed = move_speed;
 
 
 

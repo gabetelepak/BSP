@@ -8,3 +8,5 @@ slow_blink_alarm = 0;
 
 //audio
 music_playing = 0;
+
+anim = 0;

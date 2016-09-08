@@ -75,6 +75,7 @@ if poop != noone{
 sprite_index = spr_plate_sandwich_soiled;
 if instance_exists(granny) &amp;&amp; granny &gt; 0{
 if granny.cry &lt;= 0{
+scr_score_point(g.big_score);
 granny.cry = 1;
 g.check_sandwich = 1;
 scr_check_burst(6);
@@ -91,6 +92,7 @@ sprite_index = spr_plate_sandwich_soiled;
 if instance_exists(granny) &amp;&amp; granny &gt; 0{
 if granny.cry &lt;= 0{
 granny.cry = 1;
+scr_score_point(g.big_score);
 g.check_sandwich = 1;
 scr_check_burst(6);
 }}}}}}
@@ -106,6 +108,7 @@ if instance_exists(granny) &amp;&amp; granny &gt; 0{
 if granny.cry &lt;= 0{
 pug.pug_action_proc = 1;
 granny.cry = 1;
+scr_score_point(g.big_score);
 g.check_sandwich = 1;
 scr_check_burst(6);
 }}}

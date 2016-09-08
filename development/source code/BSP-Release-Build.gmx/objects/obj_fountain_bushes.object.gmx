@@ -31,6 +31,8 @@ hint_flash = 1;
 frisbee = 1;
 bubble_wand = 0;
 spr_bush_splash = spr_trash_bush_poof;
+
+points_worth = g.med_score;
 </string>
           </argument>
         </arguments>
@@ -64,7 +66,7 @@ bush_shake = 1;
 frisbee = 0;
 pug.pug_action_proc = 1;
 pug.item_held = "Frisbee";
-
+scr_score_point(points_worth);
 
 if g.unlock_frisbee = 0{
 g.unlock_frisbee = 1;

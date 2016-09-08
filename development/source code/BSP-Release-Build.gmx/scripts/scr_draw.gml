@@ -16,6 +16,9 @@ scr_draw_chartut();}
 if game_phase = 'park night'{
 scr_draw_park_night();}
 
+if game_phase = 'treehouse'{
+scr_draw_treehouse();}
+
 
 if screen_flash = 1{
 screen_flash = 17;}
@@ -45,9 +48,9 @@ draw_set_alpha(1);}
 
 
 
-
-
-
+draw_set_color(c_black);
+draw_set_halign(fa_left);
+//draw_text(vx+30,vy+30,start_room);
 
 
 //draw debug test

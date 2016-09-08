@@ -1,4 +1,6 @@
+
 scr_init_park_ui();
+scr_define_talkingheads();
 
 //first thing when entering the park
 mpgrid = mp_grid_create(-3,-3,ceil(room_width/6)+1,ceil(room_height/6)+1,6,6);

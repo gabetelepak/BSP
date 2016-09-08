@@ -1,5 +1,12 @@
 scr_depth();
 
+pause = 0;
+invisible = 0;
+
+if g.ascend_treehouse > 0{
+pause = 1;
+invisible = 1;}
+
 
 //handle controls
 
@@ -28,8 +35,8 @@ opt.active = 1;
 
 
 //general movement
-if g.game_phase = 'tutorial' || g.game_phase = 'park night'{
-if g.park_night_intro = 0 && slide  = 0 && hurt = 0{
+if g.game_phase = 'tutorial' || g.game_phase = 'park night' || g.game_phase = 'treehouse'{
+if g.park_night_intro = 0 && slide  = 0 && hurt = 0 && jump = 0 && pause = 0{
 if pug_action <= 0 && (magic_mode = 0 || magic_mode = 2){
 scr_pug_movement();}
 
@@ -92,8 +99,33 @@ if place_free(x+face*1,y){x += face*1;}
 }
 
 
+if room = rm_treehouse{
 
+if jump_up_ladder = 0{
+vspeed = 0;
+if treehouse_floor = 1{y = 144;}else{y = 96;}
+if sprite_index = spr_walk_up || sprite_index = spr_walk_down{
+image_speed = 0;
+sprite_index = spr_sit;}}
 
+//jump up
+if x > 192 && treehouse_floor = 1 && jump_up_ladder = 0{
+path_start(path_jump_up, 3, path_action_stop, false);
+jump_up_ladder = 1;}
+//jump down
+if x < 236-16 && treehouse_floor = 2 && jump_up_ladder = 0{
+path_position = 1;
+path_start(path_jump_down, 3, path_action_stop, false);
+jump_up_ladder = -1;}
+//end jump
+if jump_up_ladder != 0{
+if jump_up_ladder = 1{face = -1;}else{face = 1;}
+jump = 1;
+if path_position = 1{
+if jump_up_ladder = 1{treehouse_floor = 2;}else{treehouse_floor = 1;}
+jump_up_ladder = 0;
+jump = 0;}}
+}
 
 
 

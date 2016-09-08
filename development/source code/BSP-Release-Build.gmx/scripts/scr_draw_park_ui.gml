@@ -84,8 +84,8 @@ draw_text(vx+(vw/2),vy+14,string(i));
 }//end if room = park
 
 
-
-
+show_reset_timer = 0;//temp turn off timer.
+if show_reset_timer = 1{
 if game_phase = 'park night' && park_night_intro = 0{
 draw_set_font(font_bsp23);
 draw_set_color(c_black);
@@ -109,7 +109,7 @@ draw_text(vx+(320),vy+14,string(i));
 if game_finished = 1{
 draw_sprite_ext(spr_orbyt_panel,game_finished,vx+vw/2,vy,1,1,0,c_white,1);}
 
-}
+}}
 
 
 

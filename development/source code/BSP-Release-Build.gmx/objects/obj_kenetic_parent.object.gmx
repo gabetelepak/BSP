@@ -72,6 +72,9 @@ if id = instance_find( asset_get_index(object_get_name(id)),i){
 
    }
 
+   //score
+   obj_scored = 0;
+   points_worth = g.small_score;
 
 
 </string>

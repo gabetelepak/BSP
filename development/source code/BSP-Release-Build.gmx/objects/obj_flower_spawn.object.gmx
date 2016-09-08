@@ -28,6 +28,8 @@
             <string>active = 1;
 death_time = -1;
 life_time = 0;
+pug = -1;
+spawn = 0;
 
 //reposition if overlapping another flower bed.
 /*
@@ -115,6 +117,10 @@ if opt != noone{if opt.kill = 0{opt.kill = 2;i = 1000;}}
 i += 1;}
 }
 
+//score
+obj_scored = 0;
+points_worth = g.min_score;
+
 
 </string>
           </argument>
@@ -138,13 +144,19 @@ i += 1;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>//event_inherited();
+
+
+if spawn = 0{spawn = 1;
+scr_score_point(g.small_score);}
+scr_pug_nearest();
 
 //pee
 if scr_pug_dis(4){
 if scr_dis(x,y,pug.x+pug.face*18,pug.y) &lt; 18{
 if pug.sprite_index = pug.spr_pee{
 if pug.pug_action = 9{
+scr_score_point(points_worth);
 death_time = 200;
 if instance_exists(flower0){flower0.death_time = death_time;}
 if instance_exists(flower1){flower1.death_time = death_time;}

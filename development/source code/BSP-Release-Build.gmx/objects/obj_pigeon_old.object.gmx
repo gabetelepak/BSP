@@ -85,7 +85,9 @@ image_speed = .25;
 alarm[0] = floor(sprite_get_number(spr_pigeon_coo)/image_speed);
 scr_sound(snd_duck_quack,g.sfx_volume);
 action = 1;
-speed = 0;}}
+speed = 0;
+scr_score_point(g.min_score);
+}}
 
 
 //bite reaction
@@ -95,6 +97,7 @@ if pug.pug_action = 6{
 action = 1;
 interact = "takeoff";
 target = pug;
+scr_score_point(g.small_score);
 }}}
 
 
@@ -215,6 +218,10 @@ z = 1;
 image_speed = .75;
 direction = irandom(360);
 speed = irandom(4)/4;
+
+if pug.scoot &gt; 0{
+scr_score_point(g.min_score);}
+
 }}}}
 
 if interact = "flutter"{

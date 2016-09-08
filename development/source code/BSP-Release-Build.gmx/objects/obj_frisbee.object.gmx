@@ -32,6 +32,8 @@ spr_shadow = spr_frisbee_shadow;
 z = 0;
 image_speed = 0;
 
+points_worth = g.med_score;
+
 </string>
           </argument>
         </arguments>
@@ -80,6 +82,7 @@ if z &lt;= 1{
 if scr_pug_dis(4) &gt; 0{
 if pug.magic_mode = 0{
 if g.unlock_frisbee = 0{
+scr_score_point(points_worth);
 g.unlock_frisbee = 1;
 pug.spr_unlock = spr_unlock_frisbee;}}}}
 
@@ -92,7 +95,8 @@ pug.sprite_index = pug.spr_bite_low
 if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 pug.item_held = "Frisbee";
-if z &gt;= 1{g.frisbee_catch += 1;pug.show_catch = 30;}
+if z &gt;= 1{g.frisbee_catch += 1;pug.show_catch = 30;
+scr_score_point(g.small_score*g.frisbee_catch);}
 instance_destroy();
 }}}}
 </string>

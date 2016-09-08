@@ -1,4 +1,10 @@
+if room != last_room{
+if instance_exists(obj_player){
+with obj_player{
+g.pug_id[player_number] = id;}}
+start_room += 1;}
 
+last_room = room;
 
 scr_step_controls(0);
 scr_step_controls(1);
@@ -23,6 +29,9 @@ scr_step_character_select();}
 
 if game_phase = 'tuorial'{
 scr_step_chartut();}
+
+if game_phase = 'treehouse'{
+scr_step_treehouse();}
 
 
 //if room = rm_tutorial{
@@ -69,4 +78,10 @@ with i{scr_obj_full_sparkle();}}}
 
 g.vx = view_xview[0];
 g.vy = view_yview[0];
+
+
+
+
+
+
 

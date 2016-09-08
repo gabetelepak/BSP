@@ -1,4 +1,4 @@
-//options should be first
+//options should be first.
 game_phase = 'start menu';//start menu, char select, tutorial, park night
 scr_define_game_options();
 scr_define_controls();
@@ -15,10 +15,17 @@ scr_define_park_night();
 scr_define_colors();
 scr_define_game_options();
 scr_define_park_night_camera();
+scr_define_score();
+scr_define_talkingheads();
+scr_define_treehouse();
 
 player = 0;
 pug_id[0] = 0;
+pug_score[0] = 0;
+pug_score_show[0] = 0;
 pug_id[1] = 0;
+pug_score[1] = 0;
+pug_score_show[1] = 0;
 button[player,"A"] = 0;
 frisbee_catch = 0;
 hint_time_max = 30*10;//30*45;
@@ -143,4 +150,5 @@ arrayname[5] = 0;
 g.selected_char[0] = 0;
 g.selected_char[1] = 1;
 
-
+last_room = 0;
+start_room = 0;

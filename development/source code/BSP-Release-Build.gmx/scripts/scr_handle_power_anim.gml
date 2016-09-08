@@ -28,6 +28,7 @@ scoot = 0;
 if sprite_index = spr_poop{
 if pug_action = 10{
 opt = instance_create(x+(face*20),y,obj_poop);
+opt.pug = id;
 if ate_firefly >= 1{opt.glow = 1;
 ate_firefly -= 1;}
 }}
@@ -37,6 +38,7 @@ ate_firefly -= 1;}
 if sprite_index = spr_scoot{
 if image_index mod 2{
 opt = instance_create(x+random(6)-3,y+random(6)-3,obj_poop);
+opt.pug = id;
 opt.oil = 1;
 opt.depth += 6;
 opt.sprite_index = spr_poop_oil;

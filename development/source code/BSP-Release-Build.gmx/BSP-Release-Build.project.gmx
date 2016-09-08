@@ -116,6 +116,16 @@
     <sounds name="unlock ui">
       <sound>sound\snd_scratch</sound>
     </sounds>
+    <sounds name="talking heads">
+      <sounds name="moose">
+        <sound>sound\snd_moose1_1</sound>
+        <sound>sound\snd_moose1_2</sound>
+        <sound>sound\snd_moose1_3</sound>
+        <sound>sound\snd_moose2_1</sound>
+        <sound>sound\snd_moose2_2</sound>
+        <sound>sound\snd_moose2_3</sound>
+      </sounds>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_blank</sprite>
@@ -816,6 +826,32 @@
       <sprite>sprites\spr_ants</sprite>
       <sprite>sprites\spr_ants_mask</sprite>
     </sprites>
+    <sprites name="point mode">
+      <sprite>sprites\spr_score_popup_left</sprite>
+      <sprite>sprites\obj_score_mask</sprite>
+      <sprite>sprites\spr_score_popup_number</sprite>
+      <sprite>sprites\spr_point_ui_bg</sprite>
+    </sprites>
+    <sprites name="treehouse">
+      <sprite>sprites\spr_treehouse_stars</sprite>
+      <sprite>sprites\spr_treehouse_moonlight</sprite>
+      <sprite>sprites\spr_treehouse_bg</sprite>
+      <sprite>sprites\spr_treehouse_fg</sprite>
+      <sprite>sprites\spr_treehouse_select</sprite>
+      <sprite>sprites\spr_treehouse_park</sprite>
+      <sprite>sprites\spr_treehouse_mask</sprite>
+      <sprite>sprites\sprite534</sprite>
+      <sprite>sprites\spr_pug_bike_1</sprite>
+      <sprite>sprites\spr_pug_bike_0</sprite>
+      <sprite>sprites\spr_bike_sign</sprite>
+    </sprites>
+    <sprites name="talking heads">
+      <sprite>sprites\spr_moose_talk</sprite>
+      <sprite>sprites\spr_moose_talk_happy</sprite>
+      <sprite>sprites\spr_moose_talk_scared</sprite>
+      <sprite>sprites\spr_moose_talk_mad</sprite>
+      <sprite>sprites\spr_talking_head_bg</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="title screen">
@@ -824,6 +860,7 @@
     </backgrounds>
     <backgrounds name="Park Night">
       <background>background\bg_park_night</background>
+      <background>background\background8</background>
       <background>background\bg_park_night_sky</background>
       <background>background\bg_park_night_lake</background>
     </backgrounds>
@@ -831,8 +868,14 @@
       <background>background\bg_char_tut</background>
       <background>background\bg_char_tut_mock</background>
     </backgrounds>
+    <backgrounds name="treehouse">
+      <background>background\bg_treehouse</background>
+    </backgrounds>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path_jump_up</path>
+    <path>paths\path_jump_down</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="g">
       <script>scripts\scr_create.gml</script>
@@ -897,8 +940,8 @@
       <script>scripts\scr_draw_park_night.gml</script>
       <script>scripts\scr_define_park_night.gml</script>
       <scripts name="park step">
-        <script>scripts\scr_park_night_camera.gml</script>
         <script>scripts\scr_define_park_night_camera.gml</script>
+        <script>scripts\scr_park_night_camera.gml</script>
       </scripts>
       <scripts name="user interface">
         <script>scripts\scr_init_park_ui.gml</script>
@@ -910,6 +953,7 @@
           <script>scripts\scr_draw_unlock_ui.gml</script>
         </scripts>
         <script>scripts\scr_draw_park_ui_top_panel.gml</script>
+        <script>scripts\scr_draw_power_ui_with_score.gml</script>
         <script>scripts\scr_draw_power_ui.gml</script>
       </scripts>
       <scripts name="particle">
@@ -952,11 +996,30 @@
       <script>scripts\scr_draw_chartut.gml</script>
       <script>scripts\scr_erase_character_select_obj.gml</script>
     </scripts>
+    <scripts name="point mode">
+      <script>scripts\scr_score_point.gml</script>
+      <script>scripts\scr_define_score.gml</script>
+    </scripts>
+    <scripts name="treehouse">
+      <script>scripts\scr_define_treehouse.gml</script>
+      <script>scripts\scr_step_treehouse.gml</script>
+      <script>scripts\scr_draw_treehouse_bg.gml</script>
+      <script>scripts\scr_draw_treehouse.gml</script>
+      <script>scripts\scr_draw_th_selection.gml</script>
+    </scripts>
+    <scripts name="talking heads">
+      <script>scripts\scr_define_talkingheads.gml</script>
+      <script>scripts\scr_handle_talkingheads.gml</script>
+      <script>scripts\scr_draw_talkingheads.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_bsp14</font>
+    <font>fonts\font_bsp_popup_score</font>
+    <font>fonts\font4</font>
     <font>fonts\font1</font>
     <font>fonts\font_bsp23</font>
+    <font>fonts\font_talking_heads</font>
   </fonts>
   <objects name="objects">
     <object>objects\g</object>
@@ -1059,6 +1122,9 @@
         <object>objects\obj_plate</object>
         <object>objects\obj_bubble_wand_pond</object>
         <object>objects\obj_hint</object>
+        <object>objects\obj_treehouse</object>
+        <object>objects\obj_bike_sign</object>
+        <object>objects\obj_pug_bike</object>
       </objects>
       <objects name="kenetic objects">
         <object>objects\obj_kenetic_parent</object>
@@ -1118,13 +1184,20 @@
       <object>objects\obj_tut_sign_bottom</object>
       <object>objects\obj_chartut_status</object>
     </objects>
+    <objects name="point mode">
+      <object>objects\obj_score_popup</object>
+    </objects>
+    <objects name="tree house objs">
+      <object>objects\obj_treehouse_bg</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_title_screen</room>
-    <room>rooms\rm_character_select</room>
     <room>rooms\rm_park_night</room>
+    <room>rooms\rm_character_select</room>
     <room>rooms\rm_park_night_big</room>
     <room>rooms\rm_testoutroom</room>
+    <room>rooms\rm_treehouse</room>
     <rooms name="old">
       <room>rooms\rm_tutorial</room>
       <room>rooms\rm_character_select_old</room>

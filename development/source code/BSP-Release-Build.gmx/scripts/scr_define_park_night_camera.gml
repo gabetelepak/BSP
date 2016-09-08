@@ -3,3 +3,5 @@ vy = 0;
 vw = 0;
 vh = 0;
 shake = 0;
+g.vy_offset = 0;
+g.vx_offset = 0;

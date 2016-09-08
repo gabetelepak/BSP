@@ -3,11 +3,11 @@
   <caption></caption>
   <width>1344</width>
   <height>720</height>
-  <vsnap>4</vsnap>
-  <hsnap>4</hsnap>
+  <vsnap>2</vsnap>
+  <hsnap>2</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>instance_create(0,0,g_floor);
@@ -72,7 +72,6 @@ scr_erase_character_select_obj();}
     <instance objName="obj_hotdog_stand" x="708" y="96" name="inst_EB3C0290" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_trashcan" x="780" y="120" name="inst_A8C4AF19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_carpet" x="540" y="204" name="inst_F94C5AB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tree_right" x="960" y="252" name="inst_4A03410A" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge" x="192" y="378" name="inst_1A43F65D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bridge_front" x="192" y="462" name="inst_4C1A3A9B" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bench" x="372" y="438" name="inst_1994494B" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -200,9 +199,9 @@ scr_erase_character_select_obj();}
     <instance objName="obj_pigeon_breadshop" x="1200" y="252" name="inst_DC26DE44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pigeon_breadshop" x="1260" y="264" name="inst_FEB3B35C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pigeon_breadshop" x="1188" y="300" name="inst_49B86412" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_babyduck" x="854" y="220" name="inst_4FC03F64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_babyduck" x="878" y="210" name="inst_33521F1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_babyduck" x="874" y="230" name="inst_CFB07DF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_babyduck" x="186" y="230" name="inst_4FC03F64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_babyduck" x="204" y="236" name="inst_33521F1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_babyduck" x="188" y="240" name="inst_CFB07DF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bubble_wand_pond" x="492" y="168" name="inst_3F7E98F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firefly" x="540" y="132" name="inst_C624FA3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firefly" x="588" y="144" name="inst_D5CEBF4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -242,6 +241,9 @@ scr_erase_character_select_obj();}
     <instance objName="obj_pigeon_old" x="600" y="288" name="inst_D2AAD756" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pigeon_old" x="632" y="292" name="inst_EA6C711A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pigeon_old" x="584" y="276" name="inst_947C0388" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treehouse" x="940" y="264" name="inst_7835945C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bike_sign" x="862" y="208" name="inst_4631BF47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pug_bike" x="902" y="222" name="inst_E144BAC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -78,8 +78,9 @@ created += 1;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if created &gt;= 3{
-scr_pug_draw();}
+            <string>if invisible = 0{
+if created &gt;= 3{
+scr_pug_draw();}}
 </string>
           </argument>
         </arguments>

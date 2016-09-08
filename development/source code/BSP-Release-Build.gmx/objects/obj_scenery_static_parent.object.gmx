@@ -47,6 +47,10 @@ spr_hint = spr_blank;
 hint_time = g.hint_time_max;
 hintx = 0;
 hinty = 0;
+
+//scoring
+obj_scored = 0;
+points_worth = g.small_score;
 </string>
           </argument>
         </arguments>

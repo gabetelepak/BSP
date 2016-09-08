@@ -55,7 +55,8 @@ hinty = -59;
 hint_time = g.hint_time_max;
 hint_alpha = 0;
 
-
+//score
+points_worth = g.med_score;
 
 </string>
           </argument>
@@ -123,6 +124,7 @@ state = "wake";}}}
 
 
 if state = "wake"{
+scr_score_point(points_worth);
 sprite_index = spr_granny_wakeup;
 image_index = 0;
 image_speed = .25;
