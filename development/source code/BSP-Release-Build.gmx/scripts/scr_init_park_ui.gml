@@ -34,6 +34,7 @@ check_granny = 0;
 check_frog = 0;
 check_duck = 0;
 check_sandwich = 0;
+check_xol = 0;
 
 
 //intro tip "solve puzzles"

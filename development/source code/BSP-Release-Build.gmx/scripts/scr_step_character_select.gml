@@ -1,3 +1,5 @@
+
+
 idle_anim += .1;
 if idle_anim >= 8{
 idle_anim = 0;}

@@ -72,7 +72,7 @@ button[islot,button_RT] = max(gamepad_button_check(gamepad[islot], gp_shoulderrb
 
 
 i = 0;
-button_pressed = 0;
 repeat(button_slots_max){
-if button[islot,i] > 0{button_pressed = i;}
+if button[islot,i] > 0{button_pressed[islot,i] += 1;}
+else{button_pressed[islot,i] = 0;}
 i+=1;}

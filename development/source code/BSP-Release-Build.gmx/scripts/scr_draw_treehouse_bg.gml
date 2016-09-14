@@ -16,6 +16,14 @@ i = (abs(moontime - (15*10))/48)+.25;
 draw_sprite_ext(spr_treehouse_moonlight,2,0,0,1,1,0,c_white,i);
 
 
-
+if g.customize_furn > 0{
+i = 0;
+i2 = 0;
+repeat(6){
+i2 = 0;
+if i = g.th_current_select_spot{i2 = g.anim*.2;}
+draw_sprite(spr_treehouse_select,i2,g.th_select_x[i],g.th_select_y[i]);
+i+=1;}
+}
 
 

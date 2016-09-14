@@ -1,3 +1,7 @@
+if created < 5{created += 1;}
+
+if created = 4{scr_pug_assign_sprites();}
+
 scr_depth();
 
 pause = 0;
@@ -7,6 +11,23 @@ if g.ascend_treehouse > 0{
 pause = 1;
 invisible = 1;}
 
+if g.customize_furn > 0 && player_number = 0{
+speed = 0;
+pause = 1;
+direction = point_direction(x,y,g.select_draw_x,g.select_draw_y);}
+
+if g.talking_head_current_string != ''{
+pause = 1;}
+
+if pause > 0{
+if g.customize_furn > 0{
+sprite_index = spr_good;
+image_speed = .5;
+pug_action = 0;
+if image_index >= 8{image_speed = 0;}}}
+else{
+if sprite_index = spr_good{sprite_index = spr_sit;}
+}
 
 //handle controls
 
@@ -101,31 +122,61 @@ if place_free(x+face*1,y){x += face*1;}
 
 if room = rm_treehouse{
 
+//while not jumping.
 if jump_up_ladder = 0{
 vspeed = 0;
-if treehouse_floor = 1{y = 144;}else{y = 96;}
-if sprite_index = spr_walk_up || sprite_index = spr_walk_down{
-image_speed = 0;
-sprite_index = spr_sit;}}
+if treehouse_floor = 1{y = 144;}else{y = 96;}}
 
-//jump up
+//start jump up anim
 if x > 192 && treehouse_floor = 1 && jump_up_ladder = 0{
-path_start(path_jump_up, 3, path_action_stop, false);
+sprite_index = spr_jump;
+image_index = 0;
+image_speed = .25;
 jump_up_ladder = 1;}
-//jump down
+
+//start jump down anim
 if x < 236-16 && treehouse_floor = 2 && jump_up_ladder = 0{
 path_position = 1;
-path_start(path_jump_down, 3, path_action_stop, false);
-jump_up_ladder = -1;}
-//end jump
-if jump_up_ladder != 0{
-if jump_up_ladder = 1{face = -1;}else{face = 1;}
-jump = 1;
-if path_position = 1{
-if jump_up_ladder = 1{treehouse_floor = 2;}else{treehouse_floor = 1;}
-jump_up_ladder = 0;
-jump = 0;}}
+sprite_index = spr_jump;
+image_index = 0;
+image_speed = .25;
+jump_up_ladder = -1;
 }
+
+//actual leap.
+if jump_up_ladder != 0 && path_index = -1 && floor(image_index) = 3{
+if treehouse_floor = 1{
+path_start(path_jump_up, 6, path_action_stop, false);}
+else{
+path_start(path_jump_down, 6, path_action_stop, false);}}
+
+
+
+
+//while jumping
+if jump_up_ladder != 0{
+jump = 1;
+speed = 0;
+if jump_up_ladder = 1{face = -1;}else{face = 1;}
+
+if path_index >= 0{
+image_speed = 0;
+image_index = 3 + floor(4*path_position);}
+
+//end jump
+if path_position = 1 && image_index > 3{
+path_end();
+path_position = 0;
+image_index = 7;
+image_speed = .25;}
+
+if image_index >= 9{
+if jump_up_ladder = 1{treehouse_floor = 2;}else{treehouse_floor = 1;}
+jump = 0;
+jump_up_ladder = 0;}
+
+
+}}
 
 
 

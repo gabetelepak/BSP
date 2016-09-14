@@ -5,6 +5,7 @@ scr_define_controls();
 
 tiff_panels = 0;
 manymouse_active = 0;
+g.pewds_build = 1;
 scr_init_manymouse();
 
 scr_define_misc_systems();
@@ -62,7 +63,8 @@ spr_bread_walk[i] = spr_sammie_bread_walk;
 spr_bread_down[i] = spr_sammie_bread_down;
 spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
-
+spr_jump[i] = spr_sammie_jump;
+spr_good[i] = spr_sammie_good;
 
 
 //alice
@@ -90,9 +92,14 @@ spr_bread_walk[i] = spr_sammie_bread_walk;
 spr_bread_down[i] = spr_sammie_bread_down;
 spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
+spr_jump[i] = spr_alice_jump;
+spr_good[i] = spr_alice_good;
+
+
+i+=1;
 
 //bella
-i+=1;
+if g.pewds_build = 0{
 scr_load_pug_sheets(spr_bella_sheet);
 g.spr_pugslide[i] = spr_slide_sammy;
 spr_transform[i] = spr_bella_transform;
@@ -116,6 +123,36 @@ spr_bread_walk[i] = spr_sammie_bread_walk;
 spr_bread_down[i] = spr_sammie_bread_down;
 spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
+spr_jump[i] = spr_bella_jump;
+spr_good[i] = spr_bella_good;}
+
+//convert above to maya
+if g.pewds_build = 1{
+scr_load_pug_sheets(spr_maya_sheet);
+g.spr_pugslide[i] = spr_slide_sammy;
+spr_transform[i] = spr_bella_transform;
+spr_hover[i] = spr_bella_hover;
+spr_itemget[i] = spr_bella_itemget;
+spr_bubble_wand_use[i] = spr_sammie_bubble_wand_use;
+spr_bubble_wand_walk[i] = spr_sammie_bubble_wand_walk;
+spr_bubble_wand_down[i] = spr_sammie_bubble_wand_down;
+spr_bubble_wand_up[i] = spr_sammie_bubble_wand_up;
+spr_bubble_wand_idle[i] = spr_sammie_bubble_wand_idle;
+spr_bugnet_use[i] = spr_sammie_bugnet_use;
+spr_bugnet_walk[i] = spr_sammie_bugnet_walk;
+spr_bugnet_down[i] = spr_sammie_bugnet_down;
+spr_bugnet_up[i] = spr_sammie_bugnet_up;
+spr_bugnet_idle[i] = spr_sammie_bugnet_idle;
+spr_frisbee_walk[i] = spr_sammie_frisbee_walk;
+spr_frisbee_down[i] = spr_sammie_frisbee_down;
+spr_frisbee_up[i] = spr_sammie_frisbee_up;
+spr_frisbee_idle[i] = spr_sammie_frisbee_idle;
+spr_bread_walk[i] = spr_sammie_bread_walk;
+spr_bread_down[i] = spr_sammie_bread_down;
+spr_bread_up[i] = spr_sammie_bread_up;
+spr_bread_idle[i] = spr_sammie_bread_idle;
+spr_jump[i] = spr_bella_jump;
+spr_good[i] = spr_bella_good;}
 
 //edgar
 i+=1;
@@ -142,6 +179,8 @@ spr_bread_walk[i] = spr_sammie_bread_walk;
 spr_bread_down[i] = spr_sammie_bread_down;
 spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
+spr_jump[i] = spr_edgar_jump;
+spr_good[i] = spr_edgar_good;
 
 
 arrayname[5] = 0;

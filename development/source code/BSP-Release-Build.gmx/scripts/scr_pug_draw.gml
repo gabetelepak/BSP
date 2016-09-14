@@ -3,7 +3,7 @@ if spr_item != spr_blank && sprite_index != spr_itemget && hurt <= 0
 && sprite_index != spr_sniffed{
 draw_sprite_ext(spr_item,image_single,x,y-magic_mode_y,1*face,1,rot,color,alpha);}
 
-//draw_text(x,y-48,player_number);
+//draw_text(x,y-48,g.selected_char[player_number]);
 
 //draw shadow for mm
 if magic_mode > 0{

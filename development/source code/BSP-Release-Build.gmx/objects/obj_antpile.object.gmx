@@ -64,9 +64,9 @@ pug.direction = point_direction(pug.x,pug.y,x,y)+180;
 if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 complete = 1;
-scr_sound(snd_scratch,1);
+//scr_sound(snd_scratch,1);
 scr_score_point(g.big_score);
-with obj_babyduck{stage = "pug follow";}
+//with obj_xol{stage = "pug follow";}
 
 repeat(5){scr_obj_full_sparkle(3);}
 

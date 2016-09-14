@@ -3,4 +3,4 @@
 
 repeat(irandom(argument3)){
 opt = instance_create(argument0,argument1,obj_dust);
-opt.direction = direction+irandom(12)-6;}
+opt.direction = argument2+irandom(12)-6;}

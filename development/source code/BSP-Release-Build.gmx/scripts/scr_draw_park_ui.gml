@@ -9,7 +9,7 @@ scr_draw_power_ui();
 //scr_draw_park_ui_top_panel();
 
 //orbyt build top panel
-
+dont_show_objectives = 1;
 if room = rm_park_night{
 if dont_show_objectives = 0{
 //solve puzzle text for 5 seconds when game starts
@@ -35,7 +35,7 @@ draw_sprite_ext(spr_ui_checkmark,check_sandwich,ix,vy+17,1,1,0,c_white,1);
 ix += 33;}
 
 
-
+}
 
 
 //bones ui
@@ -45,7 +45,6 @@ bones_time = 60;}
 
 if bones_time > 0{
 bones_time -= 1;}
-
 
 draw_sprite_ext(spr_bone_ui,0,vx+10,vy+15+10,1,1,0,c_white,bones_show/5);
 draw_set_alpha(bones_show/5);
@@ -57,7 +56,7 @@ draw_text(vx+10+35,vy+23,string(floor(bones_show)));
 draw_set_color(c_white);
 draw_text(vx+10+35,vy+21,string(floor(bones_show)));
 draw_set_alpha(1);
-}
+
 
 //draw reset timer
 if unlock_intro_tip <= 0{

@@ -11,7 +11,9 @@ instance_create(0,0,obj_tut_sign_top);
 instance_create(0,0,obj_tut_sign_bottom);
 with obj_player{
 x = g.char_startx[player_number];
-y = g.char_starty[player_number];}}
+y = g.char_starty[player_number];
+scr_pug_create();
+scr_pug_assign_sprites();}}
 
 
 

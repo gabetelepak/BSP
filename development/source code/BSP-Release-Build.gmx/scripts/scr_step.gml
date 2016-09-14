@@ -6,6 +6,8 @@ start_room += 1;}
 
 last_room = room;
 
+g.bones = 100;
+
 scr_step_controls(0);
 scr_step_controls(1);
 
@@ -21,7 +23,8 @@ scr_step_title_screen();}
 
 if game_phase = 'char select'{
 if room_phase = -1 && room = rm_park_night{
-scr_define_character_select();}
+scr_define_character_select();
+scr_init_character_select();}
 
 if room_phase = 0{
 scr_step_character_select();}
@@ -32,6 +35,8 @@ scr_step_chartut();}
 
 if game_phase = 'treehouse'{
 scr_step_treehouse();}
+
+scr_handle_talkingheads();
 
 
 //if room = rm_tutorial{

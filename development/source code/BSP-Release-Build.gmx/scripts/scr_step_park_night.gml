@@ -6,8 +6,7 @@ audio_sound_gain(background_music1, g.music_volume, 0);
 audio_play_sound(background_music1, 1, 1);}
 
 if park_night_intro = 0{
-scr_handle_park_ui();
-scr_handle_talkingheads();}
+scr_handle_park_ui();}
 
 scr_park_night_camera();
 

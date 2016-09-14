@@ -19,6 +19,8 @@ scr_draw_park_night();}
 if game_phase = 'treehouse'{
 scr_draw_treehouse();}
 
+scr_draw_talkingheads();
+
 
 if screen_flash = 1{
 screen_flash = 17;}
@@ -48,10 +50,10 @@ draw_set_alpha(1);}
 
 
 
-draw_set_color(c_black);
+draw_set_color(c_white);
 draw_set_halign(fa_left);
-//draw_text(vx+30,vy+30,start_room);
-
+//draw_text(vx+30,vy+30,g.selected_char[0]);
+//draw_text(vx+30,vy+50,g.selected_char[1]);
 
 //draw debug test
 //scr_draw_debug();

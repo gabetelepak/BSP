@@ -32,8 +32,8 @@ spr_sold = spr_breadshop_sold;
 
 hint_time = g.hint_time_max*.25;
 spr_hint = spr_hint_pigeon;
-hintx = -36-24;
-hinty = -44;
+hintx = 48;
+hinty = -48;
 </string>
           </argument>
         </arguments>
@@ -78,14 +78,19 @@ g.unlock_bread = 1;
 pug.spr_unlock = spr_unlock_bread;
 
 //make attack pigeons
-repeat(6){
-instance_create(564,288,obj_pigeon_attack);}
+i = 0;
+with obj_pigeon_old{
+if other.i &lt; 6{other.i += 1;
+if z = 0{
+instance_create(x,y,obj_pigeon_attack);}
+instance_destroy();}
+}}
 
 }}
 
 }
 
-}
+
 
 //nope
 if scr_pug_dis(32) &gt; 0{
@@ -106,7 +111,7 @@ if pigeon &gt; 0{
 if hint_time &gt; 0{
 hint_time -= 1;}
 else{
-hint_time = g.hint_time_max*.33;
+hint_time = g.hint_time_max*.66;
 opt = instance_create(x+hintx,y+hinty,obj_hint);
 opt.spr_hint = spr_hint;}
 }}else{hint_time = g.hint_time_max*.3;}

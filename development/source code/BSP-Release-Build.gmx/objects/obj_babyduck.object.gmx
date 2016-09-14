@@ -40,6 +40,16 @@ swim = 0;
 interact = "";
 action = 0;
 alarm[0] = floor(random(60))+60;
+
+obj_num = 0;
+var i;
+for (i = 0; i &lt; instance_number(obj_player); i += 1){
+if id = instance_find(obj_player,i){
+obj_num = i;}}
+
+
+spr_walk = spr_baby_duck_walk;
+
 </string>
           </argument>
         </arguments>
@@ -130,23 +140,27 @@ if pug.sprite_index = pug.spr_bark{}}
 
 
 if speed &gt; 0 || z &gt; 0{
-sprite_index = spr_baby_duck_walk;
 
+sprite_index = spr_walk;
+
+//taken out for xol
 if direction &gt; 45 &amp;&amp; direction &lt; 90+45{
 sprite_index = spr_baby_duck_walk_up;}
 if direction &gt; 270-45 &amp;&amp; direction &lt; 270+45{
 sprite_index = spr_baby_duck_walk_down;}
+
+
 image_speed = .15;
 
 if z &gt; 0{image_speed = .35;}
 
 }
 else{
-sprite_index = spr_baby_duck_walk;
+sprite_index = spr_walk;
 image_index = 0;
 image_speed = 0;}
 
-
+maxdis = 3;
 if distance_to_point(spawn_x,spawn_y) &gt; maxdis{
 direction = point_direction(x,y,spawn_x,spawn_y)-35+irandom(70);
 speed = move_speed;}
@@ -162,8 +176,6 @@ if stage != "sandbox" &amp;&amp; z &lt;= 0{zspeed = .5+random(1.5);}
 speed = move_speed;
 if distance_to_point(spawn_x,spawn_y) &gt; maxdis{
 direction = point_direction(x,y,spawn_x,spawn_y)-20+irandom(40);}}
-
-
 
 
 }//end if no interact

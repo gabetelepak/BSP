@@ -3,7 +3,7 @@
 if room = rm_tutorial && g.tutorial_step < 2{g.button[player_number,g.button_Y] = 0;}
 
 //init action
-if g.button[player_number,g.button_Y]{
+if g.button[player_number,g.button_Y] && g.button_pressed[0,g.button_Y] < 2{
 if pug_action <= 0{
 scoot = 0;
 sprite_index = spr_sniff;

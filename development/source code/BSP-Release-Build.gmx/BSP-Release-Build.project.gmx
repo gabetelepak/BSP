@@ -162,6 +162,7 @@
         <sprite>sprites\spr_char_bella_select</sprite>
         <sprite>sprites\spr_char_bella_big</sprite>
         <sprite>sprites\spr_char_sit_bella</sprite>
+        <sprite>sprites\spr_char_sit_bella_locked</sprite>
         <sprite>sprites\spr_char_sit_select_bella</sprite>
         <sprite>sprites\spr_char_bella_name</sprite>
         <sprite>sprites\spr_char_edgar_idle</sprite>
@@ -175,7 +176,7 @@
         <sprite>sprites\spr_char_doug_locked</sprite>
         <sprite>sprites\spr_char_sit_doug</sprite>
         <sprite>sprites\spr_char_maya_locked</sprite>
-        <sprite>sprites\spr_char_sit_maya</sprite>
+        <sprite>sprites\spr_char_sit_maya_locked</sprite>
         <sprite>sprites\spr_char_puglie_locked</sprite>
         <sprite>sprites\spr_char_sit_puglie</sprite>
         <sprite>sprites\spr_char_sammie_idle</sprite>
@@ -184,6 +185,12 @@
         <sprite>sprites\spr_char_sit_sammie</sprite>
         <sprite>sprites\spr_char_sit_select_sammie</sprite>
         <sprite>sprites\spr_char_sammie_name</sprite>
+        <sprite>sprites\spr_char_maya_idle</sprite>
+        <sprite>sprites\spr_char_maya_select</sprite>
+        <sprite>sprites\spr_char_maya_big</sprite>
+        <sprite>sprites\spr_char_sit_maya</sprite>
+        <sprite>sprites\spr_char_sit_select_maya</sprite>
+        <sprite>sprites\spr_char_maya_name</sprite>
       </sprites>
       <sprite>sprites\spr_char_sit_selector</sprite>
     </sprites>
@@ -281,8 +288,11 @@
           </sprites>
           <sprites name="breadshop">
             <sprite>sprites\spr_breadshop_idle</sprite>
+            <sprite>sprites\sprite576</sprite>
             <sprite>sprites\spr_breadshop_give</sprite>
+            <sprite>sprites\sprite577</sprite>
             <sprite>sprites\spr_breadshop_no</sprite>
+            <sprite>sprites\sprite578</sprite>
             <sprite>sprites\spr_breadshop_sold</sprite>
           </sprites>
         </sprites>
@@ -691,6 +701,8 @@
           <sprite>sprites\spr_sammie_bread_up</sprite>
           <sprite>sprites\spr_sammie_bread_idle</sprite>
         </sprites>
+        <sprite>sprites\spr_sammie_jump</sprite>
+        <sprite>sprites\spr_sammie_good</sprite>
       </sprites>
       <sprites name="alice">
         <sprite>sprites\spr_alice_sheet</sprite>
@@ -711,6 +723,8 @@
           <sprite>sprites\spr_alice_bread_up</sprite>
           <sprite>sprites\spr_alice_bread_idle</sprite>
         </sprites>
+        <sprite>sprites\spr_alice_jump</sprite>
+        <sprite>sprites\spr_alice_good</sprite>
       </sprites>
       <sprites name="bella">
         <sprite>sprites\spr_bella_sheet</sprite>
@@ -719,6 +733,8 @@
           <sprite>sprites\spr_bella_hover</sprite>
           <sprite>sprites\spr_bella_transform</sprite>
         </sprites>
+        <sprite>sprites\spr_bella_jump</sprite>
+        <sprite>sprites\spr_bella_good</sprite>
       </sprites>
       <sprites name="edgar">
         <sprite>sprites\spr_edgar_sheet</sprite>
@@ -727,6 +743,12 @@
           <sprite>sprites\spr_edgar_hover</sprite>
           <sprite>sprites\spr_edgar_transform</sprite>
         </sprites>
+        <sprite>sprites\spr_edgar_jump</sprite>
+        <sprite>sprites\spr_edgar_good</sprite>
+      </sprites>
+      <sprites name="maya">
+        <sprite>sprites\spr_maya_sheet</sprite>
+        <sprite>sprites\sprite560</sprite>
       </sprites>
     </sprites>
     <sprites name="general park">
@@ -844,6 +866,13 @@
       <sprite>sprites\spr_pug_bike_1</sprite>
       <sprite>sprites\spr_pug_bike_0</sprite>
       <sprite>sprites\spr_bike_sign</sprite>
+      <sprite>sprites\spr_th_selection_ui</sprite>
+      <sprites name="furniture">
+        <sprite>sprites\spr_th_furn_flowers</sprite>
+        <sprite>sprites\spr_test_furn</sprite>
+      </sprites>
+      <sprite>sprites\spr_treehouse_customize_on_off</sprite>
+      <sprite>sprites\spr_treehouse_exit_sign</sprite>
     </sprites>
     <sprites name="talking heads">
       <sprite>sprites\spr_moose_talk</sprite>
@@ -851,6 +880,20 @@
       <sprite>sprites\spr_moose_talk_scared</sprite>
       <sprite>sprites\spr_moose_talk_mad</sprite>
       <sprite>sprites\spr_talking_head_bg</sprite>
+      <sprite>sprites\spr_th_a_button</sprite>
+    </sprites>
+    <sprites name="pewdiepie">
+      <sprite>sprites\spr_barrel</sprite>
+      <sprite>sprites\spr_billy</sprite>
+      <sprite>sprites\spr_clint</sprite>
+      <sprite>sprites\spr_billy_sad</sprite>
+      <sprite>sprites\spr_billy_swim</sprite>
+      <sprite>sprites\spr_clint_sad</sprite>
+      <sprite>sprites\spr_clint_swim</sprite>
+      <sprite>sprites\spr_splash</sprite>
+      <sprite>sprites\sprite573</sprite>
+      <sprite>sprites\spr_stall_yellow</sprite>
+      <sprite>sprites\spr_stall_purple</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -898,6 +941,7 @@
       <script>scripts\scr_define_character_select.gml</script>
       <script>scripts\scr_step_character_select.gml</script>
       <script>scripts\scr_draw_character_select.gml</script>
+      <script>scripts\scr_init_character_select.gml</script>
     </scripts>
     <scripts name="game options">
       <script>scripts\scr_define_game_options.gml</script>
@@ -984,13 +1028,14 @@
         <script>scripts\scr_init_item_holding.gml</script>
         <script>scripts\scr_handle_item_holding.gml</script>
       </scripts>
+      <script>scripts\scr_pug_assign_sprites.gml</script>
     </scripts>
     <scripts name="tutorial_old">
       <script>scripts\scr_define_tutorial.gml</script>
       <script>scripts\scr_step_tutorial.gml</script>
       <script>scripts\scr_draw_tutorial.gml</script>
     </scripts>
-    <scripts name=" tutorial">
+    <scripts name="tutorial">
       <script>scripts\scr_define_chartut.gml</script>
       <script>scripts\scr_step_chartut.gml</script>
       <script>scripts\scr_draw_chartut.gml</script>
@@ -1003,6 +1048,7 @@
     <scripts name="treehouse">
       <script>scripts\scr_define_treehouse.gml</script>
       <script>scripts\scr_step_treehouse.gml</script>
+      <script>scripts\scr_step_treehouse_new.gml</script>
       <script>scripts\scr_draw_treehouse_bg.gml</script>
       <script>scripts\scr_draw_treehouse.gml</script>
       <script>scripts\scr_draw_th_selection.gml</script>
@@ -1011,6 +1057,7 @@
       <script>scripts\scr_define_talkingheads.gml</script>
       <script>scripts\scr_handle_talkingheads.gml</script>
       <script>scripts\scr_draw_talkingheads.gml</script>
+      <script>scripts\scr_moose_tut_script.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -1124,6 +1171,9 @@
         <object>objects\obj_hint</object>
         <object>objects\obj_treehouse</object>
         <object>objects\obj_bike_sign</object>
+        <object>objects\obj_barrel</object>
+        <object>objects\obj_stall_yellow</object>
+        <object>objects\obj_stall_purple</object>
         <object>objects\obj_pug_bike</object>
       </objects>
       <objects name="kenetic objects">
@@ -1144,6 +1194,7 @@
           <object>objects\obj_frog</object>
           <object>objects\obj_duck</object>
           <object>objects\obj_babyduck</object>
+          <object>objects\obj_xol</object>
           <object>objects\obj_pigeon_old</object>
           <object>objects\obj_pigeon_breadshop</object>
           <object>objects\obj_pigeon_attack</object>
@@ -1153,6 +1204,7 @@
       </objects>
       <objects name="particles">
         <object>objects\obj_dust</object>
+        <object>objects\obj_splash</object>
       </objects>
     </objects>
     <objects name="pug characters">
@@ -1171,6 +1223,7 @@
       <object>objects\obj_biglake</object>
       <object>objects\obj_bigfountain_bush_left</object>
       <object>objects\obj_bigfountain_bush_right</object>
+      <object>objects\obj_wall_bush</object>
       <object>objects\obj_bigfountain</object>
       <object>objects\obj_antpile</object>
       <object>objects\obj_gatedoor</object>
@@ -1194,6 +1247,7 @@
   <rooms name="rooms">
     <room>rooms\rm_title_screen</room>
     <room>rooms\rm_park_night</room>
+    <room>rooms\room8</room>
     <room>rooms\rm_character_select</room>
     <room>rooms\rm_park_night_big</room>
     <room>rooms\rm_testoutroom</room>

@@ -93,9 +93,15 @@ if speed &lt; 2.5{speed += .025;}
 
 if scr_dis(x,y,obj_bigfountain.x,obj_bigfountain.y-37) &lt; 4{
 
-opt = instance_create(360,200,obj_chartut_status);
-opt.step = 1;
-scr_sound(snd_scratch,1);
+with g{
+talking_head_draw_string = '';
+talking_head_step = 0;
+talking_head_index = 0;
+scr_moose_tut_script();
+talking_head_current_string = th_line[talking_head_index];
+spr_talking_head = talk_sprite[th_face[talking_head_index]];}
+
+
 
 ready = 3;
 with obj_bigfountain{scr_obj_full_sparkle(5);
@@ -104,10 +110,20 @@ repeat(5){scr_obj_full_sparkle(3);}
 
 }}
 
-if ready = 3{
+if ready &gt;= 3{
 depth = obj_bigfountain.depth;
 x = obj_bigfountain.x;
 y = obj_bigfountain.y-37;}
+
+
+if ready = 3 &amp;&amp; g.talking_head_current_string = ""{
+ready = 4;
+opt = instance_create(360,200,obj_chartut_status);
+opt.step = 1;
+scr_sound(snd_scratch,1);}
+
+
+
 
 </string>
           </argument>

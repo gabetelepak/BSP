@@ -27,3 +27,9 @@ button_DRIGHT= i;i+=1;
 button_DUP= i;i+=1;
 button_DDOWN= i;i+=1;
 button_slots_max = i-1;
+
+i = 0;
+repeat(button_slots_max){
+button_pressed[0,i] = 0;
+button_pressed[1,i] = 0;
+i+=1;}

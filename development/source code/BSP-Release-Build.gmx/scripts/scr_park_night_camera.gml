@@ -25,8 +25,8 @@ view_yview[0] = floor(iy/player_total)-floor(view_hview[0]/2) + g.vy_offset;
 
 //clamp view
 if g.game_phase = "park night"{
-view_xview[0] = clamp(view_xview[0],0,room_width-view_wview[0]) + shakex;
-view_yview[0] = clamp(view_yview[0],0,room_height-view_hview[0]) + shakey;}
+view_xview[0] = clamp(view_xview[0],0,1000-view_wview[0]) + shakex;
+view_yview[0] = clamp(view_yview[0],0,32) + shakey;}
 
 /*
 if g.game_phase = "char select"{
