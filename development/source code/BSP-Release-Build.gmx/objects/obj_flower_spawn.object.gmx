@@ -30,6 +30,7 @@ death_time = -1;
 life_time = 0;
 pug = -1;
 spawn = 0;
+no_overlap = 0;
 
 //reposition if overlapping another flower bed.
 /*
@@ -42,17 +43,49 @@ i = scr_collide(obj_flower_spawn);
 if i &gt; 0{instance_destroy();}
 */
 
-
+//destroy if hit the flower mask
+/* omitted
 i = instance_place(x,y,obj_flower_spawn);
 if instance_exists(i){active = 0;}
 
-
-//destroy if hit the flower mask
 if instance_exists(obj_flower_mask){
 if place_meeting(x,y,obj_flower_mask){active = 0;}}
+*/
 
-
+active = 1;
 //spawn 4 flowers
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//event_inherited();
+
+if spawn &lt; 2{spawn += 1;}
+
+if spawn = 1{
+
+if place_meeting(x,y,obj_flower_spawn) &amp;&amp; no_overlap = 1{
+active = 0;}
+
 if active = 1{
 
 i = instance_place(x, y, obj_poop);
@@ -121,34 +154,9 @@ i += 1;}
 obj_scored = 0;
 points_worth = g.min_score;
 
+}//end spawn///////////////////////////////////////////////////
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//event_inherited();
-
-
-if spawn = 0{spawn = 1;
-scr_score_point(g.small_score);}
+if spawn = 2{
 scr_pug_nearest();
 
 //pee
@@ -193,6 +201,7 @@ if instance_exists(flower3){with flower3{instance_destroy();}}
 instance_destroy();
 }
 
+}
 
 </string>
           </argument>
@@ -216,7 +225,11 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//
+            <string>/*
+if no_overlap = 1{
+if id &lt; other.id{
+kill = 2;}}
+*/
 </string>
           </argument>
         </arguments>

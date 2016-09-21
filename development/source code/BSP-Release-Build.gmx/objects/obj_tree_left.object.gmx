@@ -58,7 +58,7 @@ drop_frisbee = 0;
 drop_frisbee = 1;
 bush_shake = 1;
 frisbee = 0;
-opt = instance_create(x-45,y+24,obj_frisbee);
+opt = instance_create(x-45,y+24,obj_pizza);
 opt.z = 24+96;
 opt.zspeed = -2;}
 </string>

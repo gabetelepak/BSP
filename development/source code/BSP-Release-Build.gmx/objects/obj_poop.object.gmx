@@ -109,7 +109,9 @@ iy = i.y;
 if abs(i.x-x) &gt;= abs(i.y-y){
 ix = i.x+sign(x-i.x)*24;}else{
 iy = i.y+sign(y-i.y)*24;}
+
 opt = instance_create(ix,iy,obj_flower_spawn);
+opt.no_overlap = 1;
 with opt{scr_pug_nearest();}
 instance_destroy();
 

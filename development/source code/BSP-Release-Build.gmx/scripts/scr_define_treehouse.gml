@@ -44,7 +44,9 @@ max_th_furn = 0;
 i = 0;
 th_furn_item[i] = spr_blank;i+=1;
 th_furn_item[i] = spr_th_furn_flowers;i+=1;
-th_furn_item[i] = spr_test_furn;i+=1;
+th_furn_item[i] = spr_th_furn_duck_float;i+=1;
+th_furn_item[i] = spr_th_furn_egg_chair;i+=1;
+th_furn_item[i] = spr_th_furn_tent;i+=1;
 max_th_furn = i-1;
 
 th_current_select_furn = th_select_furn[th_current_select_spot];

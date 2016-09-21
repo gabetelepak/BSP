@@ -160,8 +160,9 @@ abs(other.y+15 - y) &lt; 15{
 if bubble &gt; 0{
 other.target = id;
 other.lash = 3;
-g.mm_unlock_frog = 1;
+//g.mm_unlock_frog = 1;
 
+/*
 if g.unlock_frog = 0{
 g.unlock_frog = 1;
 //pug.spr_unlock = spr_unlock_frog;
@@ -169,6 +170,7 @@ opt = instance_create(x,y,obj_unlock);
 opt.sprite_index = spr_unlock_frog;
 opt.magic_mode = 1;
 }
+*/
 
 scr_magic_mode_db();
 lilypad = 0;

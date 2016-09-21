@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 spr_shadow = spr_fountain_bushes_shadow;
-hint_flash = 1;
-frisbee = 1;
+hint_flash = 0;
+frisbee = 0;
 bubble_wand = 0;
 spr_bush_splash = spr_trash_bush_poof;
 

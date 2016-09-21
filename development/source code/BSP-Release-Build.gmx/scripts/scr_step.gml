@@ -6,7 +6,7 @@ start_room += 1;}
 
 last_room = room;
 
-g.bones = 100;
+
 
 scr_step_controls(0);
 scr_step_controls(1);

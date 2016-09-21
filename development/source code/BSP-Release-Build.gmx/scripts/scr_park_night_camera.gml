@@ -1,4 +1,4 @@
-//camera shake
+// camera shake
 if shake > 0{
 shakex = random(shake*2)-shake;
 shakey = random(shake*2)-shake;
@@ -8,7 +8,9 @@ shake -= .5;}
 //follow players
 ix = 0;
 iy = 0;
+player_total = 0;
 with obj_player{
+g.player_total += 1;
 g.ix += x;
 g.iy += y;}
 
@@ -24,7 +26,7 @@ view_yview[0] = floor(iy/player_total)-floor(view_hview[0]/2) + g.vy_offset;
 }
 
 //clamp view
-if g.game_phase = "park night"{
+if g.game_phase = "park night" && park_night_intro = 0{
 view_xview[0] = clamp(view_xview[0],0,1000-view_wview[0]) + shakex;
 view_yview[0] = clamp(view_yview[0],0,32) + shakey;}
 

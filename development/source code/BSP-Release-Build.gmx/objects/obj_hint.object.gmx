@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = .25;
+            <string>//omitting hints
+//instance_destroy();
+
+image_speed = .25;
 spr_hint = spr_blank;
 hint_time = 0;
 </string>
@@ -67,6 +70,29 @@ hint_time = 0;}
 if sprite_index = spr_hint_deflate{
 if image_index &gt; image_number - 1{
 instance_destroy();}}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//dont draw, omitted quick fix.
 </string>
           </argument>
         </arguments>

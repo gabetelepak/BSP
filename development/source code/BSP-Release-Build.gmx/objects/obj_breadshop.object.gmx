@@ -66,11 +66,12 @@ else{pigeon = -1;}
 //g.bones = 50;
 
 if scr_pug_dis(4) &gt; 0 &amp;&amp; pug.x &lt; x{
-if g.bones &lt; 50 || pigeon &gt; 0{
+if g.bones &lt; 100 || pigeon &gt; 0{
 sprite_index = spr_breadshop_no;}
 else{
 if sold = 0 &amp;&amp; pug.item_held = ""{
 sold = 1;
+g.bones -= 100;
 sprite_index = spr_breadshop_give;
 pug.item_held = "Bread";
 if g.unlock_bread = 0{

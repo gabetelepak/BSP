@@ -90,6 +90,7 @@ spawn = 0;}
 
 
 if stage = "pug follow"{
+
 if obj_num = 0{spr_walk = spr_clint;}
 else{spr_walk = spr_billy;}
 
@@ -97,7 +98,7 @@ maxdis = 16;
 i = instance_nearest(x,y,obj_player);
 spawn_x = i.x;
 spawn_y = i.y;
-move_speed = 1;
+move_speed = 1.5;
 
 
 
@@ -118,6 +119,9 @@ if place_meeting(x,y,obj_pond){
 dive_meter += 1;}}
 
 if dive_meter = 30{
+if obj_num = 0{
+g.bones += 50;
+pug.spr_unlock = spr_unlock_temp;}
 with obj_barrel{fuse = 100;}
 repeat(5){instance_create(x+irandom(8)-4,y+irandom(8)-4,obj_splash);}}
 

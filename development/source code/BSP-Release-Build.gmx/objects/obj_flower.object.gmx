@@ -46,6 +46,10 @@ bloom = 0;
 bloom_alpha = 1;
 death_time = 999;
 death_alpha = 0;
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -116,6 +120,12 @@ if colorn = "purple"{petal_color = g.c_flower_purple;}
 if colorn = "red"{petal_color = g.c_flower_red;}
 if colorn = "white"{petal_color = c_white;}
 if colorn = "yellow"{petal_color = c_yellow;}
+
+//make ladybug
+if colorn = "yellow"{
+i = irandom(100);
+if i &lt;= 25{
+opt = instance_create(x,y,obj_ladybug);}}
 
 }
 

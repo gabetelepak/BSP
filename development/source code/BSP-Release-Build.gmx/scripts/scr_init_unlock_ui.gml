@@ -18,4 +18,12 @@ secrets_found_panel_y = 0;
 show_unlock_menu = 0;
 b_pressed = 0;
 
+//bugs
+unlock_beetle = 0;
+unlock_butterfly = 0;
+unlock_firefly = 0;
+unlock_ladybug = 0;
+unlock_pillbug = 0;
+unlock_snail = 0;
+
 

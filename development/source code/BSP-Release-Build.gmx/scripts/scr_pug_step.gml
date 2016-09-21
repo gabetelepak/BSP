@@ -77,13 +77,15 @@ scr_handle_magic_mode();}}
 //handle action timer
 if pug_action > 0{
 if sprite_index != spr_bugnet_use{speed = 0;}
+
+/*omitting bugnet use, movement forward
 else{speed = move_speed*.75;
 
 if direction = 90 || direction = 270{
 if face = -1{direction -= 45;}
-else{direction += 45;}}
+else{direction += 45;}}}
+*/
 
-}
 pug_action -= abs(image_speed);}
 else{
 hurt = 0;
@@ -115,8 +117,13 @@ zbounce = 1;}}
 }
 
 //stung
-if hurt = 1{
-if place_free(x+face*1,y){x += face*1;}
+if hurt > 0{
+//if place_free(x+face*1,y){x += face*1;}
+
+//pom zone hurt
+//direction = point_direction(x,y,obj_pom.x,obj_pom.y)+180;
+//speed = 1;
+
 }
 
 

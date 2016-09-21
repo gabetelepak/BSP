@@ -152,27 +152,32 @@ bubble = 1;
 }}}
 
 //get bit
+/*
 if scr_pug_dis(2) &gt; 0{
 if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
 if pug.pug_action = 3 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
 pug.ate_firefly += 1;
 instance_destroy();}}}
+*/
 
-//get netted
+//get netted////////////////
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bugnet_use{
-if pug.pug_action = 5 &amp;&amp; pug.pug_action_proc = 0{
+if (pug.pug_action &lt;= 11 &amp;&amp; pug.pug_action &gt;= 9) &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
-pug.net_firefly += 1;
-instance_destroy();
-
+scr_obj_full_sparkle(3);
 if g.check_firefly = 0{
 g.check_firefly = 1;
-scr_check_burst(1);}
+pug.spr_unlock = spr_firefly_award;}
+else{
+opt = instance_create(x,y,obj_unlock);
+opt.sprite_index = spr_award_5;
+opt.float = 1;}
+instance_destroy();
+}}}///////////////////////
 
-
-}}}
+//pug.net_firefly += 1;
 
 if instance_exists(obj_bubble_wand){
 opt = instance_nearest(x,y,obj_bubble_wand);

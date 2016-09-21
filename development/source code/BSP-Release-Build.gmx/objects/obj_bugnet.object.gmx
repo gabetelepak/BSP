@@ -61,6 +61,8 @@ net_firefly = min(floor(net_firefly*1.5),15);}
             <string>event_inherited();
 image_speed = 0;
 
+if speed &gt; 0{speed = speed*.95;}
+if speed &lt;= .01{speed = 0;}
 
 if z = 0{image_index = 1;
 depth += 13;

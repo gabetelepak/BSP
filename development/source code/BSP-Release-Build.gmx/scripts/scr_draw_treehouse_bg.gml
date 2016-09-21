@@ -26,4 +26,19 @@ draw_sprite(spr_treehouse_select,i2,g.th_select_x[i],g.th_select_y[i]);
 i+=1;}
 }
 
+//draw current selected item
+i = g.th_current_select_spot;
+i2 = 1;
+if g.th_furn_item[g.th_select_furn[i]] = g.th_furn_item[g.th_current_select_furn]{i2 = 0;}
+if g.customize_furn > 0{
+draw_sprite(g.th_furn_item[g.th_current_select_furn],i2,g.th_select_x[i],g.th_select_y[i]-3);}
+
+//draw built items in their spots. unless spot selected
+i = 0;
+repeat(6){
+if i != g.th_current_select_spot || g.customize_furn = 0{
+draw_sprite(g.th_furn_item[g.th_select_furn[i]],0,g.th_select_x[i],g.th_select_y[i]-3);
+}
+i+=1;}
+
 

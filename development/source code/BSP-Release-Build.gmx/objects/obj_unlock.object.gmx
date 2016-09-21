@@ -26,12 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>unlock_time = 60;
-stage = 0;
-
-ix = (g.vx+g.vw/2)+128+25;
-iy = g.vy+25;
-init_dis = distance_to_point(ix,iy);
-magic_mode = 0;
+alpha = 0;
+image_speed = 0;
+spawn = 0;
+float = 0;
 </string>
           </argument>
         </arguments>
@@ -54,27 +52,17 @@ magic_mode = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>unlock_time -= 1;
-
-if unlock_time &lt;= 0{
-unlock_time = 90;
-stage += 1;
-
-if stage = 1{
-y = y-52;
-
-if sprite_index = spr_unlock_beachball{
-opt = instance_create(x,y,obj_unlock);
-opt.sprite_index = sprite_index;
-opt.stage = 1;
-opt.unlock_time = 90;
-opt.magic_mode = 1;}
-
-
+            <string>if spawn = 0{
+spawn = 1;
+if float = 1{
+y = y-32;}
+else{
+y = y-52;}
 }
 
 
-}
+
+
 
 
 
@@ -102,71 +90,29 @@ opt.magic_mode = 1;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>unlock_time -= 1;
+
+if unlock_time &lt;= 50{
+if alpha &lt; 1{alpha += .1;}
+if float = 1{y -= .25;}
+image_speed = .2;}
+
+draw_sprite_ext(sprite_index,image_index,x,y,1,1,0,c_white,alpha);
 
 
-//draw unlock
-if stage = 0{
-if unlock_time &gt; 0  &amp;&amp; unlock_time &lt;= 60-16{
-draw_sprite_ext(sprite_index,0,x,y-52,1,1,0,c_white,1-sqr(unlock_time/30));
+if floor(image_index) = sprite_get_number(sprite_index)-1{
+image_speed = 0;}
 
 if (unlock_time mod 10) == 0{
 scr_sparkle(x,y-52,20,0);}
 
-}
-}
-
-if stage = 1{
-if (unlock_time mod 5) == 0{
-scr_sparkle(x,y,20,0);}
-
-//the unlock button cords
-if magic_mode = 0{
-ix = (g.vx+g.vw/2)+128+25;
-iy = g.vy+25;
-
-//temp orbyt location
-ix = (g.vx+g.vw/2);
-iy = g.vy-25;
-
-speed = (distance_to_point(ix,iy)/20)+2;
-direction = point_direction(x,y,ix,iy)-30;}
-else{
-
-ix = (g.vx+g.vw/2)-128-25;
-iy = g.vy+25;
-
-//temp orbyt location
-ix = (g.vx+g.vw/2);
-iy = g.vy-25;
-
-speed = (distance_to_point(ix,iy)/20)+2;
-direction = point_direction(x,y,ix,iy)+30;
-}
 
 
 
-draw_sprite(sprite_index,0,x,y);
-
-
-if scr_dis(x,y,ix,iy) &lt; 5{
-scr_sparkle(x,y,40,0);
-repeat(15){scr_sparkle(x,y,20,4);}
-
-if magic_mode = 0{
-
-if sprite_index != spr_unlock_frog{
-g.unlock_alert = 1;
-g.secrets_found_panel += 1;}
-
-}
-else{g.magic_mode_alert = 1;}
-
-
+if unlock_time = 1{
+scr_sparkle(x,y,20,0);
+repeat(5){scr_sparkle(x,y,20,4);}
 instance_destroy();}
-
-
-}
 
 
 

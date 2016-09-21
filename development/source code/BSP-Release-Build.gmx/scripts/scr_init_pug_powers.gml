@@ -10,7 +10,7 @@ pug_power = 2;
 
 
 
-pug_power_max = 2;
+pug_power_max = 4;
 
 //set one
 i = 0;
@@ -30,10 +30,10 @@ pug_power_ui_icon[i] = spr_ui_bite;
 pug_power_anim[i] = spr_bite;
 pug_power_snd[i] = snd_pug_bite;
 i+=1;
-pug_power_icon[i] = spr_tip_poop;
-pug_power_ui_icon[i] = spr_ui_poop;
-pug_power_anim[i] = spr_poop;
-pug_power_snd[i] = snd_pug_poop;
+pug_power_icon[i] = spr_tip_dig;
+pug_power_ui_icon[i] = spr_ui_dig;
+pug_power_anim[i] = spr_dig;
+pug_power_snd[i] = snd_pug_dig;
 //set three
 i+=1;
 pug_power_icon[i] = spr_tip_buttdrag;
@@ -41,10 +41,10 @@ pug_power_ui_icon[i] = spr_ui_scoot;
 pug_power_anim[i] = spr_scoot;
 pug_power_snd[i] = snd_blank;
 i+=1;
-pug_power_icon[i] = spr_tip_bite;
-pug_power_ui_icon[i] = spr_ui_bite;
-pug_power_anim[i] = spr_bite;
-pug_power_snd[i] = snd_pug_bite;
+pug_power_icon[i] = spr_tip_poop;
+pug_power_ui_icon[i] = spr_ui_poop;
+pug_power_anim[i] = spr_poop;
+pug_power_snd[i] = snd_pug_poop;
 
 
 
