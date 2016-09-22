@@ -11,13 +11,14 @@ direction = point_direction(x,y,obj_tree_left.x,obj_tree_left.y);
 scr_dust(x,y,direction+180,1);
 sprite_index = spr_scoot;
 image_index = 0;
-speed = 3;
+speed = 5;
 face = -1;
 //slide = 0;
 visible = 1;
-if scr_dis(x,y,obj_tree_left.x,obj_tree_left.y) <= 26{
+if scr_dis(x,y,obj_tree_left.x,obj_tree_left.y) <= 32{
 slide = 0;
 if obj_tree_left.drop_frisbee = 0{obj_tree_left.drop_frisbee = 2;}
 scr_dust(x,y,0,3);
+x -= 10;
 hurt = 2;}
 }}/////////////

@@ -148,7 +148,7 @@ sprite_index = spr_pigeon_eat;
 image_speed = .25;
 alarm[0] = floor(sprite_get_number(sprite_index)/image_speed);}
 
-if i &gt;= 10 &amp;&amp; i &lt; 30{
+if i &gt;= 10 &amp;&amp; i &lt; 13{
 action = 1;
 sprite_index = spr_pigeon_coo;
 image_speed = .25;

@@ -1,6 +1,6 @@
 
 //init action, left
-if g.button[player_number,g.button_LT]{
+if g.button[player_number,g.button_LT] && g.talking_head_current_string = ''{
 if pug_action <= 0{
 sprite_index = abi_left_anim;
 image_speed = .25;
@@ -19,7 +19,7 @@ image_speed = .5;}
 if room = rm_tutorial && g.tutorial_step < 1{g.button[player_number,g.button_RT] = 0;}
 
 //right
-if g.button[player_number,g.button_RT]{
+if g.button[player_number,g.button_RT] && g.talking_head_current_string = ''{
 if pug_action <= 0{
 sprite_index = abi_right_anim;
 image_speed = .25;
@@ -73,6 +73,14 @@ unlock_time -= 1;
 if floor(image_index) = 8{
 image_speed = 0;
 pug_action = 2;}
+
+if unlock_time <= 2{
+if g.talking_head_current_string != ''{
+unlock_time = 2;
+sprite_index = spr_itemget;
+image_index = 8;}}
+
+
 
 }
 if unlock_time = 1{

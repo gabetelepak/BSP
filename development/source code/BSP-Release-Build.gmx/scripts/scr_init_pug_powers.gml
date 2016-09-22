@@ -7,9 +7,6 @@ spr_unlock = 0;
 //pug power db
 pug_power = 2;
 
-
-
-
 pug_power_max = 4;
 
 //set one

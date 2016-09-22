@@ -29,7 +29,7 @@
 zgrav = .05;
 zbouncable = 0;
 spr_shadow = spr_frog_shadow;
-direction = random(360);
+direction = 180;
 image_index = irandom(3);
 frog_sleep = 1;
 
@@ -74,6 +74,9 @@ hint_alpha = 0;
             <kind>1</kind>
             <string>event_inherited();
 zbouncable = 0;
+
+if g.unlock_furn_tent = 1{
+frog_sleep = 0;}
 
 if g.park_night_intro = 0 &amp;&amp; g.game_phase = "park night"{
 
@@ -176,9 +179,11 @@ scr_magic_mode_db();
 lilypad = 0;
 instance_destroy();
 
+/*
 if g.check_frog = 0{
 g.check_frog = 1;
 scr_check_burst(4);}
+*/
 
 }
 else{

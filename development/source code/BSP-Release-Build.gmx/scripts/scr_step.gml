@@ -11,10 +11,12 @@ last_room = room;
 scr_step_controls(0);
 scr_step_controls(1);
 
+/*
 if manymouse_active = 1{
 scr_handle_manymouse();
 scr_manymouse_controls(0);
 scr_manymouse_controls(1);}
+*/
 
 
 

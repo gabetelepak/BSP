@@ -62,6 +62,7 @@ alarm[0] = floor(random(60))+60;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+if g.game_phase = 'park night'{
 zbouncable = 0;
 
 alarm[1] -= 1;
@@ -139,7 +140,7 @@ sprite_index = spr_pigeon_eat;
 image_speed = .25;
 alarm[0] = floor(sprite_get_number(sprite_index)/image_speed);}
 
-if i &gt;= 10 &amp;&amp; i &lt; 30{
+if i &gt;= 10 &amp;&amp; i &lt; 13{
 action = 1;
 sprite_index = spr_pigeon_coo;
 image_speed = .25;
@@ -239,7 +240,7 @@ flutter_immune = 15;}}
 if flutter_immune &gt; 0{flutter_immune -= 1;}
 
 //
-
+}
 </string>
           </argument>
         </arguments>

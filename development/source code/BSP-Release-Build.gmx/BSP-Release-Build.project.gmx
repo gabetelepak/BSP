@@ -22,9 +22,7 @@
       <filename>Pictures</filename>
     </datafile>
   </datafiles>
-  <NewExtensions>
-    <extension index="0">extensions\manymouse</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound">
     <sounds name="title screen">
       <sound>sound\snd_title_theme</sound>
@@ -127,6 +125,15 @@
         <sound>sound\snd_moose2_3</sound>
       </sounds>
     </sounds>
+    <sounds name="pewds">
+      <sound>sound\snd_barrel_explode</sound>
+      <sound>sound\snd_bike_lift</sound>
+      <sound>sound\snd_pom_bark</sound>
+      <sound>sound\snd_coins</sound>
+      <sound>sound\snd_pewds_duck</sound>
+      <sound>sound\snd_leaves</sound>
+      <sound>sound\snd_pond_splash</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_blank</sprite>
@@ -138,6 +145,9 @@
       <sprite>sprites\spr_title_logo</sprite>
       <sprite>sprites\spr_title_logo_pugs_sniffin_pugs</sprite>
       <sprite>sprites\spr_title_start_button</sprite>
+      <sprite>sprites\spr_title_screen_bg</sprite>
+      <sprite>sprites\spr_pewds_sticker</sprite>
+      <sprite>sprites\spr_ks_sticker</sprite>
     </sprites>
     <sprites name="Character Select">
       <sprite>sprites\sprite479</sprite>
@@ -286,6 +296,8 @@
             <sprite>sprites\spr_slide</sprite>
             <sprite>sprites\spr_slide_alice</sprite>
             <sprite>sprites\spr_slide_sammy</sprite>
+            <sprite>sprites\spr_slide_maya</sprite>
+            <sprite>sprites\sprite640</sprite>
           </sprites>
           <sprites name="breadshop">
             <sprite>sprites\spr_breadshop_idle</sprite>
@@ -304,6 +316,7 @@
             <sprite>sprites\spr_teen_pom_stones</sprite>
             <sprite>sprites\spr_teen_pom_mask_closed</sprite>
           </sprites>
+          <sprite>sprites\sprite641</sprite>
         </sprites>
         <sprites name="grass">
           <sprite>sprites\spr_grass1</sprite>
@@ -490,11 +503,18 @@
           <sprite>sprites\spr_snail_turn</sprite>
           <sprite>sprites\spr_butterfly_blue</sprite>
           <sprite>sprites\spr_butterfly_yellow</sprite>
+          <sprite>sprites\spr_beetle_idle</sprite>
+          <sprite>sprites\spr_beetle_fly</sprite>
+          <sprite>sprites\spr_pillbug_ball</sprite>
+          <sprite>sprites\spr_pillbug</sprite>
         </sprites>
         <sprites name="pom">
           <sprite>sprites\spr_pom_walk</sprite>
           <sprite>sprites\spr_pom_react</sprite>
+          <sprite>sprites\sprite646</sprite>
           <sprite>sprites\spr_pom_pee</sprite>
+          <sprite>sprites\spr_pom_happy</sprite>
+          <sprite>sprites\spr_pom_pizza</sprite>
         </sprites>
       </sprites>
       <sprites name="items">
@@ -834,6 +854,7 @@
           <sprite>sprites\spr_award_5</sprite>
           <sprite>sprites\spr_award_25</sprite>
           <sprite>sprites\spr_award_50</sprite>
+          <sprite>sprites\spr_award_50_bag</sprite>
         </sprites>
       </sprites>
       <sprites name="particles">
@@ -915,8 +936,16 @@
         <sprite>sprites\spr_th_furn_duck_float</sprite>
         <sprite>sprites\spr_th_furn_egg_chair</sprite>
         <sprite>sprites\spr_th_furn_tent</sprite>
+        <sprite>sprites\sprite628</sprite>
+        <sprite>sprites\sprite629</sprite>
+        <sprites name="awards">
+          <sprite>sprites\spr_award_flowers</sprite>
+          <sprite>sprites\spr_award_duck_float</sprite>
+          <sprite>sprites\spr_award_tent</sprite>
+          <sprite>sprites\spr_award_egg_chair</sprite>
+        </sprites>
       </sprites>
-      <sprite>sprites\spr_treehouse_stars</sprite>
+      <sprite>sprites\asdasd</sprite>
       <sprite>sprites\spr_treehouse_moonlight</sprite>
       <sprite>sprites\spr_treehouse_bg</sprite>
       <sprite>sprites\spr_treehouse_fg</sprite>
@@ -930,14 +959,18 @@
       <sprite>sprites\spr_th_selection_ui</sprite>
       <sprite>sprites\spr_treehouse_customize_on_off</sprite>
       <sprite>sprites\spr_treehouse_exit_sign</sprite>
+      <sprite>sprites\spr_treehouse_stars</sprite>
     </sprites>
     <sprites name="talking heads">
       <sprite>sprites\spr_moose_talk</sprite>
       <sprite>sprites\spr_moose_talk_happy</sprite>
       <sprite>sprites\spr_moose_talk_scared</sprite>
+      <sprite>sprites\spr_moose_talk_dadjoke</sprite>
       <sprite>sprites\spr_moose_talk_mad</sprite>
       <sprite>sprites\spr_talking_head_bg</sprite>
       <sprite>sprites\spr_th_a_button</sprite>
+      <sprite>sprites\spr_moose_talk_suprised</sprite>
+      <sprite>sprites\spr_moose_talk_meh</sprite>
     </sprites>
     <sprites name="pewdiepie">
       <sprite>sprites\spr_barrel</sprite>
@@ -954,6 +987,7 @@
       <sprite>sprites\spr_pizza_fall</sprite>
       <sprite>sprites\spr_pizza_flop</sprite>
       <sprite>sprites\spr_pizza</sprite>
+      <sprite>sprites\spr_pizza_tree</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -1113,12 +1147,15 @@
       <script>scripts\scr_draw_treehouse_bg.gml</script>
       <script>scripts\scr_draw_treehouse.gml</script>
       <script>scripts\scr_draw_th_selection.gml</script>
+      <script>scripts\scr_check_locked_status.gml</script>
     </scripts>
     <scripts name="talking heads">
       <script>scripts\scr_define_talkingheads.gml</script>
       <script>scripts\scr_handle_talkingheads.gml</script>
       <script>scripts\scr_draw_talkingheads.gml</script>
       <script>scripts\scr_moose_tut_script.gml</script>
+      <script>scripts\scr_moose_tut_script_new.gml</script>
+      <script>scripts\scr_moose_talk.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -1237,6 +1274,7 @@
         <object>objects\obj_treehouse</object>
         <object>objects\obj_bike_sign</object>
         <object>objects\obj_barrel</object>
+        <object>objects\obj_duck_float</object>
         <object>objects\obj_hole</object>
         <object>objects\obj_stall_yellow</object>
         <object>objects\obj_stall_purple</object>
@@ -1260,6 +1298,9 @@
           <object>objects\obj_firefly</object>
           <object>objects\obj_butterfly</object>
           <object>objects\obj_ladybug</object>
+          <object>objects\obj_beetle</object>
+          <object>objects\obj_snail</object>
+          <object>objects\obj_pillbug</object>
           <object>objects\obj_frog</object>
           <object>objects\obj_duck</object>
           <object>objects\obj_pom</object>

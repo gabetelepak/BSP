@@ -61,6 +61,7 @@ if pug.sprite_index = pug.spr_bark{
 complete = 1;
 bush_shake = 2;
 instance_create(x,y,obj_idol);
+scr_sound(snd_get,g.sfx_volume);
 }}
 
 }

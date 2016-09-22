@@ -28,12 +28,13 @@
             <string>event_inherited();
 zgrav = .0025;
 zbouncable = 0;
-spr_shadow = spr_frisbee_shadow;
+spr_shadow = spr_babyduck_shadow;
 z = 0;
 image_speed = .25;
 
 points_worth = 0;
 
+scr_sound(snd_leaves,g.sfx_volume);
 </string>
           </argument>
         </arguments>
@@ -70,7 +71,16 @@ image_speed = .25;
 sprite_index = spr_pizza_flop;}
 
 if instance_exists(obj_pom){
-obj_pom.distracted = 1;}
+obj_pom.distracted = 1;
+
+if g.unlock_furn_tent = 0{
+g.unlock_furn_tent = 1;
+scr_moose_talk(spr_moose_talk_suprised,"WHOA! You got a Dreamy Tent!
+Who needs camping when you've got 
+glow-in-the-dark stars?!");
+pug.spr_unlock = spr_award_tent;}
+
+}
 }
 
 if sprite_index = spr_pizza_flop{

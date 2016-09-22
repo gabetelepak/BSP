@@ -6,7 +6,7 @@ scr_define_controls();
 tiff_panels = 0;
 manymouse_active = 0;
 g.pewds_build = 1;
-scr_init_manymouse();
+//scr_init_manymouse();
 
 scr_define_misc_systems();
 scr_define_title_screen();
@@ -132,7 +132,7 @@ spr_dig[i] = spr_sammie_dig;}
 //convert above to maya
 if g.pewds_build = 1{
 scr_load_pug_sheets(spr_maya_sheet);
-g.spr_pugslide[i] = spr_slide_sammy;
+g.spr_pugslide[i] = spr_slide_maya;
 spr_transform[i] = spr_bella_transform;
 spr_hover[i] = spr_bella_hover;
 spr_itemget[i] = spr_maya_itemget;
@@ -156,7 +156,7 @@ spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
 spr_jump[i] = spr_maya_jump;
 spr_good[i] = spr_maya_good;
-spr_dig[i] = spr_sammie_dig;}
+spr_dig[i] = spr_maya_dig;}
 
 //edgar
 i+=1;
@@ -185,7 +185,7 @@ spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
 spr_jump[i] = spr_edgar_jump;
 spr_good[i] = spr_edgar_good;
-spr_dig[i] = spr_sammie_dig;
+spr_dig[i] = spr_edgar_dig;
 
 
 arrayname[5] = 0;

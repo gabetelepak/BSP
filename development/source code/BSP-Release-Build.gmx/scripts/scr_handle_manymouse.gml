@@ -2,6 +2,8 @@
 //mm_button[device,button]
 //0 = left, 1 = right, 2 = middle
 
+/*
+
 i = 0;
 repeat(8){
 xpos[i] = 0;
@@ -59,7 +61,7 @@ i+=1;}
 
 
 
-
+*/
 
 
 

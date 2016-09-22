@@ -63,9 +63,9 @@ pigeon = instance_nearest(x,y,obj_pigeon_breadshop);}
 else{pigeon = -1;}
 
 //pigeon = -1;
-//g.bones = 50;
 
-if scr_pug_dis(4) &gt; 0 &amp;&amp; pug.x &lt; x{
+
+if scr_pug_dis(4) &gt; 0{
 if g.bones &lt; 100 || pigeon &gt; 0{
 sprite_index = spr_breadshop_no;}
 else{
@@ -77,6 +77,9 @@ pug.item_held = "Bread";
 if g.unlock_bread = 0{
 g.unlock_bread = 1;
 pug.spr_unlock = spr_unlock_bread;
+scr_moose_talk(spr_moose_talk_suprised,"You bought some Bread!
+If you can get past the pigeons I'm 
+sure the Baby Ducks would love that.");
 
 //make attack pigeons
 i = 0;
@@ -95,7 +98,7 @@ instance_destroy();}
 
 //nope
 if scr_pug_dis(32) &gt; 0{
-if g.bones &lt; 50 || pigeon &gt; 0{
+if g.bones &lt; 50 || pigeon &gt; 0 || sold &gt; 0{
 sprite_index = spr_breadshop_no;}}
 
 

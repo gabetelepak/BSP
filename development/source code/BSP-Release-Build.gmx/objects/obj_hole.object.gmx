@@ -30,6 +30,8 @@
 //spr_bush_splash = spr_tree_right_leaves;
 image_speed = 0;
 fill = 1;
+
+holes_dug = 0;
 </string>
           </argument>
         </arguments>
@@ -60,7 +62,29 @@ if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_dig{
 if pug.pug_action = 1 &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
-fill = 0;}}}
+fill = 0;
+
+
+if holes_dug = 0{
+opt = instance_create(x,y-8,obj_pillbug);}
+
+if holes_dug = 1{
+if g.unlock_furn_flowers = 0{
+g.unlock_furn_flowers = 1;
+scr_moose_talk(spr_moose_talk_suprised,"WHOA! You got some Chic Flowers! 
+Everything's 'chic' on Pugterest...so I 
+think that's good? IDK.");
+pug.spr_unlock = spr_award_flowers;}}
+
+if holes_dug = 2{
+g.bones += 50;
+scr_moose_talk(spr_moose_talk_suprised,"WHOA! You found 50 bones! 
+You're rich!");
+pug.spr_unlock = spr_award_50_bag;}
+
+
+
+obj_hole.holes_dug += 1;}}}
 </string>
           </argument>
         </arguments>

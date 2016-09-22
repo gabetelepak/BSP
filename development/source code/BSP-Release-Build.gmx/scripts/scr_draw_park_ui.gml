@@ -39,8 +39,9 @@ ix += 33;}
 
 
 //bones ui
-if bones > bones_show{
-bones_show += .25;
+if bones != bones_show{
+if (bones-bones_show) <= 1{bones_show = bones;}
+bones_show += ((bones-bones_show)*.1);
 bones_time = 60;}
 
 if bones_time > 0{

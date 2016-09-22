@@ -62,9 +62,17 @@
 if instance_exists(obj_pom){
 with obj_player{
 if place_meeting(x,y,obj_pomzone_wall){
-if hurt &lt;= 0{
 y = y + 4;
 x = x - 2;
+
+if g.teen_pom_message = 0{
+g.teen_pom_message = 1;
+scr_moose_talk(spr_moose_talk_meh,"That's Teen Pom, our local bad boy.
+Pro tip, don’t go into that kid's zone 
+unless you can speed past him.");}
+
+
+if hurt &lt;= 0{
 hurt = 2;
 if obj_pom.action &lt;= 0{
 obj_pom.speed = 0;

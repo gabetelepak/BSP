@@ -161,25 +161,25 @@ with opt{instance_destroy();}
 bubble = 1;
 }}}
 
-//get bit
-if scr_pug_dis(2) &gt; 0{
-if pug.sprite_index = pug.spr_bite || pug.sprite_index = pug.spr_bite_low{
-if pug.pug_action = 3 &amp;&amp; pug.pug_action_proc = 0{
-pug.pug_action_proc = 1;
-pug.ate_firefly += 1;
-instance_destroy();}}}
-
-//get netted
+//get netted////////////////
 if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bugnet_use{
-if pug.pug_action = 5 &amp;&amp; pug.pug_action_proc = 0{
+if (pug.pug_action &lt;= 11 &amp;&amp; pug.pug_action &gt;= 9) &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
+g.bones += 25;
+scr_obj_full_sparkle(3);
+if g.unlock_butterfly = 0{
+scr_moose_talk(spr_moose_talk,"You caught a Common Butterfly! 
+I've seen a lot of those around lately.");
+g.unlock_butterfly = 1;
+pug.spr_unlock = spr_butterfly_award;}
+else{
+scr_sound(snd_pewds_duck,g.sfx_volume);
+opt = instance_create(x,y,obj_unlock);
+opt.sprite_index = spr_award_25;
+opt.float = 1;}
 instance_destroy();
-
-
-
-
-}}}
+}}}///////////////////////
 
 
 

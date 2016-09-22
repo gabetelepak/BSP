@@ -45,11 +45,11 @@ vspeed = ceil(lengthdir_y(move_speed,direction));}else{vspeed = 0;}
 
 }
 
+
 if magic_mode = 0{
 if speed > 0{
 image_speed = speed/3;}
 else{sprite_index = spr_sit;
 image_speed = 0;}}
-
 
 

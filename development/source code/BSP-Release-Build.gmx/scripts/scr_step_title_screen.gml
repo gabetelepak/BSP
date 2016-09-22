@@ -21,6 +21,7 @@ title_splash_alarm = 29;}}}
 //allow start menu after splash screen
 if title_splash_alarm <= 0 && room = rm_title_screen{
 if button[0,button_A] || button[1,button_A]{
+scr_sound(snd_button,g.sfx_volume);
 room_goto(rm_park_night);
 game_phase = 'char select';
 screen_flash = 1;

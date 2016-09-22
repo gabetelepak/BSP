@@ -33,6 +33,7 @@ zspeed = 0;
 alpha = 0;
 move_speed = .1;
 stage = "flower";
+flower_obj = -1;
 
 //personal
 bubble = 0;
@@ -114,6 +115,7 @@ alpha += 1/60;}
 
 //move around on flower
 if stage = "flower"{
+sprite_index = spr_ladybug_idle;
 if alarm[0] &gt; 0{alarm[0] -= 1;}else{
 alarm[0] = 30+irandom(30);
 i = irandom(10);
@@ -149,7 +151,37 @@ spr_shadow = spr_babyduck_shadow;
 if speed &lt;= ispeed{speed += .1;}}
 
 
+//get netted////////////////
+if scr_pug_dis(8) &gt; 0 &amp;&amp; alpha &gt;= 1{
+if pug.sprite_index = pug.spr_bugnet_use{
+if (pug.pug_action &lt;= 11 &amp;&amp; pug.pug_action &gt;= 9) &amp;&amp; pug.pug_action_proc = 0{
+pug.pug_action_proc = 1;
+g.bones += 25;
+scr_obj_full_sparkle(3);
+if g.unlock_ladybug = 0{
+scr_moose_talk(spr_moose_talk_happy,"You caught a Ladybug!
+Or is this one a man? Ladybugs can’t 
+all be ladies. I mean that’s just crazy.");
+g.unlock_ladybug = 1;
+pug.spr_unlock = spr_ladybug_award;}
+else{
+scr_sound(snd_pewds_duck,g.sfx_volume);
+opt = instance_create(x,y,obj_unlock);
+opt.sprite_index = spr_award_25;
+opt.float = 1;}
+instance_destroy();
+}}}///////////////////////
 
+if x &gt; room_width || x &lt; 0 ||
+y &gt; room_height || y &lt; 0{
+stage = "flower";
+x = sx;
+y = sy;
+alpha = 0;}
+
+
+if !instance_exists(flower_obj){
+instance_destroy();}
 </string>
           </argument>
         </arguments>

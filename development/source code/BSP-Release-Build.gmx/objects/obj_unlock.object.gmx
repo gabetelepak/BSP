@@ -90,7 +90,10 @@ y = y-52;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>unlock_time -= 1;
+            <string>
+unlock_time -= 1;
+if unlock_time &lt;= 5{
+if g.talking_head_current_string != ''{unlock_time = 5;}}
 
 if unlock_time &lt;= 50{
 if alpha &lt; 1{alpha += .1;}

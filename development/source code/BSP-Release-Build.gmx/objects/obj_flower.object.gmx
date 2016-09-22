@@ -125,7 +125,8 @@ if colorn = "yellow"{petal_color = c_yellow;}
 if colorn = "yellow"{
 i = irandom(100);
 if i &lt;= 25{
-opt = instance_create(x,y,obj_ladybug);}}
+opt = instance_create(x,y,obj_ladybug);
+opt.flower_obj = id;}}
 
 }
 

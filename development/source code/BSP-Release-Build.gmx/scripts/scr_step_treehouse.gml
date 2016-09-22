@@ -10,6 +10,7 @@ g.ascend_treehouse_dir = 'down';
 screen_flash = 1;
 game_phase='park night';
 customize_furn = 0;
+scr_sound(snd_bike_lift,g.sfx_volume);
 room_goto(rm_park_night);}
 
 
@@ -23,6 +24,8 @@ customize_furn = 1;}else{customize_furn = 0;}}
 
 //custom on
 if customize_furn > 0{
+
+scr_check_locked_status();
 
 //scroll through spots
 if button[0,button_LEFT] && button_pressed[0,button_LEFT] < 2{
@@ -41,23 +44,50 @@ if th_current_select_spot > 5{th_current_select_spot = 0;
 th_current_select_furn = th_select_furn[th_current_select_spot];}
 th_current_select_furn = th_select_furn[th_current_select_spot];}
 
-//scroll through items
+//scroll through items, down.
 if th_select_furn[th_current_select_spot] = spr_blank{
 th_selection_frame = 0;
 if (button[0,button_LB] && button_pressed[0,button_LB] < 2) ||
 (gamepad_button_check(g.gamepad[0], gp_shoulderlb) && button_pressed[0,button_LT] < 2){
 scr_sound(snd_mm_switch,g.sfx_volume);
+
+//cycle through locked items.
 th_current_select_furn -= 1;
+if th_current_select_furn < 1{th_current_select_furn = max_th_furn;}
+if th_current_select_furn > max_th_furn{th_current_select_furn = 1;}
+i = th_current_select_furn;
+repeat(max_th_furn){
+if th_furn_item_locked[i]{th_current_select_furn -= 1;}
+if th_current_select_furn < 1{th_current_select_furn = max_th_furn;}
+if th_current_select_furn > max_th_furn{th_current_select_furn = 1;}
+i = th_current_select_furn;}
+
 th_selection_frame = 1;}
 
+//up
 if (button[0,button_RB] && button_pressed[0,button_RB] < 2) ||
 (gamepad_button_check(g.gamepad[0], gp_shoulderrb) && button_pressed[0,button_RT] < 2){
 scr_sound(snd_mm_switch,g.sfx_volume);
-th_current_select_furn += 1;
-th_selection_frame = 2;}}
 
+//cycle through locked items.
+th_current_select_furn += 1;
 if th_current_select_furn < 1{th_current_select_furn = max_th_furn;}
 if th_current_select_furn > max_th_furn{th_current_select_furn = 1;}
+i = th_current_select_furn;
+repeat(max_th_furn){
+if th_furn_item_locked[i]{th_current_select_furn += 1;}
+if th_current_select_furn < 1{th_current_select_furn = max_th_furn;}
+if th_current_select_furn > max_th_furn{th_current_select_furn = 1;}
+i = th_current_select_furn;}
+
+th_selection_frame = 2;}
+
+
+if th_furn_item_locked[th_current_select_furn]{th_current_select_furn = 0;}
+
+}
+
+
 
 //demolish spot
 //if th_select_furn[th_current_select_spot] = th_current_select_furn{

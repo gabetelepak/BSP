@@ -53,13 +53,15 @@ image_speed = 0;
             <kind>1</kind>
             <string>
 //only first player can activate.
-if scr_pug_dis(32){ 
-if pug = g.pug_id[0]{
-if g.button[0,g.button_Y]{
+if scr_pug_dis(48){ 
+if g.talking_head_current_string = ''{
+if max(gamepad_button_check(g.gamepad[0], gp_face4),keyboard_check(ord('2')),keyboard_check(ord('3'))) ||
+max(gamepad_button_check(g.gamepad[1], gp_face4),keyboard_check(ord('8')),keyboard_check(ord('9'))){
 g.button[0,g.button_Y] = 0;
 g.ascend_treehouse = 1;
 g.ascend_treehouse_dir = 'up';
 g.screen_flash = 1;
+scr_sound(snd_bike_lift,g.sfx_volume);
 }}}
 </string>
           </argument>

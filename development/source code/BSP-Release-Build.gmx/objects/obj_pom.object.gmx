@@ -60,17 +60,19 @@ distracted = 0;
             <string>event_inherited();
 zbouncable = 0;
 
+if distracted &lt; 3{//fucking fix!
+
 if instance_exists(obj_pizza){
 if action = 0 &amp;&amp; distracted = 1{
 
-if scr_dis(x,y,obj_pizza.x+18,obj_pizza.y) &gt; 2{
-direction = point_direction(x,y,obj_pizza.x+18,obj_pizza.y);
-speed = .5;
-image_speed = .15;}
+if scr_dis(x,y,obj_pizza.x+22,obj_pizza.y) &gt; 2{
+direction = point_direction(x,y,obj_pizza.x+22,obj_pizza.y);
+speed = .75;
+image_speed = .2;}
 else{
-direction = point_direction(x,y,obj_pizza.x,obj_pizza.y)+180;
-speed = 0;
-action = 23;}
+direction = point_direction(x,y,obj_pizza.x,obj_pizza.y);
+distracted = 3;
+}
 }}
 
 
@@ -98,13 +100,23 @@ else{sprite_index = spr_pom_pee;}
 image_speed = .25;
 action -= image_speed;
 if floor(action = 20) &amp;&amp; distracted = 0{
-scr_sound(snd_pug_bark,g.sfx_volume);}}
+scr_sound(snd_pom_bark,g.sfx_volume);}}
 
+if distracted  &lt;= 1{
 if action &lt;= 0{
 action  = 0;
-sprite_index = spr_pom_walk;}
+sprite_index = spr_pom_walk;}}
+
+}//fucking fix!
 
 
+if distracted = 3{
+direction = 180;
+action = 0;
+speed = 0;
+sprite_index = spr_pom_pizza;
+image_speed = .1;
+distracted = 3;}
 
 
 

@@ -26,3 +26,23 @@ reset_time = 30*60*3;//6min
 idle_time = 0;
 finished_time = 0;
 
+//initial moose message
+moose_init_message = 30*5;
+
+/*
+if !audio_is_playing(background_music1){
+audio_sound_gain(background_music1, g.music_volume, 0);
+audio_play_sound(background_music1, 1, 1);}*/
+
+//scr_crossfade(background_music2,background_music1);
+
+background_music1 = snd_night_music;
+background_music2 = snd_lake_music;
+
+audio_stop_sound(background_music1);
+audio_sound_gain(background_music1, g.music_volume, 0);
+audio_play_sound(background_music1, 1, 1);
+audio_stop_sound(background_music2);
+audio_sound_gain(background_music2, 0, 0);
+audio_play_sound(background_music2, 1, 1);
+

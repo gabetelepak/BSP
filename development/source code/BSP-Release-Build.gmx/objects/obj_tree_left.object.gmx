@@ -60,7 +60,14 @@ bush_shake = 1;
 frisbee = 0;
 opt = instance_create(x-45,y+24,obj_pizza);
 opt.z = 24+96;
-opt.zspeed = -2;}
+opt.zspeed = -2;
+
+
+
+
+
+
+}
 </string>
           </argument>
         </arguments>
@@ -86,11 +93,13 @@ opt.zspeed = -2;}
             <string>event_inherited();
 
 if frisbee = 1{
+/*
 hint_flash += .25;
 if hint_flash &gt; 30{hint_flash = 0;}
 i = hint_flash;
 if i &gt; 3{i = 0;}
-draw_sprite(spr_frisbee_hint,i,x-45,y-96);}
+*/
+draw_sprite(spr_pizza_tree,g.anim*.5,x-45,y-96);}
 </string>
           </argument>
         </arguments>

@@ -81,6 +81,16 @@ speed = 0;
 pug_action = 0;
 sprite_index = spr_sit;}
 
+if instance_exists(obj_player){
+with obj_player{
+if player_number = 0{
+scr_pug_create();
+x = 633;
+y = 304;}else{
+scr_pug_create();
+x = 696;
+y = 300;}}}
+
 
 }}
 

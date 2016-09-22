@@ -11,13 +11,15 @@ if g.ascend_treehouse > 0{
 pause = 1;
 invisible = 1;}
 
+
+
 if g.customize_furn > 0 && player_number = 0{
 speed = 0;
 pause = 1;
 direction = point_direction(x,y,g.select_draw_x,g.select_draw_y);}
 
-if g.talking_head_current_string != ''{
-pause = 1;}
+//if g.talking_head_current_string != ''{
+//pause = 1;}
 
 if pause > 0{
 if g.customize_furn > 0{
@@ -58,16 +60,15 @@ opt.active = 1;
 //general movement
 if g.game_phase = 'tutorial' || g.game_phase = 'park night' || g.game_phase = 'treehouse'{
 if g.park_night_intro = 0 && slide  = 0 && hurt = 0 && jump = 0 && pause = 0{
-if pug_action <= 0 && (magic_mode = 0 || magic_mode = 2){
+if pug_action <= 0 && (magic_mode = 0 || magic_mode = 2) && g.talking_head_current_string = ''{
 scr_pug_movement();}
 
-if magic_mode = 0{
-if item_held = ""{
+if magic_mode = 0 && room != rm_treehouse{
+if item_held = "" && g.talking_head_current_string = ''{
 scr_pug_sniff();}
 
-if g.tut_power_hold = 0{
+if g.tut_power_hold = 0 && room != rm_treehouse{
 scr_handle_power_anim();}
-
 
 scr_handle_item_holding();}
 
@@ -85,12 +86,22 @@ if direction = 90 || direction = 270{
 if face = -1{direction -= 45;}
 else{direction += 45;}}}
 */
-
-pug_action -= abs(image_speed);}
-else{
+pug_action -= abs(image_speed);
+//last frame of action
+if pug_action <= 0{
+hurt = 0;
+sprite_index = spr_sit;
+image_speed = 0;
+speed = 0;}
+}else{
 hurt = 0;
 pug_action = 0;
-pug_action_proc = 0;}
+pug_action_proc = 0;
+if g.talking_head_current_string != ''{
+speed = 0;
+sprite_index = spr_sit;
+image_speed = 0;}
+}
 
 //face dir and final collision check
 if direction < 90 || direction > 270{face = -1;}
@@ -118,12 +129,6 @@ zbounce = 1;}}
 
 //stung
 if hurt > 0{
-//if place_free(x+face*1,y){x += face*1;}
-
-//pom zone hurt
-//direction = point_direction(x,y,obj_pom.x,obj_pom.y)+180;
-//speed = 1;
-
 }
 
 

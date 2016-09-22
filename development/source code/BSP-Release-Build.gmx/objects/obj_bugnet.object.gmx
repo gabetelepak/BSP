@@ -95,8 +95,10 @@ instance_destroy();
 if scr_pug_dis(4) &gt; 0{
 if pug.magic_mode = 0{
 if g.unlock_bugnet = 0{
-g.unlock_bugnet= 1;
-pug.spr_unlock = spr_unlock_bugnet;}}}
+g.unlock_bugnet = 1;
+pug.spr_unlock = spr_unlock_bugnet;
+scr_moose_talk(spr_moose_talk_suprised,"You bought a net!
+Now you can catch all sorts of bugs and sell them for sweet sweet bones!");}}}
 </string>
           </argument>
         </arguments>

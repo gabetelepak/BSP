@@ -10,54 +10,17 @@ th_face[i] = th_happy;
 th_line[i] = "Hi there, my name's Moose! 
 I'm the main Great Dane here in Central Bark.";
 i+=1;
-th_face[i] = th_happy;
+th_face[i] = th_dadjoke;
 th_line[i] = 'Although personally I like to consider myself more of an "Okay" Dane.';
 i+=1;
-th_face[i] = th_normal;
-th_line[i] = "Sorry...anyways, don't mind me I'll 
-just float here while you play 
-and give you tips if I see anything cool.";
-i+=1;
 th_face[i] = th_scared;
-th_line[i] = "Apparently my creators put me here 
-because this game is on Kickstarter 
-and they need funding for it?";
-i+=1;
-th_face[i] = th_scared;
-th_line[i] = "I don't know...they just hollered 
-"+'"'+"Float there and help! We got no 
-funds, and you're all we got."+'"';
+th_line[i] = "HAHA...sorry...how do you play this game you say?";
 i+=1;
 th_face[i] = th_happy;
-th_line[i] = 'So just know this: 
-PRESS X for your "Left Power" and 
-PRESS B for your "Right Power"';
+th_line[i] = "Umm...solve puzzles, catch some wildlife, deck out your doghouse...BSP's about just having fun silly!";
 i+=1;
 th_face[i] = th_happy;
-th_line[i] = "and don't forget to: 
-PRESS Y to sniff your friend's butt 
-to get different pug powers!";
-i+=1;
-
-th_face[i] = th_angry;
-th_line[i] = "MOTHER PUGGER...PEWDS I SWEAR TO GOD IF YOU MISSED THOSE INSTRUCTIONS I'LL COME FOR YOU";
-i+=1;
-
-
-th_face[i] = th_normal;
-th_line[i] = 'So one last time: 
-PRESS X for your "Left Power" and 
-PRESS B for your "Right Power"';
-i+=1;
-th_face[i] = th_normal;
-th_line[i] = "and don't forget to: 
-PRESS Y to sniff your friend's butt 
-to get different pug powers!";
-i+=1;
-th_face[i] = th_happy;
-th_line[i] = "Thanks for listening! Go on through the 
-gate to enter Central Bark. Don't 
-mind me, Im just gonna chill here.";
+th_line[i] = "Anywho, don't mind me I'll just float while you play and give you tips if I see anything cool. Have fun!";
 i+=1;
 th_face[i] = th_normal;
 th_line[i] = "";

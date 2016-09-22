@@ -58,10 +58,11 @@ if floor(image_index) = sprite_get_number(sprite_index)-1{
 instance_destroy();}
 
 if fuse = 100{
-fuse = irandom(10)+2;}
+fuse = irandom(45)+5;}
 
 if fuse &gt; 0{fuse -= 1;}
-if fuse = 1{image_speed = .5;}
+if fuse = 1{image_speed = .5;
+scr_sound(snd_barrel_explode,g.sfx_volume);}
 </string>
           </argument>
         </arguments>

@@ -1,6 +1,6 @@
 //
 spr_talking_head = spr_moose_talk;
-talk_speed = 1;
+talk_speed = 1.5;
 talking_head_draw_string = '';
 talking_head_current_string = '';
 ltalking_head_current_string = '';
@@ -21,11 +21,17 @@ talk_sprite[0] = spr_moose_talk;
 talk_sprite[1] = spr_moose_talk_happy;
 talk_sprite[2] = spr_moose_talk_scared;
 talk_sprite[3] = spr_moose_talk_mad;
+talk_sprite[4] = spr_moose_talk_suprised;
+talk_sprite[5] = spr_moose_talk_meh;
+talk_sprite[6] = spr_moose_talk_dadjoke;
 
 th_normal = 0;
 th_happy = 1;
 th_scared = 2;
 th_angry = 3;
+th_suprised = 4;
+th_meh = 5;
+th_dadjoke = 6;
 
 //clear text boxes.
 i = 0;

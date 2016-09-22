@@ -103,7 +103,17 @@ move_speed = 1.5;
 
 
 if scr_dis(x,y,obj_pond.x,obj_pond.y) &lt; 96{
-with obj_xol{stage = "dive";}}
+with obj_xol{stage = "dive";}
+
+//award
+if g.unlock_furn_egg_chair = 0{
+scr_moose_talk(spr_moose_talk_suprised,"WHOA! You got a Egg Chair!
+You can place that and other 
+furniture you get in your treehouse!");
+g.unlock_furn_egg_chair = 1;
+pug.spr_unlock = spr_award_egg_chair;}
+
+}
 }
 
 
@@ -119,9 +129,8 @@ if place_meeting(x,y,obj_pond){
 dive_meter += 1;}}
 
 if dive_meter = 30{
-if obj_num = 0{
-g.bones += 50;
-pug.spr_unlock = spr_unlock_temp;}
+scr_sound(snd_pond_splash,g.sfx_volume);
+if obj_num = 0{}
 with obj_barrel{fuse = 100;}
 repeat(5){instance_create(x+irandom(8)-4,y+irandom(8)-4,obj_splash);}}
 
@@ -148,11 +157,21 @@ spr_action = 0;
 if scr_pug_dis(64) {
 if pug.sprite_index = pug.spr_bark{}}
 
-
+//complete stage 1 puzzle
 if stage = "sandbox"{
 if scr_pug_dis(16){
 with obj_xol{stage = "pug follow";
-scr_obj_full_sparkle(3);}}}
+scr_obj_full_sparkle(5);}
+
+
+g.bones += 50;
+scr_moose_talk(spr_moose_talk_suprised,"You got 50 bones!
+Now you can use that to buy stuff 
+from Stephano and I!");
+pug.spr_unlock = spr_award_50_bag;
+
+
+}}
 
 
 

@@ -21,10 +21,12 @@ g.tut_power_hold = 0;
 if instance_exists(obj_player){
 with obj_player{
 if player_number = 0{
-x = 617;
-y = 204;}else{
-x = 728;
-y = 204;}}}
+scr_pug_create();
+x = 633;
+y = 304;}else{
+scr_pug_create();
+x = 696;
+y = 300;}}}
  
 
 

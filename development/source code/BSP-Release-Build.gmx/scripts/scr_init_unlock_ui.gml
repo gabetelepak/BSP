@@ -26,4 +26,14 @@ unlock_ladybug = 0;
 unlock_pillbug = 0;
 unlock_snail = 0;
 
+//furniture
+unlock_furn_flowers = 0;
+unlock_furn_duck_float = 0;
+unlock_furn_egg_chair = 0;
+unlock_furn_tent = 0;
+
+//messages
+g.teen_pom_message = 0;
+g.hungry_ducks_message = 0;
+
 

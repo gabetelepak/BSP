@@ -14,7 +14,7 @@ g.last_ui[0] = 0;
 g.last_ui[1] = 0;
 
 
-bones = 150;
+bones = 0;
 bones_show = 0;
 bones_time = 0;
 

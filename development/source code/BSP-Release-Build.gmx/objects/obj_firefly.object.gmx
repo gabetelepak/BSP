@@ -166,11 +166,16 @@ if scr_pug_dis(8) &gt; 0{
 if pug.sprite_index = pug.spr_bugnet_use{
 if (pug.pug_action &lt;= 11 &amp;&amp; pug.pug_action &gt;= 9) &amp;&amp; pug.pug_action_proc = 0{
 pug.pug_action_proc = 1;
+g.bones += 5;
 scr_obj_full_sparkle(3);
-if g.check_firefly = 0{
-g.check_firefly = 1;
-pug.spr_unlock = spr_firefly_award;}
+if g.unlock_firefly = 0{
+g.unlock_firefly = 1;
+pug.spr_unlock = spr_firefly_award;
+scr_moose_talk(spr_moose_talk_dadjoke,"You caught a Firefly!
+Good job! You should be glowing with pride! HEH...heh...");
+}
 else{
+scr_sound(snd_pewds_duck,g.sfx_volume);
 opt = instance_create(x,y,obj_unlock);
 opt.sprite_index = spr_award_5;
 opt.float = 1;}
