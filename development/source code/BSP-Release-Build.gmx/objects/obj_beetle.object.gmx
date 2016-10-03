@@ -156,7 +156,7 @@ Don’t spend him all in one place!");
 g.unlock_beetle = 1;
 pug.spr_unlock = spr_beetle_award;}
 else{
-scr_sound(snd_pewds_duck,g.sfx_volume);
+scr_sound(g.sound_mini_get,g.sfx_volume);
 opt = instance_create(x,y,obj_unlock);
 opt.sprite_index = spr_award_50;
 opt.float = 1;}

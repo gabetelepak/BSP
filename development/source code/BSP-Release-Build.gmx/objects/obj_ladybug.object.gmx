@@ -165,7 +165,7 @@ all be ladies. I mean that’s just crazy.");
 g.unlock_ladybug = 1;
 pug.spr_unlock = spr_ladybug_award;}
 else{
-scr_sound(snd_pewds_duck,g.sfx_volume);
+scr_sound(g.sound_mini_get,g.sfx_volume);
 opt = instance_create(x,y,obj_unlock);
 opt.sprite_index = spr_award_25;
 opt.float = 1;}

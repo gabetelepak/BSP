@@ -19,28 +19,27 @@ spawn_y = y;
 
 goal_x = x;
 goal_y = y;
-
-z = 0;
+unlock_butt_drag = 0;
+hurt = 0;
 zgrav = .05;
 zbounce = 0;
 zspeed = 0;
 zbouncable = 1;
-hurt = 0;
-unlock_butt_drag = 0;
+z = 0;
 
 
 //determine player number
 
 var i;
-for (i = 0; i < instance_number(obj_player); i += 1)
-   {
-if id = instance_find(obj_player,i){
-g.pug_id[i] = id;
-g.pug_score[i] = 0;
- player_number = i;}
-else{opug = instance_find(obj_player,i);}
-
-   }
+for (i = 0; i < instance_number(obj_player); i += 1){
+    if id = instance_find(obj_player,i){
+        g.pug_id[i] = id;
+        g.pug_score[i] = 0;
+        player_number = i;
+    }else{
+    opug = instance_find(obj_player,i);
+    }
+}
 
    
 scr_pug_assign_sprites();

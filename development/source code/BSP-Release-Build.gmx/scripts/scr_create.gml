@@ -5,7 +5,7 @@ scr_define_controls();
 
 tiff_panels = 0;
 manymouse_active = 0;
-g.pewds_build = 1;
+g.pewds_build = 0;
 //scr_init_manymouse();
 
 scr_define_misc_systems();
@@ -50,7 +50,7 @@ spr_bubble_wand_walk[i] = spr_sammie_bubble_wand_walk;
 spr_bubble_wand_down[i] = spr_sammie_bubble_wand_down;
 spr_bubble_wand_up[i] = spr_sammie_bubble_wand_up;
 spr_bubble_wand_idle[i] = spr_sammie_bubble_wand_idle;
-spr_bugnet_use[i] = spr_maya_bugnet_use;
+spr_bugnet_use[i] = spr_sammie_bugnet_use;
 spr_bugnet_walk[i] = spr_sammie_bugnet_walk;
 spr_bugnet_down[i] = spr_sammie_bugnet_down;
 spr_bugnet_up[i] = spr_sammie_bugnet_up;
@@ -95,13 +95,13 @@ spr_bread_up[i] = spr_sammie_bread_up;
 spr_bread_idle[i] = spr_sammie_bread_idle;
 spr_jump[i] = spr_alice_jump;
 spr_good[i] = spr_alice_good;
-spr_dig[i] = spr_edgar_dig;
+spr_dig[i] = spr_alice_dig;
 
 
 i+=1;
 
 //bella
-if g.pewds_build = 0{
+if g.pewds_build = 1{
 scr_load_pug_sheets(spr_bella_sheet);
 g.spr_pugslide[i] = spr_slide_sammy;
 spr_transform[i] = spr_bella_transform;
@@ -130,13 +130,13 @@ spr_good[i] = spr_bella_good;
 spr_dig[i] = spr_sammie_dig;}
 
 //convert above to maya
-if g.pewds_build = 1{
+if g.pewds_build = 0{
 scr_load_pug_sheets(spr_maya_sheet);
 g.spr_pugslide[i] = spr_slide_maya;
 spr_transform[i] = spr_bella_transform;
 spr_hover[i] = spr_bella_hover;
 spr_itemget[i] = spr_maya_itemget;
-spr_bubble_wand_use[i] = spr_sammie_bubble_wand_use;
+spr_bubble_wand_use[i] = spr_maya_bubble_wand_use;
 spr_bubble_wand_walk[i] = spr_sammie_bubble_wand_walk;
 spr_bubble_wand_down[i] = spr_sammie_bubble_wand_down;
 spr_bubble_wand_up[i] = spr_sammie_bubble_wand_up;
@@ -165,7 +165,7 @@ g.spr_pugslide[i] = spr_slide_alice;
 spr_transform[i] = spr_edgar_transform;
 spr_hover[i] = spr_edgar_hover;
 spr_itemget[i] = spr_edgar_itemget;
-spr_bubble_wand_use[i] = spr_alice_bubble_wand_use;
+spr_bubble_wand_use[i] = spr_edgar_bubble_wand_use;
 spr_bubble_wand_walk[i] = spr_sammie_bubble_wand_walk;
 spr_bubble_wand_down[i] = spr_sammie_bubble_wand_down;
 spr_bubble_wand_up[i] = spr_sammie_bubble_wand_up;
@@ -196,3 +196,11 @@ g.selected_char[1] = 1;
 
 last_room = 0;
 start_room = 0;
+
+
+sound_mini_get = snd_get;
+
+if g.pewds_build = 1{
+sound_mini_get = snd_pewds_duck;}
+
+

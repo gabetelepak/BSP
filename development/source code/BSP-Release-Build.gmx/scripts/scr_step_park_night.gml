@@ -24,8 +24,15 @@ if park_night_intro <= 0 && moose_init_message > 0{
 moose_init_message -= 1;}
 
 if moose_init_message = 1{
-scr_moose_talk(spr_moose_talk_mad,"OMG WHY ARE BILLY & CLINT OUT OF WATER - Hurry! Kill those ants 
-and get those Axolotls to the pond!");}
+
+//scr_moose_talk(spr_moose_talk_mad,"OMG WHY ARE BILLY & CLINT OUT OF WATER - Hurry! Kill those ants 
+//and get those Axolotls to the pond!");
+
+scr_moose_talk(spr_moose_talk_mad,"OMG WHY ARE THOSE AXOLOTLS
+ON LAND - Hurry! Kill those ants
+and get those Axolotls to the pond!");
+
+}
 
 
 //music crossfade

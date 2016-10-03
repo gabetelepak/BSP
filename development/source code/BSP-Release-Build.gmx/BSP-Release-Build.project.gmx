@@ -301,12 +301,13 @@
           </sprites>
           <sprites name="breadshop">
             <sprite>sprites\spr_breadshop_idle</sprite>
-            <sprite>sprites\sprite576</sprite>
+            <sprite>sprites\spr_breadshop_idle_stef</sprite>
             <sprite>sprites\spr_breadshop_give</sprite>
-            <sprite>sprites\sprite577</sprite>
+            <sprite>sprites\spr_breadshop_give_stef</sprite>
             <sprite>sprites\spr_breadshop_no</sprite>
-            <sprite>sprites\sprite578</sprite>
+            <sprite>sprites\spr_breadshop_no_stef</sprite>
             <sprite>sprites\spr_breadshop_sold</sprite>
+            <sprite>sprites\spr_breadshop_100</sprite>
           </sprites>
           <sprite>sprites\sprite592</sprite>
           <sprites name="teen pom">
@@ -776,6 +777,7 @@
         </sprites>
         <sprite>sprites\spr_alice_jump</sprite>
         <sprite>sprites\spr_alice_good</sprite>
+        <sprite>sprites\spr_alice_dig</sprite>
       </sprites>
       <sprites name="bella">
         <sprite>sprites\spr_bella_sheet</sprite>
@@ -799,6 +801,7 @@
         <sprite>sprites\spr_edgar_bugnet_use</sprite>
         <sprite>sprites\spr_edgar_good</sprite>
         <sprite>sprites\spr_edgar_dig</sprite>
+        <sprite>sprites\spr_edgar_bubble_wand_use</sprite>
       </sprites>
       <sprites name="maya">
         <sprite>sprites\spr_maya_sheet</sprite>
@@ -807,6 +810,7 @@
         <sprite>sprites\spr_maya_itemget</sprite>
         <sprite>sprites\spr_maya_bugnet_use</sprite>
         <sprite>sprites\spr_maya_dig</sprite>
+        <sprite>sprites\spr_maya_bubble_wand_use</sprite>
       </sprites>
     </sprites>
     <sprites name="general park">
@@ -953,8 +957,10 @@
       <sprite>sprites\spr_treehouse_park</sprite>
       <sprite>sprites\spr_treehouse_mask</sprite>
       <sprite>sprites\sprite534</sprite>
-      <sprite>sprites\spr_pug_bike_1</sprite>
       <sprite>sprites\spr_pug_bike_0</sprite>
+      <sprite>sprites\spr_pug_bike_1</sprite>
+      <sprite>sprites\spr_pug_bike_2</sprite>
+      <sprite>sprites\spr_pug_bike_3</sprite>
       <sprite>sprites\spr_bike_sign</sprite>
       <sprite>sprites\spr_th_selection_ui</sprite>
       <sprite>sprites\spr_treehouse_customize_on_off</sprite>

@@ -175,7 +175,7 @@ scr_moose_talk(spr_moose_talk_dadjoke,"You caught a Firefly!
 Good job! You should be glowing with pride! HEH...heh...");
 }
 else{
-scr_sound(snd_pewds_duck,g.sfx_volume);
+scr_sound(g.sound_mini_get,g.sfx_volume);
 opt = instance_create(x,y,obj_unlock);
 opt.sprite_index = spr_award_5;
 opt.float = 1;}

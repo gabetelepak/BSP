@@ -7,8 +7,8 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>5</bbox_left>
-  <bbox_right>58</bbox_right>
+  <bbox_left>0</bbox_left>
+  <bbox_right>64</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>95</bbox_bottom>
   <HTile>0</HTile>
@@ -33,9 +33,5 @@
     <frame index="10">images\spr_breadshop_give_10.png</frame>
     <frame index="11">images\spr_breadshop_give_11.png</frame>
     <frame index="12">images\spr_breadshop_give_12.png</frame>
-    <frame index="13">images\spr_breadshop_give_13.png</frame>
-    <frame index="14">images\spr_breadshop_give_14.png</frame>
-    <frame index="15">images\spr_breadshop_give_15.png</frame>
-    <frame index="16">images\spr_breadshop_give_16.png</frame>
   </frames>
 </sprite>

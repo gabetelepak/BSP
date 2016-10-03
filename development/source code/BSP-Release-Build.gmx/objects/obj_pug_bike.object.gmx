@@ -29,6 +29,10 @@
 //spr_shadow = spr_blank;
 //spr_bush_splash = spr_tree_right_leaves;
 image_speed = 0;
+bike_sprite = spr_pug_bike_0;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -53,7 +57,7 @@ image_speed = 0;
             <kind>1</kind>
             <string>
 //only first player can activate.
-if scr_pug_dis(48){ 
+if scr_pug_dis(24){ 
 if g.talking_head_current_string = ''{
 if max(gamepad_button_check(g.gamepad[0], gp_face4),keyboard_check(ord('2')),keyboard_check(ord('3'))) ||
 max(gamepad_button_check(g.gamepad[1], gp_face4),keyboard_check(ord('8')),keyboard_check(ord('9'))){
@@ -105,7 +109,8 @@ if g.ascend_treehouse &gt;= 30{
 i = g.ascend_treehouse-30;
 g.vy_offset = floor(-i);
 i2 = g.anim*.5;}
-draw_sprite(spr_pug_bike_1,i2,x,y-i);
+
+draw_sprite(bike_sprite,i2,x,y-i);
 
 if g.ascend_treehouse &gt;= 150{
 g.ascend_treehouse = 0;

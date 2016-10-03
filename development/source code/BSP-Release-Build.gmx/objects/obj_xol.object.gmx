@@ -165,9 +165,16 @@ scr_obj_full_sparkle(5);}
 
 
 g.bones += 50;
+
+/*
 scr_moose_talk(spr_moose_talk_suprised,"You got 50 bones!
 Now you can use that to buy stuff 
 from Stephano and I!");
+*/
+scr_moose_talk(spr_moose_talk_suprised,"You got 50 bones!
+Now you can use that to buy stuff
+from Nuno and I!");
+
 pug.spr_unlock = spr_award_50_bag;
 
 

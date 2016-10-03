@@ -158,7 +158,8 @@ opt.spr_hint = spr_hint;}
 
 if sold = 1{
 draw_sprite_ext(spr_sold,image_single,x,y,scale*face,scale,rot,color,alpha);
-}
+}else{
+draw_sprite_ext(spr_breadshop_100,image_single,x,y,scale*face,scale,rot,color,alpha);}
 </string>
           </argument>
         </arguments>

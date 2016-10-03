@@ -70,9 +70,18 @@ scr_check_burst(2);
 
 if g.unlock_furn_duck_float = 0{
 g.unlock_furn_duck_float = 1;
+
+
 scr_moose_talk(spr_moose_talk_suprised,"WHOA! You got a Duck Floaty!
 Wait...do my eyes decieve me or is a 
 duck playing this game right now?");
+
+scr_moose_talk(spr_moose_talk_suprised,"WHOA! You got a Duck Floaty!
+Good thing too...with those T-Rex
+arms of yours, you can barely swim!");
+
+
+
 pug.spr_unlock = spr_award_duck_float;}
 
 if g.target_bread.object_index = obj_player{

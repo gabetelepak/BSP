@@ -78,7 +78,7 @@ if scr_pug_dis(96) {
 if g.hungry_ducks_message = 0{
 g.hungry_ducks_message = 1;
 scr_moose_talk(spr_moose_talk,"Hmmm...it looks like those Baby Ducks
-are hungry. Isn’t Stephano selling 
+are hungry. Isn’t Nuno selling 
 bread right now?");}}
 
 

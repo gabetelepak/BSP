@@ -46,3 +46,23 @@ spr_bugnet_use = g.spr_bugnet_use[i];
 
 
 sprite_index = spr_sit;
+
+
+if instance_exists(obj_pug_bike){
+with obj_pug_bike{
+bike_sprite = spr_pug_bike_1;
+
+//both fawn
+if (g.selected_char[0] = 0 ||
+g.selected_char[0] = 2) &&
+(g.selected_char[1] = 0 ||
+g.selected_char[1] = 2){
+bike_sprite = spr_pug_bike_2;}
+
+//both black
+if (g.selected_char[0] = 1 ||
+g.selected_char[0] = 3) &&
+(g.selected_char[1] = 1 ||
+g.selected_char[1] = 3){
+bike_sprite = spr_pug_bike_3;}}}
+

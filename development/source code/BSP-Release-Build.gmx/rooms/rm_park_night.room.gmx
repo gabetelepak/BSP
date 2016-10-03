@@ -268,6 +268,7 @@ scr_erase_character_select_obj();}
     <instance objName="obj_beetle" x="942" y="268" name="inst_F0F00E4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_beetle" x="380" y="206" name="inst_B279BA09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_duck_float" x="182" y="233" name="inst_0CEFEC5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_barrel" x="489" y="341" name="inst_C5186F3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

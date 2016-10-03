@@ -72,6 +72,8 @@
           <argument>
             <kind>1</kind>
             <string>scr_draw();
+
+
 </string>
           </argument>
         </arguments>
