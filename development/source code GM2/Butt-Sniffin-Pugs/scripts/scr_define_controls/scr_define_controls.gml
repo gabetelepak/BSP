@@ -1,15 +1,10 @@
-i= 0;
-i2 = 0;
+i= 1;
+i2 = 1;
 repeat(8){
 gamepad[i] = -1;
 if gamepad_is_connected(i){
 gamepad[i2] = i;
 gamepad_set_button_threshold(i, 0.4);
-
-
-
-
-
 i2+=1;}
 i+=1;}
  
@@ -42,4 +37,9 @@ button[i2,i] = 0;
 button_pressed[i2,i] = 0;
 button_released[i2,i] = 0;
 i+=1;}
+
+lsh[i2] = 0;
+lhv[i2] = 0;
+rsh[i2] = 0;
+rhv[i2] = 0;
 i2 += 1;}
