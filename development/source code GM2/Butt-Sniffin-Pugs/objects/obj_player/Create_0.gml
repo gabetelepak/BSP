@@ -3,3 +3,6 @@
 
 
 player_num = 1;
+
+
+scr_define_player_movement();
