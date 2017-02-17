@@ -9,4 +9,4 @@ instance_create_depth(x,y,10000,obj_floor);}
 scr_handle_controls();
 scr_handle_camera();
 
-if keyboard_check_pressed(vk_numpad1){scr_generate_biome();}
+if keyboard_check_pressed(ord("1")){scr_generate_biome();}

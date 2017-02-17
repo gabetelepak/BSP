@@ -1,26 +1,26 @@
 
 /*
+world = 4320 x 2160
+hub = 2400 x 720
+biome = 1440 x 1920
+old
 world = 3600 x 3600
 hub = 2400 x 720
 biome = 1104 x 2880
-large module = 480
-medium = 320
-small = 240
 */
 //hmm
 
 mod_width_large = 480; // 10
-mod_width_medium = 336; // 6
+mod_width_medium = 288; // 6
 mod_width_small = 192; // 4
 
 hub_height = 720;
-
 max_modules = 100;
 
 i = 0;//biome number
-max_modules_large[i] = 2;
-max_modules_medium[i] = 5;
-max_modules_small[i] = 7;
+max_modules_large[i] = 1;
+max_modules_medium[i] = 7;
+max_modules_small[i] = 10;
 
 
 

@@ -1,5 +1,5 @@
 
-window_set_size(1280,720);
+window_set_size(640,360);
 
 view_camera[0] = camera_create();
 camera = view_camera[0];
