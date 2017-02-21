@@ -3,8 +3,7 @@
 
 
 
-//temp grass texture
-draw_sprite_tiled_ext(spr_grass_tile,0,0,0,1,1,c_white,1);
+ 
 
 //room border
 draw_set_color(c_black);
