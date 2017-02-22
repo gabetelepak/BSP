@@ -39,6 +39,22 @@
             }
         },
         {
+            "Key": "00be8275-d945-4314-aac2-3afe296ce903",
+            "Value": {
+                "id": "b0aa8918-c2d0-4884-bae4-b8cbcfe0518b",
+                "resourcePath": "sprites\\spr_path_point\\spr_path_point.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "04cc7d93-27de-4c09-9c42-a132210f58db",
+            "Value": {
+                "id": "9040b073-3cdf-4a72-bf1e-4bc4e0de88c8",
+                "resourcePath": "scripts\\scr_module_get_grid\\scr_module_get_grid.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "05cad2f8-8af5-4a60-add3-e25305b0a53c",
             "Value": {
                 "id": "1cc54140-081e-4404-9585-20406d4b065f",
@@ -164,6 +180,22 @@
                 "id": "95adaa7c-867c-400b-9714-94a17b43b056",
                 "resourcePath": "views\\301d716a-bc9a-457f-9525-1c9d576a7341.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3175a614-278e-4cf1-bd16-32d9801f7c63",
+            "Value": {
+                "id": "3ed01bbf-239b-4a91-8963-235a49e97330",
+                "resourcePath": "sprites\\spr_test_player_mask\\spr_test_player_mask.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "332c30f7-33bf-42f1-a08a-c14d2f798fd1",
+            "Value": {
+                "id": "93256655-3050-466f-815a-6e795f73cc36",
+                "resourcePath": "scripts\\scr_module_db\\scr_module_db.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -575,6 +607,14 @@
             }
         },
         {
+            "Key": "c043162f-fcd0-47e6-9455-5bfca9bae314",
+            "Value": {
+                "id": "c5318ab1-9257-4f38-95e0-6dcf7d49c12b",
+                "resourcePath": "views\\c043162f-fcd0-47e6-9455-5bfca9bae314.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c1d14243-c718-4639-95ac-f9fef9c00339",
             "Value": {
                 "id": "193690f3-ee22-4a8b-ab4c-971b174253de",
@@ -635,6 +675,14 @@
             "Value": {
                 "id": "411b8105-7662-4d93-9deb-18c6551a5bf6",
                 "resourcePath": "objects\\obj_basic_wall\\obj_basic_wall.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d0a429a3-3764-4c18-8178-4820176e9064",
+            "Value": {
+                "id": "56b01b5c-afce-404f-9cc3-0d7c0bdc4023",
+                "resourcePath": "objects\\obj_path_point\\obj_path_point.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -783,6 +831,14 @@
             }
         },
         {
+            "Key": "fa24415d-be27-48dd-878c-1b222669c738",
+            "Value": {
+                "id": "9ac8a746-60ea-43d9-bfbb-11e662b59512",
+                "resourcePath": "rooms\\rm_mod_test2\\rm_mod_test2.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "fcd8a466-0bd2-405a-85cf-eb06e5fa70b5",
             "Value": {
                 "id": "a1fcfed7-ecd5-4a2d-9856-15bcc30ccd48",
@@ -798,14 +854,16 @@
         "ecaa89b3-e5c4-4fc1-a48a-a27d2a9c5eb2",
         "832a08ec-bd82-4a6d-ba43-ce961bb829fb",
         "b54f41d4-8ba1-4ad6-a316-e1f95f80c6f8",
-        "700d25c9-16c9-4f8f-8c6b-a7eb8ea53027",
         "e11d9f3c-0bed-4523-8049-245b75bf10fc",
+        "700d25c9-16c9-4f8f-8c6b-a7eb8ea53027",
         "95936bc1-d3f0-4631-a9b7-334780326d06",
         "e3229599-4a99-47ce-a96a-16b3f3d7f8ba",
         "46d0c061-54bd-429f-824b-187caa226683",
         "c230b68d-6e76-4e58-8c5d-cf3286b5ef98",
         "c6833744-8b00-49fc-87b6-38f6d08e43ab",
         "5b52421e-97ae-4588-87b7-423990250e0b",
+        "04cc7d93-27de-4c09-9c42-a132210f58db",
+        "332c30f7-33bf-42f1-a08a-c14d2f798fd1",
         "45bed50e-91f5-4c0e-8680-51403a1fc29c",
         "6e37d217-0940-4602-8e44-c31926058d3d"
     ],

@@ -3,7 +3,7 @@
 event_inherited();
 
 
-origin_offset_y = 50;
+origin_offset_y = 48;
 
 
 shadow_sprite = spr_fence_diagonal_shadow_right;

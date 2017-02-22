@@ -1,13 +1,17 @@
 //checks if the given cords and size would overlap an existing module
+var module_padding = 48;
+
+if mod_width_small = argument2{
+module_padding = 24;}
 
 //if overlapping any other module
 var ireturn = false;
 var i13 = 0;
 repeat(max_modules){
-if (argument0+argument2) >= module_x[i13] && 
-argument0 <= (module_x[i13]+module_size[i13]) &&
-(argument1+argument2) >= module_y[i13] && 
-argument1 <= (module_y[i13]+module_size[i13]){
+if (argument0+argument2) > module_x[i13]-module_padding && 
+argument0 < (module_x[i13]+module_size[i13]+module_padding) &&
+(argument1+argument2) > module_y[i13]-module_padding && 
+argument1 < (module_y[i13]+module_size[i13]+module_padding){
 ireturn = true;}
 i13+=1;}
 

@@ -14,6 +14,11 @@ if g.lsh[player_num] == 0 && g.lsv[player_num] == 0{
 speed = lerp(speed,0,.25);
 }
 
+
+if !place_free(x+hspeed,y){hspeed = 0;}
+if !place_free(x,y+vspeed){vspeed = 0;}
+
+
 if keyboard_check(vk_space){
 max_speed = max_run_speed;}
 else{
