@@ -1,7 +1,7 @@
 {
     "id": "3175a614-278e-4cf1-bd16-32d9801f7c63",
     "modelName": "GMSprite",
-    "mvc": "1.0",
+    "mvc": "1.12",
     "name": "spr_test_player_mask",
     "For3D": false,
     "HTile": false,
@@ -58,6 +58,7 @@
     "playbackSpeedType": 0,
     "sepmasks": false,
     "swatchColours": null,
+    "swfPrecision": 0,
     "textureGroup": 0,
     "type": 0,
     "width": 48,
