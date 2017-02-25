@@ -1,8 +1,8 @@
 {
-    "id": "332c30f7-33bf-42f1-a08a-c14d2f798fd1",
+    "id": "ef6c697b-c582-4eba-9bf3-9a93e4a0ce66",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_module_db",
+    "name": "scr_module_populate",
     "IsCompatibility": false,
     "IsDnD": false
 }

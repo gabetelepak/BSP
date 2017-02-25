@@ -10,7 +10,8 @@
         "5b52421e-97ae-4588-87b7-423990250e0b",
         "04cc7d93-27de-4c09-9c42-a132210f58db",
         "332c30f7-33bf-42f1-a08a-c14d2f798fd1",
-        "a4d42653-fc10-41a4-a7b3-837f4186550e"
+        "a4d42653-fc10-41a4-a7b3-837f4186550e",
+        "ef6c697b-c582-4eba-9bf3-9a93e4a0ce66"
     ],
     "filterType": "GMScript",
     "folderName": "modular generation",
