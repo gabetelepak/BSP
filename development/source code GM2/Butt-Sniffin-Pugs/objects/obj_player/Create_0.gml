@@ -9,5 +9,11 @@ origin_y = 0;
 
 player_num = 1;
 
+face = 1;
+
+shadow_sprite = spr_sammy_shadow;
+shadow_x = 0;
+shadow_y = 0;
+
 
 scr_define_player_movement();

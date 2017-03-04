@@ -1,3 +1,4 @@
+//goes to each module room and adds all objects to a ds grid.
 
 if modules_loaded <= module_room_max{
 
@@ -24,11 +25,12 @@ for (i2 = 0; i2 < instance_number(all); i2 += 1)
    {
    inst = instance_find(all,i2);
    if instance_exists(inst){
+   if inst != g || inst != obj_floor{
    ds_grid_set(module_room_grid[i],floor(inst.x/12),floor(inst.y/12),inst.object_index);
-   }
+   }}
    
    }
-test_str += string(room_get_name(room))+ ":"+string(instance_number(all))+" loaded\n";
+test_str += string(i)+ " "+string(room_get_name(room))+ ":"+string(instance_number(all))+" loaded\n";
 modules_loaded += 1;}
 
 

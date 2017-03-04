@@ -19,4 +19,5 @@ shadow_y = 0;
 scale = 1;
 color = c_white;
 rot = 0;
-alpha = 1;
+alpha = -1;
+generated = 0;

@@ -8,10 +8,12 @@
         "c230b68d-6e76-4e58-8c5d-cf3286b5ef98",
         "c6833744-8b00-49fc-87b6-38f6d08e43ab",
         "5b52421e-97ae-4588-87b7-423990250e0b",
-        "04cc7d93-27de-4c09-9c42-a132210f58db",
         "332c30f7-33bf-42f1-a08a-c14d2f798fd1",
-        "a4d42653-fc10-41a4-a7b3-837f4186550e",
-        "ef6c697b-c582-4eba-9bf3-9a93e4a0ce66"
+        "04cc7d93-27de-4c09-9c42-a132210f58db",
+        "ef6c697b-c582-4eba-9bf3-9a93e4a0ce66",
+        "c8bbb425-a00e-4e0d-aaa5-bc0fcbeabbef",
+        "6e92bc80-8ecb-4e94-9fd4-41c614ef62d9",
+        "97f4721e-c03a-41dc-8377-7890aa6e1802"
     ],
     "filterType": "GMScript",
     "folderName": "modular generation",

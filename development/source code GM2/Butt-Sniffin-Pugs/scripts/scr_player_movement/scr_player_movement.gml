@@ -23,3 +23,17 @@ if keyboard_check(vk_space){
 max_speed = max_run_speed;}
 else{
 max_speed = max_walk_speed;}
+
+
+
+
+if direction = 0{sprite_index = spr_sammy_right;face = 1;}
+if direction = 180{sprite_index = spr_sammy_right;face = -1;}
+if direction = 90{sprite_index = spr_sammy_up;}
+if direction = 270{sprite_index = spr_sammy_down;}
+
+
+if speed > .1{
+image_speed = speed/4;}
+else{image_speed = 0;
+image_index = 0;}

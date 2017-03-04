@@ -10,6 +10,9 @@ biome = 1104 x 2880
 */
 //hmm
 
+module_populate_success = 0;
+filler_populate_success = 0;
+
 mod_width_large = 480; // 10
 mod_width_medium = 288; // 6
 mod_width_small = 192; // 4
@@ -21,11 +24,6 @@ i = 0;//biome number
 max_modules_large[i] = 1;
 max_modules_medium[i] = 6;
 max_modules_small[i] = 6;
-
-
-
-
-
 
 i = 0;
 repeat(max_modules){

@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 //testing
+random_set_seed(current_time);
 test_str = "";
 
 scr_define_colors();

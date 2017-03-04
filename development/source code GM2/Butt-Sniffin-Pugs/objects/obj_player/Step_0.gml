@@ -6,3 +6,14 @@ origin_y = y + origin_offset_y;
 depth = room_height-origin_y;
 
 scr_player_movement();
+
+
+if device_mouse_check_button(0,mb_left){
+x = mouse_x;
+y = mouse_y;}
+
+
+//draw shadow
+
+
+
