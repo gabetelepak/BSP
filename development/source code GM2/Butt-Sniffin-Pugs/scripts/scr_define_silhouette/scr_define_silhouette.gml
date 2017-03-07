@@ -1,0 +1,1 @@
+g.surf_player_silhouette = surface_create(48,48);
