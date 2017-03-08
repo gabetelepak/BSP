@@ -6,3 +6,10 @@ scr_draw_silhouette();
 
 
 
+
+if keyboard_check(vk_tab){
+mp_grid_draw(g.world_grid);}
+
+
+
+

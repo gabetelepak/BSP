@@ -9,7 +9,7 @@ instance_create_depth(x,y,10000,obj_floor);}}
 
 
 scr_handle_controls();
-scr_handle_camera();
+
 
 
 if keyboard_check_pressed(ord("1")){
@@ -47,7 +47,8 @@ if instance_exists(obj_basic_wall){
 with obj_basic_wall{instance_destroy();}}}
 
 
-
+if keyboard_check_pressed(ord("2")){
+scr_update_world_path();}
 
 
 

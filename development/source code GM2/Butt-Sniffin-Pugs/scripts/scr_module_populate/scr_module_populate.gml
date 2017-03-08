@@ -24,7 +24,11 @@ ix = 0;
 iy = 0;
 repeat(2304){
 inst = ds_grid_get(module_room_grid[module_room_number],ix,iy);
-if inst > 0{instance_create_depth(module_x[i]-48+ix*12,module_y[i]-48+iy*12,10000,inst);}
+if inst > 0{
+opt = instance_create_depth(module_x[i]-48+ix*12,module_y[i]-48+iy*12,10000,inst);
+opt.module_id = module_room_number;
+
+}
 ix += 1;
 if ix > 40{ix = 0;iy+=1;}}
 }

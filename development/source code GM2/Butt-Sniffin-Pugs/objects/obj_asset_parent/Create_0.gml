@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+module_id = -1;//if belongs to a module and which.
+
 //handle origin, calculate depth
 origin_offset_x = floor(sprite_width/2);
 origin_offset_y = sprite_height;

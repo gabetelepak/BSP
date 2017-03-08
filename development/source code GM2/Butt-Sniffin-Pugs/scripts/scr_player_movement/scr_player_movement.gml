@@ -26,11 +26,11 @@ max_speed = max_walk_speed;}
 
 
 
-
+if speed > 0{
 if direction = 0{sprite_index = spr_sammy_right;face = 1;}
 if direction = 180{sprite_index = spr_sammy_right;face = -1;}
 if direction = 90{sprite_index = spr_sammy_up;}
-if direction = 270{sprite_index = spr_sammy_down;}
+if direction = 270{sprite_index = spr_sammy_down;}}
 
 
 if speed > .1{

@@ -10,6 +10,8 @@ scr_define_controls();
 
 scr_define_mod_gen();
 scr_define_module_db_grid();
+scr_define_world_path();
+
 scr_define_camera();
 scr_define_silhouette();
 
