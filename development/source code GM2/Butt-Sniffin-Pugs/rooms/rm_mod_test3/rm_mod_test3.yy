@@ -70,7 +70,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_43A1E415",
-                    "x": 120,
+                    "x": 192,
                     "y": 348,
                     "IsDnD": false,
                     "colour": {
@@ -89,7 +89,7 @@
                     "id": "780f9c14-c756-441f-9039-6812bb8b5208",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
-                    "ignore": false,
+                    "ignore": true,
                     "inheritItemSettings": false,
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,

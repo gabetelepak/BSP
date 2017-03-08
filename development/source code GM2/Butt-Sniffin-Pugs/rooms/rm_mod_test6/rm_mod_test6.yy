@@ -70,7 +70,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_7C8D2513",
-                    "x": 180,
+                    "x": 192,
                     "y": 348,
                     "IsDnD": false,
                     "colour": {
@@ -89,13 +89,13 @@
                     "id": "c7cf88b8-901a-44ca-abb8-c3fc1c41f57b",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
-                    "ignore": false,
+                    "ignore": true,
                     "inheritItemSettings": false,
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_78E02F63",
                     "x": 348,
-                    "y": 228,
+                    "y": 216,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295

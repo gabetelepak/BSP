@@ -5,7 +5,7 @@ g.ireturn = -1;
 with obj_path_point{
 if path_section_start < 0{
 if id != g.itrigger && g.itrigger.module_id != module_id{
-i = distance_to_point(g.itrigger.x,g.itrigger.y);
+i = distance_to_point(g.itrigger.sx,g.itrigger.sy);
 if i < g.idis{
 g.ireturn = id;
 g.idis = i;}}}}

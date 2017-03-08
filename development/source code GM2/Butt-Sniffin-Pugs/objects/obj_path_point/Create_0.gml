@@ -4,4 +4,7 @@
 opt = -1;
 path_section_start = -1;
 module_id = -1;
-path = path_add(); 
+path = path_add();  
+
+sx = x;
+sy = y;
