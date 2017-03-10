@@ -2540,7 +2540,7 @@
                     "id": "32dfb25b-6a61-4e57-87c9-adbfd79312a3",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
-                    "ignore": true,
+                    "ignore": false,
                     "inheritItemSettings": false,
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
@@ -2551,8 +2551,8 @@
                     "colour": {
                         "Value": 4294967295
                     },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
+                    "creationCodeFile": "InstanceCreationCode_inst_7C1355A9.gml",
+                    "creationCodeType": ".gml",
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_7C1355A9",
                     "objId": "d0a429a3-3764-4c18-8178-4820176e9064",
@@ -2564,7 +2564,7 @@
                     "id": "cb162fd3-7856-4269-bb07-3bf3f374c7eb",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
-                    "ignore": true,
+                    "ignore": false,
                     "inheritItemSettings": false,
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
@@ -2575,8 +2575,8 @@
                     "colour": {
                         "Value": 4294967295
                     },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
+                    "creationCodeFile": "InstanceCreationCode_inst_6926E0CD.gml",
+                    "creationCodeType": ".gml",
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_6926E0CD",
                     "objId": "d0a429a3-3764-4c18-8178-4820176e9064",
@@ -2611,11 +2611,11 @@
             "animationFPS": 15,
             "animationSpeedType": 0,
             "colour": {
-                "Value": 4287752311
+                "Value": 4294967295
             },
             "hspeed": 0,
             "htiled": true,
-            "spriteId": "00000000-0000-0000-0000-000000000000",
+            "spriteId": "ef0f33f1-8d79-41ec-b9f1-4613dde9abd6",
             "stretch": false,
             "userdefined_animFPS": false,
             "vspeed": 0,

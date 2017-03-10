@@ -47,9 +47,19 @@ if instance_exists(obj_basic_wall){
 with obj_basic_wall{instance_destroy();}}}
 
 
-if keyboard_check_pressed(ord("2")){
+if keyboard_check_pressed(ord("3")){
+generate_world_path = 1;
 scr_update_world_path();}
 
+if keyboard_check_pressed(ord("4")){
+generate_world_path = 2;}
+
+/*
+generate_world_path = 0;
+if instance_exists(obj_path_point){
+with obj_path_point{
+if path_speed > 0{g.generate_world_path = 1;}}}
+*/
 
 
 

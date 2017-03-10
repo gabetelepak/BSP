@@ -4,8 +4,8 @@ mp_grid_clear_all(g.world_grid);
 
 //surface for drawing path
 if !surface_exists(world_grid_surf){
-world_grid_surf = surface_create(room_width,room_height);}
-surface_resize(world_grid_surf,room_width,room_height);
+world_grid_surf = surface_create(4320,3120);}
+//surface_resize(world_grid_surf,room_width,room_height);
 
 surface_set_target(world_grid_surf);
 draw_clear_alpha(c_white,0);
