@@ -33,9 +33,9 @@ if path_section_start < 0{
 path_section_start = 1;
 opt = scr_nearest_path_point();
 mp_grid_path(g.world_grid,path,sx,sy,opt.sx,opt.sy,1);
-}
+}}///////
 
 
 
 
-}///////
+

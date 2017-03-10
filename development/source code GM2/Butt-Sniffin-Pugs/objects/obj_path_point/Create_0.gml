@@ -8,3 +8,5 @@ path = path_add();
 
 sx = x;
 sy = y;
+
+clear_path = 0;
