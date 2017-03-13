@@ -8,6 +8,9 @@
 //temp grass texture
 //draw_sprite_tiled_ext(spr_testing_grid_floor,0,0,0,1,1,c_white,1);
 
+//park paths
+if surface_exists(g.world_grid_surf){
+draw_surface(g.world_grid_surf,0,0);}
 
 
 if surface_exists(g.surf_shadow){

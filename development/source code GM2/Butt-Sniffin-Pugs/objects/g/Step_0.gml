@@ -13,6 +13,7 @@ scr_handle_controls();
 
 
 if keyboard_check_pressed(ord("1")){
+room_speed = 90;
 scr_generate_biome();
 scr_module_populate();
 
@@ -44,7 +45,10 @@ filler_obj_cur += 1;}
 
 if module_populate_success = 1 && filler_obj_cur >= filler_obj_max+1{
 if instance_exists(obj_basic_wall){
-with obj_basic_wall{instance_destroy();}}}
+with obj_basic_wall{instance_destroy();}}
+room_speed = 30;
+
+}
 
 
 if keyboard_check_pressed(ord("3")){
