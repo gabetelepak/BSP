@@ -22,5 +22,7 @@ camera_width = 0;
 camera_height = 0;
 
 
+flash_surfaces = 90;
+
 
 

@@ -43,8 +43,8 @@
             "modelName": "GMRInstanceLayer",
             "mvc": "1.0",
             "depth": 0,
-            "grid_x": 12,
-            "grid_y": 12,
+            "grid_x": 48,
+            "grid_y": 48,
             "hierarchyFrozen": false,
             "hierarchyVisible": true,
             "inheritLayerDepth": false,
@@ -621,7 +621,7 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_150804BE",
-                    "x": 336,
+                    "x": 384,
                     "y": 192,
                     "IsDnD": false,
                     "colour": {
@@ -646,7 +646,7 @@
                     "m_serialiseFrozen": false,
                     "name": "inst_7FDEFDA6",
                     "x": 192,
-                    "y": 336,
+                    "y": 384,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295

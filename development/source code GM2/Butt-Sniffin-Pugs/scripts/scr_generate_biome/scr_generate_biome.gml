@@ -60,7 +60,7 @@ repeat(1000){
 if run_it_home = 0{
 if scr_module_overlap(temp_module_x,temp_module_y,mod_width_medium){
 temp_module_x = (1+irandom(((1440-mod_width_medium)/48)-1))*48;
-temp_module_y = (1+hub_height) + irandom(((2400-mod_width_medium)/48)-1)*48;}
+temp_module_y = (1+hub_height) + irandom(((2352-mod_width_medium)/48)-1)*48;}
 else{
 module_name[i] = "temp";
 module_x[i] = temp_module_x;
@@ -89,7 +89,7 @@ repeat(1000){
 if run_it_home = 0{
 if scr_module_overlap(temp_module_x,temp_module_y,mod_width_medium){
 temp_module_x = (1+irandom(((1440-mod_width_small)/48)-1))*48;
-temp_module_y = (1+hub_height) + irandom(((2400-mod_width_small)/48)-1)*48;}
+temp_module_y = (1+hub_height) + irandom(((2352-mod_width_small)/48)-1)*48;}
 else{
 module_name[i] = "temp";
 module_x[i] = temp_module_x;

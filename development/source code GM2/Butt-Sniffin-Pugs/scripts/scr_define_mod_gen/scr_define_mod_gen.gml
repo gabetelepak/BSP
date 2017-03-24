@@ -22,12 +22,14 @@ max_modules = 100;
 
 i = 0;//biome number
 max_modules_large[i] = 1;
-max_modules_medium[i] = 3;
-max_modules_small[i] = 3;
+max_modules_medium[i] = 2;
+max_modules_small[i] = 2;
 
 i = 0;
 repeat(max_modules){ 
 module_size[i] = 0;
+module_x[i] = 0;
+module_y[i] = 0;
 i+=1;}
 
 

@@ -1,10 +1,11 @@
 
-world_grid = mp_grid_create(0,0,floor(room_width/12),floor(room_height/12),12,12);
+world_grid = mp_grid_create(24,24,floor(room_width/48),floor(room_height/48),48,48);
 mp_grid_clear_all(g.world_grid);
 
 //surface for drawing path
 if !surface_exists(world_grid_surf){
-world_grid_surf = surface_create(4320,3120);}
+world_grid_surf = surface_create(4320,3120);
+buffer_get_surface(world_grid_buffer,world_grid_surf,0,0,0);}
 //surface_resize(world_grid_surf,room_width,room_height);
 
 surface_set_target(world_grid_surf);
@@ -15,7 +16,7 @@ surface_reset_target();
 //add module areas to grid
 var i13 = 0;
 repeat(max_modules){
-mp_grid_add_rectangle(g.world_grid,module_x[i13]+24,module_y[i13]+24,module_x[i13]+module_size[i13]-24,module_y[i13]+module_size[i13]-24);
+mp_grid_add_rectangle(g.world_grid,module_x[i13],module_y[i13],module_x[i13]+module_size[i13],module_y[i13]+module_size[i13]);
 i13+=1;}
 
 

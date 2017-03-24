@@ -51,12 +51,9 @@ room_speed = 30;
 }
 
 
-if keyboard_check_pressed(ord("3")){
-generate_world_path = 1;
-scr_update_world_path();}
+scr_handle_world_path();
 
-if keyboard_check_pressed(ord("4")){
-generate_world_path = 2;}
+
 
 /*
 generate_world_path = 0;
