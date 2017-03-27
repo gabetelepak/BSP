@@ -14,4 +14,4 @@ scr_define_world_path();
 
 scr_define_camera();
 scr_define_silhouette();
-
+scr_define_pug_sprites();

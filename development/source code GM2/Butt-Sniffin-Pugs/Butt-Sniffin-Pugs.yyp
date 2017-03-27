@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "1e73cf86-a6af-4d2d-92fd-04e5e99d5227",
+            "Value": {
+                "id": "94a8ab04-fce8-4990-a9d6-c43250910312",
+                "resourcePath": "scripts\\scr_create_sprite\\scr_create_sprite.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "267078a1-bf82-4e42-8e1b-9885c1f99377",
             "Value": {
                 "id": "41568b30-7b2c-44a3-ab1a-6e9036d3f88b",
@@ -559,6 +567,14 @@
             }
         },
         {
+            "Key": "7465c7ed-8116-4b2d-baa2-1291ca57cc2a",
+            "Value": {
+                "id": "2e4814e2-a2a2-4f72-9ded-8c11546a81ca",
+                "resourcePath": "scripts\\scr_define_pug_sprites\\scr_define_pug_sprites.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "76b926bf-37fb-43bd-89c8-90552ad296c6",
             "Value": {
                 "id": "e260a76f-fa7c-4ed6-866b-c7eca371e7a6",
@@ -583,11 +599,11 @@
             }
         },
         {
-            "Key": "7afb85d0-f103-4db1-8735-6f5e0d943bda",
+            "Key": "7a6a5755-e1a1-42e6-a454-40b0d873d595",
             "Value": {
-                "id": "e1c5809b-dc21-4e94-988d-f4f402606ab5",
-                "resourcePath": "scripts\\scr_create_sprite\\scr_create_sprite.yy",
-                "resourceType": "GMScript"
+                "id": "00bce469-9b45-453c-af37-bc523297c723",
+                "resourcePath": "views\\7a6a5755-e1a1-42e6-a454-40b0d873d595.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -908,6 +924,14 @@
                 "id": "49e351d0-6214-4da4-b034-1920828c557d",
                 "resourcePath": "objects\\g\\g.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b8e1eba4-cc64-481b-a8c1-d33929a2e88e",
+            "Value": {
+                "id": "4ea3d486-c6cb-46e3-9376-7e0df1041849",
+                "resourcePath": "scripts\\scr_load_pug_sheet\\scr_load_pug_sheet.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1346,7 +1370,9 @@
     "script_order": [
         "a3bbcb3b-35b9-4e51-989c-29ea7e24d654",
         "3efd99e5-ed84-4c43-9417-6f9dbcba8e4d",
-        "7afb85d0-f103-4db1-8735-6f5e0d943bda",
+        "7465c7ed-8116-4b2d-baa2-1291ca57cc2a",
+        "b8e1eba4-cc64-481b-a8c1-d33929a2e88e",
+        "1e73cf86-a6af-4d2d-92fd-04e5e99d5227",
         "ecaa89b3-e5c4-4fc1-a48a-a27d2a9c5eb2",
         "832a08ec-bd82-4a6d-ba43-ce961bb829fb",
         "b54f41d4-8ba1-4ad6-a316-e1f95f80c6f8",

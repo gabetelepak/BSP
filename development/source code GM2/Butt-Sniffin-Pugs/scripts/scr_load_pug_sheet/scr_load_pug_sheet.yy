@@ -1,8 +1,8 @@
 {
-    "id": "1e73cf86-a6af-4d2d-92fd-04e5e99d5227",
+    "id": "b8e1eba4-cc64-481b-a8c1-d33929a2e88e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_create_sprite",
+    "name": "scr_load_pug_sheet",
     "IsCompatibility": false,
     "IsDnD": false
 }
