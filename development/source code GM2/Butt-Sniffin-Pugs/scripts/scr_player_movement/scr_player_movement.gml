@@ -1,6 +1,7 @@
 
 snapped_x = floor(x/12)*12;
 snapped_y = floor(x/12)*12;
+ldirection = direction;
 
 
 
@@ -29,8 +30,8 @@ max_speed = max_walk_speed;}
 if speed > 0{
 if direction = 0{sprite_index = g.spr_walk[player_num];face = -1;}
 if direction = 180{sprite_index = g.spr_walk[player_num];face = 1;}
-if direction = 90{sprite_index = g.spr_walk_up[player_num];;}
-if direction = 270{sprite_index = g.spr_walk_down[player_num];;}}
+if direction = 90{sprite_index = g.spr_walk_up[player_num];}
+if direction = 270{sprite_index = g.spr_walk_down[player_num];}}
 
 
 if speed > .1{
@@ -39,3 +40,26 @@ else{image_speed = 0;
 image_index = 0;
 sprite_index = g.spr_stand[player_num];
 }
+
+
+
+
+//make dust
+
+if speed > max_walk_speed{
+dust_alarm -= 1;
+if dust_alarm <= 0{
+dust_alarm = 22;
+instance_create_depth(x-lengthdir_x(6,direction),y+min(0,lengthdir_y(8,direction+180)),depth,obj_step_dust);}
+
+if direction != ldirection{
+instance_create_depth(x-lengthdir_x(6,direction),y+min(0,lengthdir_y(8,direction+180)),depth,obj_step_dust);
+dust_alarm = 22;}
+
+}
+
+
+
+
+
+

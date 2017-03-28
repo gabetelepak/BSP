@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "209ea6d8-f19a-4b4a-91a8-6c0528e109c4",
+            "Value": {
+                "id": "854ff6b4-1af6-4b94-a70b-2b947917eb44",
+                "resourcePath": "views\\209ea6d8-f19a-4b4a-91a8-6c0528e109c4.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "267078a1-bf82-4e42-8e1b-9885c1f99377",
             "Value": {
                 "id": "41568b30-7b2c-44a3-ab1a-6e9036d3f88b",
@@ -412,6 +420,14 @@
                 "id": "316c4da1-1cf5-48d5-86ac-503f04daec82",
                 "resourcePath": "views\\4be5cc0c-12cf-440d-9e02-267d6077e21b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4dcdaae6-580e-4e3c-81fc-1057ca2833d1",
+            "Value": {
+                "id": "b3f0055a-e94f-4f9a-b337-3434c2435787",
+                "resourcePath": "objects\\obj_step_dust\\obj_step_dust.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -651,6 +667,14 @@
             "Value": {
                 "id": "a23c3144-3919-4c58-bf9f-6db5d29c06d3",
                 "resourcePath": "views\\88a68bcc-c565-4efc-8920-96e4688b54ef.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8c33a8bd-6c19-4cc2-bc65-7c3349aaa457",
+            "Value": {
+                "id": "5789fd12-271c-448c-88c9-7669e0062b03",
+                "resourcePath": "views\\8c33a8bd-6c19-4cc2-bc65-7c3349aaa457.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1180,6 +1204,14 @@
                 "id": "0672c41c-39c0-4137-a175-b75e5ce1cf65",
                 "resourcePath": "objects\\obj_fence_vertical\\obj_fence_vertical.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e024f456-51ae-4346-a3e7-8f2dac8c54cf",
+            "Value": {
+                "id": "5d6a7dcb-9a46-4d71-8f92-2f8cf7b86550",
+                "resourcePath": "sprites\\spr_step_dust\\spr_step_dust.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
