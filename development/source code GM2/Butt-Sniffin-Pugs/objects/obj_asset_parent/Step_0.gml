@@ -35,3 +35,14 @@ generated = 3;}
 
 if alpha < 1{
 alpha += 1/5;}
+
+
+
+if g.activate_alarm = 2{
+if g.generate_world_path = 3{
+if x < g.camera_x-240 || y < g.camera_y-240 ||
+ x > g.camera_x+g.camera_width+240 || y > g.camera_y+g.camera_height+240{
+instance_deactivate_object(id);}}
+}
+
+

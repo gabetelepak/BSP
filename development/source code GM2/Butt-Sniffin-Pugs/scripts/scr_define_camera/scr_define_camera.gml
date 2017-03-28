@@ -23,6 +23,6 @@ camera_height = 0;
 
 
 flash_surfaces = 90;
-
+activate_alarm = 0;//how often to check to deavtivate instances outside the view.
 
 
