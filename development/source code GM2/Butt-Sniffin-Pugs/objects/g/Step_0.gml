@@ -55,7 +55,7 @@ scr_handle_world_path();
 
 
 
-/*
+/* 
 generate_world_path = 0;
 if instance_exists(obj_path_point){
 with obj_path_point{
@@ -71,10 +71,9 @@ scr_module_get_grid();
 
 
 if keyboard_check_pressed(ord("5")){
-message[0] = "hello world.";
-message[1] = "how are you.";
-message[0] = "\\0Normal \\1Shaky \\2Color \\3Shaky Color \\4Wavy \\5Gradient \\6Wavy Gradient";
-message[1] = "\\0Advanced \\1Dialogue \\1Box";
+message[0] = "\\0Thanks \\3Diestware! \\0Great \\6Dialogue box \\0tutorial.";
+message[0] = "Basic paths? \\3PUGGET ABOUT IT. \\0he he he Central Bark is going to be \\6THICC \\0so we gotta have those procedural paths ya'll.";
+//message[1] = "\\0Advanced \\1Dialogue \\1Box";
 newChat(message, spr_talk_sammy);}
 
 

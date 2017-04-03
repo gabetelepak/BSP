@@ -1,4 +1,4 @@
-/// @description Insert description here
+ /// @description Insert description here
 // Y ou can write your code in this editor
 
 origin_x = x + origin_offset_x;
@@ -7,11 +7,11 @@ depth = room_height-origin_y;
 
 scr_player_movement();
 
-
+/*
 if device_mouse_check_button(0,mb_left){
 x = mouse_x;
 y = mouse_y;}
-
+*/
 
 //draw shadow
 //draw player shadow

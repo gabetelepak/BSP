@@ -26,15 +26,15 @@ if (message_end > 0)
     //Draw chat box
     draw_sprite(chatbox_sprite, 0, x, y);
     //Draw Portrait
-    if (portrait != "none") draw_sprite(portrait, 0, x, y);
+    if (portrait != "none") draw_sprite(portrait, mouth_index, x, y);
     
     //This is for the effects
     var modifier = 0;
     //Character Width
     var charWidth = 9;
     //How many characters allowed in each line
-    if (portrait == "none") var lineEnd = 40;
-    else var lineEnd = 40;
+    if (portrait == "none") var lineEnd = 36;
+    else var lineEnd = 36;
     //Variables for spacing characters
     var line = 0;
     var space = 0;
@@ -45,8 +45,8 @@ if (message_end > 0)
     //Text Position
     var tY = y + 14;
     //Change the horizontal position if there is a portrait
-    if (portrait == "none") var tX = x + 90;
-    else var tX = x + 90;
+    if (portrait == "none") var tX = x + 84;
+    else var tX = x + 84;
     
     //If we are done printing out the current message
     if (cutoff == string_length(message[message_current]))
@@ -84,9 +84,11 @@ if (message_end > 0)
             if(!audio_is_playing(so_chat)) audio_play_sound(so_chat, 10, false);
             cutoff++;
             timer = 0;
+			mouth_index = irandom(3);
         }
         else timer++;
     }
+	else{mouth_index = 0;}//stop lip flappin.
     
     //Text
     while(i <= string_length(message[message_current]) && i <= cutoff)
@@ -131,13 +133,13 @@ if (message_end > 0)
             }
             case 2: //color
             {
-                draw_set_colour(c_lime);
+                draw_set_colour(selected_text_color);
                 draw_text(tX+(space*charWidth), tY+(13*line), string_char_at(message[message_current], i));
                 break;
             }
             case 3: //color and shake
             {
-                draw_set_colour(c_lime);
+                draw_set_colour(selected_text_color );
                 draw_text(tX+(space*charWidth)+random_range(-1, 1), tY+(13*line)+random_range(-1, 1), string_char_at(message[message_current], i));
                 break;
             }
@@ -170,3 +172,8 @@ if (message_end > 0)
         i++;
     }
 }
+
+
+
+
+//draw_text(x,y-20,timer);
