@@ -68,3 +68,14 @@ if path_speed > 0{g.generate_world_path = 1;}}}
 //game initiation, gather module data
 scr_module_get_grid();
 
+
+
+if keyboard_check_pressed(ord("5")){
+message[0] = "hello world.";
+message[1] = "how are you.";
+message[0] = "\\0Normal \\1Shaky \\2Color \\3Shaky Color \\4Wavy \\5Gradient \\6Wavy Gradient";
+message[1] = "\\0Advanced \\1Dialogue \\1Box";
+newChat(message, spr_talk_sammy);}
+
+
+
