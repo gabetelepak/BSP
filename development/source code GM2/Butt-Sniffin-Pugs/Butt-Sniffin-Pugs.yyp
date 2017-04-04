@@ -314,7 +314,7 @@
             "Key": "2f0dcc94-ec8d-41a3-94de-7f01ad9a2337",
             "Value": {
                 "id": "6288ce0c-63ac-4d22-84a1-82f20667eb8f",
-                "resourcePath": "objects\\obj_player\\obj_player.yy",
+                "resourcePath": "objects\\obj_creature\\obj_creature.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -756,6 +756,14 @@
                 "id": "fcc15e07-0cfc-4dc2-afee-71210852b755",
                 "resourcePath": "sprites\\spr_fence_diagonal_shadow_right\\spr_fence_diagonal_shadow_right.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "88518a97-44b1-4a71-b33a-32516d7754f5",
+            "Value": {
+                "id": "2abb131b-4baf-4799-88c4-f866a924245d",
+                "resourcePath": "objects\\obj_spawn_player\\obj_spawn_player.yy",
+                "resourceType": "GMObject"
             }
         },
         {

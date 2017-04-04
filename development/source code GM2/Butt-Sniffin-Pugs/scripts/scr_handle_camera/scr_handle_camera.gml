@@ -11,14 +11,14 @@ if keyboard_check_pressed(ord("0")){
 if camera_mode = 0{camera_mode = 1;}else{camera_mode = 0;}}
 
 if camera_mode = 0{
-if instance_exists(obj_player){
+if instance_exists(player_object[1]){
 
-if abs(camera_x-(obj_player.x-(view_width/2))) > 2{
-camera_x = round(lerp(camera_x,obj_player.x-(view_width/2),.1));}
+if abs(camera_x-(player_object[1].x-(view_width/2))) > 2{
+camera_x = round(lerp(camera_x,player_object[1].x-(view_width/2),.1));}
 
 
-if abs(camera_y-obj_player.y-((view_height/2))) > 2{
-camera_y = round(lerp(camera_y,obj_player.y-(view_height/2),.1));}
+if abs(camera_y-player_object[1].y-((view_height/2))) > 2{
+camera_y = round(lerp(camera_y,player_object[1].y-(view_height/2),.1));}
 
 
 camera_set_view_size(view_camera[0],view_width,view_height);
