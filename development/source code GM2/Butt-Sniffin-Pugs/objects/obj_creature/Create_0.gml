@@ -18,5 +18,5 @@ shadow_sprite = spr_sammy_shadow;
 shadow_x = 0;
 shadow_y = 0;
 
+image_speed = 0;
 
-scr_define_player_movement();
