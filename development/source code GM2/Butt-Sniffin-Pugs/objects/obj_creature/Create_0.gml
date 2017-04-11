@@ -20,3 +20,10 @@ shadow_y = 0;
 
 image_speed = 0;
 
+
+//sprites.
+stand_sprite = spr_blank;
+walk_sprite = spr_blank;
+walk_up_sprite = spr_blank;
+walk_down_sprite = spr_blank;
+shadow_sprite = spr_blank;

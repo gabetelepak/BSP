@@ -25,4 +25,4 @@ surface_reset_target();
 }///////////////
 
 
-
+scr_handle_creature_sprites();
