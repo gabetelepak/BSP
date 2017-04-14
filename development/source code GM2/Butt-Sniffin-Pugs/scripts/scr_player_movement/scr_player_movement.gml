@@ -6,18 +6,20 @@ ldirection = direction;
 
 
 if g.lsh[player_num] != 0 || g.lsv[player_num] != 0{
+direction = point_direction(0,0, g.lsh[player_num],g.lsv[player_num]);
+draw_direction = direction;
 speed = lerp(speed,max_speed,.25);
-direction = point_direction(0,0, g.lsh[player_num],g.lsv[player_num]);}
+}
 
 
-
+//slow to a stop.
 if g.lsh[player_num] == 0 && g.lsv[player_num] == 0{
 speed = lerp(speed,0,.25);
 }
 
-
-if !place_free(x+hspeed,y){hspeed = 0;}
-if !place_free(x,y+vspeed){vspeed = 0;}
+//collide
+if !place_free(x+lengthdir_x(max_speed,direction),y){hspeed = 0;}
+if !place_free(x,y+lengthdir_y(max_speed,direction)){vspeed = 0;}
 
 
 if keyboard_check(vk_space){
@@ -27,7 +29,6 @@ max_speed = max_walk_speed;}
 
 
 //make dust
-
 if speed > max_walk_speed{
 dust_alarm -= 1;
 if dust_alarm <= 0{

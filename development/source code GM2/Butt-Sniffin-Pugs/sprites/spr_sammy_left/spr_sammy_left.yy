@@ -2,7 +2,7 @@
     "id": "dbc85244-8d56-41c2-8b3f-544b7293c25c",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_sammy_right",
+    "name": "spr_sammy_left",
     "For3D": false,
     "HTile": false,
     "VTile": false,

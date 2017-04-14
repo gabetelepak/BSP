@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-
+draw_direction = 0;
 origin_offset_x = 0;
 origin_offset_y = 0;
 origin_x = 0;

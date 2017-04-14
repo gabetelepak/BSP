@@ -2,7 +2,7 @@
     "id": "f189570e-17ed-440f-a32d-7a55805ac442",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_npc",
+    "name": "obj_npc_delete",
     "eventList": [
         {
             "id": "63b30cdf-aa42-41bb-a6c7-638a86f515fe",
