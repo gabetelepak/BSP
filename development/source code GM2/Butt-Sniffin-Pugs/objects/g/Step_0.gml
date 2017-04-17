@@ -70,7 +70,9 @@ scr_module_get_grid();
 
 
 
-
-
+//inventory
+if g.button_pressed[1,g.button_start]{
+if inventory_open = 0{inventory_open = 1;}
+else{inventory_open = 0;}}
 
 

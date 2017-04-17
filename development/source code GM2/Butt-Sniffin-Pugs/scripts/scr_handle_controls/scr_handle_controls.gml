@@ -14,7 +14,8 @@ if keyboard_check(ord("S")){lsv[islot] = 1;}
 i = max(gamepad_button_check(gamepad[islot], gp_face1), keyboard_check(vk_space));
 scr_button_check(button_A,i);
 
-
+i = max(/*gamepad_button_check(gamepad[islot], gp_face1)*/ 0, keyboard_check(vk_enter));
+scr_button_check(button_start,i);
 
 
 

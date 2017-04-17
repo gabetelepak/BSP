@@ -55,6 +55,8 @@ surface_free(g.surf_shadow);}
 
 
 
+
+
 //activate scenery objects
 if activate_alarm <= 0{
 instance_activate_region(camera_x-240,camera_y-240,camera_width+480,camera_height+480,1);

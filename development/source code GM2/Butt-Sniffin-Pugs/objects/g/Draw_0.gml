@@ -6,7 +6,9 @@ scr_handle_camera();}
 
 
 scr_draw_silhouette();
- 
+
+
+scr_draw_inventory();
 
 
 
