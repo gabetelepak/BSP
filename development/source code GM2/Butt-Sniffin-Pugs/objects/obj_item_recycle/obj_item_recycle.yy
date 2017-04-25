@@ -1,42 +1,42 @@
 {
-    "id": "9a09a152-6ff7-46bc-a52b-f242e8d9959c",
+    "id": "14d4310f-2929-4c85-8bdf-fad4f69e18a6",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_item",
+    "name": "obj_item_recycle",
     "eventList": [
         {
-            "id": "c9072f28-4be1-415a-b4da-3b94ef421ff0",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "9a09a152-6ff7-46bc-a52b-f242e8d9959c"
-        },
-        {
-            "id": "f2f8b649-5900-4e99-93ce-5627df089063",
+            "id": "2be53f5a-0d01-4114-8c4e-40f730a70547",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "9a09a152-6ff7-46bc-a52b-f242e8d9959c"
+            "m_owner": "14d4310f-2929-4c85-8bdf-fad4f69e18a6"
         },
         {
-            "id": "75800c14-2f6d-4392-9b87-f0ae38df1799",
+            "id": "3043e575-6cf7-48ba-a6d1-d386ca7e8d80",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "14d4310f-2929-4c85-8bdf-fad4f69e18a6"
+        },
+        {
+            "id": "d521d159-ec36-4518-8850-e5aed48620e4",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "9a09a152-6ff7-46bc-a52b-f242e8d9959c"
+            "m_owner": "14d4310f-2929-4c85-8bdf-fad4f69e18a6"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "parentObjectId": "2f0dcc94-ec8d-41a3-94de-7f01ad9a2337",
+    "parentObjectId": "9a09a152-6ff7-46bc-a52b-f242e8d9959c",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -44,7 +44,7 @@
     "physicsGroup": 0,
     "physicsKinematic": false,
     "physicsLinearDamping": 0.1,
-    "physicsObject": false,
+    "physicsObject": true,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
     "physicsShape": 1,

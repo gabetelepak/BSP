@@ -3,4 +3,9 @@
 
 event_inherited();
 
-scr_interaction();
+
+is_creature = 0;
+is_item = 0;
+interaction = 1;
+dialogue_text = "Item!";
+ 

@@ -12,5 +12,6 @@ scr_define_basic_movement();
 
 
 interaction = 1;
-show_interaction = 0;
-interaction_alpha = 0;
+is_creature = 1;
+dialogue_text = "NPC!";
+

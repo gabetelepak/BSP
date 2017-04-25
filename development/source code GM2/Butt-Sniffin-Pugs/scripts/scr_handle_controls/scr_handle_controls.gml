@@ -38,7 +38,16 @@ scr_button_check(button_B,i);
 
 }
 
-
-
+//start button either player
+i = keyboard_check(vk_enter);
+scr_button_check(button_start,i);
 
 islot += 1;}
+
+
+
+
+
+
+
+

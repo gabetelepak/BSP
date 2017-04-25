@@ -5,7 +5,8 @@ origin_x = x + origin_offset_x;
 origin_y = y + origin_offset_y;
 depth = room_height-origin_y;
 
-
+nplayer = instance_nearest(x,y,obj_player);
+pnum = nplayer.player_num;
 
 /*
 if device_mouse_check_button(0,mb_left){
@@ -25,4 +26,5 @@ surface_reset_target();
 }///////////////
 
 
-scr_handle_creature_sprites();
+if is_creature = 1{
+scr_handle_creature_sprites();}
