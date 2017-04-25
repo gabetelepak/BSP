@@ -30,7 +30,7 @@ button_select = i;i+=1;
 var button_slots_max = i-1;
 
 i = 0;
-i2 = 0;
+i2 = 1;
 repeat 2{
 repeat button_slots_max{
 button[i2,i] = 0;

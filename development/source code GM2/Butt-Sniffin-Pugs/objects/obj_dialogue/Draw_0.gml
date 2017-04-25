@@ -58,7 +58,7 @@ if (message_end > 0)
 		draw_sprite(string_cursor_sprite, i2, x+414, y+58);
         
         //Check player input
-        if (g.button_pressed[0,g.button_A])
+        if (g.button_pressed[1,g.button_A] || g.button_pressed[2,g.button_A])
         {
             //If we still have messages left, go to next message
             if (message_current < message_end-1)
