@@ -22,4 +22,5 @@ item_name[5] = "Tuna Can";
 i = irandom(5);
 sprite_index = item_sprite[i];
 name = item_name[i];
+interaction_script = scr_item_pickup;
  
