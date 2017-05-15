@@ -4,3 +4,4 @@ event_inherited();
 
 //player controlled movement
 scr_player_movement();
+scr_player_controls();

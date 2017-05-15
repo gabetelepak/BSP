@@ -11,4 +11,4 @@ shader_reset();
 surface_reset_target();}
 
 
-//draw_text(x,y-48,direction);
+draw_text(x,y-48,test);

@@ -1,10 +1,10 @@
-i= 1;
+i= 0;
 i2 = 1;
 repeat(8){
-gamepad[i] = -1;
+gamepad[i2] = -1;
 if gamepad_is_connected(i){
 gamepad[i2] = i;
-gamepad_set_button_threshold(i, 0.4);
+gamepad_set_button_threshold(i, 0.5);
 i2+=1;}
 i+=1;}
  
