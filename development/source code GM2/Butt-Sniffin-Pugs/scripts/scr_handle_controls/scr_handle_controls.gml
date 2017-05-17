@@ -39,7 +39,7 @@ if keyboard_check(ord("L")){lsh[islot] = 1;}
 if keyboard_check(ord("I")){lsv[islot] = -1;}
 if keyboard_check(ord("K")){lsv[islot] = 1;}
 
-i = max(gamepad_button_check(gamepad[islot], gp_face1), keyboard_check(ord("Z")));
+i = max(gamepad_button_check(gamepad[islot], gp_face1), keyboard_check(ord("N")));
 scr_button_check(button_A,i);
 
 i = max(gamepad_button_check(gamepad[islot], gp_face3), keyboard_check(ord("Q")));
@@ -48,7 +48,7 @@ scr_button_check(button_X,i);
 i = max(gamepad_button_check(gamepad[islot], gp_face2), keyboard_check(ord("E")));
 scr_button_check(button_B,i);
 
-i = max(gamepad_button_check(gamepad[islot], gp_face4), keyboard_check(ord("X")));
+i = max(gamepad_button_check(gamepad[islot], gp_face4), keyboard_check(ord("M")));
 scr_button_check(button_Y,i);
 
 }

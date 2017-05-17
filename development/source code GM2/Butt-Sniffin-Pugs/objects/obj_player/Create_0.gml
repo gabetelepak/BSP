@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-origin_offset_y = -4;
+origin_offset_y = -2;
 
 
 i = 0;
@@ -14,5 +14,7 @@ i+=1;}
 
 scr_define_player_sprites();
 scr_define_player_movement();
+
+interaction_target = 0;
 
 test = 0;
