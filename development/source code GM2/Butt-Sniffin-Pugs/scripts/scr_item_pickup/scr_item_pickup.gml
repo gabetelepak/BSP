@@ -21,4 +21,5 @@ i += 1;}}
 
 
 if success = 1{
-instance_destroy();}
+interaction = 0;
+item_death = 1;}

@@ -3,6 +3,8 @@
 
 event_inherited();
 
+shadow_sprite = spr_sammy_shadow;
+
 //pick which recycle item to be at random
 
 item_sprite[0] = spr_waterbottle;

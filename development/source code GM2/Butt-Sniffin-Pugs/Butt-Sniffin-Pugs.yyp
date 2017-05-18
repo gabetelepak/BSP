@@ -1511,6 +1511,14 @@
             }
         },
         {
+            "Key": "d69512a1-01ea-4c17-87fd-144df65bf117",
+            "Value": {
+                "id": "d65c70c4-7457-428c-bfef-19cc2f124378",
+                "resourcePath": "sprites\\spr_pigeon_shadow\\spr_pigeon_shadow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d6c99f4a-acd9-44d8-bbf3-0a7eedff9d2b",
             "Value": {
                 "id": "a09cf0a8-4b49-476f-b3de-142fa743ee05",
