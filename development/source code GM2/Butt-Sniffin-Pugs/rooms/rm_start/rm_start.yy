@@ -4,13 +4,12 @@
     "mvc": "1.0",
     "name": "rm_start",
     "IsDnD": false,
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
-        "cd854fce-353f-4292-9531-ea09bff59b72",
-        "b77d5fb5-5728-4511-a5da-54461776b54c"
+        "cd854fce-353f-4292-9531-ea09bff59b72"
     ],
     "layers": [
         {
@@ -51,35 +50,11 @@
                     "colour": {
                         "Value": 4294967295
                     },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
+                    "creationCodeFile": "InstanceCreationCode_inst_2A2A824F.gml",
+                    "creationCodeType": ".gml",
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_2A2A824F",
                     "objId": "b826beb5-916b-472a-b3fd-a7c3deaac2c1",
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                },
-                {
-                    "id": "b77d5fb5-5728-4511-a5da-54461776b54c",
-                    "modelName": "GMRInstance",
-                    "mvc": "1.0",
-                    "ignore": false,
-                    "inheritItemSettings": false,
-                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
-                    "m_serialiseFrozen": false,
-                    "name": "inst_88C98F8",
-                    "x": 128,
-                    "y": 192,
-                    "IsDnD": false,
-                    "colour": {
-                        "Value": 4294967295
-                    },
-                    "creationCodeFile": "",
-                    "creationCodeType": "",
-                    "inheritCode": false,
-                    "name_with_no_file_rename": "inst_88C98F8",
-                    "objId": "5cdfeefa-0613-4675-adf8-3560a19e80b4",
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1

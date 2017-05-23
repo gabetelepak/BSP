@@ -4,12 +4,15 @@ snapped_y = floor(x/12)*12;
 ldirection = direction;
 
 
-
+if action = 0{
 if g.lsh[player_num] != 0 || g.lsv[player_num] != 0{
 direction = point_direction(0,0, g.lsh[player_num],g.lsv[player_num]);
 draw_direction = direction;
 speed = lerp(speed,max_speed,.25);
-}
+}}
+
+//dont move if performing an action, or inventory open
+if action > 0 || g.inventory_open > 0 || g.paused{speed = 0;}
 
 
 //slow to a stop.

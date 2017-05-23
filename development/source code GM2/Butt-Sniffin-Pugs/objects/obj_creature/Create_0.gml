@@ -41,3 +41,6 @@ show_interaction = 0;
 interaction_alpha = 0;
 interaction_script = scr_int_dialogue;
 dialogue_text = "Hello World!";
+
+//actions
+action = 0;

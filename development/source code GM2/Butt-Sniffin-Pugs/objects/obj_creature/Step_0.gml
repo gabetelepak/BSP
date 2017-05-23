@@ -18,3 +18,9 @@ y = mouse_y;}
 
 if is_creature = 1{
 scr_handle_creature_sprites();}
+
+
+//handle action
+if action > 0{
+action -= 1;
+if action < 0{action = 0;}}

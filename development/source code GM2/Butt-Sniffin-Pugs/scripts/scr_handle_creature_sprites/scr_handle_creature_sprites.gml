@@ -1,4 +1,7 @@
 
+
+//if no action, walk / stand
+if action = 0{
 //change sprite and face with direction
 if draw_direction >= 270+45 || draw_direction <= 45{sprite_index = walk_sprite;face = -1;}
 if draw_direction >= 180-45 && draw_direction <= 180+45{sprite_index = walk_sprite;face = 1;}
@@ -17,3 +20,4 @@ id != g.player_object[1]{
 if stand_sprite != spr_blank{
 sprite_index = stand_sprite;}}
 }
+}//end action
