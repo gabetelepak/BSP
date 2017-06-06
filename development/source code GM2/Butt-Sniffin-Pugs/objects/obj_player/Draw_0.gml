@@ -1,4 +1,4 @@
-
+ 
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
@@ -13,3 +13,18 @@ surface_reset_target();}
 
 
 draw_text(x,y-48,player_num);
+
+
+ix = x+48;
+iy = y;
+ 
+ 
+draw_sprite(temp_sprite,image_index,ix,iy); 
+/*
+draw_sprite(walk_left_sprite[0],image_index,ix,iy);
+draw_sprite(walk_left_sprite[1],image_index,ix,iy);
+draw_sprite(walk_left_sprite[2],image_index,ix,iy);
+draw_sprite(walk_left_sprite[3],image_index,ix,iy);
+draw_sprite(walk_left_sprite[4],image_index,ix,iy);
+*/
+
