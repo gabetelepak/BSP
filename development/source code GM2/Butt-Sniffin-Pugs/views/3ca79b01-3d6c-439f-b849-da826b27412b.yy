@@ -9,7 +9,7 @@
         "05ea5089-6c09-48fd-bdac-839d06fd72b2"
     ],
     "filterType": "GMSprite",
-    "folderName": "parts",
+    "folderName": "walk parts",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

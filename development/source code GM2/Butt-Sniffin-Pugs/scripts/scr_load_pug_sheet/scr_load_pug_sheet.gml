@@ -24,7 +24,7 @@ spr_walk_up[i] = scr_create_sprite(surface_sheet,i2,8,24,48);i2 += 1;
 spr_bark[i] = scr_create_sprite(surface_sheet,i2,6,24,48);i2 += 1;
 spr_bite[i] = scr_create_sprite(surface_sheet,i2,7,24,48);i2 += 1;
 spr_bite_low[i] = scr_create_sprite(surface_sheet,i2,7,24,48);i2 += 1;
-spr_poop[i] = scr_create_sprite(surface_sheet,i2,16,24,48);i2 += 1;
+//spr_poop[i] = scr_create_sprite(surface_sheet,i2,16,24,48);i2 += 1;
 spr_sick[i] = scr_create_sprite(surface_sheet,i2,9,24,48);i2 += 1;
 spr_pee[i] = scr_create_sprite(surface_sheet,i2,19,24,48);i2 += 1;
 

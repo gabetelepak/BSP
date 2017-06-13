@@ -23,7 +23,7 @@ alpha = 1;
 shadow_sprite = spr_sammy_shadow;
 shadow_x = 0;
 shadow_y = 0;
-
+face_direction = "right";
 image_speed = 0;
 
 
@@ -44,3 +44,4 @@ dialogue_text = "Hello World!";
 
 //actions
 action = 0;
+action_performed = 0;

@@ -19,7 +19,7 @@ ix = x+48;
 iy = y;
  
  
-draw_sprite(temp_sprite,image_index,ix,iy); 
+//draw_sprite(temp_sprite,image_index,ix,iy); 
 /*
 draw_sprite(walk_left_sprite[0],image_index,ix,iy);
 draw_sprite(walk_left_sprite[1],image_index,ix,iy);
