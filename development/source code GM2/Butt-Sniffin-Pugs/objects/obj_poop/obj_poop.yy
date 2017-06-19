@@ -1,42 +1,42 @@
 {
-    "id": "3b397885-d256-4996-9b31-c1390e16ff9e",
+    "id": "a50d98ee-6be6-47af-9d26-70f5d98b0660",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "obj_poop",
     "eventList": [
         {
-            "id": "86cf77b7-3e6f-46f9-b96f-1f2017ccb887",
+            "id": "3cc7cbc9-b170-47b2-99f8-8dba9873d45e",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "3b397885-d256-4996-9b31-c1390e16ff9e"
+            "m_owner": "a50d98ee-6be6-47af-9d26-70f5d98b0660"
         },
         {
-            "id": "0b64ba5f-04b0-4781-828b-59e915f7bb3a",
+            "id": "20f4f1eb-9c04-4ab0-b07b-d156b1ab8ffa",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "3b397885-d256-4996-9b31-c1390e16ff9e"
+            "m_owner": "a50d98ee-6be6-47af-9d26-70f5d98b0660"
         },
         {
-            "id": "1537efa2-7914-4191-b2cc-cd54fe8568b0",
+            "id": "a9f7637c-10c5-4072-9fba-56e3f91e5a99",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "3b397885-d256-4996-9b31-c1390e16ff9e"
+            "m_owner": "a50d98ee-6be6-47af-9d26-70f5d98b0660"
         }
     ],
-    "maskSpriteId": "a92b31a4-7c12-4ff9-b5ed-4f1c25d5bb57",
-    "parentObjectId": "fcd8a466-0bd2-405a-85cf-eb06e5fa70b5",
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "9a09a152-6ff7-46bc-a52b-f242e8d9959c",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -44,7 +44,7 @@
     "physicsGroup": 0,
     "physicsKinematic": false,
     "physicsLinearDamping": 0.1,
-    "physicsObject": false,
+    "physicsObject": true,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
     "physicsShape": 1,

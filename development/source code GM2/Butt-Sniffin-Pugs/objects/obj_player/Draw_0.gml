@@ -12,7 +12,7 @@ shader_reset();
 surface_reset_target();}
 
 
-draw_text(x,y-48,player_num);
+//draw_text(x,y-48,player_num);
 
 
 ix = x+48;

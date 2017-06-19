@@ -30,8 +30,8 @@ walk_up_sprite[5] = spr_walk_up_fur;
 walk_up_sprite[6] = spr_walk_up_tail;
 walk_up_sprite = scr_assemble_player_sprite(walk_up_sprite);
 
-walk_down_sprite[0] = spr_walk_down_body;
-walk_down_sprite[1] = spr_walk_down_legs;
+walk_down_sprite[0] = spr_walk_down_legs;
+walk_down_sprite[1] = spr_walk_down_body;
 walk_down_sprite[2] = spr_walk_down_head;
 walk_down_sprite[3] = spr_walk_down_chin;
 walk_down_sprite[4] = spr_walk_down_arms;

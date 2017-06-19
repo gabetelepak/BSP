@@ -3,7 +3,7 @@
 
 origin_x = x + origin_offset_x;
 origin_y = y + origin_offset_y;
-depth = room_height-origin_y;
+depth = room_height-floor(origin_y);
 
 nplayer = instance_nearest(x,y,obj_player);
 pnum = nplayer.player_num;

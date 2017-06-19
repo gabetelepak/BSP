@@ -45,7 +45,7 @@ dust_alarm = 22;}
 }
 
 
-
+if speed = 0{x = floor(x);y = floor(y);}
 
 
 

@@ -23,3 +23,4 @@ color = c_white;
 rot = 0;
 alpha = -1;
 generated = 0;
+silhouette = 1;

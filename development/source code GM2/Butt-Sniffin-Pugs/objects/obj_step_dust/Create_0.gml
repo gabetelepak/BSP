@@ -6,4 +6,4 @@ alpha = 1;
 image_speed = .5;
 
 direction = 90;
-speed = .25;
+speed = .2+(irandom(10)/100);

@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-origin_offset_y = -2;
+origin_offset_y = 0;
 
 
 i = 0;

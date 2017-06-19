@@ -32,3 +32,5 @@ direction = floor(point_direction(x,y,start_x,start_y)/8)*8;}
 }
 
 draw_direction = direction;
+
+if speed = 0{x = floor(x);y = floor(y);}
