@@ -2,7 +2,8 @@
 // You can write your code in this editor
 
 if instance_exists(player_object[1]){
-scr_handle_camera();}
+scr_handle_camera();
+}
 
 
 scr_draw_silhouette();

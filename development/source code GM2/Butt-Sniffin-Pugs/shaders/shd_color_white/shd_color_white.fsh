@@ -1,5 +1,5 @@
  //
-// Simple passthrough fragment shader
+// turns the sprite completely white.
 //
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;

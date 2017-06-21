@@ -12,6 +12,18 @@ shader_reset();
 surface_reset_target();}
 
 
+
+
+
+
+
+draw_surface(test_color_surf,x+48-24,y-48);
+
+
+
+
+
+
 //draw_text(x,y-48,player_num);
 
 

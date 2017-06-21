@@ -1,7 +1,7 @@
 
 
-if !surface_exists(g.surf_camera){
-g.surf_camera = surface_create(view_width,view_height);
+if !surface_exists(surf_camera){
+surf_camera = surface_create(view_width,view_height);
 }
 
 
@@ -48,9 +48,9 @@ camera_y = clamp(camera_y,0,room_height-camera_height);
 //flash surfaces
 
 if flash_surfaces > 0{flash_surfaces -=1;}
-if flash_surfaces = 1{surface_free(world_grid_surf );
-surface_free(world_grid_surf );
-surface_free(g.surf_shadow);}
+if flash_surfaces = 1{
+if surface_exists(world_grid_surf){surface_free(world_grid_surf );}
+if surface_exists( surf_shadow){surface_free(surf_shadow);}}
 
 
 

@@ -14,6 +14,6 @@ draw_text(10,130,g.button_pressed[islot,g.button_X]);
 draw_text(10,150,g.button_pressed[islot,g.button_Y]);
 
 
-//draw_text(10,10,fps_real);
+//draw_text(10,200,room_get_name(room));
 //draw_text(10,30,fps);
 //draw_text(10,50,test_str);

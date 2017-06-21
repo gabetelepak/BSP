@@ -1,4 +1,6 @@
 
+scr_define_color_change();
+scr_set_color_change_brown();
 
 
 shadow_sprite = spr_sammy_shadow;
