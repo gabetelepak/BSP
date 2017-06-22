@@ -1,4 +1,4 @@
- 
+  
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
@@ -17,7 +17,7 @@ surface_reset_target();}
 
 
 
-draw_surface(test_color_surf,x+48-24,y-48);
+//draw_surface(test_color_surf[0],x+48-24,y-48);
 
 
 

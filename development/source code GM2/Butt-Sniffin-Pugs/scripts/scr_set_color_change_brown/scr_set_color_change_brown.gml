@@ -3,10 +3,7 @@
 
 
 max_colors = 0;
-i = 0; 
-colorIn[i] = make_color_rgb(44, 44, 44);
-colorOut[i] = make_color_rgb(147, 102, 74);
-i+=1;       
+i=0;      
 colorIn[i] = make_color_rgb(231, 231, 231);
 colorOut[i] = make_color_rgb(241, 237, 230);
 i+=1;
@@ -22,6 +19,8 @@ i+=1;
 colorIn[i] = make_color_rgb(86, 86, 86);
 colorOut[i] = make_color_rgb(196, 150, 99);
 i+=1;
+colorIn[i] = make_color_rgb(44, 44, 44);
+colorOut[i] = make_color_rgb(147, 102, 74);
 
 
-max_colors = 1;
+max_colors = i;

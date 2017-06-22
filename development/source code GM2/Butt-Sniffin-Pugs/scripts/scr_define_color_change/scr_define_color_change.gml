@@ -12,3 +12,7 @@ i = 0;
 colorIn[i] = make_color_rgb(140,240,164);
 colorOut[i] = make_color_rgb(54,113,123);
 i+=1;
+
+test_color_surf[0] = surface_create(73,73);
+test_color_surf[1] = surface_create(73,73);
+color_change_switch = 1;

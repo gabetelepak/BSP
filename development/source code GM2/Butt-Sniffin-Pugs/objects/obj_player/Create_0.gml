@@ -18,7 +18,7 @@ scr_define_player_movement();
 interaction_target = 0;
 
 test = 0;
-test_color_surf = surface_create(73,73);
+
 
 
 
