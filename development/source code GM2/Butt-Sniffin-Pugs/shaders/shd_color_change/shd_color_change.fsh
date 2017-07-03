@@ -88,6 +88,8 @@ void main()
                                  clamp( colorOut.a + colorDelta.a, 0.0, 1.0) ),
                           blend );
     }
+	else{
+	colorPixel.a = 0.0;}
     
     gl_FragColor = v_vColour * colorPixel;
 }
