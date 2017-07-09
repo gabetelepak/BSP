@@ -49,6 +49,8 @@ temp_sprite = sprite_create_from_surface(temp_color_surf,0,0,73,73,0,0,36,51);}e
 sprite_add_from_surface(temp_sprite,temp_color_surf,0,0,73,73,0,0);}
 temp_index += 1;}
 
+
+
 surface_free(temp_surf);
 surface_free(temp_color_surf);
 return temp_sprite;

@@ -1,8 +1,8 @@
 
 //abilities.
 if face_direction = "right" || face_direction = "left"{
-abi_left_sprite = poop_left_sprite;
-abi_right_sprite = poop_left_sprite;}
+abi_left_sprite = dig_left_sprite;
+abi_right_sprite = dig_left_sprite;}
 
 if face_direction = "up"{
 abi_left_sprite = poop_up_sprite;

@@ -50,6 +50,7 @@ assemble_sprite[4] = spr_jump_left_arms;//arms
 assemble_sprite[5] = spr_jump_left_fur;//fur
 assemble_sprite[6] = spr_jump_left_tail;//tail
 jump_left_sprite = scr_assemble_player_sprite(assemble_sprite);
+jump_left_sprite_reverse = scr_reverse_sprite(jump_left_sprite);
 
 //jump up
 assemble_sprite[0] = spr_jump_up_body;//body
@@ -60,6 +61,7 @@ assemble_sprite[4] = spr_jump_up_arms;//arms
 assemble_sprite[5] = spr_jump_up_fur;//fur
 assemble_sprite[6] = spr_jump_up_tail;//tail
 jump_up_sprite = scr_assemble_player_sprite(assemble_sprite);
+jump_up_sprite_reverse = scr_reverse_sprite(jump_up_sprite);
 
 //jump down
 assemble_sprite[0] = spr_jump_down_body;//body
@@ -70,6 +72,7 @@ assemble_sprite[4] = spr_jump_down_arms;//arms
 assemble_sprite[5] = spr_jump_down_fur;//fur
 assemble_sprite[6] = spr_jump_down_tail;//tail
 jump_down_sprite = scr_assemble_player_sprite(assemble_sprite);
+jump_down_sprite_reverse = scr_reverse_sprite(jump_down_sprite);
 
 
 //poop left
@@ -82,7 +85,7 @@ assemble_sprite[5] = spr_poop_left_fur;//fur
 assemble_sprite[6] = spr_poop_left_tail;//tail
 poop_left_sprite = scr_assemble_player_sprite(assemble_sprite);
 poop_left_sprite = scr_add_onto_sprite(jump_left_sprite,poop_left_sprite);
-
+poop_left_sprite = scr_add_onto_sprite(poop_left_sprite,jump_left_sprite_reverse);
 
 //poop up
 assemble_sprite[0] = spr_poop_up_body;//body
@@ -94,6 +97,7 @@ assemble_sprite[5] = spr_poop_up_fur;//fur
 assemble_sprite[6] = spr_poop_up_tail;//tail
 poop_up_sprite = scr_assemble_player_sprite(assemble_sprite);
 poop_up_sprite = scr_add_onto_sprite(jump_up_sprite,poop_up_sprite);
+poop_up_sprite = scr_add_onto_sprite(poop_up_sprite,jump_up_sprite_reverse);
 
 //poop down
 assemble_sprite[0] = spr_poop_down_body;//body
@@ -105,9 +109,20 @@ assemble_sprite[5] = spr_poop_down_fur;//fur
 assemble_sprite[6] = spr_poop_down_tail;//tail
 poop_down_sprite = scr_assemble_player_sprite(assemble_sprite);
 poop_down_sprite = scr_add_onto_sprite(jump_down_sprite,poop_down_sprite);
+poop_down_sprite = scr_add_onto_sprite(poop_down_sprite,jump_down_sprite_reverse);
 
 
-
+//dig left
+assemble_sprite[0] = spr_dig_left_body;//body
+assemble_sprite[1] = spr_dig_left_legs;//legs
+assemble_sprite[2] = spr_dig_left_head;//heads
+assemble_sprite[3] = spr_dig_left_chin;//chin
+assemble_sprite[4] = spr_dig_left_arms;//arms
+assemble_sprite[5] = spr_dig_left_fur;//fur
+assemble_sprite[6] = spr_dig_left_tail;//tail
+dig_left_sprite = scr_assemble_player_sprite(assemble_sprite);
+dig_left_sprite = scr_add_onto_sprite(jump_left_sprite,dig_left_sprite);
+dig_left_sprite = scr_add_onto_sprite(dig_left_sprite,jump_left_sprite_reverse);
 
 
 
