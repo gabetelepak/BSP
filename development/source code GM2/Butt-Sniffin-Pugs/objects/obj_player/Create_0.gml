@@ -15,6 +15,11 @@ i+=1;}
 scr_define_player_sprites();
 scr_define_player_movement();
 
+
+abi_left = "dig";
+abi_right = "poop";
+scr_define_player_abi();
+
 interaction_target = 0;
 
 test = 0;

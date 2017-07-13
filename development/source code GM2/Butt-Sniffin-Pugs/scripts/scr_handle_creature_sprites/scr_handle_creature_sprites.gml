@@ -7,9 +7,9 @@ if draw_direction >= 270+45 || draw_direction <= 45{
 face_direction = "right";sprite_index = walk_sprite;face = -1;}
 if draw_direction >= 180-45 && draw_direction <= 180+45{
 face_direction = "left";sprite_index = walk_sprite;face = 1;}
-if draw_direction >= 45 && draw_direction <= 90+45{
+if draw_direction > 45 && draw_direction < 90+45{
 face_direction = "up";sprite_index = walk_up_sprite;}
-if draw_direction >= 270-45 && draw_direction <= 270+45{
+if draw_direction > 270-45 && draw_direction < 270+45{
 face_direction = "down";sprite_index = walk_down_sprite;}
 
 

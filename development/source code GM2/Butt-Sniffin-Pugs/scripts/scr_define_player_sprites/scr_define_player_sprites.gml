@@ -124,6 +124,30 @@ dig_left_sprite = scr_assemble_player_sprite(assemble_sprite);
 dig_left_sprite = scr_add_onto_sprite(jump_left_sprite,dig_left_sprite);
 dig_left_sprite = scr_add_onto_sprite(dig_left_sprite,jump_left_sprite_reverse);
 
+//dig up
+assemble_sprite[0] = spr_dig_up_body;//body
+assemble_sprite[1] = spr_dig_up_legs;//legs
+assemble_sprite[2] = spr_dig_up_head;//heads
+assemble_sprite[3] = spr_dig_up_chin;//chin
+assemble_sprite[4] = spr_blank;//arms
+assemble_sprite[5] = spr_dig_up_fur;//fur
+assemble_sprite[6] = spr_dig_up_tail;//tail
+dig_up_sprite = scr_assemble_player_sprite(assemble_sprite);
+dig_up_sprite = scr_add_onto_sprite(jump_up_sprite,dig_up_sprite);
+dig_up_sprite = scr_add_onto_sprite(dig_up_sprite,jump_up_sprite_reverse);
+
+//poop down
+assemble_sprite[0] = spr_dig_down_body;//body
+assemble_sprite[1] = spr_dig_down_legs;//legs
+assemble_sprite[2] = spr_dig_down_head;//heads
+assemble_sprite[3] = spr_dig_down_chin;//chin
+assemble_sprite[4] = spr_blank;//arms
+assemble_sprite[5] = spr_dig_down_fur;//fur
+assemble_sprite[6] = spr_dig_down_tail;//tail
+dig_down_sprite = scr_assemble_player_sprite(assemble_sprite);
+dig_down_sprite = scr_add_onto_sprite(jump_down_sprite,dig_down_sprite);
+dig_down_sprite = scr_add_onto_sprite(dig_down_sprite,jump_down_sprite_reverse);
+
 
 
 

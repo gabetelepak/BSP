@@ -45,3 +45,4 @@ dialogue_text = "Hello World!";
 //actions
 action = 0;
 action_performed = 0;
+abi_action = "";
