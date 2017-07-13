@@ -14,7 +14,7 @@ image_speed = .1;
 if speed > 1 && dust_alarm <= 0{
 dust_alarm = 15+irandom(15);
 instance_create_depth(origin_x,origin_y+2,depth-2,obj_step_dust);}
-}
+} 
 
 if dust_alarm > 0{dust_alarm -= 1;}
 
@@ -44,7 +44,7 @@ if ceil(image_index) >= image_number-3 && explode = 2{
 explode = 3;
 with obj_boulder{
 if distance_to_object(other.id) <= 8{
-direction = (floor(point_direction(other.origin_x,other.origin_y-2,origin_x,origin_y-6)/90))*90;
+direction = (round(point_direction(other.origin_x,other.origin_y-6,origin_x,origin_y-6)/90))*90;
 speed = 3;}}}
 
 if ceil(image_index) = image_number-1{
