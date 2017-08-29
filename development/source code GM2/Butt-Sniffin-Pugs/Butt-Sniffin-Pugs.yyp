@@ -1055,6 +1055,14 @@
             }
         },
         {
+            "Key": "64af267a-95e9-4775-8236-dce0da9d0c56",
+            "Value": {
+                "id": "6c2a84a3-5134-43d7-b9ef-e87aa3b94711",
+                "resourcePath": "tilesets\\tile_cliff24\\tile_cliff24.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "65637ef3-69c0-4eb0-a159-780d1abc6f07",
             "Value": {
                 "id": "36a1341c-b3c2-4f1d-94cc-2cc7a94b8685",
@@ -1735,6 +1743,14 @@
             }
         },
         {
+            "Key": "a68e051f-80a9-4e56-a7dc-1c89aef6065f",
+            "Value": {
+                "id": "d024cc1e-5a13-4f8f-a26d-beb6fb755fc4",
+                "resourcePath": "tilesets\\tile_cliff48\\tile_cliff48.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "a78c800d-2d36-4cdf-851c-0d480931039d",
             "Value": {
                 "id": "95f7fa75-05ae-47fc-beee-eda00ea579b7",
@@ -1972,6 +1988,14 @@
                 "id": "4ea3d486-c6cb-46e3-9376-7e0df1041849",
                 "resourcePath": "scripts\\scr_load_pug_sheet\\scr_load_pug_sheet.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b8f19fe8-00cc-44dc-a3fe-7d6e94309c36",
+            "Value": {
+                "id": "9cbcef7c-a21d-487b-84d7-ce5479ca9dff",
+                "resourcePath": "sprites\\spr_cliff_tiles_48\\spr_cliff_tiles_48.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2547,6 +2571,14 @@
             "Value": {
                 "id": "9df11cb5-7dc2-434b-bdff-a085a0d5731f",
                 "resourcePath": "sprites\\spr_coffeecan\\spr_coffeecan.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e8bc5b7d-8bf3-424c-a9d0-644c106660ae",
+            "Value": {
+                "id": "fbc32fec-e5d0-48a4-a5db-6d1da36eb95c",
+                "resourcePath": "sprites\\spr_cliff_tiles_24\\spr_cliff_tiles_24.yy",
                 "resourceType": "GMSprite"
             }
         },
