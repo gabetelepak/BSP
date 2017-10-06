@@ -9,7 +9,8 @@
         "ef0f33f1-8d79-41ec-b9f1-4613dde9abd6",
         "b5afe2b8-37bd-42ea-aed0-986c42be37cf",
         "b8f19fe8-00cc-44dc-a3fe-7d6e94309c36",
-        "e8bc5b7d-8bf3-424c-a9d0-644c106660ae"
+        "e8bc5b7d-8bf3-424c-a9d0-644c106660ae",
+        "5f7dd610-d8af-4716-9243-b70803370ac8"
     ],
     "filterType": "GMSprite",
     "folderName": "park backgrounds",

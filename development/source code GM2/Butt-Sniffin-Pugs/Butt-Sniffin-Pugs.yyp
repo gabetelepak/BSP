@@ -1007,6 +1007,14 @@
             }
         },
         {
+            "Key": "5f7dd610-d8af-4716-9243-b70803370ac8",
+            "Value": {
+                "id": "92ab0518-c395-4fed-8b5e-118901bf995a",
+                "resourcePath": "sprites\\spr_cliff_test\\spr_cliff_test.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5f9c84fa-b4ad-40e8-9f66-46df6ccdbf0c",
             "Value": {
                 "id": "89d66264-e9a9-4d74-bba8-635a451d9ae1",
@@ -2348,6 +2356,14 @@
                 "id": "fc73628b-a00d-4b8d-8829-338d0c3f9b1f",
                 "resourcePath": "views\\d726a17d-22dc-4205-9b7b-8b5c20b50ea1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d8011987-68bc-4d0b-b128-9dfc148f3497",
+            "Value": {
+                "id": "7d847dfb-797b-4804-886c-e8267646ed12",
+                "resourcePath": "tilesets\\tile_cliff_test\\tile_cliff_test.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
