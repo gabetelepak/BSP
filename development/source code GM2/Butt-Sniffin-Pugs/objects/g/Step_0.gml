@@ -1,4 +1,4 @@
-/// @description Insert description here
+    /// @description Insert description here
 // You can write your code in this editor
 if keyboard_check_pressed(vk_escape){game_end();}
 if keyboard_check(vk_shift) && keyboard_check(vk_enter){game_restart();}
@@ -6,6 +6,11 @@ if keyboard_check(vk_shift) && keyboard_check(vk_enter){game_restart();}
 if room = rm_park_test{
 if !instance_exists(obj_floor){
 instance_create_depth(x,y,10000,obj_floor);}}
+
+if tile_deepen = 1{
+if room = rm_center_bottom{tile_deepen = 2;
+	// scr_tile_deepen("terrain_tiles",48,48,room_height);
+	}}
 
 
 scr_handle_controls();

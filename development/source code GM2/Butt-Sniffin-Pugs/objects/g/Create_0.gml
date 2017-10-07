@@ -1,4 +1,4 @@
-/// @description Insert description here
+ /// @description Insert description here
 // You can write your code in this editor
 scr_define_camera();
 //debug_surface = surface_create(10,10);
@@ -26,3 +26,5 @@ paused = 0;
 
 //for shadows.
 surf_shadow = surface_create(g.camera_width,g.camera_height);
+tile_deepen = 1;  
+scr_tile_deepen("terrain_elevated_tiles",24,24,room_height);

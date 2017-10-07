@@ -1,5 +1,5 @@
 //goes to each module room and adds all objects to a ds grid.
-
+if start_mod_gen = 1{
 if modules_loaded <= module_room_max{
 
 
@@ -52,7 +52,7 @@ if modules_loaded = module_room_max+1{
 room_goto(rm_park_test);
 modules_loaded += 1;}
 
-
+}//end if start mod gen
 
 
 /*

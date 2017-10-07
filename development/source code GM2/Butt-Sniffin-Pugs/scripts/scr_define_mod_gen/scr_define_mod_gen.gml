@@ -9,7 +9,7 @@ hub = 2400 x 720
 biome = 1104 x 2880
 */
 //hmm
-
+start_mod_gen = 0;
 module_populate_success = 0;
 filler_populate_success = 0;
 
