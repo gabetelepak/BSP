@@ -15,8 +15,7 @@
         "0c738440-3ade-4191-ba4c-253cd2c0f118",
         "a92b31a4-7c12-4ff9-b5ed-4f1c25d5bb57",
         "00be8275-d945-4314-aac2-3afe296ce903",
-        "504ef6e1-29bb-4c47-8967-ebe588d84ae4",
-        "3ea00293-b08d-41bb-bf56-97c7aacbb54d"
+        "504ef6e1-29bb-4c47-8967-ebe588d84ae4"
     ],
     "filterType": "GMSprite",
     "folderName": "misc temp",
