@@ -14,8 +14,8 @@ face_direction = "down";sprite_index = walk_down_sprite;}
 
 
 //reset anim and freeze. change to stand sprite
-if speed > .1{
-image_speed = speed/4;}
+if spd > .1{
+image_speed = spd/4;}
 else{
 image_speed = 0;
 image_index = 0;

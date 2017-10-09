@@ -1,4 +1,4 @@
-/// @description Insert description here
+ /// @description Insert description here
 // You can write your code in this editor
 is_creature = 1;
 is_item = 0;
@@ -25,6 +25,11 @@ shadow_x = 0;
 shadow_y = 0;
 face_direction = "right";
 image_speed = 0;
+
+//movement
+hsp = 0;
+vsp = 0;
+spd = 0;
 
 
 //sprites.

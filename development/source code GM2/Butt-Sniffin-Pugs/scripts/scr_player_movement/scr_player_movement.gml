@@ -8,21 +8,37 @@ if action = 0{
 if g.lsh[player_num] != 0 || g.lsv[player_num] != 0{
 direction = point_direction(0,0, g.lsh[player_num],g.lsv[player_num]);
 draw_direction = direction;
-speed = lerp(speed,max_speed,.25);
+spd = lerp(spd,max_speed,.25);
 }}
 
 //dont move if performing an action, or inventory open
-if action > 0 || g.inventory_open > 0 || g.paused{speed = 0;}
+if action > 0 || g.inventory_open > 0 || g.paused{spd = 0;}
 
 
 //slow to a stop.
 if g.lsh[player_num] == 0 && g.lsv[player_num] == 0{
-speed = lerp(speed,0,.25);
+spd = lerp(spd,0,.25);
 }
 
 //collide
-if !place_free(x+lengthdir_x(max_speed,direction),y){hspeed = 0;}
-if !place_free(x,y+lengthdir_y(max_speed,direction)){vspeed = 0;}
+//if !place_free(x+lengthdir_x(max_speed,direction),y){hspeed = 0;}
+//if !place_free(x,y+lengthdir_y(max_speed,direction)){vspeed = 0;}
+
+hsp = lengthdir_x(spd,direction);
+vsp = lengthdir_y(spd,direction);
+
+if !place_free(x+hsp,y){
+while(place_free(x+sign(hsp),y)){
+x += sign(hsp);}
+hsp = 0;}
+
+if !place_free(x,y+vsp){
+while(place_free(x,y+sign(vsp))){
+y += sign(vsp);}
+vsp = 0;}
+
+x += hsp;
+y += vsp;
 
 
 if keyboard_check(vk_space){
@@ -45,7 +61,7 @@ dust_alarm = 22;}
 }
 
 
-if speed = 0{x = floor(x);y = floor(y);}
+if spd = 0{x = floor(x);y = floor(y);}
 
 
 
